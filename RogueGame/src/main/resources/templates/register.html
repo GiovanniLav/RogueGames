@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione Utente</title>
+</head>
+<body>
+    <h1>Registrati</h1>
+    <form th:action="@{/api/utenti/registrati}" method="post" th:object="${utente}">
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}" required/><br/>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" th:field="*{password}" required/><br/>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" th:field="*{nome}" required/><br/>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" th:field="*{cognome}" required/><br/>
+
+        <label for="eta">Età:</label>
+        <input type="number" id="eta" th:field="*{eta}" required/><br/>
+
+        <label for="residenza">Residenza:</label>
+        <input type="text" id="residenza" th:field="*{residenza}" required/><br/>
+
+        <label for="tel">Telefono:</label>
+        <input type="tel" id="tel" th:field="*{tel}" required/><br/>
+
+        <button type="submit">Registrati</button>
+    </form>
+</body>
+</html>
