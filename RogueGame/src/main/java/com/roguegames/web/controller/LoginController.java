@@ -56,4 +56,5 @@ public class LoginController {
         session.invalidate();  // Invalida la sessione
         return "redirect:/utenti/login";  // Reindirizza al login
     }
+
 }
