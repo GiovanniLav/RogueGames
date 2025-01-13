@@ -36,7 +36,7 @@ public class UtenteController {
 
         try {
             utenteService.registrati(utente); // Salva l'utente
-            return "redirect:/utenti/registrazione-completa"; // Successo, reindirizza a una pagina di successo
+            return "redirect:/utenti/login"; // Successo, reindirizza a una pagina di successo
         } catch (IllegalArgumentException e) {
             model.addAttribute("error", e.getMessage());
             return "register"; // Se c'è un errore (es. email già registrata), ritorna al form
@@ -49,13 +49,4 @@ public class UtenteController {
         return "registration_complete"; // Questa pagina conferma la registrazione
     }
 
-    // Metodo per testare la connessione al database
-    @GetMapping("/db")
-    public ResponseEntity<String> checkDatabaseConnection() {
-        if (utenteService.isDatabaseConnected()) {
-            return ResponseEntity.ok("Database connected!");
-        } else {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Database not connected!");
-        }
-    }
 }
