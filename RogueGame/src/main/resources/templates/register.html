@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione Utente</title>
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
 <h1>Registrati</h1>
@@ -44,6 +45,7 @@
     <div th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}" style="color: red;"></div><br/>
 
     <button type="submit">Registrati</button>
+
 </form>
 
 </body>

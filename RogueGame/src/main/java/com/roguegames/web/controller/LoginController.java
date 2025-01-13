@@ -21,7 +21,7 @@ public class LoginController {
     @GetMapping("/login")
     public String showLoginForm(Model model) {
         model.addAttribute("error", false);
-        return "login";  // Restituisce la pagina login.html
+        return "Login";  // Restituisce la pagina login.html
     }
 
     // Gestisce il login
@@ -33,27 +33,28 @@ public class LoginController {
         Utente utente = utenteService.verificaCredenziali(email, password);
         if (utente == null) {
             model.addAttribute("error", true);
-            return "login";  // Mostra la pagina di login con un messaggio di errore
+            return "Login";  // Mostra la pagina di login con un messaggio di errore
         }
         session.setAttribute("utente", utente);
-        return "redirect:/utenti/dashboard";  // Reindirizza alla dashboard
+        return "redirect:/utenti/home";  // Reindirizza alla dashboard
     }
 
     // Mostra la dashboard (protetta)
-    @GetMapping("/dashboard")
+    @GetMapping("/home")
     public String dashboard(HttpSession session, Model model) {
         Utente utente = (Utente) session.getAttribute("utente");
         if (utente == null) {
-            return "redirect:/utenti/login";  // Reindirizza al login se l'utente non è loggato
+            return "redirect:/utenti/Login";  // Reindirizza al login se l'utente non è loggato
         }
         model.addAttribute("utente", utente);
-        return "dashboard";  // Mostra la pagina di dashboard
+        return "home";  // Mostra la pagina di dashboard
     }
 
     // Logout
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();  // Invalida la sessione
-        return "redirect:/utenti/login";  // Reindirizza al login
+        return "redirect:/utenti/Login";  // Reindirizza al login
     }
+
 }
