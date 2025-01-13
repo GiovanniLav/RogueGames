@@ -13,7 +13,7 @@ body {
 
 .container {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px;
+    padding: 25px;
     border-radius: 8px;
     width: 100%;
     max-width: 400px;
@@ -21,15 +21,14 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
 }
-
-h1 {
+h2 {
     font-family: 'Open Sans', sans-serif;
-    margin-bottom: 20px;
-    font-size: 2.5em;
-    letter-spacing: 2px;
+    font-size: 2em;
     color: #fff;
+    margin-bottom: 20px;  /* Aggiungi un po' di spazio tra il titolo e il form */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
+
 
 form {
     display: flex;
@@ -38,13 +37,13 @@ form {
 
 label {
     font-size: 1.1em;
-    margin-top: 15px;
+    margin-top: 0px;  /* Ridotto margine */
     text-align: left;
 }
 
 input {
-    padding: 10px;
-    margin: 10px 0;
+    padding: 0px;  /* Ridotto padding */
+    margin: 0px 0;  /* Ridotto margine tra gli input */
     border: none;
     border-radius: 5px;
     font-size: 1em;
@@ -58,7 +57,7 @@ input:focus {
 }
 
 button {
-    padding: 12px;
+    padding: 10px;
     background-color: #ff7e5f;
     color: white;
     border: none;
@@ -75,7 +74,7 @@ button:hover {
 .error {
     color: #ff4d4d;
     font-size: 0.9em;
-    margin-top: 10px;
+    margin-top: 2px;  /* Ridotto margine */
 }
 
 /* Animazione per il form */

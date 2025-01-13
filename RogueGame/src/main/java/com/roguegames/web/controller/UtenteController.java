@@ -23,7 +23,7 @@ public class UtenteController {
     @GetMapping("/registrati")
     public String showRegistrationForm(Model model) {
         model.addAttribute("utente", new Utente());
-        return "register"; // Restituisce la pagina register.html
+        return "Register"; // Restituisce la pagina register.html
     }
 
     // Metodo per gestire la registrazione dell'utente
@@ -31,7 +31,7 @@ public class UtenteController {
     public String registerUtente(@Valid @ModelAttribute("utente") Utente utente, BindingResult result, Model model) {
         // Se ci sono errori nel form, torna alla pagina di registrazione
         if (result.hasErrors()) {
-            return "register"; // Se ci sono errori, ritorna alla pagina di registrazione
+            return "Register"; // Se ci sono errori, ritorna alla pagina di registrazione
         }
 
         try {
@@ -39,14 +39,14 @@ public class UtenteController {
             return "redirect:/utenti/login"; // Successo, reindirizza a una pagina di successo
         } catch (IllegalArgumentException e) {
             model.addAttribute("error", e.getMessage());
-            return "register"; // Se c'è un errore (es. email già registrata), ritorna al form
+            return "Register"; // Se c'è un errore (es. email già registrata), ritorna al form
         }
     }
 
     // Metodo per la pagina di successo della registrazione
     @GetMapping("/registrazione-completa")
     public String registrationComplete() {
-        return "registration_complete"; // Questa pagina conferma la registrazione
+        return "Login"; // Questa pagina conferma la registrazione
     }
 
 }
