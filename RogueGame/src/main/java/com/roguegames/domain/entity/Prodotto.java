@@ -63,7 +63,7 @@ public class Prodotto {
     private Integer quantita;
 
     @ManyToOne
-    @JoinColumn(name = "Tipo", referencedColumnName = "Nome", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "Tipo", referencedColumnName = "Tipologia", nullable = false, insertable = false, updatable = false)
     private Tipologia tipologia;
 
     // Enumerazioni per Piattaforma e Tipo
