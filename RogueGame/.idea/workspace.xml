@@ -103,7 +103,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.RogueGameApplication">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.98">
     <configuration name="RogueGameApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="RogueGame" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.roguegames.RogueGameApplication" />
