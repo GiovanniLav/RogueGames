@@ -32,5 +32,14 @@ public class UtenteService {
         return utenteRepository.findByEmail(email);
     }
 
-    // Altri metodi di business possono essere aggiunti qui
+    public boolean isDatabaseConnected() {
+        try {
+            utenteRepository.testConnection();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
+        // Altri metodi di business possono essere aggiunti qui
+    }
 }
