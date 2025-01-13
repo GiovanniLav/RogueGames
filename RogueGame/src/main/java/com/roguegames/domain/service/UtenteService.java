@@ -32,6 +32,14 @@ public class UtenteService {
         return utenteRepository.findByEmail(email);
     }
 
+    public Utente verificaCredenziali(String email, String password) {
+        Utente utente = utenteRepository.findByEmail(email);
+        if (utente != null && utente.getPassword().equals(password)) { // Assicurati di aggiungere hashing in futuro
+            return utente;
+        }
+        return null;
+    }
+
     public boolean isDatabaseConnected() {
         try {
             utenteRepository.testConnection();
