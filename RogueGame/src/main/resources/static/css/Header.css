@@ -1,0 +1,59 @@
+/* Impostazioni globali */
+html, body {
+    font-family: 'Arial', sans-serif;
+    height: 100%;   /* Assicurati che l'altezza del body sia 100% */
+    margin: 0;      /* Rimuove i margini predefiniti */
+    padding: 0;     /* Rimuove il padding predefinito */
+    display: flex;  /* Usa flexbox per il layout */
+    flex-direction: column; /* Imposta la direzione verticale */
+}
+
+/* Il contenuto principale occupa lo spazio disponibile tra header e footer */
+main {
+    flex: 1; /* Questo fa sì che il contenuto prenda lo spazio disponibile */
+}
+
+/* Stile per l'header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+    padding: 10px 20px;
+    position: relative;  /* Assicurati che l'header abbia una posizione corretta */
+    z-index: 10;  /* Imposta una priorità di livello superiore */
+}
+
+/* Logo nell'header */
+header .logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ff9900;
+}
+
+/* Lista di navigazione nell'header */
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Stili dei link di navigazione */
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Effetto hover sui link */
+header nav ul li a:hover {
+    background-color: #ff9900;
+}
+
+

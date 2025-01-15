@@ -40,6 +40,10 @@ public class UtenteService {
         return null;
     }
 
+    public void aggiornaUtente(Utente utente) {
+        utenteRepository.save(utente);
+    }
+
     public boolean isDatabaseConnected() {
         try {
             utenteRepository.testConnection();

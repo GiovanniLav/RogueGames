@@ -1,0 +1,9 @@
+footer {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: auto; /* Questo spinge il footer verso il basso */
+}

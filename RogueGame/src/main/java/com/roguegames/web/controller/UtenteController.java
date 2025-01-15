@@ -23,7 +23,7 @@ public class UtenteController {
     @GetMapping("/registrati")
     public String showRegistrationForm(Model model) {
         model.addAttribute("utente", new Utente());
-        return "Register"; // Restituisce la pagina register.html
+        return "Register"; // Restituisce la pagina Register.html
     }
 
     // Metodo per gestire la registrazione dell'utente
