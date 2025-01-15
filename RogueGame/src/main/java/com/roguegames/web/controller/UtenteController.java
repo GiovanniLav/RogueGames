@@ -47,4 +47,9 @@ public class UtenteController {
         return "Login"; // Questa pagina conferma la registrazione
     }
 
+    @GetMapping("/log")
+    public String regProva() {
+        return "redirect:/utenti/login";
+
+    }
 }
