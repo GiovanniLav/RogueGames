@@ -1,0 +1,278 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"RogueGame:war\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"433e2958-9e21-4bdc-a2c5-d543b8096ec1\" name=\"Changes\" comment=\"Catalogo funzionante\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <favorite-branches>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$/..\" source=\"Domenico\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </favorite-branches>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$/..\" value=\"Giovanni\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;GiovanniLav&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/GiovanniLav/RogueGames.git\",\r\n    \"accountId\": \"9c3832cf-568e-4e1b-8d1b-80df7faf44a7\"\r\n  }\r\n}]]></component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"customMavenHome\" value=\"C:\\apache-maven-3.9.4\" />\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"CUSTOM\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n    <option name=\"showPreview\" value=\"true\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2rR6WN1j8I1LpwKvTwIkqCUexxe\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor\": \"Run\",\r\n    \"RequestMappingsPanelOrder0\": \"0\",\r\n    \"RequestMappingsPanelOrder1\": \"1\",\r\n    \"RequestMappingsPanelWidth0\": \"75\",\r\n    \"RequestMappingsPanelWidth1\": \"75\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"Spring Boot.RogueGameApplication.executor\": \"Run\",\r\n    \"Tomcat Server.Tomcat 9.0.98.executor\": \"Run\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/intellij/RogueGames/RogueGame\",\r\n    \"list.type.of.created.stylesheet\": \"CSS\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Artifacts\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"settings.editor.selected.configurable\": \"MavenSettings\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"DatabaseDriversLRU\": [\r\n      \"mysql\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\ROBA\\RogueGames\\RogueGame\\src\\main\\resources\\static\\css\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.RogueGameApplication\">\r\n    <configuration name=\"RogueGameApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" nameIsGenerated=\"true\">\r\n      <module name=\"RogueGame\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.roguegames.RogueGameApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Tomcat 9.0.98\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.98\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\r\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\r\n      <deployment>\r\n        <artifact name=\"RogueGame:war\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/RogueGame_war\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"695dfc39-0299-4031-945b-8f43f4693bf2\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"52838\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"RogueGame:war\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"433e2958-9e21-4bdc-a2c5-d543b8096ec1\" name=\"Changes\" comment=\"\" />\r\n      <created>1736509572906</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1736509572906</updated>\r\n      <workItem from=\"1736509573946\" duration=\"30000\" />\r\n      <workItem from=\"1736612425240\" duration=\"175000\" />\r\n      <workItem from=\"1736612623666\" duration=\"1834000\" />\r\n      <workItem from=\"1736614494141\" duration=\"4769000\" />\r\n      <workItem from=\"1736694762531\" duration=\"6767000\" />\r\n      <workItem from=\"1736701590652\" duration=\"402000\" />\r\n      <workItem from=\"1736702017163\" duration=\"5029000\" />\r\n      <workItem from=\"1736718190786\" duration=\"8421000\" />\r\n      <workItem from=\"1736786093863\" duration=\"142000\" />\r\n      <workItem from=\"1736786248025\" duration=\"2644000\" />\r\n      <workItem from=\"1736867485813\" duration=\"7012000\" />\r\n      <workItem from=\"1736893345879\" duration=\"12000\" />\r\n      <workItem from=\"1736935704172\" duration=\"7065000\" />\r\n      <workItem from=\"1737027936851\" duration=\"371000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Prova commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736701682173</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736701682173</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Registrazione funzionante\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736782553444</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736782553444</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"SpringBoot funzionante\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736784335786</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736784335786</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"prodotto\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736791073760</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736791073760</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"File del main mergiati\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736792758797</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736792758797</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Pagina profilo funzionante\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736939732697</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736939732697</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Catalogo funzionante\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1737026763307</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1737026763307</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Prova commit\" />\r\n    <MESSAGE value=\"Registrazione funzionante\" />\r\n    <MESSAGE value=\"SpringBoot funzionante\" />\r\n    <MESSAGE value=\"prodotto\" />\r\n    <MESSAGE value=\"File del main mergiati\" />\r\n    <MESSAGE value=\"Pagina profilo funzionante\" />\r\n    <MESSAGE value=\"Catalogo funzionante\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Catalogo funzionante\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6db7f38fad260079e7f49da673b3336aef53867b)
++++ b/.idea/workspace.xml	(date 1737053268145)
+@@ -9,7 +9,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Catalogo funzionante" />
++    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Catalogo funzionante">
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/repository/ProdottoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/repository/ProdottoRepository.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -18,9 +24,9 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
++        <option value="CSS File" />
++        <option value="HTML File" />
+         <option value="Class" />
+-        <option value="HTML File" />
+-        <option value="CSS File" />
+       </list>
+     </option>
+   </component>
+@@ -40,7 +46,7 @@
+     </favorite-branches>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$/.." value="Giovanni" />
++        <entry key="$PROJECT_DIR$/.." value="main" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+@@ -51,12 +57,12 @@
+     &quot;assignee&quot;: &quot;GiovanniLav&quot;
+   }
+ }</component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/GiovanniLav/RogueGames.git",
+-    "accountId": "9c3832cf-568e-4e1b-8d1b-80df7faf44a7"
+-  }
+-}]]></component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/GiovanniLav/RogueGames.git&quot;,
++    &quot;accountId&quot;: &quot;9c3832cf-568e-4e1b-8d1b-80df7faf44a7&quot;
++  }
++}</component>
+   <component name="LogFilters">
+     <option name="FILTER_ERRORS" value="false" />
+     <option name="FILTER_WARNINGS" value="false" />
+@@ -87,44 +93,52 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "DefaultHtmlFileTemplate": "HTML File",
+-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+-    "RequestMappingsPanelOrder0": "0",
+-    "RequestMappingsPanelOrder1": "1",
+-    "RequestMappingsPanelWidth0": "75",
+-    "RequestMappingsPanelWidth1": "75",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "Spring Boot.RogueGameApplication.executor": "Run",
+-    "Tomcat Server.Tomcat 9.0.98.executor": "Run",
+-    "git-widget-placeholder": "main",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/intellij/RogueGames/RogueGame",
+-    "list.type.of.created.stylesheet": "CSS",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Artifacts",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0",
+-    "settings.editor.selected.configurable": "MavenSettings",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
++    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
++    &quot;JavaScript Debug.Catalogo.html.executor&quot;: &quot;Run&quot;,
++    &quot;JavaScript Debug.DettagliProdotto.html.executor&quot;: &quot;Run&quot;,
++    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
++    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
++    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
++    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
++    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;Spring Boot.RogueGameApplication.executor&quot;: &quot;Run&quot;,
++    &quot;Tomcat Server.Tomcat 9.0.98.executor&quot;: &quot;Run&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;Domenico&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/intellij/RogueGames/RogueGame&quot;,
++    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   },
+-  "keyToStringList": {
+-    "DatabaseDriversLRU": [
+-      "mysql"
++  &quot;keyToStringList&quot;: {
++    &quot;DatabaseDriversLRU&quot;: [
++      &quot;mysql&quot;
+     ]
+   }
+-}]]></component>
++}</component>
++  <component name="Push.Settings">
++    <force-push-targets>
++      <force-push-target remote-path="origin" branch="Domenico" />
++    </force-push-targets>
++  </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\ROBA\RogueGames\RogueGame\src\main\resources\static\css\images" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Spring Boot.RogueGameApplication">
++  <component name="RunManager">
+     <configuration name="RogueGameApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+       <module name="RogueGame" />
+       <option name="SPRING_BOOT_MAIN_CLASS" value="com.roguegames.RogueGameApplication" />
+@@ -132,93 +146,6 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Tomcat 9.0.98" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.98" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+-      <option name="UPDATING_POLICY" value="restart-server" />
+-      <deployment>
+-        <artifact name="RogueGame:war">
+-          <settings>
+-            <option name="CONTEXT_PATH" value="/RogueGame_war" />
+-          </settings>
+-        </artifact>
+-      </deployment>
+-      <server-settings>
+-        <option name="BASE_DIRECTORY_NAME" value="695dfc39-0299-4031-945b-8f43f4693bf2" />
+-      </server-settings>
+-      <predefined_log_file enabled="true" id="Tomcat" />
+-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+-      <predefined_log_file id="Tomcat Manager" />
+-      <predefined_log_file id="Tomcat Host Manager" />
+-      <predefined_log_file id="Tomcat Localhost Access" />
+-      <RunnerSettings RunnerId="Debug">
+-        <option name="DEBUG_PORT" value="52838" />
+-      </RunnerSettings>
+-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+-        <option name="USE_ENV_VARIABLES" value="true" />
+-        <STARTUP>
+-          <option name="USE_DEFAULT" value="true" />
+-          <option name="SCRIPT" value="" />
+-          <option name="VM_PARAMETERS" value="" />
+-          <option name="PROGRAM_PARAMETERS" value="" />
+-        </STARTUP>
+-        <SHUTDOWN>
+-          <option name="USE_DEFAULT" value="true" />
+-          <option name="SCRIPT" value="" />
+-          <option name="VM_PARAMETERS" value="" />
+-          <option name="PROGRAM_PARAMETERS" value="" />
+-        </SHUTDOWN>
+-      </ConfigurationWrapper>
+-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+-        <option name="USE_ENV_VARIABLES" value="true" />
+-        <STARTUP>
+-          <option name="USE_DEFAULT" value="true" />
+-          <option name="SCRIPT" value="" />
+-          <option name="VM_PARAMETERS" value="" />
+-          <option name="PROGRAM_PARAMETERS" value="" />
+-        </STARTUP>
+-        <SHUTDOWN>
+-          <option name="USE_DEFAULT" value="true" />
+-          <option name="SCRIPT" value="" />
+-          <option name="VM_PARAMETERS" value="" />
+-          <option name="PROGRAM_PARAMETERS" value="" />
+-        </SHUTDOWN>
+-      </ConfigurationWrapper>
+-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+-        <option name="USE_ENV_VARIABLES" value="true" />
+-        <STARTUP>
+-          <option name="USE_DEFAULT" value="true" />
+-          <option name="SCRIPT" value="" />
+-          <option name="VM_PARAMETERS" value="" />
+-          <option name="PROGRAM_PARAMETERS" value="" />
+-        </STARTUP>
+-        <SHUTDOWN>
+-          <option name="USE_DEFAULT" value="true" />
+-          <option name="SCRIPT" value="" />
+-          <option name="VM_PARAMETERS" value="" />
+-          <option name="PROGRAM_PARAMETERS" value="" />
+-        </SHUTDOWN>
+-      </ConfigurationWrapper>
+-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+-        <option name="USE_ENV_VARIABLES" value="true" />
+-        <STARTUP>
+-          <option name="USE_DEFAULT" value="true" />
+-          <option name="SCRIPT" value="" />
+-          <option name="VM_PARAMETERS" value="" />
+-          <option name="PROGRAM_PARAMETERS" value="" />
+-        </STARTUP>
+-        <SHUTDOWN>
+-          <option name="USE_DEFAULT" value="true" />
+-          <option name="SCRIPT" value="" />
+-          <option name="VM_PARAMETERS" value="" />
+-          <option name="PROGRAM_PARAMETERS" value="" />
+-        </SHUTDOWN>
+-      </ConfigurationWrapper>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-        <option name="BuildArtifacts" enabled="true">
+-          <artifact name="RogueGame:war" />
+-        </option>
+-      </method>
+-    </configuration>
+   </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+@@ -249,7 +176,9 @@
+       <workItem from="1736867485813" duration="7012000" />
+       <workItem from="1736893345879" duration="12000" />
+       <workItem from="1736935704172" duration="7065000" />
+-      <workItem from="1737027936851" duration="371000" />
++      <workItem from="1737027936851" duration="2870000" />
++      <workItem from="1737044311118" duration="5995000" />
++      <workItem from="1737050372190" duration="2878000" />
+     </task>
+     <task id="LOCAL-00001" summary="Prova commit">
+       <option name="closed" value="true" />
+@@ -307,7 +236,23 @@
+       <option name="project" value="LOCAL" />
+       <updated>1737026763307</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="Catalogo funzionante">
++      <option name="closed" value="true" />
++      <created>1737038506890</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1737038506890</updated>
++    </task>
++    <task id="LOCAL-00009" summary="Catalogo funzionante">
++      <option name="closed" value="true" />
++      <created>1737038622468</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1737038622468</updated>
++    </task>
++    <option name="localTasksCounter" value="10" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">

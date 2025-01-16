@@ -1,0 +1,91 @@
+Index: src/main/resources/templates/Catalogo.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html xmlns:th=\"http://www.thymeleaf.org\" lang=\"it\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Catalogo Prodotti</title>\r\n    <link rel=\"stylesheet\" href=\"/css/prod.css\">\r\n    <link rel=\"stylesheet\" href=\"/css/Footer.css\">\r\n    <link rel=\"stylesheet\" href=\"/css/Header.css\">\r\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0\">\r\n    <script src=\"/script/btnQuantita.js\"></script>\r\n    <script src=\"/script/Popup.js\"></script>\r\n</head>\r\n<body>\r\n<div th:replace=\"header :: header\"></div>\r\n\r\n<main>\r\n    <div class=\"catalogo\">\r\n        <div th:if=\"${products == null || products.isEmpty()}\">\r\n            <h2>No products available</h2>\r\n        </div>\r\n        <div th:each=\"product : ${products}\" class=\"prodotto\">\r\n            <div style=\"text-align: right\">\r\n                <form id=\"preferitiForm\">\r\n                 <!--   <button type=\"button\" class=\"star\"\r\n                            th:classappend=\"${product.preferito} ? 'active' : ''\"\r\n                            th:onclick=\"|toggleFavorite(${product.nome})|\">\r\n                        &#9733;\r\n                    </button>-->\r\n                </form>\r\n            </div>\r\n            <a th:href=\"@{/dettagli/{id}(id=${product.nome})}\" style=\"text-decoration: none\">\r\n                <img th:src=\"@{/images/{name}(name=${product.immagine})}\"\r\n                     th:alt=\"${product.nome}\">\r\n                <h3 th:text=\"${product.nome}\">Nome del Prodotto</h3>\r\n            </a>\r\n            <p class=\"descrizione\" th:text=\"${product.piattaforma ?: product.genere}\">Descrizione</p>\r\n            <p class=\"prezzo\" th:text=\"${product.prezzo} + ' €'\">Prezzo</p>\r\n            <div>\r\n                <!--<button th:if=\"${product.quantita > 0}\"\r\n                        id=\"carrello\"\r\n                        th:onclick=\"|addCart(${product.nome})|\">\r\n                    Add to cart\r\n                </button>-->\r\n                <h2 th:if=\"${product.quantita == 0}\">Esaurito</h2>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</main>\r\n\r\n<div th:replace=\"footer :: footer\"></div>\r\n<script>\r\n    function toggleFavorite(nome) {\r\n        // Funzione per gestire l'aggiunta o rimozione dai preferiti\r\n    }\r\n\r\n    function addCart(nome) {\r\n        // Funzione per aggiungere un prodotto al carrello\r\n    }\r\n</script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/Catalogo.html b/src/main/resources/templates/Catalogo.html
+--- a/src/main/resources/templates/Catalogo.html	(revision 6db7f38fad260079e7f49da673b3336aef53867b)
++++ b/src/main/resources/templates/Catalogo.html	(date 1737052616511)
+@@ -29,7 +29,7 @@
+                     </button>-->
+                 </form>
+             </div>
+-            <a th:href="@{/dettagli/{id}(id=${product.nome})}" style="text-decoration: none">
++                <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
+                 <img th:src="@{/images/{name}(name=${product.immagine})}"
+                      th:alt="${product.nome}">
+                 <h3 th:text="${product.nome}">Nome del Prodotto</h3>
+Index: src/main/java/com/roguegames/domain/service/ProdottoService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.roguegames.domain.service;\r\n\r\nimport com.roguegames.domain.entity.Prodotto;\r\nimport com.roguegames.domain.repository.ProdottoRepository;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Service;\r\nimport org.springframework.validation.annotation.Validated;\r\nimport javax.validation.Valid;\r\nimport javax.validation.constraints.NotNull;\r\nimport java.util.Optional;\r\nimport java.util.List;\r\n\r\n@Service\r\npublic class ProdottoService {\r\n\r\n    @Autowired\r\n    private ProdottoRepository prodottoRepository;\r\n\r\n    public List<Prodotto> getAllProdotti() {\r\n        return prodottoRepository.findAll();\r\n    }\r\n\r\n    public Prodotto saveProdotto(Prodotto prodotto) {\r\n        return prodottoRepository.save(prodotto);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/roguegames/domain/service/ProdottoService.java b/src/main/java/com/roguegames/domain/service/ProdottoService.java
+--- a/src/main/java/com/roguegames/domain/service/ProdottoService.java	(revision 6db7f38fad260079e7f49da673b3336aef53867b)
++++ b/src/main/java/com/roguegames/domain/service/ProdottoService.java	(date 1737050913456)
+@@ -23,4 +23,6 @@
+     public Prodotto saveProdotto(Prodotto prodotto) {
+         return prodottoRepository.save(prodotto);
+     }
++
++    public Prodotto findProdotto(String name){return prodottoRepository.findByNome(name);}
+ }
+Index: src/main/java/com/roguegames/domain/repository/ProdottoRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.roguegames.domain.repository;\r\n\r\n\r\nimport com.roguegames.domain.entity.Prodotto;\r\nimport org.springframework.data.jpa.repository.JpaRepository;\r\nimport org.springframework.stereotype.Repository;\r\nimport java.util.List;\r\n\r\n@Repository\r\npublic interface ProdottoRepository extends JpaRepository<Prodotto, Long> {\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/roguegames/domain/repository/ProdottoRepository.java b/src/main/java/com/roguegames/domain/repository/ProdottoRepository.java
+--- a/src/main/java/com/roguegames/domain/repository/ProdottoRepository.java	(revision 6db7f38fad260079e7f49da673b3336aef53867b)
++++ b/src/main/java/com/roguegames/domain/repository/ProdottoRepository.java	(date 1737050913464)
+@@ -3,10 +3,17 @@
+ 
+ import com.roguegames.domain.entity.Prodotto;
+ import org.springframework.data.jpa.repository.JpaRepository;
++import org.springframework.data.jpa.repository.Query;
++import org.springframework.data.repository.query.Param;
+ import org.springframework.stereotype.Repository;
+ import java.util.List;
+ 
+ @Repository
+ public interface ProdottoRepository extends JpaRepository<Prodotto, Long> {
++    //@Query("SELECT p FROM Prodotto p WHERE p.nome = :nome")
++
++    //Prodotto findByName(@Param("nome") String nome);
++    Prodotto findByNome(String nome);
++
+ 
+ }
+\ No newline at end of file
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\" created-in=\"IU-242.24807.4\">\r\n    <data-source name=\"GameRogue@localhost\" uuid=\"5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc\">\r\n      <database-info product=\"MySQL\" version=\"8.0.40\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)\" dbms=\"MYSQL\" exact-version=\"8.0.40\" exact-driver-version=\"8.2\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"lower\" quoted-identifiers=\"lower\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>root</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"@\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n    <data-source name=\"GameRogue@localhost\" uuid=\"8f53db4f-2f22-4507-a918-d8e1d0f3cf5d\">\r\n      <database-info product=\"MySQL\" version=\"8.0.40\" jdbc-version=\"4.2\" driver-name=\"MySQL Connector/J\" driver-version=\"mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)\" dbms=\"MYSQL\" exact-version=\"8.0.40\" exact-driver-version=\"8.2\">\r\n        <extra-name-characters>#@</extra-name-characters>\r\n        <identifier-quote-string>`</identifier-quote-string>\r\n        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"lower\" quoted-identifiers=\"lower\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <user-name>root</user-name>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"@\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision 6db7f38fad260079e7f49da673b3336aef53867b)
++++ b/.idea/dataSources.local.xml	(date 1737044677209)
+@@ -5,7 +5,6 @@
+       <database-info product="MySQL" version="8.0.40" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="8.0.40" exact-driver-version="8.2">
+         <extra-name-characters>#@</extra-name-characters>
+         <identifier-quote-string>`</identifier-quote-string>
+-        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>
+       </database-info>
+       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+       <secret-storage>master_key</secret-storage>
+@@ -20,7 +19,6 @@
+       <database-info product="MySQL" version="8.0.40" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)" dbms="MYSQL" exact-version="8.0.40" exact-driver-version="8.2">
+         <extra-name-characters>#@</extra-name-characters>
+         <identifier-quote-string>`</identifier-quote-string>
+-        <jdbc-catalog-is-schema>true</jdbc-catalog-is-schema>
+       </database-info>
+       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+       <secret-storage>master_key</secret-storage>
