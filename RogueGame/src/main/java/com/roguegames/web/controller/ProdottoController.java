@@ -19,6 +19,6 @@ public class ProdottoController {
     public String mostraProdotti(Model model) { // Modifica il tipo di ritorno e aggiungi Model
         List<Prodotto> prodotti = prodottoService.getAllProdotti();
         model.addAttribute("products", prodotti); // Aggiungi la lista al Model
-        return "catalogo"; // Restituisci il nome del template Thymeleaf (prodotti.html)
+        return "Catalogo"; // Restituisci il nome del template Thymeleaf (prodotti.html)
     }
 }
