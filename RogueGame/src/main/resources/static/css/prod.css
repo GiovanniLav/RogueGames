@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.company-name {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff007f;
+}
+.adminBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+#carrello {
+    background: #00bfff;
+    color: white;
+}
+
+.company-name .highlight {
+    color: #00bfff;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Spaziatura tra i prodotti */
+    padding: 20px; /* Padding esterno */
+}
+
+.prodotto {
+    width: calc(25% - 20px); /* Larghezza del prodotto - considera il padding e lo spazio tra i prodotti */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 20px; /* Spazio sotto ogni prodotto */
+}
+
+.prodotto img {
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+}
+
+.prodotto h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.prodotto .descrizione {
+    color: #777;
+    font-size: 0.9em;
+    margin: 10px 0;
+}
+
+.prodotto .prezzo {
+    color: #333;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.prodotto:hover {
+    transform: scale(1.05);
+}
+
+.star {
+    font-size: 30px;
+    color: #ccc;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    /*align-self: right;*/
+}
+
+.star:focus {
+    outline: none;
+}
+
+.active {
+    color: #FDD017;
+}
+
+/* Media Queries per Schermi Mobili e Tablet */
+@media (max-width: 1200px) {
+    .prodotto {
+        width: calc(33.333% - 20px); /* 3 colonne */
+    }
+}
+
+@media (max-width: 768px) {
+    .prodotto {
+        width: calc(50% - 20px); /* 2 colonne */
+    }
+}
+
+@media (max-width: 480px) {
+    .prodotto {
+        width: 100%; /* 1 colonna */
+    }
+}

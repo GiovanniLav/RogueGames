@@ -1,0 +1,362 @@
+Index: src/main/resources/templates/Dashboard.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/Dashboard.html b/src/main/resources/templates/Dashboard.html
+deleted file mode 100644
+--- a/src/main/resources/templates/Dashboard.html	(revision 22b7bbfbe0157ca254e29e53c0938f0780cf6a3a)
++++ /dev/null	(revision 22b7bbfbe0157ca254e29e53c0938f0780cf6a3a)
+@@ -1,16 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="it">
+-<head>
+-  <meta charset="UTF-8">
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <title>Dashboard</title>
+-  <link rel="stylesheet" href="/css/style.css">
+-</head>
+-<body>
+-<div class="dashboard-container">
+-  <h1>Benvenuto, <span th:text="${utente.nome}"></span>!</h1>
+-  <p>Questa è la tua dashboard personale.</p>
+-  <a href="/utenti/logout">Logout</a>
+-</div>
+-</body>
+-</html>
+Index: src/main/resources/static/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/static/style.css b/src/main/resources/static/style.css
+deleted file mode 100644
+--- a/src/main/resources/static/style.css	(revision 22b7bbfbe0157ca254e29e53c0938f0780cf6a3a)
++++ /dev/null	(revision 22b7bbfbe0157ca254e29e53c0938f0780cf6a3a)
+@@ -1,104 +0,0 @@
+-/* Impostazioni di base */
+-body {
+-    font-family: 'Roboto', sans-serif;
+-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+-    height: 100vh;
+-    margin: 0;
+-    display: flex;
+-    justify-content: center;
+-    align-items: center;
+-    color: #fff;
+-    overflow: hidden;
+-}
+-
+-.container {
+-    background-color: rgba(0, 0, 0, 0.7);
+-    padding: 30px;
+-    border-radius: 8px;
+-    width: 100%;
+-    max-width: 400px;
+-    text-align: center;
+-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+-    transition: transform 0.3s ease-in-out;
+-}
+-
+-h1 {
+-    font-family: 'Open Sans', sans-serif;
+-    margin-bottom: 20px;
+-    font-size: 2.5em;
+-    letter-spacing: 2px;
+-    color: #fff;
+-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+-}
+-
+-form {
+-    display: flex;
+-    flex-direction: column;
+-}
+-
+-label {
+-    font-size: 1.1em;
+-    margin-top: 15px;
+-    text-align: left;
+-}
+-
+-input {
+-    padding: 10px;
+-    margin: 10px 0;
+-    border: none;
+-    border-radius: 5px;
+-    font-size: 1em;
+-    outline: none;
+-    transition: all 0.3s ease;
+-}
+-
+-input:focus {
+-    border: 2px solid #ff7e5f;
+-    box-shadow: 0 0 10px rgba(255, 126, 95, 0.7);
+-}
+-
+-button {
+-    padding: 12px;
+-    background-color: #ff7e5f;
+-    color: white;
+-    border: none;
+-    border-radius: 5px;
+-    font-size: 1.1em;
+-    cursor: pointer;
+-    transition: background-color 0.3s ease;
+-}
+-
+-button:hover {
+-    background-color: #feb47b;
+-}
+-
+-.error {
+-    color: #ff4d4d;
+-    font-size: 0.9em;
+-    margin-top: 10px;
+-}
+-
+-/* Animazione per il form */
+-.container:hover {
+-    transform: translateY(-10px);
+-}
+-
+-/* Media query per dispositivi mobili */
+-@media (max-width: 600px) {
+-    .container {
+-        padding: 20px;
+-        width: 90%;
+-    }
+-
+-    h1 {
+-        font-size: 2em;
+-    }
+-
+-    label {
+-        font-size: 1em;
+-    }
+-
+-    input, button {
+-        font-size: 1em;
+-    }
+-}
+Index: src/main/resources/templates/registration_complete.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/registration_complete.html b/src/main/resources/templates/registration_complete.html
+deleted file mode 100644
+--- a/src/main/resources/templates/registration_complete.html	(revision 22b7bbfbe0157ca254e29e53c0938f0780cf6a3a)
++++ /dev/null	(revision 22b7bbfbe0157ca254e29e53c0938f0780cf6a3a)
+@@ -1,12 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="it">
+-<head>
+-  <meta charset="UTF-8">
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <title>Registrazione Completata</title>
+-</head>
+-<body>
+-<h1>Registrazione Completata!</h1>
+-<p>La tua registrazione è avvenuta con successo. Ora puoi accedere al sistema.</p>
+-</body>
+-</html>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"RogueGame:war\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"433e2958-9e21-4bdc-a2c5-d543b8096ec1\" name=\"Changes\" comment=\"Registrazione funzionante\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$/..\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;GiovanniLav&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/GiovanniLav/RogueGames.git&quot;,\r\n    &quot;accountId&quot;: &quot;8d0ed380-654d-469a-8658-561e18c66822&quot;\r\n  }\r\n}</component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"customMavenHome\" value=\"C:\\apache-maven-3.9.4\" />\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"CUSTOM\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n    <option name=\"showPreview\" value=\"true\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 2\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2rR6WN1j8I1LpwKvTwIkqCUexxe\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,\r\n    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,\r\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\r\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\r\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\r\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;Spring Boot.RogueGameApplication.executor&quot;: &quot;Run&quot;,\r\n    &quot;Tomcat Server.Tomcat 9.0.98.executor&quot;: &quot;Run&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;Giovanni&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;DatabaseDriversLRU&quot;: [\r\n      &quot;mysql&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.RogueGameApplication\">\r\n    <configuration name=\"RogueGameApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" nameIsGenerated=\"true\">\r\n      <module name=\"RogueGame\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.roguegames.RogueGameApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Tomcat 9.0.98\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.98\" ALTERNATIVE_JRE_ENABLED=\"false\" nameIsGenerated=\"true\">\r\n      <option name=\"UPDATING_POLICY\" value=\"restart-server\" />\r\n      <deployment>\r\n        <artifact name=\"RogueGame:war\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/RogueGame_war\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"695dfc39-0299-4031-945b-8f43f4693bf2\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"52838\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"RogueGame:war\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"433e2958-9e21-4bdc-a2c5-d543b8096ec1\" name=\"Changes\" comment=\"\" />\r\n      <created>1736509572906</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1736509572906</updated>\r\n      <workItem from=\"1736509573946\" duration=\"30000\" />\r\n      <workItem from=\"1736612425240\" duration=\"175000\" />\r\n      <workItem from=\"1736612623666\" duration=\"1834000\" />\r\n      <workItem from=\"1736614494141\" duration=\"4769000\" />\r\n      <workItem from=\"1736694762531\" duration=\"6767000\" />\r\n      <workItem from=\"1736701590652\" duration=\"402000\" />\r\n      <workItem from=\"1736702017163\" duration=\"5029000\" />\r\n      <workItem from=\"1736718190786\" duration=\"8421000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Prova commit\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736701682173</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736701682173</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Registrazione funzionante\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1736782553444</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1736782553444</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Prova commit\" />\r\n    <MESSAGE value=\"Registrazione funzionante\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Registrazione funzionante\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 22b7bbfbe0157ca254e29e53c0938f0780cf6a3a)
++++ b/.idea/workspace.xml	(date 1736791194611)
+@@ -9,9 +9,14 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Registrazione funzionante">
++    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Login/Registrazione funzionante">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/UtenteController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Dashboard.html" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Register.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration_complete.html" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -23,13 +28,14 @@
+       <list>
+         <option value="Class" />
+         <option value="HTML File" />
++        <option value="CSS File" />
+       </list>
+     </option>
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$/.." value="main" />
++        <entry key="$PROJECT_DIR$/.." value="Giovanni" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+@@ -73,36 +79,42 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;Spring Boot.RogueGameApplication.executor&quot;: &quot;Run&quot;,
+-    &quot;Tomcat Server.Tomcat 9.0.98.executor&quot;: &quot;Run&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;Giovanni&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "DefaultHtmlFileTemplate": "HTML File",
++    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
++    "RequestMappingsPanelOrder0": "0",
++    "RequestMappingsPanelOrder1": "1",
++    "RequestMappingsPanelWidth0": "75",
++    "RequestMappingsPanelWidth1": "75",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "Spring Boot.RogueGameApplication.executor": "Run",
++    "Tomcat Server.Tomcat 9.0.98.executor": "Run",
++    "git-widget-placeholder": "main",
++    "kotlin-language-version-configured": "true",
++    "list.type.of.created.stylesheet": "CSS",
++    "node.js.detected.package.eslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "Artifacts",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
++    "settings.editor.selected.configurable": "MavenSettings",
++    "vue.rearranger.settings.migration": "true"
+   },
+-  &quot;keyToStringList&quot;: {
+-    &quot;DatabaseDriversLRU&quot;: [
+-      &quot;mysql&quot;
++  "keyToStringList": {
++    "DatabaseDriversLRU": [
++      "mysql"
+     ]
+   }
+-}</component>
++}]]></component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\ROBA\RogueGames\RogueGame\src\main\resources\static\css" />
++    </key>
++  </component>
+   <component name="RunManager" selected="Spring Boot.RogueGameApplication">
+     <configuration name="RogueGameApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+       <module name="RogueGame" />
+@@ -240,7 +252,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1736782553444</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Login/Registrazione funzionante">
++      <option name="closed" value="true" />
++      <created>1736783780310</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1736783780310</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -249,6 +269,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Prova commit" />
+     <MESSAGE value="Registrazione funzionante" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Registrazione funzionante" />
++    <MESSAGE value="Login/Registrazione funzionante" />
++    <option name="LAST_COMMIT_MESSAGE" value="Login/Registrazione funzionante" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/resources/templates/Register.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/Register.html b/src/main/resources/templates/Register.html
+new file mode 100644
+--- /dev/null	(date 1736791191988)
++++ b/src/main/resources/templates/Register.html	(date 1736791191988)
+@@ -0,0 +1,50 @@
++<!DOCTYPE html>
++<html lang="it">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Registrazione Utente</title>
++</head>
++<body>
++<h1>Registrati</h1>
++
++<!-- Mostra eventuali errori globali -->
++<div th:if="${error}">
++    <p style="color: red;">${error}</p>
++</div>
++
++<!-- Form di Registrazione -->
++<form th:action="@{/utenti/registrati}" method="post" th:object="${utente}">
++    <label for="email">Email:</label>
++    <input type="email" id="email" th:field="*{email}" required/><br/>
++    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></div><br/>
++
++    <label for="password">Password:</label>
++    <input type="password" id="password" th:field="*{password}" required/><br/>
++    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"></div><br/>
++
++    <label for="nome">Nome:</label>
++    <input type="text" id="nome" th:field="*{nome}" required/><br/>
++    <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" style="color: red;"></div><br/>
++
++    <label for="cognome">Cognome:</label>
++    <input type="text" id="cognome" th:field="*{cognome}" required/><br/>
++    <div th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}" style="color: red;"></div><br/>
++
++    <label for="eta">Età:</label>
++    <input type="number" id="eta" th:field="*{eta}" required/><br/>
++    <div th:if="${#fields.hasErrors('eta')}" th:errors="*{eta}" style="color: red;"></div><br/>
++
++    <label for="residenza">Residenza:</label>
++    <input type="text" id="residenza" th:field="*{residenza}" required/><br/>
++    <div th:if="${#fields.hasErrors('residenza')}" th:errors="*{residenza}" style="color: red;"></div><br/>
++
++    <label for="tel">Telefono:</label>
++    <input type="tel" id="tel" th:field="*{tel}" required/><br/>
++    <div th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}" style="color: red;"></div><br/>
++
++    <button type="submit">Registrati</button>
++</form>
++
++</body>
++</html>
