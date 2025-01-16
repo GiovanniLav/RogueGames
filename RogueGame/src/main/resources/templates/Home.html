@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameShop - Home</title>
+    <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/css/Footer.css">
+    <link rel="stylesheet" href="/css/Home.css">
+</head>
+<body>
+<div th:replace="header :: header"></div>
+
+<main>
+    <section class="hero">
+        <h2>Benvenuto su RogueGames!</h2>
+        <p>Trova i tuoi videogiochi preferiti al miglior prezzo.</p>
+    </section>
+
+    <section class="featured">
+        <h3>Giochi in Evidenza</h3>
+        <div class="game-grid">
+            <div class="game-card" th:each="gioco : ${giochiInEvidenza}">
+                <img th:src="@{/images/{id}(id=${gioco.id})}" alt="Gioco">
+                <h4 th:text="${gioco.titolo}">Titolo del Gioco</h4>
+                <p th:text="${gioco.prezzo} + ' €'">19.99 €</p>
+                <a th:href="@{/giochi/{id}(id=${gioco.id})}" class="btn">Scopri di più</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div th:replace="footer :: footer"></div>
+</body>
+</html>

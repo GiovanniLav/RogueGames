@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profilo Utente</title>
+  <link rel="stylesheet" href="/css/Header.css">
+  <link rel="stylesheet" href="/css/Footer.css">
+  <link rel="stylesheet" href="/css/Profilo.css">
+</head>
+<body>
+
+<!-- Inclusione dell'header -->
+<header th:replace="header :: header"></header>
+
+<main>
+  <section class="profilo-container">
+    <h2>Il tuo Profilo</h2>
+
+    <div class="profilo-dettagli">
+      <!-- Email -->
+      <div class="profilo-campo">
+        <label>Email:</label>
+        <span th:text="${utente.email}">esempio@email.com</span>
+        <button class="btn-modifica" onclick="apriModale('email')">Modifica</button>
+      </div>
+
+      <!-- Nome -->
+      <div class="profilo-campo">
+        <label>Nome:</label>
+        <span th:text="${utente.nome}">Mario</span>
+        <button class="btn-modifica" onclick="apriModale('nome')">Modifica</button>
+      </div>
+
+      <!-- Cognome -->
+      <div class="profilo-campo">
+        <label>Cognome:</label>
+        <span th:text="${utente.cognome}">Rossi</span>
+        <button class="btn-modifica" onclick="apriModale('cognome')">Modifica</button>
+      </div>
+
+      <!-- Età -->
+      <div class="profilo-campo">
+        <label>Età:</label>
+        <span th:text="${utente.eta}">30</span>
+        <button class="btn-modifica" onclick="apriModale('eta')">Modifica</button>
+      </div>
+
+      <!-- Password -->
+      <div class="profilo-campo">
+        <label>Password:</label>
+        <span>******</span>
+        <button class="btn-modifica" onclick="apriModale('password')">Modifica</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Inclusione del footer -->
+<footer th:replace="footer :: footer"></footer>
+
+<!-- Finestra Modale per la modifica -->
+<div id="modale" class="modale">
+  <div class="modale-contenuto">
+    <span class="chiudi" onclick="chiudiModale()">×</span>
+    <h3 id="modale-titolo">Modifica Campo</h3>
+    <form id="modale-form" onsubmit="inviaModifica(event)">
+      <label for="nuovoValore">Nuovo valore:</label>
+      <input type="text" id="nuovoValore" name="nuovoValore" required>
+      <button type="submit">Salva</button>
+    </form>
+  </div>
+</div>
+
+<div id="toast" class="toast">
+  <span id="toast-message">Modifica avvenuta con successo!</span>
+</div>
+
+<script>
+  let campoModifica = ''; // Memorizza il campo che si vuole modificare
+
+  // Funzione per aprire la modale
+  function apriModale(campo) {
+    campoModifica = campo;
+    document.getElementById('modale').style.display = 'flex';
+    document.getElementById('modale-titolo').textContent = `Modifica ${campo.charAt(0).toUpperCase() + campo.slice(1)}`;
+  }
+
+  // Funzione per chiudere la modale
+  function chiudiModale() {
+    document.getElementById('modale').style.display = 'none';
+  }
+
+  // Funzione per inviare la modifica
+  function inviaModifica(event) {
+    event.preventDefault(); // Prevenire il comportamento di invio del form
+
+    const nuovoValore = document.getElementById('nuovoValore').value;
+
+    fetch(`/utenti/modifica`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ campo: campoModifica, valore: nuovoValore })
+    }).then(response => {
+      if (response.ok) {
+        alert(`${campoModifica} aggiornato con successo!`);
+        location.reload(); // Ricarica la pagina per aggiornare i dati
+      } else {
+        alert('Errore durante l\'aggiornamento. Riprova.');
+      }
+      chiudiModale(); // Chiudi la modale
+    });
+  }
+</script>
+
+</body>
+</html>

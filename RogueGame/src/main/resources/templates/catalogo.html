@@ -4,20 +4,15 @@
     <meta charset="UTF-8">
     <title>Catalogo Prodotti</title>
     <link rel="stylesheet" href="/css/prod.css">
+    <link rel="stylesheet" href="/css/Footer.css">
+    <link rel="stylesheet" href="/css/Header.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="/script/btnQuantita.js"></script>
     <script src="/script/Popup.js"></script>
 </head>
 <body>
-<header>
-    <h1 class="company-name">Catalogo<span class="highlight"> Prodotti</span></h1>
-    <form th:action="@{/prodotti}" method="POST">
-        <input type="hidden" name="stampa" value="anno">
-        <input type="hidden" name="param" value="DataRilascio">
-        <input type="submit" class="adminBtn" value="Ordina per Data Rilascio">
-    </form>
-</header>
+<div th:replace="header :: header"></div>
 
 <main>
     <div class="catalogo">
@@ -53,9 +48,7 @@
     </div>
 </main>
 
-<footer>
-    <p>&copy; 2025 GameShop - Tutti i diritti riservati.</p>
-</footer>
+<div th:replace="footer :: footer"></div>
 <script>
     function toggleFavorite(nome) {
         // Funzione per gestire l'aggiunta o rimozione dai preferiti

@@ -44,10 +44,10 @@ public class LoginController {
     public String dashboard(HttpSession session, Model model) {
         Utente utente = (Utente) session.getAttribute("utente");
         if (utente == null) {
-            return "redirect:/utenti/Login";  // Reindirizza al login se l'utente non è loggato
+            return "redirect:/utenti/login";  // Reindirizza al login se l'utente non è loggato
         }
         model.addAttribute("utente", utente);
-        return "home";  // Mostra la pagina di dashboard
+        return "Home";  // Mostra la pagina di dashboard
     }
 
     // Logout

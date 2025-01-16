@@ -13,7 +13,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-        return "home"; // Restituisce la vista "index.html"
+        return "Home"; // Restituisce la vista "index.html"
     }
 
     @GetMapping("/login")
