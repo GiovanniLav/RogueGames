@@ -2,6 +2,7 @@ package com.roguegames.domain.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -54,8 +55,7 @@ public class Prodotto {
 
     @Column(name = "DataRilascio", nullable = false)
     @NotNull(message = "La data di rilascio è obbligatoria")
-    @Temporal(TemporalType.DATE)
-    private Date dataRilascio;
+    private LocalDate dataRilascio;
 
     @Column(name = "Quantita", nullable = false)
     @NotNull(message = "La quantità è obbligatoria")
@@ -79,7 +79,7 @@ public class Prodotto {
     public Prodotto() {}
 
     public Prodotto(String nome, String immagine, String video, String descrizione, boolean cov, Double prezzo,
-                    String casaProd, Piattaforma piattaforma, String genere, Tipo tipo, Date dataRilascio, Integer quantita) {
+                    String casaProd, Piattaforma piattaforma, String genere, Tipo tipo, LocalDate dataRilascio, Integer quantita) {
         this.nome = nome;
         this.immagine = immagine;
         this.video = video;
@@ -125,8 +125,8 @@ public class Prodotto {
     public Tipo getTipo() { return tipo; }
     public void setTipo(Tipo tipo) { this.tipo = tipo; }
 
-    public Date getDataRilascio() { return dataRilascio; }
-    public void setDataRilascio(Date dataRilascio) { this.dataRilascio = dataRilascio; }
+    public LocalDate getDataRilascio() { return dataRilascio; }
+    public void setDataRilascio(LocalDate dataRilascio) { this.dataRilascio = dataRilascio; }
 
     public Integer getQuantita() { return quantita; }
     public void setQuantita(Integer quantita) { this.quantita = quantita; }

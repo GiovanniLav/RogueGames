@@ -10,19 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="aggiunta del catalogo">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_01_2025_11_18__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_14_01_2025_11_19__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_01_2025_11_16__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/repository/ProdottoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ProdottoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/prod.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/catalogo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f53db4f-2f22-4507-a918-d8e1d0f3cf5d.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f53db4f-2f22-4507-a918-d8e1d0f3cf5d/storage_v2/_src_/schema/gamerogue.KNm1PA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f53db4f-2f22-4507-a918-d8e1d0f3cf5d/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f53db4f-2f22-4507-a918-d8e1d0f3cf5d/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f53db4f-2f22-4507-a918-d8e1d0f3cf5d/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f53db4f-2f22-4507-a918-d8e1d0f3cf5d/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/Prodotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/Prodotto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,12 +66,12 @@
     &quot;assignee&quot;: &quot;GiovanniLav&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/GiovanniLav/RogueGames.git",
-    "accountId": "33ae3f31-d9e0-4fa3-af59-ede51d5b734e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/GiovanniLav/RogueGames.git&quot;,
+    &quot;accountId&quot;: &quot;33ae3f31-d9e0-4fa3-af59-ede51d5b734e&quot;
   }
-}]]></component>
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -105,6 +106,7 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.catalogo.html.executor": "Run",
+    "JavaScript Debug.home.html.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -139,8 +141,24 @@
       <recent name="C:\Users\arion\IdeaProjects\RogueGames\RogueGame\src\main\resources\static\css" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.catalogo.html">
+  <component name="RunDashboard">
+    <option name="hiddenConfigurations">
+      <map>
+        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+          <value>
+            <set>
+              <option value="Tomcat 9.0.98" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RogueGameApplication">
     <configuration name="catalogo.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RogueGame/templates/catalogo.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="home.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" engineId="37cae5b9-e8b2-4949-9172-aafa37fbc09c" uri="http://localhost:63342/RogueGame/templates/home.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="RogueGameApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -239,6 +257,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.home.html" />
         <item itemvalue="JavaScript Debug.catalogo.html" />
       </list>
     </recent_temporary>
@@ -269,7 +288,9 @@
       <workItem from="1736718190786" duration="8421000" />
       <workItem from="1736786093863" duration="142000" />
       <workItem from="1736786248025" duration="2644000" />
-      <workItem from="1736868892177" duration="6702000" />
+      <workItem from="1736868892177" duration="6808000" />
+      <workItem from="1736955167713" duration="7035000" />
+      <workItem from="1737022046352" duration="3911000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />
@@ -311,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736850005248</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="aggiunta del catalogo">
+      <option name="closed" value="true" />
+      <created>1736875702400</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736875702400</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
