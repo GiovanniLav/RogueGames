@@ -51,10 +51,15 @@ public class LoginController {
     }
 
     // Logout
-    @GetMapping("/logout")
+    @GetMapping("/InvalidateSessionL")
     public String logout(HttpSession session) {
         session.invalidate();  // Invalida la sessione
-        return "redirect:/utenti/Login";  // Reindirizza al login
+        return "redirect:/utenti/login";  // Reindirizza al login
     }
 
+    @GetMapping("/InvalidateSessionH")
+    public String logout1(HttpSession session) {
+        session.invalidate();  // Invalida la sessione
+        return "Home";  // Reindirizza alla home
+    }
 }

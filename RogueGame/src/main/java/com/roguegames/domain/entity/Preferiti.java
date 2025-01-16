@@ -1,37 +1,32 @@
 package com.roguegames.domain.entity;
 
-import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.persistence.Entity;
+import javax.persistence.EmbeddedId;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 
 @Entity
-@Table(name = "preferiti")
 public class Preferiti {
 
     @EmbeddedId
-    private PreferitiId id;
+    private PreferitiId id;  // Chiave primaria composta
 
-    @Column(name = "Immagine", length = 45, nullable = false)
-    @NotBlank(message = "Il campo immagine è obbligatorio")
     private String immagine;
 
     @ManyToOne
-    @MapsId("nome")
-    @JoinColumn(name = "Nome", referencedColumnName = "Nome", nullable = false)
+    @JoinColumn(name = "Nome", referencedColumnName = "Nome", insertable = false, updatable = false)
     private Prodotto prodotto;
 
     @ManyToOne
-    @MapsId("email")
-    @JoinColumn(name = "Email", referencedColumnName = "Email", nullable = false)
+    @JoinColumn(name = "Email", referencedColumnName = "Email", insertable = false, updatable = false)
     private Utente utente;
 
     // Costruttori
     public Preferiti() {}
 
-    public Preferiti(PreferitiId id, String immagine, Prodotto prodotto, Utente utente) {
+    public Preferiti(PreferitiId id, String immagine) {
         this.id = id;
         this.immagine = immagine;
-        this.prodotto = prodotto;
-        this.utente = utente;
     }
 
     // Getters e Setters
@@ -66,20 +61,5 @@ public class Preferiti {
     public void setUtente(Utente utente) {
         this.utente = utente;
     }
-
-    // Equals e HashCode
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Preferiti preferiti = (Preferiti) o;
-
-        return id.equals(preferiti.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return id.hashCode();
-    }
 }
+
