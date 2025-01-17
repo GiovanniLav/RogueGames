@@ -9,16 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Commit refactor Catalogo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/Preferiti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/Preferiti.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/PreferitiId.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/repository/ProdottoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/repository/ProdottoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/prod.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/prod.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Header.html" afterDir="false" />
-    </list>
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Catalogo funzionante" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -315,15 +306,7 @@
       <option name="project" value="LOCAL" />
       <updated>1737026763307</updated>
     </task>
-    <task id="LOCAL-00008" summary="Commit refactor Catalogo">
-      <option name="closed" value="true" />
-      <created>1737027010833</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1737027010833</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +320,6 @@
     <MESSAGE value="File del main mergiati" />
     <MESSAGE value="Pagina profilo funzionante" />
     <MESSAGE value="Catalogo funzionante" />
-    <MESSAGE value="Commit refactor Catalogo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit refactor Catalogo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Catalogo funzionante" />
   </component>
 </project>

@@ -23,4 +23,6 @@ public class ProdottoService {
     public Prodotto saveProdotto(Prodotto prodotto) {
         return prodottoRepository.save(prodotto);
     }
+
+    public Prodotto findProdotto(String nome){return prodottoRepository.findByNome(nome);}
 }
