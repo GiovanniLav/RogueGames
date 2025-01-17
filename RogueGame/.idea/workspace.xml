@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="dettagli prodotto funzionante" />
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Catalogo funzionante">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +102,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.RogueGameApplication.executor": "Run",
     "Tomcat Server.Tomcat 9.0.98.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Domenico",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/intellij/RogueGames/RogueGame",
     "list.type.of.created.stylesheet": "CSS",
@@ -321,7 +324,6 @@
     <MESSAGE value="File del main mergiati" />
     <MESSAGE value="Pagina profilo funzionante" />
     <MESSAGE value="Catalogo funzionante" />
-    <MESSAGE value="dettagli prodotto funzionante" />
-    <option name="LAST_COMMIT_MESSAGE" value="dettagli prodotto funzionante" />
+    <option name="LAST_COMMIT_MESSAGE" value="Catalogo funzionante" />
   </component>
 </project>

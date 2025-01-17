@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ProdottoRepository extends JpaRepository<Prodotto, Long> {
-    Prodotto findByNome(String nome);
+
 }

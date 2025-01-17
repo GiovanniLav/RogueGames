@@ -1,30 +1,48 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Colore di sfondo più chiaro */
+
     margin: 0;
     padding: 0;
 }
 
 .company-name {
     text-align: center;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: bold;
     color: #ff007f;
+    margin: 20px 0;
 }
+
 .adminBtn {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 6px 12px;
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9em;
+    cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.adminBtn:hover {
+    background-color: #0056b3;
 }
 
 #carrello {
     background: #00bfff;
     color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#carrello:hover {
+    background: #0088cc;
 }
 
 .company-name .highlight {
@@ -34,48 +52,54 @@ body {
 .catalogo {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Spaziatura tra i prodotti */
-    padding: 20px; /* Padding esterno */
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px; /* Aggiunge spaziatura uniforme tra gli elementi */
 }
 
 .prodotto {
-    width: calc(25% - 20px); /* Larghezza del prodotto - considera il padding e lo spazio tra i prodotti */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px); /* Quattro colonne con spaziatura */
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
     text-align: center;
-    transition: transform 0.2s ease-in-out;
-    margin-bottom: 20px; /* Spazio sotto ogni prodotto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.prodotto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .prodotto img {
-    border-radius: 5px;
+    border-radius: 8px;
     max-width: 100%;
     height: auto;
+    margin-bottom: 15px;
 }
 
 .prodotto h3 {
     font-size: 1.2em;
     margin: 10px 0;
+    color: #333333;
+    font-weight: bold;
 }
 
 .prodotto .descrizione {
-    color: #777;
+    color: #777777;
     font-size: 0.9em;
     margin: 10px 0;
+    line-height: 1.4;
 }
 
 .prodotto .prezzo {
-    color: #333;
+    color: #28a745;
     font-size: 1.1em;
     font-weight: bold;
     margin: 10px 0;
-}
-
-.prodotto:hover {
-    transform: scale(1.05);
 }
 
 .star {
@@ -84,33 +108,34 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    transition: color 0.3s ease;
-    /*align-self: right;*/
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.star:hover,
+.star.active {
+    color: #fdd017;
+    transform: scale(1.2);
 }
 
 .star:focus {
     outline: none;
 }
 
-.active {
-    color: #FDD017;
-}
-
-/* Media Queries per Schermi Mobili e Tablet */
+/* Media Queries */
 @media (max-width: 1200px) {
     .prodotto {
-        width: calc(33.333% - 20px); /* 3 colonne */
+        width: calc(33.333% - 20px); /* Tre colonne */
     }
 }
 
 @media (max-width: 768px) {
     .prodotto {
-        width: calc(50% - 20px); /* 2 colonne */
+        width: calc(50% - 20px); /* Due colonne */
     }
 }
 
 @media (max-width: 480px) {
     .prodotto {
-        width: 100%; /* 1 colonna */
+        width: 100%; /* Una colonna */
     }
 }
