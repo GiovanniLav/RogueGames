@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Embeddable
 public class PreferitiId implements Serializable {
-
+    //
     @Column(name = "Nome", length = 45, nullable = false)
     private String nome;
 
