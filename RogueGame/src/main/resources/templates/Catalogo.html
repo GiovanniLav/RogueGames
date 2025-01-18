@@ -15,7 +15,7 @@
 <main>
     <div class="catalogo">
         <div th:if="${products == null || products.isEmpty()}">
-            <h2>No products available</h2>
+            <h2>Nessun Prodotto Disponibile</h2>
         </div>
         <div th:each="product : ${products}" class="prodotto">
             <div style="text-align: right">
