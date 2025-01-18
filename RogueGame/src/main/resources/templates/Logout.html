@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="it">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="#">
+
+  <title>Logout</title>
+  <link rel="stylesheet" href="/css/Logout.css">
+</head>
+<body>
+<div class="logout-container">
+  <h1>Sei stato disconnesso</h1>
+  <p>Hai effettuato il logout con successo.</p>
+  <a th:href="@{/}">Torna alla Home</a>
+  <a th:href="@{/utenti/login}">Torna al login</a>
+</div>
+</body>
+</html>

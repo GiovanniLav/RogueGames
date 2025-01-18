@@ -45,7 +45,16 @@ public class CarrelloService {
         }else{PCarrello carrello  = new PCarrello(id, 1, prodotto, utente);
             carrelloRepository.save(carrello);
         }
+    }
 
+    public void rimuoviProdotto(Prodotto prodotto, Utente utente) {
+        PCarrelloId id = new PCarrelloId(utente.getEmail(), prodotto.getNome());
+        Optional<PCarrello> prodottoCarrello = trovaElementoCarrello(utente.getEmail(), prodotto.getNome());
+        if (prodottoCarrello.isPresent()) {
+            carrelloRepository.delete(prodottoCarrello.get());
+        }else{PCarrello carrello  = new PCarrello(id, 1, prodotto, utente);
+            carrelloRepository.save(carrello);
+        }
     }
 
 }
