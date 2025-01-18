@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="it">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="it">
 <head>
     <meta charset="UTF-8">
     <title>Catalogo Prodotti</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/prod.css">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Header.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
-    <script src="/script/btnQuantita.js"></script>
-    <script src="/script/Popup.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div th:replace="header :: header"></div>
@@ -36,7 +36,49 @@
             </a>
             <p class="descrizione" th:text="${product.piattaforma ?: product.genere}">Descrizione</p>
             <p class="prezzo" th:text="${product.prezzo} + ' €'">Prezzo</p>
+
             <div>
+                <form th:action="@{/Carrello/aggiungi/{nome}(nome=${product.nome})}" method="POST">
+                    <input type="hidden" name="nome" th:value="${product.nome}">
+                    <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${product.nome}">Aggiungi al carrello</button>
+                </form>
+                <div id="success-message" class="message" style="display: none;">
+                    Prodotto aggiunto al carrello!
+                </div>
+
+                <script th:inline="javascript">
+                    $(document).ready(function() {
+                        // ... (altro codice JavaScript)
+
+                        $('.aggiungi-carrello').off('click').on('click', function (e) {
+                            e.preventDefault();
+
+                            var form = $(this).closest('form');
+
+                            var nomeProdotto = $(this).data('nome-prodotto'); // Assumiamo che il nome del prodotto sia memorizzato in un attributo data
+                            var url = "/Carrello/aggiungi/" + encodeURIComponent(nomeProdotto); // Sostituisce {nome} con il valore reale
+
+
+                            $.ajax({
+                                url: url,
+                                type: "POST",
+                                data: { nome: nomeProdotto }, // Invia il nome del prodotto nel corpo della richiesta
+                                success: function(response) {
+                                    alert("Prodotto aggiunto al carrello!");
+                                },
+                                error: function(xhr, status, error) {
+                                    // Mostra un messaggio di errore personalizzato
+                                    $('#error-message').text('Si è verificato un errore durante l\'aggiunta al carrello: ' + error);
+                                    $('#error-message').show();
+                                    // Registra l'errore in console per debugging
+                                    console.error('Errore AJAX:', xhr, status, error);
+                                }
+                            });
+                        });
+                    });
+                </script>
+
+                <div id="error-message" class="error" style="display: none;"></div>
                 <!--<button th:if="${product.quantita > 0}"
                         id="carrello"
                         th:onclick="|addCart(${product.nome})|">
@@ -58,5 +100,7 @@
         // Funzione per aggiungere un prodotto al carrello
     }
 </script>
+
+
 </body>
 </html>
