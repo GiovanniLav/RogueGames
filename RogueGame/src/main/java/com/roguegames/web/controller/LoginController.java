@@ -30,7 +30,8 @@ public class LoginController {
                               @RequestParam("password") String password,
                               HttpSession session,
                               Model model) {
-        Utente utente = utenteService.verificaCredenziali(email, password);
+        String hashPass= UtenteService.hashPassword(password);
+        Utente utente = utenteService.verificaCredenziali(email, hashPass);
         if (utente == null) {
             model.addAttribute("error", true);
             return "Login";  // Mostra la pagina di login con un messaggio di errore
