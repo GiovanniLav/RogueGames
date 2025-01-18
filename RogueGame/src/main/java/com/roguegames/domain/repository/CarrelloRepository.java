@@ -1,12 +1,12 @@
 package com.roguegames.domain.repository;
 
-
+import com.roguegames.domain.entity.PCarrello;
+import com.roguegames.domain.entity.PCarrelloId;
 import com.roguegames.domain.entity.Prodotto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import java.util.List;
 
 @Repository
-public interface ProdottoRepository extends JpaRepository<Prodotto, Long> {
-    Prodotto findByNome(String nome);
+public interface CarrelloRepository extends JpaRepository<PCarrello, PCarrelloId> {
+
 }

@@ -17,11 +17,12 @@ public class ProdottoService {
     private ProdottoRepository prodottoRepository;
 
 
-    public List<Prodotto> getAllProdotti() {
-        return prodottoRepository.findAll();
-    }
+    public List<Prodotto> getAllProdotti() {return prodottoRepository.findAll();}
+
 
     public Prodotto saveProdotto(Prodotto prodotto) {
         return prodottoRepository.save(prodotto);
-    }
+        }
+
+    public Prodotto findProdotto(String nome){return prodottoRepository.findByNome(nome);}
 }
