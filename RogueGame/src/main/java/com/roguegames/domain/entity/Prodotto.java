@@ -2,7 +2,6 @@ package com.roguegames.domain.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -55,7 +54,8 @@ public class Prodotto {
 
     @Column(name = "DataRilascio", nullable = false)
     @NotNull(message = "La data di rilascio è obbligatoria")
-    private LocalDate dataRilascio;
+    @Temporal(TemporalType.DATE)
+    private Date dataRilascio;
 
     @Column(name = "Quantita", nullable = false)
     @NotNull(message = "La quantità è obbligatoria")
@@ -65,6 +65,10 @@ public class Prodotto {
     @ManyToOne
     @JoinColumn(name = "Tipo", referencedColumnName = "Tipologia", nullable = false, insertable = false, updatable = false)
     private Tipologia tipologia;
+
+    // Nuovo campo preferito
+    @Transient  // Non salvato nel database, solo in memoria
+    private boolean preferito;
 
     // Enumerazioni per Piattaforma e Tipo
     public enum Piattaforma {
@@ -76,10 +80,11 @@ public class Prodotto {
     }
 
     // Costruttori
-    public Prodotto() {}
+    public Prodotto() {
+    }
 
     public Prodotto(String nome, String immagine, String video, String descrizione, boolean cov, Double prezzo,
-                    String casaProd, Piattaforma piattaforma, String genere, Tipo tipo, LocalDate dataRilascio, Integer quantita) {
+                    String casaProd, Piattaforma piattaforma, String genere, Tipo tipo, Date dataRilascio, Integer quantita) {
         this.nome = nome;
         this.immagine = immagine;
         this.video = video;
@@ -95,44 +100,118 @@ public class Prodotto {
     }
 
     // Getters e setters
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+    public String getNome() {
+        return nome;
+    }
 
-    public String getImmagine() { return immagine; }
-    public void setImmagine(String immagine) { this.immagine = immagine; }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-    public String getVideo() { return video; }
-    public void setVideo(String video) { this.video = video; }
+    public String getImmagine() {
+        return immagine;
+    }
 
-    public String getDescrizione() { return descrizione; }
-    public void setDescrizione(String descrizione) { this.descrizione = descrizione; }
+    public void setImmagine(String immagine) {
+        this.immagine = immagine;
+    }
 
-    public boolean isCov() { return cov; }
-    public void setCov(boolean cov) { this.cov = cov; }
+    public String getVideo() {
+        return video;
+    }
 
-    public Double getPrezzo() { return prezzo; }
-    public void setPrezzo(Double prezzo) { this.prezzo = prezzo; }
+    public void setVideo(String video) {
+        this.video = video;
+    }
 
-    public String getCasaProd() { return casaProd; }
-    public void setCasaProd(String casaProd) { this.casaProd = casaProd; }
+    public String getDescrizione() {
+        return descrizione;
+    }
 
-    public Piattaforma getPiattaforma() { return piattaforma; }
-    public void setPiattaforma(Piattaforma piattaforma) { this.piattaforma = piattaforma; }
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
 
-    public String getGenere() { return genere; }
-    public void setGenere(String genere) { this.genere = genere; }
+    public boolean isCov() {
+        return cov;
+    }
 
-    public Tipo getTipo() { return tipo; }
-    public void setTipo(Tipo tipo) { this.tipo = tipo; }
+    public void setCov(boolean cov) {
+        this.cov = cov;
+    }
 
-    public LocalDate getDataRilascio() { return dataRilascio; }
-    public void setDataRilascio(LocalDate dataRilascio) { this.dataRilascio = dataRilascio; }
+    public Double getPrezzo() {
+        return prezzo;
+    }
 
-    public Integer getQuantita() { return quantita; }
-    public void setQuantita(Integer quantita) { this.quantita = quantita; }
+    public void setPrezzo(Double prezzo) {
+        this.prezzo = prezzo;
+    }
 
-    public Tipologia getTipologia() { return tipologia; }
-    public void setTipologia(Tipologia tipologia) { this.tipologia = tipologia; }
+    public String getCasaProd() {
+        return casaProd;
+    }
+
+    public void setCasaProd(String casaProd) {
+        this.casaProd = casaProd;
+    }
+
+    public Piattaforma getPiattaforma() {
+        return piattaforma;
+    }
+
+    public void setPiattaforma(Piattaforma piattaforma) {
+        this.piattaforma = piattaforma;
+    }
+
+    public String getGenere() {
+        return genere;
+    }
+
+    public void setGenere(String genere) {
+        this.genere = genere;
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public Date getDataRilascio() {
+        return dataRilascio;
+    }
+
+    public void setDataRilascio(Date dataRilascio) {
+        this.dataRilascio = dataRilascio;
+    }
+
+    public Integer getQuantita() {
+        return quantita;
+    }
+
+    public void setQuantita(Integer quantita) {
+        this.quantita = quantita;
+    }
+
+    public Tipologia getTipologia() {
+        return tipologia;
+    }
+
+    public void setTipologia(Tipologia tipologia) {
+        this.tipologia = tipologia;
+    }
+
+    // Getter e Setter per il campo preferito
+    public boolean isPreferito() {
+        return preferito;
+    }
+
+    public void setPreferito(boolean preferito) {
+        this.preferito = preferito;
+    }
 
     // Equals e HashCode
     @Override

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Preferiti</title>
+  <link rel="stylesheet" href="/css/Preferiti.css" />
+  <link rel="stylesheet" href="/css/Footer.css">
+  <link rel="stylesheet" href="/css/Header.css">
+</head>
+<body>
+<!-- Inclusione dell'header -->
+<header th:replace="header :: header"></header>
+
+<main>
+  <h1>I tuoi Preferiti</h1>
+
+  <!-- Elenco dei prodotti preferiti -->
+  <div class="preferiti-container">
+    <ul>
+      <li th:each="preferito : ${preferiti}">
+        <div class="preferito-item">
+          <img th:src="@{/images/{name}(name=${preferito.immagine})}" th:alt="${preferito.id.nome}"/>
+          <h2 th:text="${preferito.id.nome}"></h2>
+        </div>
+      </li>
+    </ul>
+  </div>
+</main>
+<div th:replace="footer :: footer"></div>
+</body>
+</html>

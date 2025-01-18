@@ -8,19 +8,32 @@
 </head>
 <body>
 <header>
-  <div class="logo">
+  <div class="logo" th:if="${utente != null}">
     <a href="/utenti/home"><h1>RogueGames</h1></a>
+  </div>
+  <div class="logo" th:if="${utente == null}">
+    <a href="/"><h1>RogueGames</h1></a>
   </div>
   <nav>
     <ul>
-      <li><a href="/catalogo/prodotti">Catalogo</a></li>
-
+      <li>
+        <a href="/catalogo/prodotti">Catalogo</a>
+      </li>
+      <li th:if="${utente != null}">
+        <a href="/Carrello">Carrello</a>
+      </li>
+      <li th:if="${utente != null}">
+        <a href="/utenti/preferiti">Preferiti</a>
+      </li>
+      <!-- Controllo se l'utente è loggato -->
       <li th:if="${utente == null}">
         <a href="/utenti/login">Login</a>
-      <li><a href="/Carrello">Carrello</a></li>
       </li>
       <li th:if="${utente != null}">
         <a href="/utenti/profilo">Profilo</a>
+      </li>
+      <li th:if="${utente != null}">
+        <a th:href="@{/logout}">Logout</a>
       </li>
     </ul>
   </nav>

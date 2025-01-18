@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CarrelloRepository extends JpaRepository<PCarrello, PCarrelloId> {
-
+    PCarrello deletePCarrelloById(PCarrelloId id);
 }

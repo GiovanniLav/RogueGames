@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <title>Catalogo Prodotti</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/prod.css">
+    <link rel="stylesheet" href="/css/Catalogo.css">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Header.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<div th:replace="header :: header"></div>
+<header th:replace="header :: header"></header>
 
 <main>
     <div class="catalogo">
@@ -21,13 +19,20 @@
         </div>
         <div th:each="product : ${products}" class="prodotto">
             <div style="text-align: right">
-                <form id="preferitiForm">
-                 <!--   <button type="button" class="star"
-                            th:classappend="${product.preferito} ? 'active' : ''"
-                            th:onclick="|toggleFavorite(${product.nome})|">
-                        &#9733;
-                    </button>-->
-                </form>
+
+                    <form th:action="@{/utenti/preferiti/toggle/{nome}(nome=${product.nome})}" method="post">
+                        <button type="submit" class="star"
+                                th:classappend="${product.isPreferito ? 'active' : ''}"
+                                th:attr="data-preferito=${product.isPreferito}">
+                            &#9733;
+                        </button>
+                    </form>
+
+                <script>
+                    const button = document.querySelector('.star');
+                    const preferito = button.getAttribute('data-preferito');
+                </script>
+
             </div>
             <a th:href="@{/dettagli/{id}(id=${product.nome})}" style="text-decoration: none">
                 <img th:src="@{/images/{name}(name=${product.immagine})}"
@@ -91,16 +96,5 @@
 </main>
 
 <div th:replace="footer :: footer"></div>
-<script>
-    function toggleFavorite(nome) {
-        // Funzione per gestire l'aggiunta o rimozione dai preferiti
-    }
-
-    function addCart(nome) {
-        // Funzione per aggiungere un prodotto al carrello
-    }
-</script>
-
-
 </body>
 </html>
