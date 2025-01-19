@@ -9,9 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/catalogo") // Base path per tutte le operazioni relative al catalogo
@@ -44,5 +46,18 @@ public class CatalogoController {
         model.addAttribute("products", prodotti);
 
         return "Catalogo"; // Ritorna alla pagina del catalogo
+    }
+    @GetMapping
+    public String getCatalogo(@RequestParam(value = "search", required = false) String search, Model model) {
+        List<Prodotto> products = prodottoService.getAllProdotti();
+
+        if (search != null && !search.isEmpty()) {
+            products = products.stream()
+                    .filter(product -> product.getNome().toLowerCase().contains(search.toLowerCase()))
+                    .collect(Collectors.toList());
+        }
+
+        model.addAttribute("products", products);
+        return "catalogo";
     }
 }

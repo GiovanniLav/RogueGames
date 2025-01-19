@@ -12,6 +12,8 @@
     <h1 th:text="${product.nome}">Nome del prodotto</h1>
 </header>
 <main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <section>
         <img th:src="@{/images/{name}(name=${product.immagine})}" alt="Immagine del prodotto" style="max-width: 300px;" />
@@ -25,6 +27,49 @@
         <p><strong>Tipo:</strong> <span th:text="${product.tipo}">Tipo</span></p>
         <p><strong>Data di rilascio:</strong> <span th:text="${#dates.format(product.dataRilascio, 'dd/MM/yyyy')}">Data di rilascio</span></p>
         <p><strong>Disponibilità:</strong> <span th:text="${product.quantita > 0 ? 'Disponibile' : 'Non disponibile'}">Disponibilità</span></p>
+
+        <div>
+            <form th:action="@{/aggiungi/{nome}(nome=${product.nome})}" method="POST">
+                <input type="hidden" name="nome" th:value="${product.nome}">
+                <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${product.nome}">Aggiungi al carrello</button>
+            </form>
+            <div id="success-message" class="message" style="display: none; color: green;">
+                Prodotto aggiunto al carrello!
+            </div>
+            <div id="error-message" class="error" style="display: none; color: red;">
+                Si è verificato un errore durante l'aggiunta al carrello.
+            </div>
+        </div>
+
+        <script th:inline="javascript">
+            $(document).ready(function () {
+                // Gestisce il clic sul pulsante "Aggiungi al carrello"
+                $('.aggiungi-carrello').off('click').on('click', function (e) {
+                    e.preventDefault();
+
+                    // Recupera il nome del prodotto dall'attributo data
+                    var nomeProdotto = $(this).data('nome-prodotto');
+                    var url = "/aggiungi/" + encodeURIComponent(nomeProdotto);
+
+                    // Effettua una richiesta AJAX per aggiungere il prodotto al carrello
+                    $.ajax({
+                        url: url,
+                        type: "POST",
+                        data: { nome: nomeProdotto },
+                        success: function (response) {
+                            // Mostra il messaggio di successo
+                            $('#success-message').text('Prodotto aggiunto al carrello!').fadeIn().delay(3000).fadeOut();
+                        },
+                        error: function (xhr, status, error) {
+                            // Mostra un messaggio di errore
+                            $('#error-message').text('Si è verificato un errore durante l\'aggiunta al carrello: ' + error).fadeIn().delay(3000).fadeOut();
+                        }
+                    });
+                });
+            });
+        </script>
+
+
     </section>
 
     <a href="/catalogo/prodotti">Torna al catalogo</a>
