@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 import java.util.Optional;
 
 import static com.mysql.cj.conf.PropertyKey.logger;
@@ -52,9 +53,11 @@ public class CarrelloService {
         Optional<PCarrello> prodottoCarrello = trovaElementoCarrello(utente.getEmail(), prodotto.getNome());
         if (prodottoCarrello.isPresent()) {
             carrelloRepository.delete(prodottoCarrello.get());
-        }else{PCarrello carrello  = new PCarrello(id, 1, prodotto, utente);
-            carrelloRepository.save(carrello);
         }
+    }
+
+    public List<PCarrello> getCarrello(Utente utente) {
+        return (List<PCarrello>) carrelloRepository.findAllByUtente(utente);
     }
 
 }

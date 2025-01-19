@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Dettagli Prodotto</title>
+    <!-- <link rel="stylesheet" href="/css/styles.css">  Stile CSS -->
+</head>
+<body>
+<div class="prodotto">
+<header>
+
+    <h1 th:text="${product.nome}">Nome del prodotto</h1>
+</header>
+<main>
+
+    <section>
+        <img th:src="@{/images/{name}(name=${product.immagine})}" alt="Immagine del prodotto" style="max-width: 300px;" />
+        <video th:src="@{/videos/{name}(name=${product.video})}" controls th:if="${product.video != null}" style="max-width: 500px;"></video>
+
+        <p><strong>Descrizione:</strong> <span th:text="${product.descrizione}">Descrizione del prodotto</span></p>
+        <p><strong>Prezzo:</strong> €<span th:text="${product.prezzo}">0.00</span></p>
+        <p><strong>Casa produttrice:</strong> <span th:text="${product.casaProd}">Casa Produttrice</span></p>
+        <p><strong>Piattaforma:</strong> <span th:text="${product.piattaforma}">Piattaforma</span></p>
+        <p><strong>Genere:</strong> <span th:text="${product.genere}">Genere</span></p>
+        <p><strong>Tipo:</strong> <span th:text="${product.tipo}">Tipo</span></p>
+        <p><strong>Data di rilascio:</strong> <span th:text="${#dates.format(product.dataRilascio, 'dd/MM/yyyy')}">Data di rilascio</span></p>
+        <p><strong>Disponibilità:</strong> <span th:text="${product.quantita > 0 ? 'Disponibile' : 'Non disponibile'}">Disponibilità</span></p>
+    </section>
+
+    <a href="/catalogo/prodotti">Torna al catalogo</a>
+</main>
+</div>
+</body>
+
+</html>

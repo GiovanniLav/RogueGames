@@ -34,7 +34,7 @@
                 </script>
 
             </div>
-            <a th:href="@{/dettagli/{id}(id=${product.nome})}" style="text-decoration: none">
+            <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
                 <img th:src="@{/images/{name}(name=${product.immagine})}"
                      th:alt="${product.nome}">
                 <h3 th:text="${product.nome}">Nome del Prodotto</h3>
@@ -43,7 +43,7 @@
             <p class="prezzo" th:text="${product.prezzo} + ' €'">Prezzo</p>
 
             <div>
-                <form th:action="@{/Carrello/aggiungi/{nome}(nome=${product.nome})}" method="POST">
+                <form th:action="@{/aggiungi/{nome}(nome=${product.nome})}" method="POST">
                     <input type="hidden" name="nome" th:value="${product.nome}">
                     <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${product.nome}">Aggiungi al carrello</button>
                 </form>
@@ -61,7 +61,7 @@
                             var form = $(this).closest('form');
 
                             var nomeProdotto = $(this).data('nome-prodotto'); // Assumiamo che il nome del prodotto sia memorizzato in un attributo data
-                            var url = "/Carrello/aggiungi/" + encodeURIComponent(nomeProdotto); // Sostituisce {nome} con il valore reale
+                            var url = "/aggiungi/" + encodeURIComponent(nomeProdotto); // Sostituisce {nome} con il valore reale
 
 
                             $.ajax({
