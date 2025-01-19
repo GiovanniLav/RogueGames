@@ -1,5 +1,6 @@
 package com.roguegames.web.controller;
 import com.roguegames.domain.comandi.carrello.AggiungiAlCarrello;
+import com.roguegames.domain.comandi.carrello.modificaQnt;
 import com.roguegames.domain.comandi.carrello.RimuoviDalCarrello;
 import com.roguegames.domain.entity.PCarrello;
 import com.roguegames.domain.service.CarrelloService;
@@ -41,6 +42,8 @@ public class CarrelloController {
             AggiungiAlCarrello command= new AggiungiAlCarrello(carrelloService, prodotto, utente);
             command.execute();
             return ResponseEntity.ok().build();
+        }catch (CarrelloService.QuantitaNonDisponibileException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
          }
@@ -66,6 +69,36 @@ public class CarrelloController {
             return ResponseEntity.ok().build();
         } catch (Exception e) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @PostMapping("/aumentaQnt")
+    public ResponseEntity<?> aumentaQuantita(
+            @RequestParam("nomeProdotto") String nome,
+            @RequestParam("quantita") String quantitaStr,
+            HttpSession session) {
+
+        PCarrello carrello;
+        Utente utente = (Utente) session.getAttribute("utente");
+        if(utente == null){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).header("Location", "/utenti/login").build();
+        }
+
+        Prodotto prodotto= prodottoService.findProdotto(nome);
+
+        if (prodotto == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Prodotto non trovato");
+        }
+
+        try{
+            modificaQnt command= new modificaQnt(carrelloService, prodotto, utente, quantitaStr);
+            command.execute();
+            return ResponseEntity.ok().build();
+
+        }catch (CarrelloService.QuantitaNonDisponibileException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Errore interno del server: " + e.getMessage());
         }
     }
 }

@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
 
-    <meta charset="UTF-8">
-    <title>Il tuo carrello</title>
+<head>
+    <link rel="shortcut icon" href="#">
+    <title>Carrello</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/Catalogo.css">
+    <link rel="stylesheet" href="css/Carrello.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Header.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/Carrello.js"></script>
 </head>
+
 <body>
-<h1>Il tuo carrello</h1>
-<table border="1">
-    <thead>
-    <tr>
-        <th>Nome</th>
-        <th>Quantità</th>
-    </tr>
-    </thead>
-    <tbody>
-    <div th:if="${carrello == null || carrello.isEmpty()}">
-        <h2>No products available</h2>
-    </div>
-    <tr th:each="prodotto : ${carrello}">
-        <td th:text="${prodotto.id.nome}"></td>
-        <td th:text="${prodotto.quantita}"></td>
-        <td>
+<header th:replace="header :: header"></header>
+
+<p class="cat">Carrello</p>
+
+<div th:if="${carrello == null || carrello.isEmpty()}">
+    <h2>No products available</h2>
+</div>
+
+<div class="contenitore-grid" th:each="prodotto, prodottoStat : ${carrello}">
+    <div th:with="pip = ${prodImgPrz[prodottoStat.index]}">
+
+        <div class="item-grid">
+            <h4 th:text="${prodotto.id.nome}"></h4>
+        </div>
+
+        <div class="item-grid">
+            <img class="img" th:src="@{/images/{name}(name=${pip.immagine})}"
+                 th:alt="${prodotto.id.nome}">
+        </div>
+
+        <div class="item-grid">
+            <h4 th:text="${#numbers.formatDecimal(pip.getPrezzo() * prodotto.quantita, 0, 2)} + '€'"></h4>
+        </div>
+
+        <div class="item-grid">
+            <input  type="number" id="quantita" th:value="${prodotto.quantita}" min="1" />
+            <input  type="hidden" id="nome" name="nome" th:value="${prodotto.id.nome}">
+            <button type="button" class="aumentaQuantita">+</button>
+        </div>
+
+        <div class="item-grid">
             <form th:action="@{/rimuovi/{nome}(nome=${prodotto.id.nome})}" method="POST" >
                 <input type="hidden" name="nome" th:value="${prodotto.id.nome}">
                 <button type="button" class="rimuovi-carrello" th:attr="data-nome-prodotto=${prodotto.id.nome}">Elimina</button>
             </form>
-        </td>
-    </tr>
-    </tbody>
-</table>
+        </div>
+    </div>
+</div>
+
+
+
+<!--
 <script th:inline="javascript">
     $(document).ready(function() {
         // ... (altro codice JavaScript)
@@ -53,7 +76,8 @@
                 type: "POST",
                 data: { nome: nomeProdotto }, // Invia il nome del prodotto nel corpo della richiesta
                 success: function(response) {
-                    $button.closest('tr').remove();
+
+                    $button.closest('.contenitore-grid').remove();
                     alert("Prodotto eliminato dal carrello!");
                 },
                 error: function(xhr, status, error) {
@@ -67,5 +91,8 @@
         });
     });
 </script>
+-->
+<div th:replace="footer :: footer"></div>
 </body>
+
 </html>
