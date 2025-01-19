@@ -13,6 +13,41 @@
 <header th:replace="header :: header"></header>
 
 <main>
+    <div class="search-container">
+
+        <input type="text" id="search-bar" placeholder="Cerca un prodotto..." />
+        <button id="search-button">Cerca</button>
+
+        <script>
+            $(document).ready(function () {
+                // Cerca prodotti lato client
+                $('#search-bar').on('input', function () {
+                    const searchTerm = $(this).val().toLowerCase();
+
+                    $('.prodotto').each(function () {
+                        const productName = $(this).find('h3').text().toLowerCase();
+
+                        if (productName.includes(searchTerm)) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                });
+
+                // Cerca prodotti lato server (opzionale)
+                $('#search-button').on('click', function () {
+                    const searchTerm = $('#search-bar').val();
+
+                    if (searchTerm.trim() !== '') {
+                        window.location.href = `/catalogo?search=${encodeURIComponent(searchTerm)}`;
+                    }
+                });
+            });
+        </script>
+    </div>
+
+
     <div class="catalogo">
         <div th:if="${products == null || products.isEmpty()}">
             <h2>Nessun Prodotto Disponibile</h2>
