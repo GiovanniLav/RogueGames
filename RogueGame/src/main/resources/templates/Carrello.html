@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Il tuo carrello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/Catalogo.css">
+    <link rel="stylesheet" href="/css/Footer.css">
+    <link rel="stylesheet" href="/css/Header.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>Il tuo carrello</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Quantità</th>
+    </tr>
+    </thead>
+    <tbody>
+    <div th:if="${carrello == null || carrello.isEmpty()}">
+        <h2>No products available</h2>
+    </div>
+    <tr th:each="prodotto : ${carrello}">
+        <td th:text="${prodotto.id.nome}"></td>
+        <td th:text="${prodotto.quantita}"></td>
+        <td>
+            <form th:action="@{/rimuovi/{nome}(nome=${prodotto.id.nome})}" method="POST" >
+                <input type="hidden" name="nome" th:value="${prodotto.id.nome}">
+                <button type="button" class="rimuovi-carrello" th:attr="data-nome-prodotto=${prodotto.id.nome}">Elimina</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<script th:inline="javascript">
+    $(document).ready(function() {
+        // ... (altro codice JavaScript)
+
+        $('.rimuovi-carrello').off('click').on('click', function (e) {
+            e.preventDefault();
+
+            var form = $(this).closest('form');
+            const $button = $(this);
+            var nomeProdotto = $(this).data('nome-prodotto'); // Assumiamo che il nome del prodotto sia memorizzato in un attributo data
+            var url = "/rimuovi/" + encodeURIComponent(nomeProdotto); // Sostituisce {nome} con il valore reale
+
+
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: { nome: nomeProdotto }, // Invia il nome del prodotto nel corpo della richiesta
+                success: function(response) {
+                    $button.closest('tr').remove();
+                    alert("Prodotto eliminato dal carrello!");
+                },
+                error: function(xhr, status, error) {
+                    // Mostra un messaggio di errore personalizzato
+                    $('#error-message').text('Si è verificato un errore durante l\'aggiunta al carrello: ' + error);
+                    $('#error-message').show();
+                    // Registra l'errore in console per debugging
+                    console.error('Errore AJAX:', xhr, status, error);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

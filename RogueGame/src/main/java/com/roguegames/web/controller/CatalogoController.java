@@ -29,7 +29,6 @@ public class CatalogoController {
         Object utenteObject = session.getAttribute("utente");
         boolean utenteLoggato = (utenteObject != null);
 
-        // Ottieni tutti i prodotti
         List<Prodotto> prodotti = prodottoService.getAllProdotti();
 
         if (utenteLoggato) {
