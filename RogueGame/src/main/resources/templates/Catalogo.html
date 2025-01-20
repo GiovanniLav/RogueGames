@@ -37,13 +37,6 @@
                 });
 
                 // Cerca prodotti lato server (opzionale)
-                $('#search-button').on('click', function () {
-                    const searchTerm = $('#search-bar').val();
-
-                    if (searchTerm.trim() !== '') {
-                        window.location.href = `/catalogo?search=${encodeURIComponent(searchTerm)}`;
-                    }
-                });
             });
         </script>
     </div>
