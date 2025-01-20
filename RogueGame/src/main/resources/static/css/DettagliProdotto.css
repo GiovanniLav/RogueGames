@@ -1,0 +1,191 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Colore di sfondo per il body */
+}
+
+.titoloProd {
+    margin: 20px 0px 5px 70px;
+    font-size: 35px;
+}
+
+.sottoTitoloProd {
+    margin: 0px 0px 0px 70px;
+    font-size: 20px;
+    color: #bbb;
+}
+
+.divider {
+    margin: 30px 50px;
+    border: 1px solid #bbb;
+}
+
+.main {
+    padding: 40px;
+    background: white;
+    border-radius: 8px; /* Aggiunto bordo arrotondato per un design piu moderno */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Aggiunta ombra per un effetto di profondit� */
+}
+
+.descrizione {
+    padding: 0px 0px 30px 0px;
+    border-bottom: 0.5px solid #bbb;
+    text-align: center;
+}
+
+.titoloDescrizione {
+    font-size: 25px;
+    color: #00bfff;
+    margin-top: 20px;
+}
+
+.gridMainInfo {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-top: 0.5px solid #bbb;
+    border-bottom: 0.5px solid #bbb;
+    margin: 30px 0px;
+    padding: 30px 0px;
+}
+
+.imgContainer {
+    text-align: center;
+}
+
+.img {
+    width: 100%;
+    max-width: 400px; /* Limita la larghezza dell'immagine */
+    height: auto;
+}
+
+.info {
+    margin-right: 70px;
+    padding: 60px 0px 0px 30px;
+    text-align: left;
+    background: #00bfff;
+    font-size: 25px;
+    color: white;
+    border-radius: 0px 50px 0px 50px;
+}
+
+/* Pulsante Aggiungi */
+.btnAggiungi {
+    text-align: center;
+    margin: 40px;
+    font-size: 25px;
+}
+
+.btnAggiungi #carrello {
+    padding: 5px 30px;
+    border-radius: 25px;
+    background: #ff007f;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+/* Stili per il video */
+.video {
+    border-radius: 20px;
+    border: 3px solid #ff007f;
+}
+
+/* Media Queries per dispositivi pi� piccoli */
+
+/* Per tablet e schermi pi� piccoli */
+@media (max-width: 768px) {
+    .titoloProd {
+        margin: 20px 20px 5px 20px;
+        font-size: 28px;
+    }
+
+    .sottoTitoloProd {
+        margin: 0px 20px;
+        font-size: 18px;
+    }
+
+    .divider {
+        margin: 20px 20px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .gridMainInfo {
+        grid-template-columns: 1fr; /* Una sola colonna per i dispositivi pi� piccoli */
+        padding: 20px 0px;
+    }
+
+    .info {
+        margin-right: 0;
+        padding: 30px 0px;
+        font-size: 20px;
+    }
+
+    .img {
+        max-width: 100%;
+    }
+
+    .btnAggiungi {
+        margin: 20px;
+        font-size: 20px;
+    }
+
+    .btnAggiungi #carrello {
+        padding: 5px 20px;
+        font-size: 18px;
+    }
+
+    .video {
+        max-width: 100%; /* Limita la larghezza del video per adattarlo agli schermi pi� piccoli */
+    }
+}
+
+/* Per smartphone e schermi molto piccoli */
+@media (max-width: 480px) {
+    .titoloProd {
+        font-size: 24px;
+    }
+
+    .sottoTitoloProd {
+        font-size: 16px;
+    }
+
+    .divider {
+        margin: 15px 10px;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    .gridMainInfo {
+        grid-template-columns: 1fr; /* Una sola colonna per tutti i dispositivi */
+        padding: 15px 0px;
+    }
+
+    .info {
+        padding: 20px 0px;
+        font-size: 18px;
+    }
+
+    .img {
+        max-width: 100%;
+    }
+
+    .btnAggiungi {
+        margin: 10px;
+        font-size: 18px;
+    }
+
+    .btnAggiungi #carrello {
+        padding: 5px 15px;
+        font-size: 16px;
+    }
+
+    .video {
+        max-width: 100%; /* Limita ulteriormente la larghezza del video per adattarsi agli schermi piccoli */
+    }
+}
