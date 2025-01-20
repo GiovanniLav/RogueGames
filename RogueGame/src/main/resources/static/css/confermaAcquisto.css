@@ -1,0 +1,168 @@
+		body {
+		    background-color: #f8f9fa;
+		    font-family: 'Arial', sans-serif;
+		}
+		
+		.container {
+		    margin-top: 50px;
+		}
+		
+		.card {
+		    margin-bottom: 20px;
+		}
+		
+		.card-header {
+		    background-color: #007bff;
+		    color: white;
+		    font-weight: bold;
+		}
+		
+		.total-price {
+		    font-size: 1.5em;
+		    font-weight: bold;
+		    text-align: right;
+		}
+		
+		.btn-purchase {
+		    width: 100%;
+		    padding: 10px;
+		    font-size: 1.2em;
+		    background-color: #28a745;
+		    color: white;
+		}
+		/* confermaAcquisto.css */
+		
+		.popup {
+		    display: none;
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background-color: rgba(0, 0, 0, 0.5);
+		    justify-content: center;
+		    align-items: center;
+		}
+		
+		.popup-content {
+		    background-color: white;
+		    padding: 20px;
+		    border-radius: 10px;
+		    text-align: center;
+		}
+		
+		.confetti {
+		    position: fixed;
+		    top: 0;
+		    width: 10px;
+		    height: 10px;
+		    background-color: red; /* Cambia colore per variabilit� */
+		    pointer-events: none;
+		}
+		#thankYouPopup {
+		    display: none; /* Hide by default */
+		    position: fixed; /* Fixed position */
+		    left: 50%; /* Center horizontally */
+		    top: 50%; /* Center vertically */
+		    transform: translate(-50%, -50%); /* Adjust positioning */
+		    background-color: white; /* Background color */
+		    padding: 20px; /* Padding */
+		    border: 1px solid #ccc; /* Border */
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+		    z-index: 1000; /* Ensure it's on top */
+		}
+		
+		.form-punti{
+		
+		text-align: right;
+		
+		}
+		
+		#punti{
+			font-size: 1.0em;
+		    font-weight: bold;
+		    align-self: right;
+		}
+		
+		.popup-content {
+		    text-align: center; /* Center text inside */
+		}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .container {
+        margin-top: 10px;
+        padding: 0 5px;
+    }
+
+    .card-header {
+        font-size: 1em;
+        padding: 6px;
+    }
+
+    .total-price {
+        font-size: 1em;
+    }
+
+    .btn-purchase {
+        font-size: 0.9em;
+        padding: 6px;
+    }
+
+    .popup-content {
+        padding: 10px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .card-header {
+        font-size: 1.2em;
+        padding: 8px;
+    }
+
+    .total-price {
+        font-size: 1.2em;
+    }
+
+    .btn-purchase {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    .popup-content {
+        padding: 15px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin-top: 10px;
+        padding: 0 5px;
+    }
+
+    .card-header {
+        font-size: 1em;
+        padding: 6px;
+    }
+
+    .total-price {
+        font-size: 1em;
+    }
+
+    .btn-purchase {
+        font-size: 0.9em;
+        padding: 6px;
+    }
+
+    .popup-content {
+        padding: 10px;
+        width: 95%;
+    }
+}

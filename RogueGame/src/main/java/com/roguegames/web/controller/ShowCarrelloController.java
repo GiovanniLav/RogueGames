@@ -59,4 +59,27 @@ public class ShowCarrelloController {
         return "Carrello";
     }
 
+    @GetMapping("/riepilogoAcquisto")
+    public String ShowRiepilogo(Model model, HttpSession session) {
+        Utente utente = (Utente) session.getAttribute("utente");
+
+        if(utente == null){
+            return "redirect:/login";
+        }
+
+        List<PCarrello> carrello = carrelloService.getCarrello(utente);
+
+        List<CarrelloItem> carrelloItem = getCarrelloItem(carrello);
+
+        double totale = 0;
+        for (CarrelloItem item : carrelloItem) {
+            totale += item.getPrezzo() * item.getCarrello().getQuantita();
+        }
+
+        model.addAttribute("totale", totale);
+        model.addAttribute("carrelloItem", carrelloItem);
+        model.addAttribute("utente", utente);
+        return "RiepilogoOrdine";
+    }
+
 }

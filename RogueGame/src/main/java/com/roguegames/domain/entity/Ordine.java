@@ -2,6 +2,7 @@ package com.roguegames.domain.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -32,7 +33,7 @@ public class Ordine {
     @Column(name = "Data", nullable = false)
     @Temporal(TemporalType.DATE)
     @NotNull(message = "La data è obbligatoria")
-    private Date data;
+    private LocalDate data;
 
     @ManyToOne
     @MapsId("email")
@@ -42,7 +43,7 @@ public class Ordine {
     // Costruttori
     public Ordine() {}
 
-    public Ordine(OrdineId id, Double prezzo, Double prezzoTot, Integer quantita, Boolean stato, Date data, Utente utente) {
+    public Ordine(OrdineId id, Double prezzo, Double prezzoTot, Integer quantita, Boolean stato, LocalDate data, Utente utente) {
         this.id = id;
         this.prezzo = prezzo;
         this.prezzoTot = prezzoTot;
@@ -93,11 +94,11 @@ public class Ordine {
         this.stato = stato;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 

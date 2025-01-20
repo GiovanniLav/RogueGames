@@ -24,35 +24,43 @@
     <h2>No products available</h2>
 </div>
 
+
+
 <div class="contenitore-grid" th:each="carrello : ${carrelloItem}">
 
 
         <div class="item-grid">
-            <h4 th:text="${carrello.getCarrello().id.nome}"></h4>
+            <h4 th:text="${carrello.carrello.id.nome}"></h4>
         </div>
 
         <div class="item-grid">
             <img class="img" th:src="@{/images/{name}(name=${carrello.immagine})}"
-                 th:alt="${carrello.getCarrello().id.nome}">
+                 th:alt="${carrello.carrello.id.nome}">
         </div>
 
         <div class="item-grid">
-            <h4 th:text="${#numbers.formatDecimal(carrello.prezzo * carrello.getCarrello().quantita, 0, 2)} + '€'"></h4>
+            <h4 th:text="${#numbers.formatDecimal(carrello.prezzo * carrello.carrello.quantita, 0, 2)} + '€'"></h4>
         </div>
 
         <div class="item-grid">
-            <input  type="number" id="quantita" th:value="${carrello.getCarrello().quantita}" min="1" />
-            <input  type="hidden" id="nome" name="nome" th:value="${carrello.getCarrello().id.nome}">
+            <input  type="number" id="quantita" th:value="${carrello.carrello.quantita}" min="1" />
+            <input  type="hidden" id="nome" name="nome" th:value="${carrello.carrello.id.nome}">
             <button type="button" class="aumentaQuantita">+</button>
         </div>
 
         <div class="item-grid">
-            <form th:action="@{/rimuovi/{nome}(nome=${carrello.getCarrello().id.nome})}" method="POST" >
-                <input type="hidden" name="nome" th:value="${carrello.getCarrello().id.nome}">
-                <button type="button" class="rimuovi-carrello" th:attr="data-nome-prodotto=${carrello.getCarrello().id.nome}">Elimina</button>
+            <form th:action="@{/rimuovi/{nome}(nome=${carrello.carrello.id.nome})}" method="POST" >
+                <input type="hidden" name="nome" th:value="${carrello.carrello.id.nome}">
+                <button type="button" class="rimuovi-carrello" th:attr="data-nome-prodotto=${carrello.carrello.id.nome}">Elimina</button>
             </form>
         </div>
+
 </div>
+
+<form th:action="@{/riepilogoAcquisto}" method="GET">
+    <input type="submit" value="Acquista" />
+</form>
+
 
 <div th:replace="footer :: footer"></div>
 </body>
