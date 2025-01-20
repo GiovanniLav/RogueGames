@@ -48,15 +48,15 @@ public class CatalogoController {
         return "Catalogo"; // Ritorna alla pagina del catalogo
     }
     @GetMapping
-    public String getCatalogo(@RequestParam(value = "search", required = false) String search, Model model) {
+    public String getCatalogo(@RequestParam(value = "search", required = false) String search, Model model, HttpSession session) {
         List<Prodotto> products = prodottoService.getAllProdotti();
-
+        Utente utente = (Utente) session.getAttribute("utente");
         if (search != null && !search.isEmpty()) {
             products = products.stream()
                     .filter(product -> product.getNome().toLowerCase().contains(search.toLowerCase()))
                     .collect(Collectors.toList());
         }
-
+        model.addAttribute("utente", utente);
         model.addAttribute("products", products);
         return "catalogo";
     }
