@@ -1,80 +1,77 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="it">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Dettagli Prodotto</title>
-    <!-- <link rel="stylesheet" href="/css/styles.css">  Stile CSS -->
-</head>
-<body>
-<div class="prodotto">
-<header>
-
-    <h1 th:text="${product.nome}">Nome del prodotto</h1>
-</header>
-<main>
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/DettagliProdotto.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="/css/DettagliProdotto.css">
+    <link rel="stylesheet" href="/css/Footer.css">
+    <link rel="stylesheet" href="/css/Header.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/Carrello.js"></script>
 
+</head>
 
-    <section>
-        <img th:src="@{/images/{name}(name=${product.immagine})}" alt="Immagine del prodotto" style="max-width: 300px;" />
-        <video th:src="@{/videos/{name}(name=${product.video})}" controls th:if="${product.video != null}" style="max-width: 500px;"></video>
+<body>
+<header th:replace="header :: header"></header>
 
-        <p><strong>Descrizione:</strong> <span th:text="${product.descrizione}">Descrizione del prodotto</span></p>
-        <p><strong>Prezzo:</strong> €<span th:text="${product.prezzo}">0.00</span></p>
-        <p><strong>Casa produttrice:</strong> <span th:text="${product.casaProd}">Casa Produttrice</span></p>
-        <p><strong>Piattaforma:</strong> <span th:text="${product.piattaforma}">Piattaforma</span></p>
-        <p><strong>Genere:</strong> <span th:text="${product.genere}">Genere</span></p>
-        <p><strong>Tipo:</strong> <span th:text="${product.tipo}">Tipo</span></p>
-        <p><strong>Data di rilascio:</strong> <span th:text="${#dates.format(product.dataRilascio, 'dd/MM/yyyy')}">Data di rilascio</span></p>
-        <p><strong>Disponibilità:</strong> <span th:text="${product.quantita > 0 ? 'Disponibile' : 'Non disponibile'}">Disponibilità</span></p>
+<div th:if="${product != null and product.nome != null}" class="main">
+    <!-- Nome del prodotto -->
+    <strong class="titoloProd" th:text="${product.nome}"></strong>
+    <p class="sottoTitoloProd">by <strong style="color: #949494" th:text="${product.casaProd}"></strong></p>
 
-        <div>
-            <form th:action="@{/aggiungi/{nome}(nome=${product.nome})}" method="POST">
-                <input type="hidden" name="nome" th:value="${product.nome}">
-                <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${product.nome}">Aggiungi al carrello</button>
-            </form>
-            <div id="success-message" class="message" style="display: none; color: green;">
-                Prodotto aggiunto al carrello!
-            </div>
-            <div id="error-message" class="error" style="display: none; color: red;">
-                Si è verificato un errore durante l'aggiunta al carrello.
+    <div class="gridMainInfo">
+        <div class="imgContainer">
+            <img th:src="@{/images/{name}(name=${product.immagine})}" alt="Immagine del prodotto" style="max-width: 300px;" />
+        </div>
+        <div class="info">
+            <!-- Prezzo -->
+            <p>Prezzo: <span style="font-size: 20px; color: black" th:text="${product.prezzo} + '€'"></span></p>
+            <!-- Genere -->
+            <p>Genere: <span style="font-size: 20px; color: black" th:text="${product.genere}"></span></p>
+            <!-- Piattaforma -->
+            <p th:if="${product.piattaforma != null}">Piattaforma: <span style="font-size: 20px; color: black" th:text="${product.piattaforma}"></span></p>
+            <!-- Data di rilascio -->
+            <p>Data Rilascio: <span style="font-size: 20px; color: black" th:text="${#dates.format(product.dataRilascio, 'dd/MM/yyyy')}"></span></p>
+            <!-- Tipo -->
+            <p>Tipo: <span style="font-size: 20px; color: black" th:text="${product.tipo}"></span></p>
+
+            <!-- Pulsante Aggiungi al carrello -->
+            <div>
+                <form th:if="${product.quantita > 0}" th:action="@{/aggiungi/{nome}(nome=${product.nome})}" method="POST">
+                    <input type="hidden" name="nome" th:value="${product.nome}">
+                    <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${product.nome}">Aggiungi al carrello</button>
+                </form>
+
+                <div id="error-message" class="error" style="display: none;"></div>
+                <h2 th:if="${product.quantita == 0}">Esaurito</h2>
             </div>
         </div>
+    </div>
 
-        <script th:inline="javascript">
-            $(document).ready(function () {
-                // Gestisce il clic sul pulsante "Aggiungi al carrello"
-                $('.aggiungi-carrello').off('click').on('click', function (e) {
-                    e.preventDefault();
+    <!-- Video del prodotto -->
+    <div th:if="${product.video != null}" class="descrizione">
+        <video th:src="@{/videos/{name}(name=${product.video})}" controls style="max-width: 500px;" muted></video>
+    </div>
 
-                    // Recupera il nome del prodotto dall'attributo data
-                    var nomeProdotto = $(this).data('nome-prodotto');
-                    var url = "/aggiungi/" + encodeURIComponent(nomeProdotto);
-
-                    // Effettua una richiesta AJAX per aggiungere il prodotto al carrello
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: { nome: nomeProdotto },
-                        success: function (response) {
-                            // Mostra il messaggio di successo
-                            $('#success-message').text('Prodotto aggiunto al carrello!').fadeIn().delay(3000).fadeOut();
-                        },
-                        error: function (xhr, status, error) {
-                            // Mostra un messaggio di errore
-                            $('#error-message').text('Si è verificato un errore durante l\'aggiunta al carrello: ' + error).fadeIn().delay(3000).fadeOut();
-                        }
-                    });
-                });
-            });
-        </script>
-
-
-    </section>
-
-    <a href="/catalogo/prodotti">Torna al catalogo</a>
-</main>
+    <!-- Descrizione del prodotto -->
+    <div class="descrizione">
+        <p class="titoloDescrizione">DESCRIZIONE</p>
+        <p th:text="${product.descrizione}"></p>
+    </div>
 </div>
+
+<!-- Messaggio prodotto non disponibile -->
+<div th:if="${product == null or product.nome == null}">
+    <h2>No product available</h2>
+</div>
+
+<!-- Inclusione del footer -->
+<div th:replace="footer :: footer"></div>
 </body>
 
 </html>

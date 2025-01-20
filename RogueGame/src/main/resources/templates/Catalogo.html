@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="it">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Header.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/Carrello.js"></script>
 </head>
 <body>
 <header th:replace="header :: header"></header>
@@ -78,52 +79,12 @@
             <p class="prezzo" th:text="${product.prezzo} + ' €'">Prezzo</p>
 
             <div>
-                <form th:action="@{/aggiungi/{nome}(nome=${product.nome})}" method="POST">
+                <form th:if="${product.quantita > 0}" th:action="@{/aggiungi/{nome}(nome=${product.nome})}" method="POST">
                     <input type="hidden" name="nome" th:value="${product.nome}">
                     <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${product.nome}">Aggiungi al carrello</button>
                 </form>
-                <div id="success-message" class="message" style="display: none;">
-                    Prodotto aggiunto al carrello!
-                </div>
-
-                <script th:inline="javascript">
-                    $(document).ready(function() {
-                        // ... (altro codice JavaScript)
-
-                        $('.aggiungi-carrello').off('click').on('click', function (e) {
-                            e.preventDefault();
-
-                            var form = $(this).closest('form');
-
-                            var nomeProdotto = $(this).data('nome-prodotto'); // Assumiamo che il nome del prodotto sia memorizzato in un attributo data
-                            var url = "/aggiungi/" + encodeURIComponent(nomeProdotto); // Sostituisce {nome} con il valore reale
-
-
-                            $.ajax({
-                                url: url,
-                                type: "POST",
-                                data: { nome: nomeProdotto }, // Invia il nome del prodotto nel corpo della richiesta
-                                success: function(response) {
-                                    alert("Prodotto aggiunto al carrello!");
-                                },
-                                error: function(xhr, status, error) {
-                                    // Mostra un messaggio di errore personalizzato
-                                    $('#error-message').text('Si è verificato un errore durante l\'aggiunta al carrello: ' + error);
-                                    $('#error-message').show();
-                                    // Registra l'errore in console per debugging
-                                    console.error('Errore AJAX:', xhr, status, error);
-                                }
-                            });
-                        });
-                    });
-                </script>
-
+                
                 <div id="error-message" class="error" style="display: none;"></div>
-                <!--<button th:if="${product.quantita > 0}"
-                        id="carrello"
-                        th:onclick="|addCart(${product.nome})|">
-                    Add to cart
-                </button>-->
                 <h2 th:if="${product.quantita == 0}">Esaurito</h2>
             </div>
         </div>
@@ -133,3 +94,4 @@
 <div th:replace="footer :: footer"></div>
 </body>
 </html>
+
