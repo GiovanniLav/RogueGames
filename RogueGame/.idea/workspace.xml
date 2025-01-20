@@ -9,18 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Completamente del carrello con l'aggiunta della modifica della quantità">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_01_2025_10_39__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_01_2025_10_43__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_01_2025_10_44__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_01_2025_10_50__Changes_.xml" beforeDir="false" />
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/DettagliProdottoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/DettagliProdottoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ShowCarrelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ShowCarrelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Carrello.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Carrello.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/DettagliProdotto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/DettagliProdotto.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
-        <option value="Interface" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -280,6 +272,7 @@
       <workItem from="1737127292470" duration="4051000" />
       <workItem from="1737190092208" duration="11642000" />
       <workItem from="1737365612284" duration="3224000" />
+      <workItem from="1737387025208" duration="1381000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />

@@ -8,6 +8,7 @@ import com.roguegames.domain.entity.Prodotto;
 import com.roguegames.domain.service.ProdottoService;
 import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.service.UtenteService;
+import com.roguegames.web.controller.Item.CarrelloItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,13 +32,14 @@ public class ShowCarrelloController {
 
 
 
-    private List<Prodotto> getProdImgPrz(List<PCarrello> carrello) {
-        List<Prodotto> prodImgPrz = new ArrayList<Prodotto>();
+    private List<CarrelloItem> getCarrelloItem(List<PCarrello> carrello) {
+        List<CarrelloItem> carrelloItem = new ArrayList<CarrelloItem>();
         for (PCarrello c : carrello) {
             Prodotto p = prodottoService.findProdotto(c.getId().getNome());
-            prodImgPrz.add(p);
+            CarrelloItem ci =new CarrelloItem(p, c);
+            carrelloItem.add(ci);
         }
-        return prodImgPrz;
+        return carrelloItem;
     }
 
     @GetMapping("/carrello")
@@ -50,10 +52,9 @@ public class ShowCarrelloController {
 
         List<PCarrello> carrello = carrelloService.getCarrello(utente);
 
-        List<Prodotto> prodImgPrz = getProdImgPrz(carrello);
+        List<CarrelloItem> carrelloItem = getCarrelloItem(carrello);
 
-        model.addAttribute("prodImgPrz", prodImgPrz);
-        model.addAttribute("carrello", carrello);
+        model.addAttribute("carrelloItem", carrelloItem);
         model.addAttribute("utente", utente);
         return "Carrello";
     }
