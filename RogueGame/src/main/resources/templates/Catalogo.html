@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Catalogo Prodotti</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/Catalogo.css">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/css/Catalogo.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/js/Carrello.js"></script>
 </head>
@@ -14,9 +14,35 @@
 <header th:replace="header :: header"></header>
 
 <main>
+    <div class="search-container">
+
+        <input type="text" id="search-bar" placeholder="Cerca un prodotto..." />
+        <button id="search-button">Cerca</button>
+
+        <script>
+            $(document).ready(function () {
+                // Cerca prodotti lato client
+                $('#search-bar').on('input', function () {
+                    const searchTerm = $(this).val().toLowerCase();
+
+                    $('.prodotto').each(function () {
+                        const productName = $(this).find('h3').text().toLowerCase();
+
+                        if (productName.includes(searchTerm)) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                });
+            });
+        </script>
+    </div>
+
+
     <div class="catalogo">
         <div th:if="${products == null || products.isEmpty()}">
-            <h2>No products available</h2>
+            <h2>Nessun Prodotto Disponibile</h2>
         </div>
         <div th:each="product : ${products}" class="prodotto">
             <div style="text-align: right">
@@ -29,10 +55,10 @@
                         </button>
                     </form>
 
-                <script>
+                <!--<script>
                     const button = document.querySelector('.star');
                     const preferito = button.getAttribute('data-preferito');
-                </script>
+                </script>-->
 
             </div>
             <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">

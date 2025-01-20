@@ -1,3 +1,4 @@
+
 /* Stile generale per il body e il main */
 body {
     font-family: 'Arial', sans-serif;
@@ -91,3 +92,29 @@ main {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#search-bar {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-button
