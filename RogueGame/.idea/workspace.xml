@@ -9,12 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="1)Complemtanto di processaOrdine by Marco&#10;2)Aggiunta delle funzionalita del gestore by Giovanni&#10;3)Aggiunta della carta di credito&#10;by Giovanni">
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="creazione ordine">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/IndirizzoSpedizione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/IndirizzoSpedizione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Carrello.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Carrello.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +24,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="Interface" />
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -48,7 +47,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="Marco" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -111,7 +110,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.RogueGameApplication.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 9.0.98.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Marco&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/ROBA/RogueGames/RogueGame/src/main/resources/static/css/images&quot;,
@@ -281,8 +280,6 @@
       <workItem from="1737622649723" duration="11296000" />
       <workItem from="1737645271008" duration="8547000" />
       <workItem from="1737707927557" duration="6958000" />
-      <workItem from="1737723031381" duration="1705000" />
-      <workItem from="1737732305954" duration="6027000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />
@@ -348,15 +345,7 @@
       <option name="project" value="LOCAL" />
       <updated>1737314229272</updated>
     </task>
-    <task id="LOCAL-00009" summary="1)Complemtanto di processaOrdine by Marco&#10;2)Aggiunta delle funzionalita del gestore by Giovanni&#10;3)Aggiunta della carta di credito&#10;by Giovanni">
-      <option name="closed" value="true" />
-      <created>1737715774320</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1737715774320</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,8 +371,7 @@
     <MESSAGE value="Pagina profilo funzionante" />
     <MESSAGE value="Completamente del carrello con l'aggiunta della modifica della quantità" />
     <MESSAGE value="aggiunta di carrelloItem" />
-    <MESSAGE value="1)Complemtanto di processaOrdine by Marco&#10;2)Aggiunta delle funzionalita del gestore by Giovanni&#10;3)Aggiunta della carta di credito&#10;by Giovanni" />
-    <option name="LAST_COMMIT_MESSAGE" value="1)Complemtanto di processaOrdine by Marco&#10;2)Aggiunta delle funzionalita del gestore by Giovanni&#10;3)Aggiunta della carta di credito&#10;by Giovanni" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta di carrelloItem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

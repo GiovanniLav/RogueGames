@@ -98,7 +98,7 @@ public class UtenteService {
 
     public void aggiungiIndirizzoSpd(String provincia, Integer cap, String via, String civico, String citta, Utente utente){
         IndirizzoSpedizioneId id = new IndirizzoSpedizioneId(provincia, cap, via, civico, citta, utente.getEmail());
-        IndirizzoSpedizione is = new IndirizzoSpedizione(id, utente);
+        IndirizzoSpedizione is = new IndirizzoSpedizione(id ,utente);
         indirizzoSpedizioneRepository.save(is);
     }
 

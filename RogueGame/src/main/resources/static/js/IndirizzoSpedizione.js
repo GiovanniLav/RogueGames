@@ -22,11 +22,11 @@ $(document).ready(function() {
                 citta: citta
             },
             success: function (response) {
-                // Gestisci la risposta del server (ad esempio, visualizza un messaggio di successo)
+
                 console.log(response);
             },
             error: function (error) {
-                // Gestisci gli errori (ad esempio, visualizza un messaggio di errore)
+
                 console.error(error);
             }
         });
@@ -47,11 +47,6 @@ $(document).ready(function() {
         var citta = document.getElementById('citta').value // Assumiamo che il nome del prodotto sia memorizzato in un attributo data
         var url = "/rimuoviIndirizzo" // Sostituisce {nome} con il valore reale
 
-        console.log(provincia);
-        console.log(via);
-        console.log(cap);
-        console.log(civico);
-        console.log(citta);
 
 
         $.ajax({
@@ -65,11 +60,9 @@ $(document).ready(function() {
                 citta: citta
             },
             success: function (response) {
-                // Gestisci la risposta del server (ad esempio, visualizza un messaggio di successo)
-                console.log(response);
+                location.reload()
             },
             error: function (error) {
-                // Gestisci gli errori (ad esempio, visualizza un messaggio di errore)
                 console.error(error);
             }
         });
