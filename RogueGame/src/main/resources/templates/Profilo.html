@@ -14,6 +14,8 @@
 <header th:replace="header :: header"></header>
 
 <main>
+  <!-- Profilo HTML -->
+
   <section class="profilo-container">
     <h2>Il tuo Profilo</h2>
 
@@ -52,6 +54,17 @@
         <span>******</span>
         <button class="btn-modifica" onclick="apriModale('password')">Modifica</button>
       </div>
+
+      <!-- Link alle carte di credito -->
+      <div class="profilo-campo">
+        <a href="/carte" class="btn-modifica carte">Carta di credito</a>
+      </div>
+
+      <!-- Link agli indirizzi
+      <div class="profilo-campo">
+        <a href="/Indirizzi" class="btn-modifica indirizzi">Gestione Indirizzi</a>
+      </div>
+      -->
     </div>
   </section>
 </main>

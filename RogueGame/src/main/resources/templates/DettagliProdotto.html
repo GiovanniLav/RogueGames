@@ -40,6 +40,7 @@
             <!-- Tipo -->
             <p>Tipo: <span style="font-size: 20px; color: black" th:text="${product.tipo}"></span></p>
 
+            <p>Tipo: <span style="font-size: 20px; color: black" th:text="${product.quantita}"></span></p>
             <!-- Pulsante Aggiungi al carrello -->
             <div>
                 <form th:if="${product.quantita > 0}" th:action="@{/aggiungi/{nome}(nome=${product.nome})}" method="POST">

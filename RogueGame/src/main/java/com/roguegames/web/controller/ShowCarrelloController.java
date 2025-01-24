@@ -59,7 +59,25 @@ public class ShowCarrelloController {
         return "Carrello";
     }
 
-    @GetMapping("/riepilogoAcquisto")
+
+    @PostMapping("/rimuoviCarrello")
+    public String rimuoviCarrello(Model model, HttpSession session) {
+        Utente utente = (Utente) session.getAttribute("utente");
+        if(utente == null){
+            return "redirect:/login";
+        }
+
+        List <PCarrello> carrello = carrelloService.getCarrello(utente);
+
+        if(carrello.isEmpty()){
+            return "redirect:/carrello";
+        }
+
+        carrelloService.rimuoviInteroCarrello(carrello, utente);
+        return "redirect:/carrello";
+    }
+
+    @PostMapping("/riepilogoAcquisto")
     public String ShowRiepilogo(Model model, HttpSession session) {
         Utente utente = (Utente) session.getAttribute("utente");
 
@@ -69,7 +87,12 @@ public class ShowCarrelloController {
 
         List<PCarrello> carrello = carrelloService.getCarrello(utente);
 
+        if(carrello.isEmpty() || carrello == null){
+            return "redirect:/carrello";
+        }
+
         List<CarrelloItem> carrelloItem = getCarrelloItem(carrello);
+
 
         double totale = 0;
         for (CarrelloItem item : carrelloItem) {
@@ -78,6 +101,7 @@ public class ShowCarrelloController {
 
         model.addAttribute("totale", totale);
         model.addAttribute("carrelloItem", carrelloItem);
+        session.setAttribute("carrelloItem", carrelloItem);
         model.addAttribute("utente", utente);
         return "RiepilogoOrdine";
     }

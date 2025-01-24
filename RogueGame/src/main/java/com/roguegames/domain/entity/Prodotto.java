@@ -1,5 +1,7 @@
 package com.roguegames.domain.entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.Date;
@@ -54,6 +56,7 @@ public class Prodotto {
 
     @Column(name = "DataRilascio", nullable = false)
     @NotNull(message = "La data di rilascio è obbligatoria")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date dataRilascio;
 
@@ -229,3 +232,5 @@ public class Prodotto {
         return nome.hashCode();
     }
 }
+
+

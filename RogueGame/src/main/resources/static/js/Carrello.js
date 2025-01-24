@@ -92,3 +92,16 @@ $(document).ready(function() {
         });
     });
 })
+
+document.getElementById('btnAcquista').addEventListener('click', function(event) {
+    event.preventDefault(); // Impedisci il submit del form
+
+    // Controlla se il carrello è vuoto (sostituisci con la tua logica)
+    if (carrelloVuoto()) {
+        document.getElementById('popup').classList.remove('hidden');
+    }
+});
+
+document.getElementById('btnClose').addEventListener('click', function() {
+    document.getElementById('popup').classList.add('hidden');
+});

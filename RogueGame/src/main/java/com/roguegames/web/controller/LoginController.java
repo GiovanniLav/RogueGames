@@ -36,6 +36,14 @@ public class LoginController {
             model.addAttribute("error", true);
             return "Login";  // Mostra la pagina di login con un messaggio di errore
         }
+        String ruolo = utente.getRuolo();
+        if ("gestore".equals(ruolo)) {
+            // Se l'utente è un gestore, passiamo questa informazione alla sessione
+            session.setAttribute("isGestore", true);
+        } else {
+            session.setAttribute("isGestore", false);
+        }
+
         session.setAttribute("utente", utente);
         return "redirect:/utenti/home";  // Reindirizza alla dashboard
     }

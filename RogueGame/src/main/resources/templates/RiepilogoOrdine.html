@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Header.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/Ordine.js"></script>
 </head>
 <body>
 
@@ -40,6 +43,11 @@
     <div class="text-right">
         <h3>Totale: <span th:text="${#numbers.formatDecimal(totale,2,2)} + '€'"></span></h3>
     </div>
+
+    <form th:action="@{/aggiungiOrdine}" method="post">
+        <input type="hidden" th:name="totale" th:value="${totale}" />
+        <button type="submit" class="processa-ordine" th:attr="data-totale=${totale}">Processa Carrello</button>
+    </form>
 
 </div>
 

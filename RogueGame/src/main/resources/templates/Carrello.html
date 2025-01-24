@@ -57,8 +57,12 @@
 
 </div>
 
-<form th:action="@{/riepilogoAcquisto}" method="GET">
-    <input type="submit" value="Acquista" />
+<form th:action="@{/riepilogoAcquisto}" method="POST">
+    <input type="submit" value="Acquista" id="btnAcquista" />
+</form>
+
+<form th:action="@{/rimuoviCarrello}" method="POST">
+    <input type="submit" value="CancellaTutto"  />
 </form>
 
 
