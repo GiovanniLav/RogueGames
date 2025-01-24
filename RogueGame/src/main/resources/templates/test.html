@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Lista Indirizzi</title>
+    <link rel="stylesheet" href="/css/Footer.css">
+    <link rel="stylesheet" href="/css/Header.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/IndirizzoSpedizione.js"></script>
+</head>
+<body>
+<header th:replace="header :: header"></header>
+<h1>Elenco degli Indirizzi</h1>
+
+<table >
+    <thead>
+    <tr>
+        <th>Provincia</th>
+        <th>CAP</th>
+        <th>Via</th>
+        <th>Civico</th>
+        <th>Città</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="indirizzo : ${is}">
+            <td name="provincia" th:text="${indirizzo.id.provincia}"></td>
+            <td name="cap" th:text="${indirizzo.id.cap}"></td>
+            <td name="via" th:text="${indirizzo.id.via}"></td>
+            <td name="civico" th:text="${indirizzo.id.civico}"></td>
+            <td name="citta" th:text="${indirizzo.id.citta}"></td>
+        <td>
+        <form th:action="@{/rimuoviIndirizzo}" method="POST">
+                <input type="hidden" id="provincia" th:value="${indirizzo.id.provincia}">
+                <input type="hidden" name="cap" th:value="${indirizzo.id.cap}">
+                <input type="hidden" id="via" th:value="${indirizzo.id.via}" >
+                <input type="hidden" id="civico" th:value="${indirizzo.id.civico}" >
+                <input type="hidden" id="citta" th:value="${indirizzo.id.citta}" >
+            <button type="submit" class="rimuovi-indirizzo" th:attr="data-cap=${indirizzo.id.cap}">Rimuovi Indirizzo</button>
+        </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div th:replace="footer :: footer"></div>
+</body>
+</html>

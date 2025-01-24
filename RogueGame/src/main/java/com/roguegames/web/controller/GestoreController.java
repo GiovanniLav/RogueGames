@@ -1,6 +1,7 @@
 package com.roguegames.web.controller;
 
 import com.roguegames.domain.entity.Prodotto;
+import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.service.GestoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -20,8 +22,13 @@ public class GestoreController {
 
     // Visualizza la lista di tutti i prodotti
     @GetMapping("/prodotti")
-    public String mostraProdotti(Model model) {
-        List<Prodotto> prodotti = productService.getAllProducts(); // Recupera tutti i prodotti dal servizio
+    public String mostraProdotti(Model model, HttpSession session) {
+        Utente utente = (Utente) session.getAttribute("utente");
+        if (utente == null && !utente.getRuolo().equals("gestore")) {
+            return "redirect:/login";
+        }
+        List<Prodotto> prodotti = productService.getAllProducts();// Recupera tutti i prodotti dal servizio
+        model.addAttribute("utente", utente);
         model.addAttribute("prodotti", prodotti); // Aggiunge la lista di prodotti al modello
         return "prodotti"; // Restituisce la pagina 'utenti/prodotti.html'
     }

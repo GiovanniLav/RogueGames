@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="/css/Header.css">
   <link rel="stylesheet" href="/css/Footer.css">
   <link rel="stylesheet" href="/css/Profilo.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/IndirizzoSpedizione.js"></script>
 </head>
 <body>
 
@@ -59,6 +61,24 @@
       <div class="profilo-campo">
         <a href="/carte" class="btn-modifica carte">Carta di credito</a>
       </div>
+
+      <div class="item-grid">
+        <form th:action="@{/AggiungiIndirizzoSpedizione}" method="POST" >
+          <input type="text" name="provincia" >
+          <input type="number" name="cap">
+          <input type="text" name="via">
+          <input type="text" name="civico">
+          <input type="text" name="citta">
+          <button type="button" class="aggiungi-indirizzo" >Aggiungi Indirizzo</button>
+        </form>
+      </div>
+
+      <div >
+        <form th:action="@{/indirizzo}" method="POST" >
+          <button type="submit" >Indirizzo</button>
+        </form>
+      </div>
+
 
       <!-- Link agli indirizzi
       <div class="profilo-campo">
