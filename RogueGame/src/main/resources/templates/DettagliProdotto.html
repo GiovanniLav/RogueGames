@@ -56,7 +56,7 @@
 
     <!-- Video del prodotto -->
     <div th:if="${product.video != null}" class="descrizione">
-        <video th:src="@{/videos/{name}(name=${product.video})}" controls style="max-width: 500px;" muted></video>
+        <video th:src="@{/video/{name}(name=${product.video})}" controls style="max-width: 500px;" muted></video>
     </div>
 
     <!-- Descrizione del prodotto -->
