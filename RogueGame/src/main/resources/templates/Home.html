@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="/css/Home.css">
 </head>
 <body>
-<div th:replace="header :: header"></div>
+<header th:replace="header :: header"></header>
 
-<main>
-    <section class="hero">
+    <!--<section class="hero">
         <h2>Benvenuto su RogueGames!</h2>
         <p>Trova i tuoi videogiochi preferiti al miglior prezzo.</p>
     </section>
@@ -28,7 +27,66 @@
             </div>
         </div>
     </section>
-</main>
+-->
+
+<script src="/js/Slider.js"></script>
+
+<div class="slider-container">
+    <div class="slider" id="slider">
+        <div class="slide">
+            <img src="/images/DragonsBanner.jpg" alt="Immagine 1">
+        </div>
+        <div class="slide">
+            <img src="/images/funkoBanner.jpg" alt="Immagine 2">
+        </div>
+        <div class="slide">
+            <img src="/images/SwitchBanner.jpg" alt="Immagine 3">
+        </div>
+    </div>
+    <button class="prev buttonSlider" id="prevBtn">&#10094;</button>
+    <button class="next buttonSlider" id="nextBtn">&#10095;</button>
+</div>
+
+    <hr class="divider">
+
+<div class="platformFilter">
+    <div class="platform" data-name="Xbox">
+        <a href="/filteredCatalogo?piattaforma=Xbox">
+            <img src="/images/xboxLogo.png" alt="Xbox">
+        </a>
+    </div>
+    <div class="platform" data-name="Ps5">
+        <a href="/filteredCatalogo?piattaforma=PlayStation">
+            <img src="/images/ps5Logo.png" alt="Ps5">
+        </a>
+    </div>
+    <div class="platform" data-name="Switch">
+        <a href="/filteredCatalogo?piattaforma=NintendoSwitch">
+            <img src="/images/switchLogo.jpg" alt="Switch">
+        </a>
+    </div>
+    <div class="platform" data-name="Pc">
+        <a href="/filteredCatalogo?piattaforma=Pc">
+            <img src="/images/pcLogo.jpg" alt="Pc">
+        </a>
+    </div>
+</div>
+
+    <hr class="divider">
+
+<div class="container">
+    <div class="product-grid">
+        <!-- Itera attraverso i prodotti passati dal controller -->
+        <div class="product" th:each="prodotto : ${prodotti}">
+            <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${prodotto.nome})}" style="text-decoration: none">
+                <img th:src="@{'/images/' + ${prodotto.immagine}}" th:alt="${prodotto.nome}" />
+            </a>
+            <h2 th:text="${prodotto.nome}"></h2>
+            <p class="price" th:text="${prodotto.prezzo + '€'}"></p>
+            <!--<a class="pbutton" th:href="@{'/dettagliServlet?param=' + ${prodotto.id}}" style="text-decoration: none">Dettagli</a>-->
+        </div>
+    </div>
+</div>
 
 <div th:replace="footer :: footer"></div>
 </body>

@@ -5,48 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrazione Utente</title>
     <link rel="stylesheet" href="/css/Register.css">
+    <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/css/Footer.css">
 </head>
 <body>
-<h1>Registrati</h1>
+<header th:replace="header :: header"></header>
+<div class="globalContainer">
+    <!-- Mostra eventuali errori globali -->
+    <div th:if="${error}">
+        <p style="color: red;">"${error}"</p>
+    </div>
 
-<!-- Mostra eventuali errori globali -->
-<div th:if="${error}">
-    <p style="color: red;">"${error}"</p>
+    <!-- Form di Registrazione -->
+    <form th:action="@{/utenti/registrati}" method="post" th:object="${utente}">
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}" required/><br/>
+        <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></div><br/>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" th:field="*{password}" required/><br/>
+        <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"></div><br/>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" th:field="*{nome}" required/><br/>
+        <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" style="color: red;"></div><br/>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" th:field="*{cognome}" required/><br/>
+        <div th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}" style="color: red;"></div><br/>
+
+        <label for="eta">Età:</label>
+        <input type="number" id="eta" th:field="*{eta}" required/><br/>
+        <div th:if="${#fields.hasErrors('eta')}" th:errors="*{eta}" style="color: red;"></div><br/>
+
+        <label for="residenza">Residenza:</label>
+        <input type="text" id="residenza" th:field="*{residenza}" required/><br/>
+        <div th:if="${#fields.hasErrors('residenza')}" th:errors="*{residenza}" style="color: red;"></div><br/>
+
+        <label for="tel">Telefono:</label>
+        <input type="tel" id="tel" th:field="*{tel}" required/><br/>
+        <div th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}" style="color: red;"></div><br/>
+
+        <button type="submit">Registrati</button>
+
+    </form>
 </div>
-
-<!-- Form di Registrazione -->
-<form th:action="@{/utenti/registrati}" method="post" th:object="${utente}">
-    <label for="email">Email:</label>
-    <input type="email" id="email" th:field="*{email}" required/><br/>
-    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></div><br/>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" th:field="*{password}" required/><br/>
-    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"></div><br/>
-
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" th:field="*{nome}" required/><br/>
-    <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" style="color: red;"></div><br/>
-
-    <label for="cognome">Cognome:</label>
-    <input type="text" id="cognome" th:field="*{cognome}" required/><br/>
-    <div th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}" style="color: red;"></div><br/>
-
-    <label for="eta">Età:</label>
-    <input type="number" id="eta" th:field="*{eta}" required/><br/>
-    <div th:if="${#fields.hasErrors('eta')}" th:errors="*{eta}" style="color: red;"></div><br/>
-
-    <label for="residenza">Residenza:</label>
-    <input type="text" id="residenza" th:field="*{residenza}" required/><br/>
-    <div th:if="${#fields.hasErrors('residenza')}" th:errors="*{residenza}" style="color: red;"></div><br/>
-
-    <label for="tel">Telefono:</label>
-    <input type="tel" id="tel" th:field="*{tel}" required/><br/>
-    <div th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}" style="color: red;"></div><br/>
-
-    <button type="submit">Registrati</button>
-
-</form>
-
+<div th:replace="footer :: footer"></div>
 </body>
 </html>

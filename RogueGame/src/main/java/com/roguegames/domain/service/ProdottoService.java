@@ -45,4 +45,7 @@ public class ProdottoService {
             }
         }
     }
+
+    public List<Prodotto> get6RandomProdotto() {return prodottoRepository.findRandom();}
+    public List<Prodotto> filteredCatalogo(Prodotto.Piattaforma piattaforma) {return prodottoRepository.findByPiattaforma(piattaforma);};
 }
