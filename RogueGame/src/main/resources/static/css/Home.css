@@ -54,7 +54,7 @@ h1 {
 }
 
 .product {
-    background-color: #222;
+    background-color: #ff9900;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -185,4 +185,115 @@ img {
 
 .next {
     right: 10px;
+}
+
+/* Prototipo css slider genere*/
+
+.containerFantasy {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.containerConsole {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto auto auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Titolo del genere */
+.miniTitle {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Slider wrapper */
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenitore immagini */
+.slider-content {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.product-card {
+    flex: 0 0 calc(100% / 3); /* Mostra 3 prodotti per riga */
+    text-align: center;
+    display: none;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 115px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+.product-card-console {
+    flex: 0 0 calc(100% / 3);
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.product-card-console img {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-console h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Controlli */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slide-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slide-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }

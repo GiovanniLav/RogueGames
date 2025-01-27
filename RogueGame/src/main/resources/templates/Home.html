@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="/css/Header.css">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/Carrello.js"></script>
+    <script src="/js/Slider.js"></script>
+    <script src="/js/FantasySlider.js"></script>
 </head>
 <body>
 <header th:replace="header :: header"></header>
@@ -28,8 +32,6 @@
         </div>
     </section>
 -->
-
-<script src="/js/Slider.js"></script>
 
 <div class="slider-container">
     <div class="slider" id="slider">
@@ -73,6 +75,45 @@
 </div>
 
     <hr class="divider">
+<!-- Slider Fantasy -->
+<div class="containerFantasy">
+    <h1 class="miniTitle">Fantasy</h1>
+    <div class="slider-wrapper">
+        <div id="productContainerFantasy" class="slider-content">
+            <div class="product-card" th:each="product : ${fantasyProducts}">
+                <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
+                    <img th:src="@{'/images/' + ${product.immagine}}" th:alt="${product.nome}">
+                </a>
+                <h3 th:text="${product.nome}"></h3>
+            </div>
+        </div>
+        <div id="productControlsFantasy" class="slider-controls">
+            <button id="prev-slide-fantasy" class="slide-button">❮</button>
+            <button id="next-slide-fantasy" class="slide-button">❯</button>
+        </div>
+    </div>
+</div>
+
+<!-- Slider Console -->
+<div class="containerConsole">
+    <h1 class="miniTitle">Console</h1>
+    <div class="slider-wrapper">
+        <div id="productContainerConsole" class="slider-content">
+            <div class="product-card-console" th:each="product : ${consoleProducts}">
+                <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
+                    <img th:src="@{'/images/' + ${product.immagine}}" th:alt="${product.nome}">
+                </a>
+                <h3 th:text="${product.nome}"></h3>
+            </div>
+        </div>
+        <div id="productControlsConsole" class="slider-controls">
+            <button id="prev-slide-Console" class="slide-button">❮</button>
+            <button id="next-slide-Console" class="slide-button">❯</button>
+        </div>
+    </div>
+</div>
+
+    <hr class="divider">
 
 <div class="container">
     <div class="product-grid">
@@ -83,7 +124,15 @@
             </a>
             <h2 th:text="${prodotto.nome}"></h2>
             <p class="price" th:text="${prodotto.prezzo + '€'}"></p>
-            <!--<a class="pbutton" th:href="@{'/dettagliServlet?param=' + ${prodotto.id}}" style="text-decoration: none">Dettagli</a>-->
+            <div th:if="${utente!=null}">
+                <form th:if="${prodotto.quantita > 0}" th:action="@{/aggiungi/{nome}(nome=${prodotto.nome})}" method="POST">
+                    <input type="hidden" name="nome" th:value="${prodotto.nome}">
+                    <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${prodotto.nome}">Aggiungi al carrello</button>
+                </form>
+
+                <div id="error-message" class="error" style="display: none;"></div>
+                <h2 th:if="${prodotto.quantita == 0}">Esaurito</h2>
+            </div>
         </div>
     </div>
 </div>

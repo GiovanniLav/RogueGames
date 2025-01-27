@@ -18,4 +18,12 @@ public interface ProdottoRepository extends JpaRepository<Prodotto, Long> {
     List<Prodotto> findRandom();
 
     List<Prodotto> findByPiattaforma(Prodotto.Piattaforma piattaforma);
+
+    @Query(value = "SELECT * FROM Prodotti WHERE genere='Fantasy'", nativeQuery = true)
+    List<Prodotto> findFantasy();
+
+    @Query(value = "SELECT * FROM Prodotti WHERE genere='Console'", nativeQuery = true)
+    List<Prodotto> findConsole();
+
 }
+

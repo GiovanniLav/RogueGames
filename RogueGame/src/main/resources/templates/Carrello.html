@@ -51,7 +51,7 @@
         <div class="item-grid">
             <form th:action="@{/rimuovi/{nome}(nome=${carrello.carrello.id.nome})}" method="POST" >
                 <input type="hidden" name="nome" th:value="${carrello.carrello.id.nome}">
-                <button type="button" class="rimuovi-carrello, pul" th:attr="data-nome-prodotto=${carrello.carrello.id.nome}">Elimina</button>
+                <button type="button" class="rimuovi-carrello" th:attr="data-nome-prodotto=${carrello.carrello.id.nome}">Elimina</button>
             </form>
         </div>
 
