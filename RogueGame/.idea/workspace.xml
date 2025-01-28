@@ -9,26 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifche a utenteService">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Indirizzo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_01_2025_16_34_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_01_2025_16_34__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2025_12_26_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2025_12_26__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/OrdineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/OrdineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ShowCarrelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ShowCarrelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/confermaAcquisto.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/acquiso.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/prodotti.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/prodotti.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" />
-    </list>
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifche a utenteService" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +46,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
