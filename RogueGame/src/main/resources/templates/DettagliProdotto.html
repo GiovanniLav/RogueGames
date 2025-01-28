@@ -45,7 +45,9 @@
             <div>
                 <form th:if="${product.quantita > 0}" th:action="@{/aggiungi/{nome}(nome=${product.nome})}" method="POST">
                     <input type="hidden" name="nome" th:value="${product.nome}">
-                    <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${product.nome}">Aggiungi al carrello</button>
+                    <div class="btnAggiungi">
+                        <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${product.nome}">Aggiungi al carrello</button>
+                    </div>
                 </form>
 
                 <div id="error-message" class="error" style="display: none;"></div>
@@ -56,7 +58,7 @@
 
     <!-- Video del prodotto -->
     <div th:if="${product.video != null}" class="descrizione">
-        <video th:src="@{/videos/{name}(name=${product.video})}" controls style="max-width: 500px;" muted></video>
+        <video th:src="@{/video/{name}(name=${product.video})}" controls style="max-width: 500px;" muted></video>
     </div>
 
     <!-- Descrizione del prodotto -->

@@ -1,6 +1,8 @@
 package com.roguegames.web.controller;
 
+import com.roguegames.domain.entity.Prodotto;
 import com.roguegames.domain.entity.Utente;
+import com.roguegames.domain.service.ProdottoService;
 import com.roguegames.domain.service.UtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 @Controller
@@ -16,6 +19,9 @@ public class LoginController {
 
     @Autowired
     private UtenteService utenteService;
+
+    @Autowired
+    private ProdottoService prodottoService;
 
     // Mostra la pagina di login
     @GetMapping("/login")
@@ -55,15 +61,26 @@ public class LoginController {
         if (utente == null) {
             return "redirect:/utenti/login";  // Reindirizza al login se l'utente non è loggato
         }
+        List<Prodotto> prodotti = prodottoService.get6RandomProdotto();
+        List<Prodotto> fantasyProducts= prodottoService.getFantasy();
+        List<Prodotto> consoleProducts= prodottoService.getConsole();
+        model.addAttribute("fantasyProducts", fantasyProducts);
+        model.addAttribute("consoleProducts", consoleProducts);
+        model.addAttribute("prodotti", prodotti);
         model.addAttribute("utente", utente);
         return "Home";  // Mostra la pagina di dashboard
     }
 
     // Logout
-    @GetMapping("/logout")
+    @GetMapping("/InvalidateSessionL")
     public String logout(HttpSession session) {
         session.invalidate();  // Invalida la sessione
-        return "redirect:/utenti/Login";  // Reindirizza al login
+        return "redirect:/utenti/login";  // Reindirizza al login
     }
 
+    @GetMapping("/InvalidateSessionH")
+    public String logout1(HttpSession session) {
+        session.invalidate();  // Invalida la sessione
+        return "Home";  // Reindirizza alla home
+    }
 }

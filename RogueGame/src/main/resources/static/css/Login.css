@@ -1,25 +1,18 @@
 /* Impostazioni di base */
-body {
+
+.globalContainer {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    background-color: white;
     height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
-    overflow: hidden;
+    color: #ff9900;
 }
 
-.container {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 25px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
+.login-container {
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
 }
 h2 {
     font-family: 'Open Sans', sans-serif;
@@ -42,13 +35,16 @@ label {
 }
 
 input {
-    padding: 0px;  /* Ridotto padding */
-    margin: 0px 0;  /* Ridotto margine tra gli input */
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
+    margin-bottom: 20px;
+    height: 35px;
+    background: transparent;
+    border: 2px solid #ff9900;
     outline: none;
-    transition: all 0.3s ease;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #ff9900;
+    padding: 0 20px;
+    transition: .5s ease;
 }
 
 input:focus {
@@ -57,8 +53,9 @@ input:focus {
 }
 
 button {
+    margin: 0 0 10px 0;
     padding: 10px;
-    background-color: #ff7e5f;
+    background-color: #ff9900;
     color: white;
     border: none;
     border-radius: 5px;
@@ -99,5 +96,36 @@ button:hover {
 
     input, button {
         font-size: 1em;
+    }
+}
+
+.contenitore {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenitore span {
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height: 6px;
+    background: #ff9900;
+    border-radius: 8px;
+    transform-origin: 128px;
+    transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
+    animation: animatedBlink 3s linear infinite;
+    animation-delay: calc(var(--i) * (3s / 50));
+}
+
+@keyframes animatedBlink {
+    0% {
+        background: yellow;
+    }
+    25% {
+        background: #ff9900;
     }
 }

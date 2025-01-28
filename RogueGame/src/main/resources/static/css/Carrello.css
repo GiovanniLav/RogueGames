@@ -73,6 +73,16 @@ h2#prodTit {
 
 /* Media Queries per Tablet e Dispositivi piu Piccoli */
 
+.botPul {
+    margin: 20px 0 20px 0;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    gap: 10px;
+    height: 100px;
+    align-items: center;
+}
+
 @media (max-width: 1024px) {
     .contenitore-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -176,4 +186,8 @@ h2#prodTit {
     }
 }
 
-				
+.pul {
+    border-radius: 5px;
+    background-color: #222;
+    color: #ff9900;
+}
