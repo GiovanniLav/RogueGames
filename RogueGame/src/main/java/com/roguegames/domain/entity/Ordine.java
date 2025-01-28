@@ -1,15 +1,20 @@
 package com.roguegames.domain.entity;
 
+import org.hibernate.annotations.GenerationTime;
+
+import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.time.LocalDate;
 import java.util.Date;
+import java.lang.String;
 
 @Entity
 @Table(name = "ordine")
 public class Ordine {
 
     @EmbeddedId
-    private OrdineId id;
+    private OrdineId id;  // Composite key
 
     @Column(name = "Prezzo", nullable = false)
     @NotNull(message = "Il prezzo è obbligatorio")
@@ -29,10 +34,6 @@ public class Ordine {
     @Column(name = "Stato", nullable = false)
     private Boolean stato;
 
-    @Column(name = "Data", nullable = false)
-    @Temporal(TemporalType.DATE)
-    @NotNull(message = "La data è obbligatoria")
-    private Date data;
 
     @ManyToOne
     @MapsId("email")
@@ -42,13 +43,12 @@ public class Ordine {
     // Costruttori
     public Ordine() {}
 
-    public Ordine(OrdineId id, Double prezzo, Double prezzoTot, Integer quantita, Boolean stato, Date data, Utente utente) {
+    public Ordine(OrdineId id, Double prezzo, Double prezzoTot, Integer quantita, Boolean stato, Utente utente) {
         this.id = id;
         this.prezzo = prezzo;
         this.prezzoTot = prezzoTot;
         this.quantita = quantita;
         this.stato = stato;
-        this.data = data;
         this.utente = utente;
     }
 
@@ -93,14 +93,6 @@ public class Ordine {
         this.stato = stato;
     }
 
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
-    }
-
     public Utente getUtente() {
         return utente;
     }
@@ -108,6 +100,7 @@ public class Ordine {
     public void setUtente(Utente utente) {
         this.utente = utente;
     }
+
 
     // Equals e HashCode
     @Override

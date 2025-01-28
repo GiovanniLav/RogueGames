@@ -1,0 +1,208 @@
+/* Impostazioni generali per il layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.pul {
+    border-radius: 5px;
+    background-color: #222;
+    color: #ff9900;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+/* Stile per la lista dei prodotti */
+.prodotti-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* Ogni card di prodotto */
+.prodotto-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.prodotto-card:hover {
+    transform: scale(1.05);
+}
+
+.prodotto-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.prodotto-card h3 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.prodotto-card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.prodotto-card .prezzo {
+    font-size: 1.2rem;
+    color: #28a745;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Pulsanti per modifica ed eliminazione */
+.prodotto-card .actions {
+    margin-top: 15px;
+}
+
+.prodotto-card .btn {
+    padding: 8px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.prodotto-card .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Stile per il pulsante di aggiunta prodotto */
+.add-product-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+}
+
+.add-product-btn:hover {
+    background-color: #218838;
+}
+
+/* Modal (Popup) per aggiungere prodotto */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.modal-body input, .modal-body select, .modal-body textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-footer .btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.modal-footer .btn:hover {
+    background-color: #218838;
+}
+
+/* Stile per il pulsante di chiusura della modal */
+.close {
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+table {
+    margin: 0 auto 20px auto;
+    border-collapse: collapse;
+    border: 3px solid white;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid white;  
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: darkgray;
+}
+
+td {
+background-color: lightgray;
+}
+
+h1 {
+    color: #ff9900;
+    text-align: center;
+}

@@ -20,40 +20,51 @@
 
 <p class="cat">Carrello</p>
 
-<div th:if="${carrello == null || carrello.isEmpty()}">
+<div th:if="${carrelloItem == null || carrelloItem.isEmpty()}">
     <h2>No products available</h2>
 </div>
 
-<div class="contenitore-grid" th:each="prodotto, prodottoStat : ${carrello}">
-    <div th:with="pip = ${prodImgPrz[prodottoStat.index]}">
+
+
+<div class="contenitore-grid" th:each="carrello : ${carrelloItem}">
+
 
         <div class="item-grid">
-            <h4 th:text="${prodotto.id.nome}"></h4>
+            <h4 th:text="${carrello.carrello.id.nome}"></h4>
         </div>
 
         <div class="item-grid">
-            <img class="img" th:src="@{/images/{name}(name=${pip.immagine})}"
-                 th:alt="${prodotto.id.nome}">
+            <img class="img" th:src="@{/images/{name}(name=${carrello.immagine})}"
+                 th:alt="${carrello.carrello.id.nome}">
         </div>
 
         <div class="item-grid">
-            <h4 th:text="${#numbers.formatDecimal(pip.getPrezzo() * prodotto.quantita, 0, 2)} + '€'"></h4>
+            <h4 th:text="${#numbers.formatDecimal(carrello.prezzo * carrello.carrello.quantita, 0, 2)} + '€'"></h4>
         </div>
 
         <div class="item-grid">
-            <input  type="number" id="quantita" th:value="${prodotto.quantita}" min="1" />
-            <input  type="hidden" id="nome" name="nome" th:value="${prodotto.id.nome}">
+            <input  type="number" id="quantita" th:value="${carrello.carrello.quantita}" min="1" />
+            <input  type="hidden" id="nome" name="nome" th:value="${carrello.carrello.id.nome}">
             <button type="button" class="aumentaQuantita">+</button>
         </div>
 
         <div class="item-grid">
-            <form th:action="@{/rimuovi/{nome}(nome=${prodotto.id.nome})}" method="POST" >
-                <input type="hidden" name="nome" th:value="${prodotto.id.nome}">
-                <button type="button" class="rimuovi-carrello" th:attr="data-nome-prodotto=${prodotto.id.nome}">Elimina</button>
+            <form th:action="@{/rimuovi/{nome}(nome=${carrello.carrello.id.nome})}" method="POST" >
+                <input type="hidden" name="nome" th:value="${carrello.carrello.id.nome}">
+                <button type="button" class="rimuovi-carrello" th:attr="data-nome-prodotto=${carrello.carrello.id.nome}">Elimina</button>
             </form>
         </div>
-    </div>
+
 </div>
+       <div class="botPul">
+            <form th:action="@{/riepilogoAcquisto}" method="POST">
+                <input type="submit" class="pul" value="Acquista" id="btnAcquista" />
+            </form>
+
+            <form th:action="@{/rimuoviCarrello}" method="POST">
+                <input type="submit" class="pul" value="CancellaTutto"  />
+            </form>
+       </div>
 
 <div th:replace="footer :: footer"></div>
 </body>

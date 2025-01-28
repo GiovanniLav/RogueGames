@@ -46,5 +46,4 @@ public class UtenteController {
     public String registrationComplete() {
         return "Login"; // Questa pagina conferma la registrazione
     }
-
 }

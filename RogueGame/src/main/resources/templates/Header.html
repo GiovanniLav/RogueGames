@@ -9,10 +9,12 @@
 <body>
 <header>
   <div class="logo" th:if="${utente != null}">
-    <a href="/utenti/home"><h1>RogueGames</h1></a>
+    <a href="/utenti/home" style="text-decoration: none"><img src="/images/RogueGameLogo.png" alt="Logo"></a>
+    <h1>RogueGames</h1>
   </div>
   <div class="logo" th:if="${utente == null}">
-    <a href="/"><h1>RogueGames</h1></a>
+    <a href="/" style="text-decoration: none"><img src="/images/RogueGameLogo.png" alt="Logo"></a>
+    <h1>RogueGames</h1>
   </div>
   <nav>
     <ul>
@@ -33,6 +35,13 @@
         <a href="/utenti/profilo">Profilo</a>
       </li>
       <li th:if="${utente != null}">
+        <a href="/Storico_Ordine">Storico Ordini</a>
+      </li>
+      <!-- Controllo se l'utente è un gestore -->
+      <li th:if="${session.isGestore}">
+        <a href="/utenti/prodotti">Gestore</a>
+      </li>
+      <li th:if="${utente != null}">
         <a th:href="@{/logout}">Logout</a>
       </li>
     </ul>
@@ -40,4 +49,3 @@
 </header>
 </body>
 </html>
-

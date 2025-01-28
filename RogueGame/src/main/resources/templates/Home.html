@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="/css/Header.css">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/Carrello.js"></script>
+    <script src="/js/Slider.js"></script>
+    <script src="/js/FantasySlider.js"></script>
 </head>
 <body>
-<div th:replace="header :: header"></div>
+<header th:replace="header :: header"></header>
 
-<main>
-    <section class="hero">
+    <!--<section class="hero">
         <h2>Benvenuto su RogueGames!</h2>
         <p>Trova i tuoi videogiochi preferiti al miglior prezzo.</p>
     </section>
@@ -28,7 +31,111 @@
             </div>
         </div>
     </section>
-</main>
+-->
+
+<div class="slider-container">
+    <div class="slider" id="slider">
+        <div class="slide">
+            <img src="/images/DragonsBanner.jpg" alt="Immagine 1">
+        </div>
+        <div class="slide">
+            <img src="/images/funkoBanner.jpg" alt="Immagine 2">
+        </div>
+        <div class="slide">
+            <img src="/images/SwitchBanner.jpg" alt="Immagine 3">
+        </div>
+    </div>
+    <button class="prev buttonSlider" id="prevBtn">&#10094;</button>
+    <button class="next buttonSlider" id="nextBtn">&#10095;</button>
+</div>
+
+    <hr class="divider">
+
+<div class="platformFilter">
+    <div class="platform" data-name="Xbox">
+        <a href="/filteredCatalogo?piattaforma=Xbox">
+            <img src="/images/xboxLogo.png" alt="Xbox">
+        </a>
+    </div>
+    <div class="platform" data-name="Ps5">
+        <a href="/filteredCatalogo?piattaforma=PlayStation">
+            <img src="/images/ps5Logo.png" alt="Ps5">
+        </a>
+    </div>
+    <div class="platform" data-name="Switch">
+        <a href="/filteredCatalogo?piattaforma=NintendoSwitch">
+            <img src="/images/switchLogo.jpg" alt="Switch">
+        </a>
+    </div>
+    <div class="platform" data-name="Pc">
+        <a href="/filteredCatalogo?piattaforma=Pc">
+            <img src="/images/pcLogo.jpg" alt="Pc">
+        </a>
+    </div>
+</div>
+
+    <hr class="divider">
+<!-- Slider Fantasy -->
+<div class="containerFantasy">
+    <h1 class="miniTitle">Fantasy</h1>
+    <div class="slider-wrapper">
+        <div id="productContainerFantasy" class="slider-content">
+            <div class="product-card" th:each="product : ${fantasyProducts}">
+                <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
+                    <img th:src="@{'/images/' + ${product.immagine}}" th:alt="${product.nome}">
+                </a>
+                <h3 th:text="${product.nome}"></h3>
+            </div>
+        </div>
+        <div id="productControlsFantasy" class="slider-controls">
+            <button id="prev-slide-fantasy" class="slide-button">❮</button>
+            <button id="next-slide-fantasy" class="slide-button">❯</button>
+        </div>
+    </div>
+</div>
+
+<!-- Slider Console -->
+<div class="containerConsole">
+    <h1 class="miniTitle">Console</h1>
+    <div class="slider-wrapper">
+        <div id="productContainerConsole" class="slider-content">
+            <div class="product-card-console" th:each="product : ${consoleProducts}">
+                <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
+                    <img th:src="@{'/images/' + ${product.immagine}}" th:alt="${product.nome}">
+                </a>
+                <h3 th:text="${product.nome}"></h3>
+            </div>
+        </div>
+        <div id="productControlsConsole" class="slider-controls">
+            <button id="prev-slide-Console" class="slide-button">❮</button>
+            <button id="next-slide-Console" class="slide-button">❯</button>
+        </div>
+    </div>
+</div>
+
+    <hr class="divider">
+
+<div class="container">
+    <div class="product-grid">
+        <!-- Itera attraverso i prodotti passati dal controller -->
+        <div class="product" th:each="prodotto : ${prodotti}">
+            <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${prodotto.nome})}" style="text-decoration: none">
+                <img th:src="@{'/images/' + ${prodotto.immagine}}" th:alt="${prodotto.nome}" />
+            </a>
+            <h2 th:text="${prodotto.nome}"></h2>
+            <p class="price" th:text="${prodotto.prezzo + '€'}"></p>
+            <div th:if="${utente!=null}">
+                <form th:if="${prodotto.quantita > 0}" th:action="@{/aggiungi/{nome}(nome=${prodotto.nome})}" method="POST">
+                    <input type="hidden" name="nome" th:value="${prodotto.nome}">
+                    <button type="button" class="aggiungi-carrello" th:attr="data-nome-prodotto=${prodotto.nome}">Aggiungi al carrello</button>
+                </form>
+
+                <div id="error-message" class="error" style="display: none;"></div>
+                <h2 th:if="${prodotto.quantita == 0}">Esaurito</h2>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div th:replace="footer :: footer"></div>
 </body>

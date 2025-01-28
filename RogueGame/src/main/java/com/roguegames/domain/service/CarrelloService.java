@@ -7,11 +7,13 @@ import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.repository.CarrelloRepository;
 
 import com.roguegames.domain.repository.PCarrelloRepository;
+import com.roguegames.web.controller.Item.CarrelloItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +31,14 @@ public class CarrelloService {
     public Optional<PCarrello> trovaElementoCarrello(String emailCliente, String nomeProdotto) {
         PCarrelloId id = new PCarrelloId(nomeProdotto, emailCliente);
         return pCarrelloRepository.findById(id);
+    }
+
+    public List<PCarrello> getPCarrello(List<CarrelloItem> carrello) {
+        List <PCarrello> carrelloLista = new ArrayList<>();
+        for (CarrelloItem carrelloItem : carrello) {
+            carrelloLista.add(carrelloItem.getCarrello());
+        }
+        return carrelloLista;
     }
 
     public static class QuantitaNonDisponibileException extends RuntimeException {
@@ -60,7 +70,13 @@ public class CarrelloService {
         }
     }
 
-
+    public void rimuoviInteroCarrello (List <PCarrello> carrello, Utente utente){
+        if (!carrello.isEmpty() && carrello != null) {
+            for (PCarrello cart : carrello) {
+                carrelloRepository.delete(cart);
+            }
+        }
+    }
 
     private static boolean isInteger(String str) {
         if (str == null || str.isEmpty()) {
