@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifche a utenteService" />
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifica di ordine" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -356,7 +356,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737314229272</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="modifica di ordine">
+      <option name="closed" value="true" />
+      <created>1738058545196</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1738058545196</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +390,8 @@
     <MESSAGE value="Pagina profilo funzionante" />
     <MESSAGE value="Completamente del carrello con l'aggiunta della modifica della quantità" />
     <MESSAGE value="aggiunta di carrelloItem" />
-    <option name="LAST_COMMIT_MESSAGE" value="aggiunta di carrelloItem" />
+    <MESSAGE value="modifica di ordine" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifica di ordine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
