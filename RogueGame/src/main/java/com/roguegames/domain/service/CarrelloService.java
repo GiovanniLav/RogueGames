@@ -53,7 +53,7 @@ public class CarrelloService {
         if (prodottoCarrello.isPresent()) {
                 PCarrello carrello = prodottoCarrello.get();
                 int newQnt= carrello.getQuantita()+1;
-                if(newQnt < prodotto.getQuantita()) {
+                if(newQnt <= prodotto.getQuantita()) {
                     carrello.setQuantita(newQnt);
                     carrelloRepository.save(carrello);
                 }else{throw new QuantitaNonDisponibileException("La quantità non è disponibile. La quantità massima di " + prodotto.getNome() + " è di " + prodotto.getQuantita());}

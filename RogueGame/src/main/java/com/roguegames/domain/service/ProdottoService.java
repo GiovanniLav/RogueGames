@@ -34,20 +34,16 @@ public class ProdottoService {
 
     public Prodotto findProdotto(String nome){return prodottoRepository.findByNome(nome);}
 
-    public void updateProdotto(List<Prodotto> prodotto) {
-        for (Prodotto p : prodotto) {
-            Prodotto prodotto1 = prodottoRepository.findByNome(p.getNome());
-            if (prodotto1 != null) {
-                int qnt=prodotto1.getQuantita();
-                int qnr2= p.getQuantita();
-                prodotto1.setQuantita(qnt-qnr2);
-                prodottoRepository.save(prodotto1);
+    public void updateProdottoQnt(Prodotto prodotto, int qnt) {
+                int qnt2= prodotto.getQuantita();
+                prodotto.setQuantita(qnt2-qnt);
+                prodottoRepository.save(prodotto);
             }
-        }
-    }
-
     public List<Prodotto> get6RandomProdotto() {return prodottoRepository.findRandom();}
     public List<Prodotto> filteredCatalogo(Prodotto.Piattaforma piattaforma) {return prodottoRepository.findByPiattaforma(piattaforma);};
     public List<Prodotto> getFantasy() {return prodottoRepository.findFantasy();};
     public List<Prodotto> getConsole() {return prodottoRepository.findConsole();};
 }
+
+
+

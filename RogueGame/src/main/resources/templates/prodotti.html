@@ -9,7 +9,6 @@
     <title>Gestione Prodotti</title>
 </head>
 <body>
-
     <header th:replace="header :: header"></header>
 <main>
     <!-- Lista dei prodotti -->
@@ -33,8 +32,8 @@
             <td th:text="${prodotto.nome}"></td>
             <td th:text="${prodotto.prezzo}"></td>
             <td>
-                <button th:attr="data-nome=${prodotto.nome}" class="pul" onclick="openEditModal(this.getAttribute('data-nome'))">Modifica</button>
-                <button th:attr="data-nome=${prodotto.nome}" class="pul">Elimina</button>
+                <button th:attr="data-nome=${prodotto.nome}" class="edit-btn" onclick="openEditModal(this.getAttribute('data-nome'))">Modifica</button>
+                <button th:attr="data-nome=${prodotto.nome}" class="delete-btn">Elimina</button>
             </td>
         </tr>
         </tbody>

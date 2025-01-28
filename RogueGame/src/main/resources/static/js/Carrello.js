@@ -42,7 +42,7 @@ $(document).ready(function() {
             type: "POST",
             data: { nome: nomeProdotto }, // Invia il nome del prodotto nel corpo della richiesta
             success: function(response) {
-                provaAlert("Prodotto aggiunto al carrello!");
+                provaAlert(nomeProdotto + " è aggiunto al carrello!");
             },
             error: function(xhr, status, error) {
                 if (xhr.status === 401) {

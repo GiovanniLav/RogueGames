@@ -1,6 +1,10 @@
 package com.roguegames.domain.service;
 
+import com.roguegames.domain.entity.IndirizzoSpedizione;
+import com.roguegames.domain.entity.IndirizzoSpedizioneId;
 import com.roguegames.domain.entity.Utente;
+import com.roguegames.domain.repository.IndirizzoSpedizioneIdRepository;
+import com.roguegames.domain.repository.IndirizzoSpedizioneRepository;
 import com.roguegames.domain.repository.UtenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +12,7 @@ import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.security.MessageDigest;
+import java.util.List;
 import java.util.Optional;
 import java.security.NoSuchAlgorithmException;
 
@@ -17,6 +22,12 @@ public class UtenteService {
 
     @Autowired
     private UtenteRepository utenteRepository;
+
+    @Autowired
+    private IndirizzoSpedizioneRepository indirizzoSpedizioneRepository;
+
+    @Autowired
+    private IndirizzoSpedizioneIdRepository indirizzoSpedizioneIdRepository;
 
     // Metodo per registrare un nuovo utente
     public Utente registrati(@Valid Utente utente) {
@@ -85,5 +96,49 @@ public class UtenteService {
         return hexString.toString();
     }
 
+    public static class IndirizzoNonDisponibile extends RuntimeException {
+        public IndirizzoNonDisponibile(String message) {
+            super(message);
+        }
+    }
+
+    public IndirizzoSpedizione aggiungiIndirizzoSpd(String provincia, Integer cap, String via, String civico, String citta, Utente utente){
+        IndirizzoSpedizioneId id = new IndirizzoSpedizioneId(provincia, cap, via, civico, citta, utente.getEmail());
+        Optional<IndirizzoSpedizione> i = getIndirizzoSpedizioneById(id);
+        System.out.println("Indirizzo spedizione aggiunto");
+        if(i.isPresent()){
+            System.out.println("Indirizzo spedizione aggiunto");
+            throw new UtenteService.IndirizzoNonDisponibile("L'indirizzo inserito è già stato salvato");
+        }
+        System.out.println("Sotr");
+        IndirizzoSpedizione is = new IndirizzoSpedizione(id ,utente);
+        return indirizzoSpedizioneRepository.save(is);
+    }
+
+    public IndirizzoSpedizione modificaIndirizzoSpd(String provincia, Integer cap, String via, String civico, String citta, Utente utente, IndirizzoSpedizione is){
+        IndirizzoSpedizioneId id = new IndirizzoSpedizioneId(provincia, cap, via, civico, citta, utente.getEmail());
+        Optional<IndirizzoSpedizione> i = getIndirizzoSpedizioneById(id);
+        System.out.println("Indirizzo spedizione aggiunto");
+        if(i.isPresent()){
+            System.out.println("Indirizzo è presente aggiunto");
+            throw new UtenteService.IndirizzoNonDisponibile("L'indirizzo inserito è già stato salvato");
+        }
+        System.out.println("Sotr");
+        IndirizzoSpedizione is1 = new IndirizzoSpedizione(id ,utente);
+        indirizzoSpedizioneRepository.delete(is);
+        return indirizzoSpedizioneRepository.save(is1);
+    }
+
+    public List<IndirizzoSpedizione> getIndirizzoSpedizioni(Utente utente) {
+        return indirizzoSpedizioneRepository.findByUtenteEmail(utente.getEmail());
+    }
+
+    public Optional<IndirizzoSpedizione> getIndirizzoSpedizioneById(IndirizzoSpedizioneId id) {
+        return indirizzoSpedizioneRepository.findById(id);
+    }
+
+    public void cancellaIndirizzoSpedizione(Utente utente, IndirizzoSpedizione indirizzoSpedizione) {
+        indirizzoSpedizioneRepository.delete(indirizzoSpedizione);
+    }
 
 }

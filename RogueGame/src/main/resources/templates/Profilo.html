@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="/css/Header.css">
   <link rel="stylesheet" href="/css/Footer.css">
   <link rel="stylesheet" href="/css/Profilo.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/IndirizzoSpedizione.js"></script>
 </head>
 <body>
 
@@ -60,11 +62,11 @@
         <a href="/carte" class="btn-modifica carte">Carta di credito</a>
       </div>
 
-      <!-- Link agli indirizzi
-      <div class="profilo-campo">
-        <a href="/Indirizzi" class="btn-modifica indirizzi">Gestione Indirizzi</a>
+      <div >
+        <form th:action="@{/indirizzo}" method="get" >
+          <button class="btn-modifica indirizzi" type="submit" >Gestione Indirizzi</button>
+        </form>
       </div>
-      -->
     </div>
   </section>
 </main>

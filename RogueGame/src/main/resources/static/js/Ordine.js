@@ -33,3 +33,29 @@ $(document).ready(function() {
         })
     })
 })
+
+function openForm(formId) {
+    const formElement = document.getElementById(formId);
+    if (formElement) {
+        formElement.style.display = "block";
+    } else {
+        console.error("Form element with ID", formId, "not found");
+    }
+}
+
+function closeForm(formId) {
+    const formElement = document.getElementById(formId);
+    if (formElement) {
+        formElement.style.display = "none";
+    } else {
+        console.error("Form element with ID", formId, "not found");
+    }
+}
+
+$(document).ready(function() {
+    $('#indirizzo, #cartacredito').change(function() {
+        const indirizzoValue = $('#indirizzo').val();
+        const cartaCreditoValue = $('#cartacredito').val();
+        $('.processa-ordine').prop('disabled', indirizzoValue === '' || cartaCreditoValue === '');
+    });
+});
