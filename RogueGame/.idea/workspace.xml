@@ -9,11 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="creazione ordine">
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifche a utenteService">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Indirizzo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_01_2025_16_34_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_01_2025_16_34__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2025_12_26_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2025_12_26__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Carrello.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Carrello.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/OrdineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/OrdineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ShowCarrelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ShowCarrelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/confermaAcquisto.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/acquiso.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/prodotti.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/prodotti.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +37,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -100,6 +114,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.ModificaIndirizzo.html.executor&quot;: &quot;Run&quot;,
     &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
@@ -110,7 +125,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.RogueGameApplication.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 9.0.98.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Marco&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/ROBA/RogueGames/RogueGame/src/main/resources/static/css/images&quot;,
@@ -144,6 +159,9 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.RogueGameApplication">
+    <configuration name="ModificaIndirizzo.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/RogueGame/templates/ModificaIndirizzo.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="RogueGameApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="RogueGame" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.roguegames.RogueGameApplication" />
@@ -238,6 +256,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.ModificaIndirizzo.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -280,6 +303,12 @@
       <workItem from="1737622649723" duration="11296000" />
       <workItem from="1737645271008" duration="8547000" />
       <workItem from="1737707927557" duration="6958000" />
+      <workItem from="1737796887634" duration="6715000" />
+      <workItem from="1737806600798" duration="383000" />
+      <workItem from="1737824300719" duration="2762000" />
+      <workItem from="1737883414889" duration="23105000" />
+      <workItem from="1737967637588" duration="12245000" />
+      <workItem from="1737990861215" duration="8724000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />

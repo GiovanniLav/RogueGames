@@ -62,29 +62,11 @@
         <a href="/carte" class="btn-modifica carte">Carta di credito</a>
       </div>
 
-      <div class="item-grid">
-        <form th:action="@{/AggiungiIndirizzoSpedizione}" method="POST" >
-          <input type="text" name="provincia" >
-          <input type="number" name="cap">
-          <input type="text" name="via">
-          <input type="text" name="civico">
-          <input type="text" name="citta">
-          <button type="button" class="aggiungi-indirizzo" >Aggiungi Indirizzo</button>
-        </form>
-      </div>
-
       <div >
-        <form th:action="@{/indirizzo}" method="POST" >
-          <button type="submit" >Indirizzo</button>
+        <form th:action="@{/indirizzo}" method="get" >
+          <button class="btn-modifica indirizzi" type="submit" >Gestione Indirizzi</button>
         </form>
       </div>
-
-
-      <!-- Link agli indirizzi
-      <div class="profilo-campo">
-        <a href="/Indirizzi" class="btn-modifica indirizzi">Gestione Indirizzi</a>
-      </div>
-      -->
     </div>
   </section>
 </main>

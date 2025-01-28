@@ -49,8 +49,15 @@ public class OrdineController {
             ordineService.processaOrdine(utente, carrello, totale);
         }
 
-        List<Prodotto> prodotto = prodottoService.findProdotto(carrello);
-        prodottoService.updateProdotto(prodotto);
+       for (CarrelloItem carrelloItem : carrello) {
+           Prodotto prodotto = prodottoService.findProdotto(carrelloItem.getCarrello().getProdotto().getNome());
+           if (prodotto != null) {
+               int qnt=carrelloItem.getCarrello().getQuantita();
+               prodottoService.updateProdottoQnt(prodotto, qnt);
+           }
+       }
+
+
         List< PCarrello> cart = carrelloService.getPCarrello(carrello);
 
         carrelloService.rimuoviInteroCarrello(cart,utente);
