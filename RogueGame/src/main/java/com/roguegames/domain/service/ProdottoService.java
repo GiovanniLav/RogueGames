@@ -39,10 +39,11 @@ public class ProdottoService {
                 prodotto.setQuantita(qnt2-qnt);
                 prodottoRepository.save(prodotto);
             }
-    }
-
     public List<Prodotto> get6RandomProdotto() {return prodottoRepository.findRandom();}
     public List<Prodotto> filteredCatalogo(Prodotto.Piattaforma piattaforma) {return prodottoRepository.findByPiattaforma(piattaforma);};
     public List<Prodotto> getFantasy() {return prodottoRepository.findFantasy();};
     public List<Prodotto> getConsole() {return prodottoRepository.findConsole();};
 }
+
+
+

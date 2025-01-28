@@ -239,7 +239,7 @@
 
 <button class="open-button" onclick="openForm('myFormCarta')">Aggiungi Carta</button>
 <div class="form-popup" id="myFormCarta">
-    <form class="form-container">
+    <form class="form-container" th:action="@{/carte/salva}" method="post">
         <h6>Aggiungi Carta</h6>
 
         <label id="aggcif" for="aggcif">Numero Carta:</label>
@@ -247,6 +247,9 @@
 
         <label id="aggscad" for="aggscad">Scadenza:</label>
         <input type="text" placeholder="MM/AA" name="scadenza" required>
+
+        <label id="aggcvv" for="aggcvv">Scadenza:</label>
+        <input type="text" placeholder="123" name="cvv" required>
 
         <button type="submit" class="btn">Aggiungi</button>
         <button type="button" class="btn cancel" onclick="closeForm('myFormCarta')">Chiudi</button>
