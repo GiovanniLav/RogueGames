@@ -6,109 +6,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/css/RiepilogoAcquisto.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/Ordine.js"></script>
-    <script src="/js/IndirizzoSpedizione.js"></script>
-
-    <style>
-        /* Popup container - can be anything you want */
-        /* Popup container - can be anything you want myFormIndirizzo*/
-        .form-popup {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            right: 15px;
-            border: 3px solid #f1f1f1;
-            z-index: 9;
-            width: 250px;
-        }
-
-        .form-popup-indi {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 15px;
-            border: 3px solid #f1f1f1;
-            z-index: 9;
-            width: 250px;
-        }
-
-        /* Add styles to the form container */
-        .form-container {
-            max-width: 100%;
-            padding: 10px;
-            background-color: white;
-        }
-
-        /* Full-width input fields */
-        .form-container input[type="text"],
-        .form-container input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            background: #f1f1f1;
-        }
-
-        /* When the inputs get focus, do something */
-        .form-container input[type="text"]:focus,
-        .form-container input[type="number"]:focus {
-            background-color: #ddd;
-            outline: none;
-        }
-
-        /* Set a style for the submit/login button */
-        .form-container .btn {
-            background-color: #04AA6D;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-
-        /* Add a red background color to the cancel button */
-        .form-container .cancel {
-            background-color: red;
-        }
-
-        /* Add some hover effects to buttons */
-        .form-container .btn:hover,
-        .open-button:hover {
-            opacity: 1;
-        }
-
-        /* Button style */
-        .open-button {
-            background-color: #555;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            cursor: pointer;
-            opacity: 0.8;
-            position: fixed;
-            bottom: 20px;
-            right: 28px;
-            width: 120px;
-        }
-
-        .open-button-indi {
-            background-color: #555;
-            color: white;
-            padding: 8px 16px;
-            border: none;
-            cursor: pointer;
-            opacity: 0.8;
-            position: fixed;
-            bottom: 20px;
-            left: 28px;
-            width: 120px;
-        }
-    </style>
-
 
 </head>
 <body>
@@ -157,38 +58,8 @@
         <h3>Totale: <span th:text="${#numbers.formatDecimal(totale,2,2)} + '€'"></span></h3>
     </div>
 
-    <script>
-        function openForm(formId) {
-            const formElement = document.getElementById(formId);
-            if (formElement) {
-                formElement.style.display = "block";
-            } else {
-                console.error("Form element with ID", formId, "not found");
-            }
-        }
-
-        function closeForm(formId) {
-            const formElement = document.getElementById(formId);
-            if (formElement) {
-                formElement.style.display = "none";
-            } else {
-                console.error("Form element with ID", formId, "not found");
-            }
-        }
-
-            $(document).ready(function() {
-            $('#indirizzo, #cartacredito').change(function() {
-                const indirizzoValue = $('#indirizzo').val();
-                const cartaCreditoValue = $('#cartacredito').val();
-                $('.processa-ordine').prop('disabled', indirizzoValue === '' || cartaCreditoValue === '');
-            });
-        });
-
-    </script>
-
     <form id = "processaOrdine" th:action="@{/aggiungiOrdine}" method="post">
-        <label for="indirizzo">Indirizzo di consegna: </label>
-        <div class="form-group">
+        <!--<div class="form-group">
             <select class="form-control" id="indirizzo" name="indirizzo" required>
                 <option value="">Seleziona indirizzo</option>
                 <th:block th:each="indirizzo : ${indirizzi}">
@@ -196,14 +67,34 @@
                     </option>
                 </th:block>
             </select>
-        </div>
+        </div>-->
         <div class="form-group">
+            <label for="indirizzo">Indirizzo di Spedizione:</label>
+            <select class="form-control" id="indirizzo" name="indirizzo" required>
+                <option value="">Seleziona indirizzo</option>
+                <th:block th:each="indirizzo : ${indirizzi}">
+                    <option th:value="|${indirizzo.id.provincia}-${indirizzo.id.cap}-${indirizzo.id.via}-${indirizzo.id.civico}-${indirizzo.id.citta}|"
+                            th:text="|${indirizzo.id.provincia} ${indirizzo.id.cap} ${indirizzo.id.via} ${indirizzo.id.civico} ${indirizzo.id.citta}|">
+                    </option>
+                </th:block>
+            </select>
+        </div>
+        <!--<div class="form-group">
             <label for="cartacredito">Carta di Credito:</label>
             <select class="form-control" id="cartacredito" name="cartacredito" required>
                 <option value="">Seleziona la carta</option>
                 <th:block th:each="carta : ${carte}">
                     <option th:text="|${carta.cif} ${carta.scadenza}|">
                     </option>
+                </th:block>
+            </select>
+        </div>-->
+        <div class="form-group">
+            <label for="cartacredito">Carta di Credito:</label>
+            <select class="form-control" id="cartacredito" name="cartacredito" required>
+                <option value="">Seleziona la carta</option>
+                <th:block th:each="carta : ${carte}">
+                    <option th:value="${carta.cif}" th:text="|${carta.cif} ${carta.scadenza}|"></option>
                 </th:block>
             </select>
         </div>
@@ -218,28 +109,28 @@
         <h6>Aggiungi Indirizzo</h6>
 
         <label id="aggpron" for="aggpron"><b>Provincia</b></label>
-        <input type="text" placeholder="Enter Email" name="provincia" required>
+        <input type="text" placeholder="Enter provincia" name="provincia" required>
 
         <label id="aggcap" for="aggcap"><b>Cap</b></label>
-        <input type="text" placeholder="Enter Email" name="cap" required>
+        <input type="text" placeholder="Enter cap" name="cap" required>
 
         <label id="aggvia" for="aggvia"><b>Via</b></label>
-        <input type="text" placeholder="Enter Email" name="via" required>
+        <input type="text" placeholder="Enter via" name="via" required>
 
         <label id="aggcivico" for="aggcivico"><b>Civico</b></label>
-        <input type="text" placeholder="Enter Email" name="civico" required>
+        <input type="text" placeholder="Enter civico" name="civico" required>
 
         <label id="aggcitta" for="aggcitta"><b>Citta</b></label>
-        <input type="text" placeholder="Enter Email" name="citta" required>
+        <input type="text" placeholder="Enter citta" name="citta" required>
 
-        <button type="submit" class="aggiungi-indirizzo">Aggiungi indirizzo</button>
+        <button type="button" class="aggiungi-indirizzo">Aggiungi indirizzo</button>
         <button type="button" class="btn cancel" onclick="closeForm('myFormIndirizzo')">Close</button>
     </form>
 </div>
 
 <button class="open-button" onclick="openForm('myFormCarta')">Aggiungi Carta</button>
 <div class="form-popup" id="myFormCarta">
-    <form class="form-container" th:action="@{/carte/salva}" method="post">
+    <form class="form-container" method="post">
         <h6>Aggiungi Carta</h6>
 
         <label id="aggcif" for="aggcif">Numero Carta:</label>
@@ -251,7 +142,7 @@
         <label id="aggcvv" for="aggcvv">Scadenza:</label>
         <input type="text" placeholder="123" name="cvv" required>
 
-        <button type="submit" class="btn">Aggiungi</button>
+        <button type="button" class="aggiungi-carta">Aggiungi</button>
         <button type="button" class="btn cancel" onclick="closeForm('myFormCarta')">Chiudi</button>
     </form>
 </div>

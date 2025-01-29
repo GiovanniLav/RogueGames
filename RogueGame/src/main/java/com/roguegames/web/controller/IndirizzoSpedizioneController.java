@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 public class IndirizzoSpedizioneController {
@@ -168,6 +166,20 @@ public class IndirizzoSpedizioneController {
         model.addAttribute("modifica", false);
         model.addAttribute("utente", utente);
         return "Indirizzo";
+    }
+
+    @GetMapping("/aggiornaIndirizzi")
+    public ResponseEntity<?> aggiornaIndirizzi(HttpSession session) {
+        Utente utente = (Utente) session.getAttribute("utente");
+
+        if (utente == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Collections.singletonMap("errore", "Utente non autenticato"));
+        }
+
+        List<IndirizzoSpedizione> indirizzi = utenteService.getIndirizzoSpedizioni(utente);
+
+        return ResponseEntity.ok(Collections.singletonMap("indirizzi", indirizzi));
     }
 
 }

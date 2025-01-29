@@ -9,7 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifiche varie" />
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifiche varie">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CartaDiCreditoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CartaDiCreditoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -426,6 +434,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.sql.SQLIntegrityConstraintViolationException" package="java.sql" />
           <option name="timeStamp" value="4" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.expression.spel.SpelEvaluationException" package="org.springframework.expression.spel" />
+          <option name="timeStamp" value="6" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
