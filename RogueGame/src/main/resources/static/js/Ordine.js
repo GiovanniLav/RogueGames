@@ -23,12 +23,24 @@ $(document).ready(function() {
                     }
                 });
             },
-            error: function (jqXHR, textStatus, errorThrown) {
+            error: function (jqXHR, textStatus, errorThrown, xhr) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Si è verificato un errore durante l\'elaborazione dell\'ordine.'
                 });
+                 if (xhr.status === 400) {
+                     provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                     setTimeout(() => {
+                         window.location.href = "/utenti/home"; // Ricarica la pagina dopo 3 secondi
+                     }, 2000);
+                }else if (xhr.status === 401) {
+            provaAlert("Errore: Il gestore non può acquistare. Registrati con l'account cliente");
+                     provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                     setTimeout(() => {
+                         window.location.href = "/utenti/login"; // Ricarica la pagina dopo 3 secondi
+                     }, 2000);
+        }
             }
         })
     })

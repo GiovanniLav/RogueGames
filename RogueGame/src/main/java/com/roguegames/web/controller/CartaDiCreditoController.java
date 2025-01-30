@@ -129,9 +129,9 @@ public class CartaDiCreditoController {
     public ResponseEntity<?> salvaCartaOrd(Model model, HttpSession session, @RequestParam("cif") String cif, @RequestParam("scadenza") String scadenza, @RequestParam("cvv") String cvv) {
         Utente utente = (Utente) session.getAttribute("utente");
         if (utente == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).header("Location", "/utenti/login").build(); // Se l'utente non è loggato, reindirizza al login
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("Location", "/utenti/login").build(); // Se l'utente non è loggato, reindirizza al login
         }
-        System.out.println(cif + " " + scadenza + " " + cvv);
+
         try {
             System.out.println("salvacartaordine");
             CartaDiCredito carta = new CartaDiCredito(cif, scadenza, cvv, utente);

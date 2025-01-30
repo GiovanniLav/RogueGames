@@ -51,6 +51,10 @@ public class ShowCarrelloController {
             return "redirect:/login";
         }
 
+        if(utente.getRuolo().equals("gestore")){
+            return "redirect:/utenti/home";
+        }
+
         List<PCarrello> carrello = carrelloService.getCarrello(utente);
 
         List<CarrelloItem> carrelloItem = getCarrelloItem(carrello);
@@ -66,6 +70,9 @@ public class ShowCarrelloController {
         Utente utente = (Utente) session.getAttribute("utente");
         if(utente == null){
             return "redirect:/login";
+        }
+        if(utente.getRuolo().equals("gestore")){
+            return "redirect:/utenti/home";
         }
 
         List <PCarrello> carrello = carrelloService.getCarrello(utente);
@@ -84,6 +91,10 @@ public class ShowCarrelloController {
 
         if(utente == null){
             return "redirect:/login";
+        }
+
+        if(utente.getRuolo().equals("gestore")){
+            return "redirect:/utenti/home";
         }
 
         List<PCarrello> carrello = carrelloService.getCarrello(utente);

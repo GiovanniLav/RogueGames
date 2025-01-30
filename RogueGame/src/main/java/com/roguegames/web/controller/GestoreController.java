@@ -100,7 +100,7 @@ public class GestoreController {
     @GetMapping("/ordini")
     public String getOrdine(Model model, HttpSession session) {
         Utente utente = (Utente) session.getAttribute("utente");
-        if (utente == null && !utente.getRuolo().equals("gestore")) {
+        if (utente == null || !utente.getRuolo().equals("gestore")) {
             return "redirect:/login";
         }
         List <Ordine> ordine = ordineService.getOrdine();

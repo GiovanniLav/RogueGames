@@ -93,6 +93,7 @@ public class IndirizzoSpedizioneController {
                 model.addAttribute("modifica", false);
                 return ResponseEntity.ok().build();
             } else {
+                System.out.println("Indirizzo spedizione non trovato");
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
             }
         } catch (UtenteService.IndirizzoNonDisponibile e) {

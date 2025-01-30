@@ -25,7 +25,11 @@ public class LoginController {
 
     // Mostra la pagina di login
     @GetMapping("/login")
-    public String showLoginForm(Model model) {
+    public String showLoginForm(Model model, HttpSession session) {
+        Utente utente = (Utente) session.getAttribute("utente");
+        if (utente != null) {
+            return "redirect:/utenti/home";
+        }
         model.addAttribute("error", false);
         return "Login";  // Restituisce la pagina login.html
     }

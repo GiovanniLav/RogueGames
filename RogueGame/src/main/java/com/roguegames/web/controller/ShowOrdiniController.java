@@ -31,8 +31,12 @@ public class ShowOrdiniController {
     @GetMapping("/Storico_Ordine")
     public String showOrdine(HttpSession session, Model model) {
         Utente utente = (Utente) session.getAttribute("utente");
-        if (utente == null) {
+        if(utente == null){
             return "redirect:/login";
+        }
+
+        if(utente.getRuolo().equals("gestore")){
+            return "redirect:/utenti/home";
         }
 
         List <Ordine> ordini =ordineService.getOrdineUtente(utente.getEmail());

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/DettagliProdotto.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <link rel="stylesheet" href="/css/DettagliProdotto.css">
@@ -23,14 +22,13 @@
     <!-- Nome del prodotto -->
     <strong class="titoloProd" th:text="${product.nome}"></strong>
     <p class="sottoTitoloProd">by <strong style="color: #949494" th:text="${product.casaProd}"></strong></p>
-
     <div class="gridMainInfo">
         <div class="imgContainer">
             <img th:src="@{/images/{name}(name=${product.immagine})}" alt="Immagine del prodotto" style="max-width: 300px;" />
         </div>
         <div class="info">
             <!-- Prezzo -->
-            <p>Prezzo: <span style="font-size: 20px; color: black" th:text="${product.prezzo} + '€'"></span></p>
+            <p>Prezzo: <span style="font-size: 20px; color: black" th:text="${utente.nome} + '€'"></span></p>
             <!-- Genere -->
             <p>Genere: <span style="font-size: 20px; color: black" th:text="${product.genere}"></span></p>
             <!-- Piattaforma -->
