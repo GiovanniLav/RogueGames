@@ -10,35 +10,42 @@ public class Utente {
 
     @Id
     @Column(name = "Email", length = 45, unique = true)
-    @Email(message = "Email non valida")
     @NotBlank(message = "L'email è obbligatoria")
+    @Size(min = 6, max = 45, message = "L'email deve essere tra 6 e 45 caratteri")
+    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", message = "Formato email non valido. Deve avere alemno 2 lettere dopo il punto")
     private String email;
 
     @Column(name = "Password", length = 100)
     @NotBlank(message = "La password è obbligatoria")
-    @Size(min = 8, message = "La password deve contenere almeno 8 caratteri") // Esempio di validazione
     private String password;
 
     @Column(name = "Nome", length = 45)
     @NotBlank(message = "Il nome è obbligatorio")
+    @Size(min = 2, max = 45, message = "Il nome deve essere tra 2 e 45 caratteri")
+    @Pattern(regexp = "^[a-zA-Z0-9]{2,45}", message = "Il nome può contenere solo lettere e numeri, tra 2 e 45 caratteri")
     private String nome;
 
     @Column(name = "Cognome", length = 45)
     @NotBlank(message = "Il cognome è obbligatorio")
+    @Size(min = 2, max = 45, message = "Il cognome deve essere tra 2 e 45 caratteri")
+    @Pattern(regexp = "^[a-zA-Z0-9]{2,45}", message = "Il cognome può contenere solo lettere e numeri, tra 2 e 45 caratteri")
     private String cognome;
 
     @Column(name = "Eta")
     @NotNull(message = "L'età è obbligatoria")
-    @Positive(message = "L'età deve essere un numero positivo")
+    @Min(value = 10, message = "L'età deve essere almeno 10 anni")
+    @Max(value = 120, message = "L'età non può superare i 120 anni")
     private int eta;
 
     @Column(name = "Residenza", length = 45)
     @NotBlank(message = "La residenza è obbligatoria")
+    @Size(min = 7, max = 45, message = "L'indirizzo di residenza deve essere tra 7 e 45 caratteri")
+    @Pattern(regexp = "^[a-zA-Z0-9 ]{7,45}", message = "L'indirizzo può contenere solo lettere, numeri e spazi, tra 7 e 45 caratteri")
     private String residenza;
 
     @Column(name = "Tel", length = 10)
     @NotBlank(message = "Il numero di telefono è obbligatorio")
-    @Size(min = 10, max = 10, message = "Il numero di telefono deve contenere 10 cifre") // Validazione lunghezza
+    @Pattern(regexp = "^[0-9]{10}", message = "Il numero di telefono deve essere esattamente di 10 cifre numeriche")
     private String tel;
 
     @Column(name = "Ruolo", length = 45)

@@ -52,8 +52,8 @@ $(document).ready(function() {
         var provinciamod = $("input[name='provincia-mod']").val();
         var capmod = $("input[name='cap-mod']").val();
         var viamod = $("input[name='via-mod']").val();
-        var civicomod = $("input[name='civico']").val();
-        var cittamod = $("input[name='citta']").val();
+        var civicomod = $("input[name='civico-mod']").val();
+        var cittamod = $("input[name='citta-mod']").val();
         var url = "/modificaIndirizzoSpedizione"
 
         $.ajax({

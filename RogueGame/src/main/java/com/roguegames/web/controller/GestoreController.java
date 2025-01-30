@@ -42,38 +42,48 @@ public class GestoreController {
     @PostMapping("/prodotti/aggiungi")
     public String aggiungiProdotto(@ModelAttribute Prodotto prodotto, HttpSession session, Model model) {
         Utente utente = (Utente) session.getAttribute("utente");
-        if (utente == null && !utente.getRuolo().equals("gestore")) {
+        if (utente == null || !utente.getRuolo().equals("gestore")) {
             return "redirect:/login";
         }
+
+        // Verifica se il prodotto esiste già
+        Prodotto prodottoEsistente = productService.getProductByName(prodotto.getNome());
+        if (prodottoEsistente != null) {
+            model.addAttribute("errore", "Attenzione: il prodotto con questo nome esiste già!"); // Messaggio di avviso
+            model.addAttribute("utente", utente);
+            return "prodotti"; // Ricarica la pagina con l'errore
+        }
+
         productService.saveProduct(prodotto); // Salva il nuovo prodotto
-        model.addAttribute("utente", utente);
         return "redirect:/utenti/prodotti"; // Ricarica la pagina con i prodotti
     }
 
-    // Gestisce la modifica di un prodotto
-    @GetMapping("/prodotti/modifica/{nome}")
-    public String modificaProdottoForm(@PathVariable String nome, Model model, HttpSession session) {
-        Utente utente = (Utente) session.getAttribute("utente");
-        if (utente == null && !utente.getRuolo().equals("gestore")) {
-            return "redirect:/login";
-        }
-        model.addAttribute("utente", utente);
-        Prodotto prodotto = productService.getProductByName(nome); // Ottieni il prodotto da modificare
-        model.addAttribute("prodotto", prodotto); // Aggiungi il prodotto al modello
-        return "modificaProdotto"; // La pagina per modificare il prodotto
-    }
 
+
+    // Gestisce la modifica di un prodotto
     @PostMapping("/prodotti/modifica/{nome}")
     public String modificaProdotto(@PathVariable String nome, @ModelAttribute Prodotto prodotto, HttpSession session, Model model) {
         Utente utente = (Utente) session.getAttribute("utente");
-        if (utente == null && !utente.getRuolo().equals("gestore")) {
+        if (utente == null || !utente.getRuolo().equals("gestore")) {
             return "redirect:/login";
         }
+
+        // Verifica se esiste già un altro prodotto con lo stesso nome (escluso quello che si sta modificando)
+        Prodotto prodottoEsistente = productService.getProductByName(prodotto.getNome());
+        if (prodottoEsistente != null && !prodottoEsistente.getNome().equals(nome)) {
+            model.addAttribute("errore", "Attenzione: il prodotto con questo nome esiste già!"); // Messaggio di avviso
+            model.addAttribute("utente", utente);
+            model.addAttribute("prodotto", prodotto); // Rendi disponibile il prodotto per la modifica
+            return "modificaProdotto"; // Ricarica la pagina di modifica
+        }
+
         prodotto.setNome(nome); // Mantieni il nome originale per l'update
         productService.updateProduct(prodotto); // Modifica il prodotto
-        model.addAttribute("utente", utente);
-        return "redirect:/utenti/prodotti"; // Ricarica la pagina
+        return "redirect:/utenti/prodotti"; // Ricarica la pagina con i prodotti
     }
+
+
+
 
     // Gestisce l'eliminazione di un prodotto
     @PostMapping("/prodotti/elimina/{nome}")

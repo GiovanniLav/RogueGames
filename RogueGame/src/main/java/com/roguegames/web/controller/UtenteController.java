@@ -27,19 +27,26 @@ public class UtenteController {
     // Metodo per gestire la registrazione dell'utente
     @PostMapping("/registrati")
     public String registerUtente(@Valid @ModelAttribute("utente") Utente utente, BindingResult result, Model model) {
-        // Se ci sono errori nel form, torna alla pagina di registrazione
         if (result.hasErrors()) {
-            return "Register"; // Se ci sono errori, ritorna alla pagina di registrazione
+            return "Register"; // Ritorna alla pagina di registrazione se ci sono errori
+        }
+
+        // Controlla se la password in chiaro soddisfa i requisiti
+        if (!utente.getPassword().matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+=-])[A-Za-z\\d!@#$%^&*()_+=-]{8,}$")) {
+            model.addAttribute("error", "La password deve contenere almeno una maiuscola, un numero, e un carattere speciale.");
+            return "Register"; // Ritorna alla pagina con errore
         }
 
         try {
-            utenteService.registrati(utente); // Salva l'utente
-            return "redirect:/utenti/login"; // Successo, reindirizza a una pagina di successo
+            // Se la password è valida, esegui la registrazione
+            utenteService.registrati(utente);
+            return "redirect:/utenti/login"; // Successo
         } catch (IllegalArgumentException e) {
             model.addAttribute("error", e.getMessage());
-            return "Register"; // Se c'è un errore (es. email già registrata), ritorna al form
+            return "Register"; // Ritorna alla pagina di registrazione in caso di errore
         }
     }
+
 
     // Metodo per la pagina di successo della registrazione
     @GetMapping("/registrazione-completa")

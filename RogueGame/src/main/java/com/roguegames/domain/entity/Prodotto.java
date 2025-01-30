@@ -75,7 +75,7 @@ public class Prodotto {
 
     // Enumerazioni per Piattaforma e Tipo
     public enum Piattaforma {
-        PlayStation, Xbox, Pc, NintendoSwitch, Null
+        PlayStation, Xbox, Pc, NintendoSwitch, Nessuna
     }
 
     public enum Tipo {
