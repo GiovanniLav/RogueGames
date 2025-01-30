@@ -40,6 +40,7 @@
       <!-- Controllo se l'utente è un gestore -->
       <li th:if="${session.isGestore}">
         <a href="/utenti/prodotti">Gestore</a>
+        <a href="/utenti/ordini">Ordini</a>
       </li>
       <li th:if="${utente != null}">
         <a th:href="@{/logout}">Logout</a>

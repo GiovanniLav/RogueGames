@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Gestione Indirizzi Spedizione</title>
+  <link rel="stylesheet" href="/css/Carte.css">
+  <link rel="stylesheet" href="/css/Footer.css">
+  <link rel="stylesheet" href="/css/Header.css">
+  <link rel="stylesheet" href="/css/IndirizzoSpedizione.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/IndirizzoSpedizione.js"></script>
+</head>
+<body>
+<header th:replace="header :: header"></header>
+<h1>Gestisci le tue carte di credito</h1>
+
+<!-- Modulo di Aggiunta o Modifica -->
+<div>
+    <form th:if="${modifica}"  method="post" id="modifica-form">
+        <h2>Modifica i dati dell'indirizzo</h2>
+
+        <label for="provincia-modifica">Provincia</label>
+        <input type="text" id="provincia-modifica" name="provincia" th:value="${is.id.provincia}" required >
+        <input type="hidden" id="provincia-mod" name="provincia-mod" th:value="${is.id.provincia}" required >
+        <label for="cap-modifica">Cap</label>
+        <input type="number" id="cap-modifica" name="cap" th:value="${is.id.cap}" required>
+        <input type="hidden" id="cap-mod" name="cap-mod" th:value="${is.id.cap}" required >
+        <label for="via-modifica">Via</label>
+        <input type="text" id="via-modifica" name="via" th:value="${is.id.via}" required>
+        <input type="hidden" id="via-mod" name="via-mod" th:value="${is.id.via}" required >
+        <label for="civico-modifica">Civico</label>
+        <input type="text" id="civico-modifica" name="civico" th:value="${is.id.civico}" required>
+        <input type="hidden" id="civico-mod" name="civico-mod" th:value="${is.id.civico}" required >
+        <label for="citta-modifica">Citta</label>
+        <input type="text" id="citta-modifica" name="citta" th:value="${is.id.citta}" required>
+        <input type="hidden" id="citta-mod" name="citta-mod" th:value="${is.id.citta}" required >
+
+        <button type="button" class="modifica-indirizzo">Salva Modifiche</button>
+        <a href="/indirizzo" class="modifica">Annulla</a>
+    </form>
+
+    <form th:if="${!modifica}" method="post" id="aggiungi-form">
+        <h2>Inserisci un indirizzo</h2>
+
+        <label for="provincia-aggiungi">Provincia</label>
+        <input type="text" id="provincia-aggiungi" name="provincia" required>
+        <label for="cap-aggiungi">Cap</label>
+        <input type="number" id="cap-aggiungi" name="cap" required>
+        <label for="via-aggiungi">Via</label>
+        <input type="text" id="via-aggiungi" name="via" required>
+        <label for="civico-aggiungi">Civico</label>
+        <input type="text" id="civico-aggiungi" name="civico" required>
+        <label for="citta-aggiungi">Citta</label>
+        <input type="text" id="citta-aggiungi" name="citta" required>
+
+        <button type="button" class="aggiungi-indirizzo">Aggiungi Indirizzo</button>
+    </form>
+</div>
+
+<!-- Visualizza tutte le carte -->
+<div class="indirizzi-container">
+    <h3>I tuoi indirizzi</h3>
+    <div th:each="indirizzo : ${is}" class="indirizzi-item">
+        <div class="indirizzi-dettagli">
+            <p>Provincia: <span th:text="${indirizzo.id.provincia}"></span></p>
+            <p>Cap: <span th:text="${indirizzo.id.cap}"></span></p>
+            <p>Via: <span th:text="${indirizzo.id.via}"></span></p>
+            <p>Civico: <span th:text="${indirizzo.id.civico}"></span></p>
+            <p>Citta: <span th:text="${indirizzo.id.citta}"></span></p>
+        </div>
+        <div class="indirizzo-azioni">
+            <form th:action="@{/modificaIndirizzo}" method="POST">
+                <input type="hidden" id="provincia-m" name="provincia" th:value="${indirizzo.id.provincia}">
+                <input type="hidden" id="cap" name="cap" th:value="${indirizzo.id.cap}">
+                <input type="hidden" id="via-m" name="via" th:value="${indirizzo.id.via}" >
+                <input type="hidden" id="civico-m" name="civico" th:value="${indirizzo.id.civico}" >
+                <input type="hidden" id="citta-m" name="citta" th:value="${indirizzo.id.citta}" >
+                <button type="sumbit" id="btn-modifica-in" th:attr="data-cap=${indirizzo.id.cap}">Modifica</button>
+            </form>
+            <form th:action="@{/rimuoviIndirizzo}" method="POST">
+                <input type="hidden" name="provincia" th:value="${indirizzo.id.provincia}">
+                <input type="hidden" name="cap" th:value="${indirizzo.id.cap}">
+                <input type="hidden" name="via" th:value="${indirizzo.id.via}" >
+                <input type="hidden" name="civico" th:value="${indirizzo.id.civico}" >
+                <input type="hidden" name="citta" th:value="${indirizzo.id.citta}" >
+                <button type="button" class="rimuovi-indirizzo" th:attr="data-cap=${indirizzo.id.cap}">Rimuovi Indirizzo</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="footer :: footer"></div>
+
+</body>
+</html>
