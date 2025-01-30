@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/Catalogo.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/js/Carrello.js"></script>
+    <script src="/js/Catalogo.js"></script>
 </head>
 <body>
 <header th:replace="header :: header"></header>
@@ -18,25 +19,6 @@
 
         <input type="text" id="search-bar" placeholder="Cerca un prodotto..." />
         <button id="search-button">Cerca</button>
-
-        <script>
-            $(document).ready(function () {
-                // Cerca prodotti lato client
-                $('#search-bar').on('input', function () {
-                    const searchTerm = $(this).val().toLowerCase();
-
-                    $('.prodotto').each(function () {
-                        const productName = $(this).find('h3').text().toLowerCase();
-
-                        if (productName.includes(searchTerm)) {
-                            $(this).show();
-                        } else {
-                            $(this).hide();
-                        }
-                    });
-                });
-            });
-        </script>
     </div>
 
 
@@ -61,7 +43,7 @@
                 </script>-->
 
             </div>
-            <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
+            <a th:href="@{/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
                 <img th:src="@{/images/{name}(name=${product.immagine})}"
                      th:alt="${product.nome}">
                 <h3 th:text="${product.nome}">Nome del Prodotto</h3>

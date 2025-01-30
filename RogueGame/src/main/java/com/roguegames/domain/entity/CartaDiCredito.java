@@ -2,6 +2,8 @@ package com.roguegames.domain.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 @Table(name = "cartadicredito")
@@ -17,6 +19,7 @@ public class CartaDiCredito {
     @NotBlank(message = "La scadenza è obbligatoria")
     @Pattern(regexp = "^(0[1-9]|1[0-2])/\\d{2}$", message = "La scadenza deve essere nel formato MM/YY")
     private String scadenza;
+
 
     @Column(name = "CVV", length = 4, nullable = false)
     @NotBlank(message = "Il CVV è obbligatorio")
@@ -66,4 +69,5 @@ public class CartaDiCredito {
     public int hashCode() {
         return cif.hashCode();
     }
+
 }

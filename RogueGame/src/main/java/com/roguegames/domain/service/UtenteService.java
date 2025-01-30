@@ -3,7 +3,6 @@ package com.roguegames.domain.service;
 import com.roguegames.domain.entity.IndirizzoSpedizione;
 import com.roguegames.domain.entity.IndirizzoSpedizioneId;
 import com.roguegames.domain.entity.Utente;
-import com.roguegames.domain.repository.IndirizzoSpedizioneIdRepository;
 import com.roguegames.domain.repository.IndirizzoSpedizioneRepository;
 import com.roguegames.domain.repository.UtenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +24,6 @@ public class UtenteService {
 
     @Autowired
     private IndirizzoSpedizioneRepository indirizzoSpedizioneRepository;
-
-    @Autowired
-    private IndirizzoSpedizioneIdRepository indirizzoSpedizioneIdRepository;
 
     // Metodo per registrare un nuovo utente
     public Utente registrati(@Valid Utente utente) {
@@ -95,7 +91,6 @@ public class UtenteService {
         }
         return hexString.toString();
     }
-
     public static class IndirizzoNonDisponibile extends RuntimeException {
         public IndirizzoNonDisponibile(String message) {
             super(message);
@@ -136,3 +131,4 @@ public class UtenteService {
     }
 
 }
+

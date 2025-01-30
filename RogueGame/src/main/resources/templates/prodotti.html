@@ -6,18 +6,21 @@
     <link rel="stylesheet" href="/css/prodotti.css">
     <link rel="stylesheet" href="/css/Header.css">
     <link rel="stylesheet" href="/css/Footer.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/Gestore.js"></script>
+
+
     <title>Gestione Prodotti</title>
 </head>
 <body>
-    <header th:replace="header :: header"></header>
+<header th:replace="header :: header"></header>
 <main>
-    <!-- Lista dei prodotti -->
     <h1>Gestisci Prodotti</h1>
 
-    <!-- Pulsante Aggiungi Prodotto -->
+
     <button class="add-product-btn" id="addProductBtn">Aggiungi Prodotto</button>
 
-    <!-- Tavola di prodotti esistenti -->
+
     <table>
         <thead>
         <tr>
@@ -27,7 +30,6 @@
         </tr>
         </thead>
         <tbody>
-        <!-- Iterazione sui prodotti -->
         <tr th:each="prodotto : ${prodotti}">
             <td th:text="${prodotto.nome}"></td>
             <td th:text="${prodotto.prezzo}"></td>
@@ -40,7 +42,6 @@
     </table>
 </main>
 
-<!-- Modal Popup Aggiungi/Modifica Prodotto -->
 <div id="addProductModal" class="modal">
     <div class="modal-content">
         <span id="closeModalBtn" class="close">&times;</span>
@@ -49,23 +50,29 @@
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" required><br><br>
 
-            <label for="img">Immagine</label>
-            <input type="file" id="img" name="img" accept=".jpg, .jpeg, .png" required><br><br>
+            <label for="immagine">Immagine</label>
+            <input type="file" id="immagine" name="immagine" accept=".jpg, .jpeg, .png">
+            <input type="hidden" id="hiddenImage" name="hiddenImage">
+            <p id="immagine-label"></p> <!-- Mostra il file attuale -->
 
-            <label for="video">Video</label>
-            <input type="file" id="video" name="video" accept=".mp4"><br><br>
+            <label for="video">Video (Opzionale)</label>
+            <input type="file" id="video" name="video" accept=".mp4">
+            <input type="hidden" id="hiddenVideo" name="hiddenVideo">
+            <p id="video-label"></p> <!-- Mostra il file attuale -->
+
 
             <label for="descrizione">Descrizione</label>
             <textarea id="descrizione" name="descrizione" required></textarea><br><br>
 
             <label for="prezzo">Prezzo</label>
-            <input type="number" id="prezzo" name="prezzo" required step="0.01"><br><br>
+            <input type="number" id="prezzo" name="prezzo" required step="0.01" min="0"><br><br>
 
             <label for="casaProd">Casa Produttrice</label>
             <input type="text" id="casaProd" name="casaProd" required><br><br>
 
             <label for="piattaforma">Piattaforma</label>
             <select id="piattaforma" name="piattaforma">
+                <option value="Nessuna">Nessuna</option>
                 <option value="PlayStation">PlayStation</option>
                 <option value="Xbox">Xbox</option>
                 <option value="Pc">PC</option>
@@ -87,7 +94,7 @@
             <input type="date" id="dataRilascio" name="dataRilascio" required><br><br>
 
             <label for="quantita">Quantità</label>
-            <input type="number" id="quantita" name="quantita" required><br><br>
+            <input type="number" id="quantita" name="quantita" required min="0"><br><br>
 
             <button type="submit" id="submitButton">Aggiungi Prodotto</button>
         </form>
@@ -96,12 +103,6 @@
 
 <div th:replace="footer :: footer"></div>
 
-<script>
-    // Ottieni gli elementi
-
-</script>
-
 </body>
 </html>
-
 
