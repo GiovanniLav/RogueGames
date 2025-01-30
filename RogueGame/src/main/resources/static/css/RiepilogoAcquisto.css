@@ -44,8 +44,8 @@
     outline: none;
 }
 
-/* Set a style for the submit/login button */
-.form-container .btn {
+
+.form-container .aggiungi {
     background-color: #04AA6D;
     color: white;
     padding: 8px 16px;

@@ -59,15 +59,7 @@
     </div>
 
     <form id = "processaOrdine" th:action="@{/aggiungiOrdine}" method="post">
-        <!--<div class="form-group">
-            <select class="form-control" id="indirizzo" name="indirizzo" required>
-                <option value="">Seleziona indirizzo</option>
-                <th:block th:each="indirizzo : ${indirizzi}">
-                    <option th:text="|${indirizzo.id.provincia} ${indirizzo.id.cap} ${indirizzo.id.via} ${indirizzo.id.civico} ${indirizzo.id.citta}|">
-                    </option>
-                </th:block>
-            </select>
-        </div>-->
+
         <div class="form-group">
             <label for="indirizzo">Indirizzo di Spedizione:</label>
             <select class="form-control" id="indirizzo" name="indirizzo" required>
@@ -79,16 +71,7 @@
                 </th:block>
             </select>
         </div>
-        <!--<div class="form-group">
-            <label for="cartacredito">Carta di Credito:</label>
-            <select class="form-control" id="cartacredito" name="cartacredito" required>
-                <option value="">Seleziona la carta</option>
-                <th:block th:each="carta : ${carte}">
-                    <option th:text="|${carta.cif} ${carta.scadenza}|">
-                    </option>
-                </th:block>
-            </select>
-        </div>-->
+
         <div class="form-group">
             <label for="cartacredito">Carta di Credito:</label>
             <select class="form-control" id="cartacredito" name="cartacredito" required>

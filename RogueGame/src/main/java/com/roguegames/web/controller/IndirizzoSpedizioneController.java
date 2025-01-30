@@ -33,7 +33,6 @@ public class IndirizzoSpedizioneController {
         }
 
 
-
         List<IndirizzoSpedizione> is = utenteService.getIndirizzoSpedizioni(utente);
         model.addAttribute("utente", utente);
         model.addAttribute("is", is);

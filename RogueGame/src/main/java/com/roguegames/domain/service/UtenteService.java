@@ -105,12 +105,9 @@ public class UtenteService {
     public IndirizzoSpedizione aggiungiIndirizzoSpd(String provincia, Integer cap, String via, String civico, String citta, Utente utente){
         IndirizzoSpedizioneId id = new IndirizzoSpedizioneId(provincia, cap, via, civico, citta, utente.getEmail());
         Optional<IndirizzoSpedizione> i = getIndirizzoSpedizioneById(id);
-        System.out.println("Indirizzo spedizione aggiunto");
         if(i.isPresent()){
-            System.out.println("Indirizzo spedizione aggiunto");
-            throw new UtenteService.IndirizzoNonDisponibile("L'indirizzo inserito è già stato salvato");
+            throw new IndirizzoNonDisponibile("L'indirizzo inserito è già stato salvato");
         }
-        System.out.println("Sotr");
         IndirizzoSpedizione is = new IndirizzoSpedizione(id ,utente);
         return indirizzoSpedizioneRepository.save(is);
     }
@@ -118,12 +115,9 @@ public class UtenteService {
     public IndirizzoSpedizione modificaIndirizzoSpd(String provincia, Integer cap, String via, String civico, String citta, Utente utente, IndirizzoSpedizione is){
         IndirizzoSpedizioneId id = new IndirizzoSpedizioneId(provincia, cap, via, civico, citta, utente.getEmail());
         Optional<IndirizzoSpedizione> i = getIndirizzoSpedizioneById(id);
-        System.out.println("Indirizzo spedizione aggiunto");
         if(i.isPresent()){
-            System.out.println("Indirizzo è presente aggiunto");
-            throw new UtenteService.IndirizzoNonDisponibile("L'indirizzo inserito è già stato salvato");
+            throw new IndirizzoNonDisponibile("L'indirizzo inserito è già stato salvato");
         }
-        System.out.println("Sotr");
         IndirizzoSpedizione is1 = new IndirizzoSpedizione(id ,utente);
         indirizzoSpedizioneRepository.delete(is);
         return indirizzoSpedizioneRepository.save(is1);

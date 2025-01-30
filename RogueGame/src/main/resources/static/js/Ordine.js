@@ -57,7 +57,7 @@ $(document).ready(function() {
                 cvv: cvv,
             },
             success: function(response) {
-                alert("La carta è stata aggiunta correttamente");
+                provaAlert("La carta è stata aggiunta correttamente");
 
                 $.ajax({
                     url: "/carte/aggiornaCarte",
@@ -84,7 +84,7 @@ $(document).ready(function() {
             },
             error: function(xhr, status, error) {
                 if (xhr.status === 401) {
-                    alert("Errore: Devi loggarti per poter inserire la carta");
+                    provaAlert("Errore: Devi loggarti per poter inserire la carta");
                 } else {
                     alert("Errore durante la richiesta.");
                 }
@@ -115,7 +115,7 @@ $(document).ready(function() {
                 citta: citta
             },
             success: function(response) {
-                alert("L'indirizzo è stato aggiunto correttamente");
+                provaAlert("L'indirizzo è stato aggiunto correttamente");
                 closeForm("myFormIndirizzo");
                 // Aggiunge il nuovo indirizzo direttamente alla select
 

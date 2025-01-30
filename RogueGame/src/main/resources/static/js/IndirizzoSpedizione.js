@@ -21,15 +21,16 @@ $(document).ready(function() {
                 citta: citta
             },
             success: function(response) {
-                alert("L'indirizzo è stato aggiunto correttamente");
+                provaAlert("L'indirizzo è stato aggiunto correttamente");
+                window.location.href = "/indirizzo";
             },
             error: function(xhr, status, error) {
                 if (xhr.status === 401) {
-                    alert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                    provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
                 } else if (xhr.responseJSON && xhr.responseJSON.message) {
-                    alert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
+                    provaAlert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
                 } else if (xhr.responseText) {
-                    alert("Errore: " + xhr.responseText); // Gestisce errori con testo semplice
+                    provaAlert("Errore: " + xhr.responseText); // Gestisce errori con testo semplice
                 } else {
                     alert("Errore durante la richiesta.");
                 }
@@ -71,16 +72,16 @@ $(document).ready(function() {
                 cittamod: cittamod
             },
             success: function(response) {
-                alert("L'indirizzo è stato modifcato correttamente");
+                provaAlert("L'indirizzo è stato modifcato correttamente");
                 window.location.href = "/indirizzo";
             },
             error: function(xhr, status, error) {
                 if (xhr.status === 401) {
-                    alert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                    provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
                 } else if (xhr.responseJSON && xhr.responseJSON.message) {
-                    alert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
+                    provaAlert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
                 } else if (xhr.responseText) {
-                    alert("Errore: " + xhr.responseText); // Gestisce errori con testo semplice
+                    provaAlert("Errore: " + xhr.responseText); // Gestisce errori con testo semplice
                 } else {
                     alert("Errore durante la richiesta.");
                 }
@@ -96,14 +97,21 @@ $(document).ready(function() {
     $('.rimuovi-indirizzo').off('click').on('click', function (e) {
         e.preventDefault();
 
-        var form = $(this).closest('form');
 
-        var provincia = document.getElementById('provincia').value
-        var via = document.getElementById('via').value
+        var button = $(this);
+        var form = button.closest('form');
+        var provincia = form.find('input[name="provincia"]').val();
         var cap = $(this).data('cap');
-        var civico = document.getElementById('civico').value
-        var citta = document.getElementById('citta').value // Assumiamo che il nome del prodotto sia memorizzato in un attributo data
+        var via = form.find('input[name="via"]').val();
+        var civico = form.find('input[name="civico"]').val();
+        var citta = form.find('input[name="citta"]').val();
         var url = "/rimuoviIndirizzo" // Sostituisce {nome} con il valore reale
+
+        console.log(provincia)
+        console.log(via)
+        console.log(cap)
+        console.log(civico)
+        console.log(citta)
 
         $.ajax({
             url: url,
@@ -116,7 +124,7 @@ $(document).ready(function() {
                 citta: citta
             },
             success: function (response) {
-                location.reload()
+                form.closest('.indirizzi-item').remove();
             },
             error: function (error) {
                 console.error(error);
@@ -160,7 +168,7 @@ $(document).ready(function () {
                         window.location.href = response.redirectUrl;
                     } else {
                         console.error('Errore:', response.message);
-                        alert(response.message || 'Errore sconosciuto');
+                        provaAlert(response.message || 'Errore sconosciuto');
                     }
                 }
             },
@@ -170,3 +178,26 @@ $(document).ready(function () {
         });
     });
 });
+
+function provaAlert(message) {
+    const alertDiv = document.createElement("messageDiv");
+    alertDiv.textContent = message;
+    alertDiv.setAttribute("style", `
+                background-color: #222;
+                color: #ff9900;
+                padding: 10px;
+                border-radius: 5px;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1000;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            `);
+
+    document.body.appendChild(alertDiv);
+
+    // Rimuove l'alert dopo 3 secondi
+    setTimeout(() => {
+        alertDiv.remove();
+    }, 3000);
+}
