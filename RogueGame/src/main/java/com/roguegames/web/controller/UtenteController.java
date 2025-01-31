@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -19,7 +20,11 @@ public class UtenteController {
 
     // Metodo per visualizzare il form di registrazione
     @GetMapping("/registrati")
-    public String showRegistrationForm(Model model) {
+    public String showRegistrationForm(Model model, HttpSession session) {
+        Utente utente = (Utente) session.getAttribute("utente");
+        if (utente != null) {
+            return "redirect:/utenti/home";
+        }
         return "Register"; // Restituisce la pagina Register.html
     }
 

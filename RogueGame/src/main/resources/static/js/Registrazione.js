@@ -1,5 +1,4 @@
-
-    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
     var password = document.getElementById("password").value;
     var passwordError = document.getElementById("passwordError");
 

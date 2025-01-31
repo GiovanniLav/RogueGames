@@ -9,28 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="-Home completata&#10;-Modifica css Login&#10;-Modifica css Register&#10;-Modifica css Carrello&#10;-Modifica css DettagliProdotto&#10;-Modifica css Catalogo&#10;-Modifica Header">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Correzione di rimuovi e aggiungi prodotti al catalogo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/CartaDiCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/CartaDiCredito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/Prodotto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/Prodotto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/UtenteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/Carte.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/Carte.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/Register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/CheckText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/CheckText.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Carte.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Carte.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/DettagliProdotto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/DettagliProdotto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/prodotti.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/prodotti.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Registrazione.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Registrazione.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Indirizzo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Indirizzo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +29,8 @@
         <option value="CSS File" />
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,7 +50,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="Giovanni" />
+        <entry key="$PROJECT_DIR$/.." value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -75,12 +61,12 @@
     &quot;assignee&quot;: &quot;GiovanniLav&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/GiovanniLav/RogueGames.git",
-    "accountId": "8d0ed380-654d-469a-8658-561e18c66822"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/GiovanniLav/RogueGames.git&quot;,
+    &quot;accountId&quot;: &quot;33ae3f31-d9e0-4fa3-af59-ede51d5b734e&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -100,6 +86,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
+    <option name="proportion" value="0.9" />
     <option name="selectedTabId" value="CurrentFile" />
     <option name="showPreview" value="true" />
   </component>
@@ -114,40 +101,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.RogueGameApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.Tomcat 9.0.98.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/anton/IdeaProjects/RogueGames/RogueGame/pom.xml&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.RogueGameApplication.executor": "Run",
+    "Tomcat Server.Tomcat 9.0.98.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/arion/IdeaProjects/RogueGames/RogueGame/src/main/resources/templates/Profilo.html",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "two.files.diff.last.used.file": "C:/Users/arion/IdeaProjects/RogueGames/RogueGame/src/main/resources/templates/Profilo.html",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ROBA\RogueGames\RogueGame\src\main\resources\static\css\images" />
@@ -259,8 +247,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -303,8 +291,12 @@
       <workItem from="1737810979443" duration="8524000" />
       <workItem from="1737901803614" duration="17040000" />
       <workItem from="1737966906921" duration="18225000" />
-      <workItem from="1738066480885" duration="733000" />
-      <workItem from="1738252659959" duration="2773000" />
+      <workItem from="1738229001168" duration="4063000" />
+      <workItem from="1738250390664" duration="1513000" />
+      <workItem from="1738251986261" duration="2337000" />
+      <workItem from="1738314998038" duration="10005000" />
+      <workItem from="1738338813863" duration="540000" />
+      <workItem from="1738339491976" duration="2772000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />
@@ -402,15 +394,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737924936591</updated>
     </task>
-    <task id="LOCAL-00013" summary="-Home completata&#10;-Modifica css Login&#10;-Modifica css Register&#10;-Modifica css Carrello&#10;-Modifica css DettagliProdotto&#10;-Modifica css Catalogo&#10;-Modifica Header">
+    <task id="LOCAL-00013" summary="modifiche varie">
       <option name="closed" value="true" />
-      <created>1737996768042</created>
+      <created>1738078671715</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1737996768042</updated>
+      <updated>1738078671715</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Correzione di rimuovi e aggiungi prodotti al catalogo">
+      <option name="closed" value="true" />
+      <created>1738324543351</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1738324543351</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,8 +440,9 @@
     <MESSAGE value="Modifica css Carrello" />
     <MESSAGE value="Sistemato Carrello" />
     <MESSAGE value="-Home aggiornata&#10;-Modifica css Login&#10;-Modifica css Register" />
-    <MESSAGE value="-Home completata&#10;-Modifica css Login&#10;-Modifica css Register&#10;-Modifica css Carrello&#10;-Modifica css DettagliProdotto&#10;-Modifica css Catalogo&#10;-Modifica Header" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Home completata&#10;-Modifica css Login&#10;-Modifica css Register&#10;-Modifica css Carrello&#10;-Modifica css DettagliProdotto&#10;-Modifica css Catalogo&#10;-Modifica Header" />
+    <MESSAGE value="modifiche varie" />
+    <MESSAGE value="Correzione di rimuovi e aggiungi prodotti al catalogo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzione di rimuovi e aggiungi prodotti al catalogo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -449,6 +450,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.sql.SQLIntegrityConstraintViolationException" package="java.sql" />
           <option name="timeStamp" value="4" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.expression.spel.SpelEvaluationException" package="org.springframework.expression.spel" />
+          <option name="timeStamp" value="6" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
