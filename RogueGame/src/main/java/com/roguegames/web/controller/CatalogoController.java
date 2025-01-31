@@ -60,4 +60,10 @@ public class CatalogoController {
         model.addAttribute("products", products);
         return "catalogo";
     }
+    @GetMapping("/ordina")
+    public String ordinaCatalogo(@RequestParam(name = "order", defaultValue = "asc") String order, Model model) {
+        List<Prodotto> prodottiOrdinati = prodottoService.ordinaPerData(order);
+        model.addAttribute("products", prodottiOrdinati);
+        return "catalogo"; // Nome della vista HTML
+    }
 }

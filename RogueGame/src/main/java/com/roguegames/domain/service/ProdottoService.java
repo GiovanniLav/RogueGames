@@ -43,6 +43,13 @@ public class ProdottoService {
     public List<Prodotto> filteredCatalogo(Prodotto.Piattaforma piattaforma) {return prodottoRepository.findByPiattaforma(piattaforma);};
     public List<Prodotto> getFantasy() {return prodottoRepository.findFantasy();};
     public List<Prodotto> getConsole() {return prodottoRepository.findConsole();};
+    public List<Prodotto> ordinaPerData(String order) {
+        if ("desc".equalsIgnoreCase(order)) {
+            return prodottoRepository.findAllByOrderByDataRilascioDesc();
+        } else {
+            return prodottoRepository.findAllByOrderByDataRilascioAsc();
+        }
+    }
 }
 
 

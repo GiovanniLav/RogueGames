@@ -1,5 +1,4 @@
-
-    $(document).ready(function () {
+$(document).ready(function () {
     // Cerca prodotti lato client
     $('#search-bar').on('input', function () {
         const searchTerm = $(this).val().toLowerCase();
@@ -14,4 +13,10 @@
             }
         });
     });
+});
+
+$(document).ready(function () {
+        $('#filter-button').on('click', function () {
+            $('#filter-panel').toggle(); // Mostra o nasconde il pannello
+        });
 });

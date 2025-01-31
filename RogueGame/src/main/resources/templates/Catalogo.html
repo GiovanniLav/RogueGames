@@ -15,12 +15,24 @@
 <header th:replace="header :: header"></header>
 
 <main>
-    <div class="search-container">
-
-        <input type="text" id="search-bar" placeholder="Cerca un prodotto..." />
-        <button id="search-button">Cerca</button>
+    <div  class="search-container">
+        <label for="search-bar"></label><input type="text" id="search-bar" placeholder="Cerca un prodotto..." />
     </div>
 
+    <button id="filter-button">Filtra per Data di Uscita</button>
+
+    <div id="filter-panel" style="display: none;">
+
+        <form th:action="@{/catalogo/ordina}" method="get">
+            <label for="sort-order">Ordina per Data di Uscita:</label>
+            <select id="sort-order" name="order">
+                <option value="desc">Dal più recente al più vecchio</option>
+                <option value="asc">Dal più vecchio al più recente</option>
+
+            </select>
+            <button id="search-button">Cerca</button>
+        </form>
+    </div>
 
     <div class="catalogo">
         <div th:if="${products == null || products.isEmpty()}">
@@ -37,10 +49,6 @@
                         </button>
                     </form>
 
-                <!--<script>
-                    const button = document.querySelector('.star');
-                    const preferito = button.getAttribute('data-preferito');
-                </script>-->
 
             </div>
             <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
