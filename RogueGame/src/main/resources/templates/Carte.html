@@ -13,8 +13,8 @@
 <h1>Gestisci le tue carte di credito</h1>
 
 <!-- Messaggio di errore -->
-<div th:if="${errore != null}" class="alert alert-danger" role="alert">
-  <span th:text="${errore}"></span>
+<div id="errore-div" style="display: none;" class="alert alert-danger" role="alert">
+  <span id="errore-msg"></span>
 </div>
 
 <!-- Modulo di Aggiunta o Modifica -->
@@ -38,7 +38,7 @@
   <form th:if="${!modifica}" th:action="@{/carte/salva}" method="post" id="aggiungi-form">
     <h2>Inserisci una nuova carta</h2>
 
-    <label for="cif-aggiungi">CIF</label>
+    <label for="cif-aggiungi">PAN</label>
     <input type="text" id="cif-aggiungi" name="cif" placeholder="Inserisci CIF" required
            pattern="^[0-9]{16}$" title="Il CIF deve essere composto da 16 numeri." />
 
@@ -77,4 +77,5 @@
 
 </body>
 </html>
+
 

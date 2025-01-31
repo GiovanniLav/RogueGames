@@ -1,5 +1,44 @@
 $(document).ready(function() {
 
+    function validateForm(provincia, cap, via, civico, citta) {
+        // Validazione della provincia (2 lettere maiuscole)
+        var provinciaPattern = /^[A-Z]{2}$/;
+        if (!provinciaPattern.test(provincia)) {
+            provaAlert("Provincia deve contenere solo 2 lettere maiuscole.");
+            return false;
+        }
+
+        // Validazione del CAP (5 cifre)
+        var capPattern = /^\d{5}$/;
+        if (!capPattern.test(cap)) {
+            provaAlert("Il CAP deve essere composto da 5 cifre.");
+            return false;
+        }
+
+        // Validazione della via (solo lettere e spazi, min 7, max 45)
+        var viaPattern = /^[A-Za-z\s]{7,45}$/;
+        if (!viaPattern.test(via)) {
+            provaAlert("La via deve essere composta da lettere e spazi, con lunghezza tra 7 e 45 caratteri.");
+            return false;
+        }
+
+        // Validazione del civico (numeri, lettere e spazi, min 1, max 7)
+        var civicoPattern = /^[A-Za-z0-9\s]{1,7}$/;
+        if (!civicoPattern.test(civico)) {
+            provaAlert("Il civico deve essere una combinazione di numeri, lettere e spazi, con lunghezza tra 1 e 7.");
+            return false;
+        }
+
+        // Validazione della città (solo lettere e spazi, min 2, max 45)
+        var cittaPattern = /^[A-Za-z\s]{2,45}$/;
+        if (!cittaPattern.test(citta)) {
+            provaAlert("La città deve essere composta solo da lettere e spazi, con lunghezza tra 2 e 45 caratteri.");
+            return false;
+        }
+
+        return true; // Tutte le validazioni sono passate
+    }
+
     $('.aggiungi-indirizzo').off('click').on('click', function (e) {
         e.preventDefault();
 
@@ -8,7 +47,9 @@ $(document).ready(function() {
         var via = $("input[name='via']").val();
         var civico = $("input[name='civico']").val();
         var citta = $("input[name='citta']").val();
-        var url = "/aggiungiIndirizzoSpedizione"
+
+        if (validateForm(provincia, cap, via, civico, citta)) {
+            var url = "/aggiungiIndirizzoSpedizione";
 
         $.ajax({
             url: url,
@@ -38,7 +79,7 @@ $(document).ready(function() {
                 }
             }
         });
-    });
+        }
 })
 
 $(document).ready(function() {
@@ -56,7 +97,9 @@ $(document).ready(function() {
         var viamod = $("input[name='via-mod']").val();
         var civicomod = $("input[name='civico-mod']").val();
         var cittamod = $("input[name='citta-mod']").val();
-        var url = "/modificaIndirizzoSpedizione"
+
+        if (validateForm(provincia, cap, via, civico, citta)) {
+            var url = "/modificaIndirizzoSpedizione";
 
         $.ajax({
             url: url,
@@ -92,6 +135,7 @@ $(document).ready(function() {
                 }
             }
         });
+        }
     });
 })
 
@@ -110,13 +154,7 @@ $(document).ready(function() {
         var via = form.find('input[name="via"]').val();
         var civico = form.find('input[name="civico"]').val();
         var citta = form.find('input[name="citta"]').val();
-        var url = "/rimuoviIndirizzo" // Sostituisce {nome} con il valore reale
-
-        console.log(provincia)
-        console.log(via)
-        console.log(cap)
-        console.log(civico)
-        console.log(citta)
+        var url = "/rimuoviIndirizzo";
 
         $.ajax({
             url: url,
@@ -136,16 +174,16 @@ $(document).ready(function() {
             }
         });
     });
-})
+});
+    $(document).ready(function () {
+        $('.btn-modifica-in').on('click', function (e) {
+            e.preventDefault();
 
-$(document).ready(function () {
-    $('.btn-modifica-in').on('click', function (e) {
-        e.preventDefault();
+            const form = $(this).closest('form');
+            const url= "/modificaIndirizzo"
 
-        const form = $(this).closest('form');
-        const url= "/modificaIndirizzo"
 
-        // Crea un oggetto FormData per gestire i dati del form
+            // Crea un oggetto FormData per gestire i dati del form
         const formData = new FormData();
         formData.append('provincia', $('#provincia-m').val());
         formData.append('cap', $('#cap').val());
@@ -184,10 +222,10 @@ $(document).ready(function () {
     });
 });
 
-function provaAlert(message) {
-    const alertDiv = document.createElement("messageDiv");
-    alertDiv.textContent = message;
-    alertDiv.setAttribute("style", `
+    function provaAlert(message) {
+        const alertDiv = document.createElement("messageDiv");
+        alertDiv.textContent = message;
+        alertDiv.setAttribute("style", `
                 background-color: #222;
                 color: #ff9900;
                 padding: 10px;
@@ -199,10 +237,10 @@ function provaAlert(message) {
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             `);
 
-    document.body.appendChild(alertDiv);
+        document.body.appendChild(alertDiv);
 
-    // Rimuove l'alert dopo 3 secondi
-    setTimeout(() => {
-        alertDiv.remove();
-    }, 3000);
-}
+        // Rimuove l'alert dopo 3 secondi
+        setTimeout(() => {
+            alertDiv.remove();
+        }, 3000);
+    }

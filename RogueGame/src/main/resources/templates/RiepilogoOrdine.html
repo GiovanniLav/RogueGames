@@ -45,7 +45,7 @@
         <tbody>
         <tr th:each="item : ${carrelloItem}">
             <td>
-            <img class="img" th:src="@{/images/{name}(name=${item.immagine})}" th:alt="${item.carrello.id.nome}">
+                <img class="img" th:src="@{/images/{name}(name=${item.immagine})}" th:alt="${item.carrello.id.nome}">
             </td>
             <td th:text="${item.carrello.id.nome}"></td>
             <td th:text="${item.carrello.quantita}"></td>
@@ -92,38 +92,45 @@
         <h6>Aggiungi Indirizzo</h6>
 
         <label id="aggpron" for="aggpron"><b>Provincia</b></label>
-        <input type="text" placeholder="Enter provincia" name="provincia" required>
+        <input type="text" placeholder="Enter provincia" name="provincia" id="provincia" required>
+        <small id="provinciaError" class="text-danger"></small>
 
         <label id="aggcap" for="aggcap"><b>Cap</b></label>
-        <input type="text" placeholder="Enter cap" name="cap" required>
+        <input type="text" placeholder="Enter cap" name="cap" id="cap" required>
+        <small id="capError" class="text-danger"></small>
 
         <label id="aggvia" for="aggvia"><b>Via</b></label>
-        <input type="text" placeholder="Enter via" name="via" required>
+        <input type="text" placeholder="Enter via" name="via" id="via" required>
+        <small id="viaError" class="text-danger"></small>
 
         <label id="aggcivico" for="aggcivico"><b>Civico</b></label>
-        <input type="text" placeholder="Enter civico" name="civico" required>
+        <input type="text" placeholder="Enter civico" name="civico" id="civico" required>
+        <small id="civicoError" class="text-danger"></small>
 
-        <label id="aggcitta" for="aggcitta"><b>Citta</b></label>
-        <input type="text" placeholder="Enter citta" name="citta" required>
+        <label id="aggcitta" for="aggcitta"><b>Città</b></label>
+        <input type="text" placeholder="Enter citta" name="citta" id="citta" required>
+        <small id="cittaError" class="text-danger"></small>
 
         <button type="button" class="aggiungi-indirizzo">Aggiungi indirizzo</button>
         <button type="button" class="btn cancel" onclick="closeForm('myFormIndirizzo')">Close</button>
     </form>
 </div>
-
 <button class="open-button" onclick="openForm('myFormCarta')">Aggiungi Carta</button>
 <div class="form-popup" id="myFormCarta">
     <form class="form-container" method="post">
         <h6>Aggiungi Carta</h6>
 
         <label id="aggcif" for="aggcif">Numero Carta:</label>
-        <input type="text" placeholder="Numero Carta" name="cif" required>
+        <input type="text" placeholder="Numero Carta" name="cif" id="cif" required>
+        <small id="cifError" class="text-danger"></small>
 
         <label id="aggscad" for="aggscad">Scadenza:</label>
-        <input type="text" placeholder="MM/AA" name="scadenza" required>
+        <input type="text" placeholder="MM/AA" name="scadenza" id="scadenza" required>
+        <small id="scadenzaError" class="text-danger"></small>
 
-        <label id="aggcvv" for="aggcvv">Scadenza:</label>
-        <input type="text" placeholder="123" name="cvv" required>
+        <label id="aggcvv" for="aggcvv">CVV:</label>
+        <input type="text" placeholder="123" name="cvv" id="cvv" required>
+        <small id="cvvError" class="text-danger"></small>
 
         <button type="button" class="aggiungi-carta">Aggiungi</button>
         <button type="button" class="btn cancel" onclick="closeForm('myFormCarta')">Chiudi</button>

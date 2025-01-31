@@ -19,7 +19,7 @@ $(document).ready(function() {
                     icon: 'success'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                            window.location.href = "/catalogo/prodotti";
+                        window.location.href = "/catalogo/prodotti";
                     }
                 });
             },
@@ -29,125 +29,156 @@ $(document).ready(function() {
                     title: 'Oops...',
                     text: 'Si è verificato un errore durante l\'elaborazione dell\'ordine.'
                 });
-                 if (xhr.status === 400) {
-                     provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
-                     setTimeout(() => {
-                         window.location.href = "/utenti/home"; // Ricarica la pagina dopo 3 secondi
-                     }, 2000);
+                if (xhr.status === 400) {
+                    provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                    setTimeout(() => {
+                        window.location.href = "/utenti/home"; // Ricarica la pagina dopo 3 secondi
+                    }, 2000);
                 }else if (xhr.status === 401) {
-            provaAlert("Errore: Il gestore non può acquistare. Registrati con l'account cliente");
-                     provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
-                     setTimeout(() => {
-                         window.location.href = "/utenti/login"; // Ricarica la pagina dopo 3 secondi
-                     }, 2000);
-        }
+                    provaAlert("Errore: Il gestore non può acquistare. Registrati con l'account cliente");
+                    provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                    setTimeout(() => {
+                        window.location.href = "/utenti/login"; // Ricarica la pagina dopo 3 secondi
+                    }, 2000);
+                }
             }
         })
     })
 })
 
-$(document).ready(function() {
-
-    $('.aggiungi-carta').off('click').on('click', function (e) {
+$(document).ready(function () {
+    $('.aggiungi-carta').on('click', function (e) {
         e.preventDefault();
 
-        var cif = $("input[name='cif']").val();
-        var scadenza = $("input[name='scadenza']").val();
-        var cvv = $("input[name='cvv']").val();
-        var url = "/carte/salvaCartaOrdine"
+        // Regex e controlli (come nel codice precedente)
+        const cifRegex = /^\d{16}$/;
+        const cvvRegex = /^\d{3}$/;
+        const scadenzaRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
 
-        console.log(cif);
-        console.log(scadenza);
-        console.log(cvv);
+        const cif = $('#cif').val();
+        const cvv = $('#cvv').val();
+        const scadenza = $('#scadenza').val();
 
+        // Validazione (come nel codice precedente)
+        if (!cifRegex.test(cif)) {
+            $('#cifError').text('Il numero della carta deve contenere 16 cifre numeriche.');
+            return;
+        }
+        if (!cvvRegex.test(cvv)) {
+            $('#cvvError').text('Il CVV deve contenere 3 cifre numeriche.');
+            return;
+        }
+        if (!scadenzaRegex.test(scadenza)) {
+            $('#scadenzaError').text('Formato scadenza non valido. Usa MM/AA.');
+            return;
+        }
+
+        // Controllo scadenza (come nel codice precedente)
+        const oggi = new Date();
+        const [meseScadenza, annoScadenza] = scadenza.split('/');
+        const annoCorrente = oggi.getFullYear() % 100;
+        const meseCorrente = oggi.getMonth() + 1;
+
+        if (
+            parseInt(annoScadenza) < annoCorrente ||
+            (parseInt(annoScadenza) === annoCorrente && parseInt(meseScadenza) < meseCorrente)
+        ) {
+            $('#scadenzaError').text('La carta è scaduta.');
+            return;
+        }
+
+        // AJAX per aggiungere la carta
         $.ajax({
-            url: url,
+            url: "/carte/salvaCartaOrdine",
             type: "POST",
-            data: {
-                cif: cif,
-                scadenza: scadenza,
-                cvv: cvv,
+            data: { cif: cif, scadenza: scadenza, cvv: cvv },
+            success: function (response) {
+                // Aggiungi la nuova carta al campo di selezione
+                const nuovaCarta = `<option value="${cif}">${cif} ${scadenza}</option>`;
+                $('#cartacredito').append(nuovaCarta);
+
+                // Mostra un messaggio di successo
+                Swal.fire('Successo', 'Carta aggiunta correttamente!', 'success');
+
+                // Svuota i campi del form
+                $('#myFormCarta')[0].reset(); // Usa .reset() per svuotare il form
+
+                // Chiudi il form
+                closeForm('myFormCarta');
             },
-            success: function(response) {
-                provaAlert("La carta è stata aggiunta correttamente");
-
-                $.ajax({
-                    url: "/carte/aggiornaCarte",
-                    type: "GET",
-                    success: function (response) {
-                        console.log("Risposta AJAX:", response); // <--- Aggiunto per debug
-
-                        $('#cartacredito').empty();
-                        $('#cartacredito').append('<option value="">Seleziona la carta</option>');
-
-                        if (response && response.carte) { // Assicurati che l'oggetto contenga le carte
-                            $.each(response.carte, function (index, carta) {
-                                console.log("Aggiungo carta:", carta); // <--- Debug per vedere i dati
-                                $('#cartacredito').append(`<option value="${carta.cif}">${carta.cif} ${carta.scadenza}</option>`);
-                            });
-                        } else {
-                            console.error("Errore: La risposta non contiene carte valide!");
-                        }
-                    },
-                    error: function (xhr, status, error) {
-                        console.error("Errore AJAX:", status, error);
-                    }
-                });
-            },
-            error: function(xhr, status, error) {
-                if (xhr.status === 401) {
-                    provaAlert("Errore: Devi loggarti per poter inserire la carta");
-                } else {
-                    alert("Errore durante la richiesta.");
-                }
+            error: function (xhr) {
+                Swal.fire('Errore', xhr.responseJSON?.message || 'Errore durante l\'aggiunta della carta.', 'error');
             }
         });
     });
-})
+});
 
-$(document).ready(function() {
-    $('.aggiungi-indirizzo').off('click').on('click', function (e) {
+$(document).ready(function () {
+    $('.aggiungi-indirizzo').on('click', function (e) {
         e.preventDefault();
 
-        var provincia = $("input[name='provincia']").val();
-        var cap = $("input[name='cap']").val();
-        var via = $("input[name='via']").val();
-        var civico = $("input[name='civico']").val();
-        var citta = $("input[name='citta']").val();
-        var url = "/aggiungiIndirizzoSpedizione";
+        // Regex e controlli (come nel codice precedente)
+        const capRegex = /^\d{5}$/;
+        const provinciaRegex = /^[A-Z]{2}$/;
+        const cittaRegex = /^[a-zA-Z\s]{2,45}$/;
+        const civicoRegex = /^[a-zA-Z0-9\s]{1,10}$/;
+        const viaRegex = /^[a-zA-Z\s]{2,45}$/;
 
+        const provincia = $('#provincia').val();
+        const cap = $('#cap').val();
+        const via = $('#via').val();
+        const civico = $('#civico').val();
+        const citta = $('#citta').val();
+
+        // Validazione (come nel codice precedente)
+        if (!provinciaRegex.test(provincia)) {
+            $('#provinciaError').text('La provincia deve contenere 2 lettere maiuscole.');
+            return;
+        }
+        if (!capRegex.test(cap)) {
+            $('#capError').text('Il CAP deve contenere 5 cifre numeriche.');
+            return;
+        }
+        if (!viaRegex.test(via)) {
+            $('#viaError').text('La via deve contenere tra 2 e 45 caratteri.');
+            return;
+        }
+        if (!civicoRegex.test(civico)) {
+            $('#civicoError').text('Il civico deve contenere tra 1 e 10 caratteri.');
+            return;
+        }
+        if (!cittaRegex.test(citta)) {
+            $('#cittaError').text('La città deve contenere tra 2 e 45 caratteri.');
+            return;
+        }
+
+        // AJAX per aggiungere l'indirizzo
         $.ajax({
-            url: url,
+            url: "/aggiungiIndirizzoSpedizione",
             type: "POST",
-            data: {
-                provincia: provincia,
-                cap: cap,
-                via: via,
-                civico: civico,
-                citta: citta
-            },
-            success: function(response) {
-                provaAlert("L'indirizzo è stato aggiunto correttamente");
-                closeForm("myFormIndirizzo");
-                // Aggiunge il nuovo indirizzo direttamente alla select
+            data: { provincia: provincia, cap: cap, via: via, civico: civico, citta: citta },
+            success: function (response) {
+                // Aggiungi il nuovo indirizzo al campo di selezione
+                const nuovoIndirizzo = `<option value="${provincia}-${cap}-${via}-${civico}-${citta}">
+                    ${provincia} ${cap} ${via} ${civico} ${citta}
+                </option>`;
+                $('#indirizzo').append(nuovoIndirizzo);
 
-                // Aggiorna gli indirizzi con AJAX per sincronizzare con il backend
-                aggiornaListaIndirizzi();
+                // Mostra un messaggio di successo
+                Swal.fire('Successo', 'Indirizzo aggiunto correttamente!', 'success');
+
+                // Svuota i campi del form
+                $('#myFormIndirizzo')[0].reset(); // Usa .reset() per svuotare il form
+
+                // Chiudi il form
+                closeForm('myFormIndirizzo');
             },
-            error: function(xhr, status, error) {
-                if (xhr.status === 401) {
-                    alert("Errore: Devi loggarti per poter aggiungere un indirizzo");
-                } else if (xhr.responseJSON && xhr.responseJSON.message) {
-                    alert("Errore: " + xhr.responseJSON.message);
-                } else if (xhr.responseText) {
-                    alert("Errore: " + xhr.responseText);
-                } else {
-                    alert("Errore durante la richiesta.");
-                }
+            error: function (xhr) {
+                Swal.fire('Errore', xhr.responseJSON?.message || 'Errore durante l\'aggiunta dell\'indirizzo.', 'error');
             }
         });
     });
-
+});
     // Funzione per aggiornare la lista degli indirizzi dal backend
     function aggiornaListaIndirizzi() {
         $.ajax({
@@ -171,7 +202,7 @@ $(document).ready(function() {
             }
         });
     }
-});
+
 
 
 function openForm(formId) {
@@ -200,63 +231,3 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-    $('.aumentaQuantita').off('click').on('click', function(e) {
-        e.preventDefault();
-
-        const quantita = $(this).closest('.item-grid').find('#quantita').val(); // Trova l'input quantita relativo al bottone
-        const nomeProdotto = $(this).closest('.item-grid').find('#nome').val(); // Trova l'input nome relativo al bottone
-
-        $.ajax({
-            type: "POST",
-            url: "/aumentaQnt",
-            data: { nomeProdotto: nomeProdotto, quantita: quantita }, // Invia i dati come parametri del form
-
-            success: function(response) {
-                provaAlert("Quantità aggiornata con successo!");
-                setTimeout(() => {
-                    location.reload(); // Ricarica la pagina dopo 3 secondi
-                }, 2000);
-            },
-            error: function(xhr, status, error) {
-                location.reload();
-                if (xhr.status === 401) {
-                    provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
-                    setTimeout(() => {
-                        window.location.href = "/utenti/login"; // Ricarica la pagina dopo 3 secondi
-                    }, 2000);
-                } else if (xhr.responseJSON && xhr.responseJSON.message) {
-                    provaAlert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
-                } else if (xhr.responseText) {
-                    provaAlert("Errore: " + xhr.responseText); // Gestisce errori con testo semplice
-                } else {
-                    provaAlert("Errore durante la richiesta.");
-                }
-            }
-        });
-    });
-})
-
-
-function provaAlert(message) {
-    const alertDiv = document.createElement("messageDiv");
-    alertDiv.textContent = message;
-    alertDiv.setAttribute("style", `
-                background-color: #222;
-                color: #ff9900;
-                padding: 10px;
-                border-radius: 5px;
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                z-index: 1000;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            `);
-
-    document.body.appendChild(alertDiv);
-
-    // Rimuove l'alert dopo 3 secondi
-    setTimeout(() => {
-        alertDiv.remove();
-    }, 3000);
-}
