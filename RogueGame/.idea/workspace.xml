@@ -9,10 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="-Home completata&#10;-Modifica css Login&#10;-Modifica css Register&#10;-Modifica css Carrello&#10;-Modifica css DettagliProdotto&#10;-Modifica css Catalogo&#10;-Modifica Header">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2025_12_26_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_01_2025_12_26__Changes_.xml" beforeDir="false" />
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Aggiunti diversi controlli: carta, prodotti">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/UtenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Carte.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Carte.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +61,12 @@
     &quot;assignee&quot;: &quot;GiovanniLav&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/GiovanniLav/RogueGames.git&quot;,
-    &quot;accountId&quot;: &quot;269ed0c3-3027-494d-a916-68e948044a1a&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/GiovanniLav/RogueGames.git",
+    "accountId": "8d0ed380-654d-469a-8658-561e18c66822"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -109,7 +113,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.RogueGameApplication.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 9.0.98.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Giovanni&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/anton/IdeaProjects/RogueGames/RogueGame/pom.xml&quot;,
@@ -241,8 +245,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -286,6 +290,7 @@
       <workItem from="1737901803614" duration="17040000" />
       <workItem from="1737966906921" duration="18225000" />
       <workItem from="1738066480885" duration="733000" />
+      <workItem from="1738341318857" duration="3508000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />
@@ -422,7 +427,8 @@
     <MESSAGE value="Sistemato Carrello" />
     <MESSAGE value="-Home aggiornata&#10;-Modifica css Login&#10;-Modifica css Register" />
     <MESSAGE value="-Home completata&#10;-Modifica css Login&#10;-Modifica css Register&#10;-Modifica css Carrello&#10;-Modifica css DettagliProdotto&#10;-Modifica css Catalogo&#10;-Modifica Header" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Home completata&#10;-Modifica css Login&#10;-Modifica css Register&#10;-Modifica css Carrello&#10;-Modifica css DettagliProdotto&#10;-Modifica css Catalogo&#10;-Modifica Header" />
+    <MESSAGE value="Aggiunti diversi controlli: carta, prodotti" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunti diversi controlli: carta, prodotti" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
