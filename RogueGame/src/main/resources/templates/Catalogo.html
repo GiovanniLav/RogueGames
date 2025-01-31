@@ -43,7 +43,7 @@
                 </script>-->
 
             </div>
-            <a th:href="@{/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
+            <a th:href="@{/DettagliProdotto/prodotto/{nome}(nome=${product.nome})}" style="text-decoration: none">
                 <img th:src="@{/images/{name}(name=${product.immagine})}"
                      th:alt="${product.nome}">
                 <h3 th:text="${product.nome}">Nome del Prodotto</h3>

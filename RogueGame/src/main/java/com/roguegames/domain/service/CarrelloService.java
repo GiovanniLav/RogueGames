@@ -120,5 +120,13 @@ public class CarrelloService {
         return (List<PCarrello>) carrelloRepository.findAllByUtente(utente);
     }
 
+    public List<PCarrello> getCarrelloNome(String nome) {
+        return (List<PCarrello>) carrelloRepository.findAllByNome(nome);
+    }
+
+    public void deleteCarrelloProdotto(PCarrelloId id) {
+       carrelloRepository.deleteById(id);
+    }
+
 }
 

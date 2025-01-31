@@ -20,7 +20,6 @@ public class GlobalExceptionHandler {
     }
 
     public ModelAndView handleGeneralException(Exception ex, HttpSession session) {
-        session.invalidate();
         ModelAndView modelAndView = new ModelAndView("error/methodNotSupported"); // Nome della tua view personalizzata
         modelAndView.addObject("error", "Si è verificato un errore interno. Ci scusiamo per il disagio.");
         // Log dell'errore per debugging (opzionale)

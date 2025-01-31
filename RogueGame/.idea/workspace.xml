@@ -9,20 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifiche di riepilogoOrdine">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" afterDir="false" />
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Aggiunti i controlli delle eccezioni">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CarrelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CarrelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/repository/CarrelloRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/repository/CarrelloRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/RiepilogoAcquisto.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/RiepilogoAcquisto.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Carrello.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Carrello.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/IndirizzoSpedizione.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/UtenteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/UtenteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Gestore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Gestore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Indirizzo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Indirizzo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/RiepilogoOrdine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/DettagliProdotto.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/DettagliProdotto.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/prodotti.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/prodotti.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -298,6 +297,9 @@
       <workItem from="1737901803614" duration="17040000" />
       <workItem from="1737966906921" duration="18225000" />
       <workItem from="1738229001168" duration="4063000" />
+      <workItem from="1738250390664" duration="1513000" />
+      <workItem from="1738251986261" duration="2337000" />
+      <workItem from="1738314998038" duration="9360000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />

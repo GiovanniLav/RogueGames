@@ -200,3 +200,63 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    $('.aumentaQuantita').off('click').on('click', function(e) {
+        e.preventDefault();
+
+        const quantita = $(this).closest('.item-grid').find('#quantita').val(); // Trova l'input quantita relativo al bottone
+        const nomeProdotto = $(this).closest('.item-grid').find('#nome').val(); // Trova l'input nome relativo al bottone
+
+        $.ajax({
+            type: "POST",
+            url: "/aumentaQnt",
+            data: { nomeProdotto: nomeProdotto, quantita: quantita }, // Invia i dati come parametri del form
+
+            success: function(response) {
+                provaAlert("Quantità aggiornata con successo!");
+                setTimeout(() => {
+                    location.reload(); // Ricarica la pagina dopo 3 secondi
+                }, 2000);
+            },
+            error: function(xhr, status, error) {
+                location.reload();
+                if (xhr.status === 401) {
+                    provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                    setTimeout(() => {
+                        window.location.href = "/utenti/login"; // Ricarica la pagina dopo 3 secondi
+                    }, 2000);
+                } else if (xhr.responseJSON && xhr.responseJSON.message) {
+                    provaAlert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
+                } else if (xhr.responseText) {
+                    provaAlert("Errore: " + xhr.responseText); // Gestisce errori con testo semplice
+                } else {
+                    provaAlert("Errore durante la richiesta.");
+                }
+            }
+        });
+    });
+})
+
+
+function provaAlert(message) {
+    const alertDiv = document.createElement("messageDiv");
+    alertDiv.textContent = message;
+    alertDiv.setAttribute("style", `
+                background-color: #222;
+                color: #ff9900;
+                padding: 10px;
+                border-radius: 5px;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1000;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            `);
+
+    document.body.appendChild(alertDiv);
+
+    // Rimuove l'alert dopo 3 secondi
+    setTimeout(() => {
+        alertDiv.remove();
+    }, 3000);
+}

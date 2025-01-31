@@ -8,10 +8,87 @@ document.addEventListener("DOMContentLoaded", function() {
     btn.onclick = function() {
         form.reset(); // Resetta tutti i campi
         modal.style.display = "block";
+
         document.getElementById("modalTitle").textContent = "Aggiungi Nuovo Prodotto";
         document.getElementById("submitButton").textContent = "Aggiungi Prodotto";
-        form.action = "/utenti/prodotti/aggiungi";
+        var v="";
+        document.getElementById('video').addEventListener('change', function(event) {
+            const vid=event.target.files[0];
+            if(vid)
+            {
+                console.log (vid.name)
+                v=vid.name;
+            }else{
+                console.log (vid.name)
+                v="";
+            }
 
+        })
+        document.getElementById('immagine').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+
+            if (file) {
+
+                console.log(file.name);
+                console.log(v);
+                $("#productForm").submit(function(event) {
+                    event.preventDefault();
+                    var nomeProdotto = $("#nome").val();
+                    var nomeImmagine = file.name
+                    var nomeVideo = v;
+
+                    var formData = new FormData();
+                    formData.append("nome", nomeProdotto);
+                    formData.append("immagine", nomeImmagine);
+                    formData.append("video", nomeVideo);
+                    formData.append("descrizione", $("#descrizione").val());
+                    formData.append("prezzo", $("#prezzo").val());
+                    formData.append("quantita", $("#quantita").val());
+                    formData.append("casaProd", $("#casaProd").val());
+                    formData.append("piattaforma", $("#piattaforma").val());
+                    formData.append("genere", $("#genere").val());
+                    formData.append("tipo", $("#tipo").val());
+                    formData.append("dataRilascio", $("#dataRilascio").val());
+                    for (var pair of formData.entries()) {
+                        console.log(pair[0] + ": " + pair[1]);
+                    }            $.ajax({
+                        url: "/utenti/prodotti/aggiungi",
+                        type: "POST",
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            console.log("Prodotto aggiunto:", response);
+                            $("#addProductModal").hide();
+                            provaAlert("Prodotto aggiunto correttamente")
+                            setTimeout(() => {
+                                location.reload(); // Ricarica la pagina dopo 3 secondi
+                            }, 2000);
+                        },
+                        error: function(xhr,error) {
+                            console.error("Errore:", error);
+                            if (xhr.status === 511) {
+                                provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                                setTimeout(() => {
+                                    window.location.href = "/utenti/login";
+                                }, 2000);
+                            } else if (xhr.status === 401) {
+                                provaAlert("Non sei autorizzato a stare in questa pagina");
+                                setTimeout(() => {
+                                    window.location.href = "/utenti/home";
+                                }, 2000);
+                            } if (xhr.status === 400) {
+                                provaAlert("il prodotto è esistente");
+                            } else {
+                                provaAlert("Errore durante la richiesta." + error);
+                            }
+                        }
+                    });
+                });
+            } else {
+                provaAlert("Devi selezionare un immagine")
+            }
+        });
         // Rendi il campo 'nome' modificabile quando si aggiunge un prodotto
         document.getElementById("nome").removeAttribute("readonly");  // Rendi il nome modificabile
 
@@ -20,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("video-label").textContent = "Video (Vuoto)";
         document.getElementById("hiddenImage").value = "";
         document.getElementById("hiddenVideo").value = "";
+
     };
 
     // Gestione della chiusura del modal
@@ -31,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (event.target === modal) {
             modal.style.display = "none";
         }
+
     };
 
     // Funzione per aprire il modal in modalità modifica
@@ -136,5 +215,27 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+function provaAlert(message) {
+    const alertDiv = document.createElement("messageDiv");
+    alertDiv.textContent = message;
+    alertDiv.setAttribute("style", `
+                background-color: #222;
+                color: #ff9900;
+                padding: 10px;
+                border-radius: 5px;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1000;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            `);
+
+    document.body.appendChild(alertDiv);
+
+    // Rimuove l'alert dopo 3 secondi
+    setTimeout(() => {
+        alertDiv.remove();
+    }, 3000);
+}
 
 
