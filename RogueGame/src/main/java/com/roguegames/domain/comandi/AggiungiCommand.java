@@ -15,6 +15,7 @@ public class AggiungiCommand implements Command {
         this.utente = utente;
     }
 
+
     @Override
     public void execute() {
         preferitiService.aggiungiPreferito(nome, utente);  // Aggiungi il prodotto ai preferiti usando l'oggetto Utente
