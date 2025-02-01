@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="shortcut icon" href="#">
+    <title>Storico Ordine Utente</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="/css/Footer.css">
+    <link rel="stylesheet" href="/css/Header.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/Carrello.js"></script>
+</head>
+<body>
+
+<header th:replace="header :: header"></header>
+<p class="cat">Storico Ordine</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID Ordine</th>
+        <th>Nome</th>
+        <th>Prezzo</th>
+        <th>Prezzo Totale</th>
+        <th>Quantità</th>
+        <th>Data</th>
+        <th>Stato</th>
+        <th>Utente</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="ordine : ${ordini}">
+
+        <td th:text="${ordine.id.idOrdine}"></td>
+        <td th:text="${ordine.id.nome}"></td>
+        <td th:text="${ordine.prezzo}"></td>
+        <td th:text="${ordine.prezzoTot}"></td>
+        <td th:text="${ordine.quantita}"></td>
+        <td th:text="${ordine.id.data}"></td>
+        <td th:text="${ordine.stato}"></td>
+        <td th:text="${ordine.utente.email}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<div th:replace="footer :: footer"></div>
+</body>
+
+</html>

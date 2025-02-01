@@ -25,5 +25,8 @@ public interface ProdottoRepository extends JpaRepository<Prodotto, Long> {
     @Query(value = "SELECT * FROM Prodotti WHERE genere='Console'", nativeQuery = true)
     List<Prodotto> findConsole();
 
+    List<Prodotto> findAllByOrderByDataRilascioAsc();
+    List<Prodotto> findAllByOrderByDataRilascioDesc();
+
 }
 

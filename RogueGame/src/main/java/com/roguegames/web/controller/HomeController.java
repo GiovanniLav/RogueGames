@@ -23,11 +23,6 @@ public class HomeController {
         return "Home"; // Restituisce la vista "index.html"
     }*/
 
-    @GetMapping("/login")
-    public String login() {
-        return "Login"; // Restituisce la vista "login.html"
-    }
-
     //Mostra 6 Prodotti Random in fondo alla Home
     @GetMapping("/")
     public String showHomePage(Model model) {

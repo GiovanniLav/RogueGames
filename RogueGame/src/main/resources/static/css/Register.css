@@ -81,6 +81,7 @@ button:hover {
     transform: translateY(-10px);
 }
 
+
 /* Media query per dispositivi mobili */
 @media (max-width: 600px) {
     .container {

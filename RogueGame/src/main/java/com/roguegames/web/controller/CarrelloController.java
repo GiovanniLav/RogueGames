@@ -28,11 +28,12 @@ public class CarrelloController {
         PCarrello carrello;
         Utente utente = (Utente) session.getAttribute("utente");
         if (utente == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .header("Location", "/utenti/login")
-                    .build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
+        if(utente.getRuolo().equals("gestore")){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
         Prodotto prodotto= prodottoService.findProdotto(nome);
 
         if (prodotto == null) {
@@ -54,7 +55,7 @@ public class CarrelloController {
         PCarrello carrello;
         Utente utente = (Utente) session.getAttribute("utente");
         if(utente == null){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).header("Location", "/utenti/login").build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("Location", "/utenti/login").build();
         }
 
         Prodotto prodotto= prodottoService.findProdotto(nome);
@@ -81,13 +82,13 @@ public class CarrelloController {
         PCarrello carrello;
         Utente utente = (Utente) session.getAttribute("utente");
         if(utente == null){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).header("Location", "/utenti/login").build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("Location", "/utenti/login").build();
         }
 
         Prodotto prodotto= prodottoService.findProdotto(nome);
 
         if (prodotto == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Prodotto non trovato");
+            return ResponseEntity.badRequest().body("Prodotto non trovato");
         }
 
         try{

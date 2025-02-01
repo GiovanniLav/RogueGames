@@ -7,70 +7,28 @@ import javax.validation.constraints.*;
 @Table(name = "indirizzospedizione")
 public class IndirizzoSpedizione {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
-    private Long id;
-
-    @Column(name = "Provincia", length = 3, nullable = false)
-    @NotBlank(message = "La provincia è obbligatoria")
-    private String provincia;
-
-    @Column(name = "CAP", nullable = false)
-    @NotNull(message = "Il CAP è obbligatorio")
-    @Digits(integer = 5, fraction = 0, message = "Il CAP deve contenere 5 cifre")
-    private Integer cap;
-
-    @Column(name = "Via", length = 45, nullable = false)
-    @NotBlank(message = "La via è obbligatoria")
-    private String via;
-
-    @Column(name = "Civico", length = 10, nullable = false)
-    @NotBlank(message = "Il numero civico è obbligatorio")
-    private String civico;
-
-    @Column(name = "Citta", length = 45, nullable = false)
-    @NotBlank(message = "La città è obbligatoria")
-    private String citta;
+    @EmbeddedId
+    private IndirizzoSpedizioneId id;
 
     @ManyToOne
-    @JoinColumn(name = "Email", nullable = false)
-    @NotNull(message = "L'email è obbligatoria")
+    @MapsId("email")
+    @JoinColumn(name = "Email", referencedColumnName = "Email", nullable = false)
     private Utente utente;
 
     // Costruttori
     public IndirizzoSpedizione() {}
 
-    public IndirizzoSpedizione(String provincia, Integer cap, String via, String civico, String citta, Utente utente) {
-        this.provincia = provincia;
-        this.cap = cap;
-        this.via = via;
-        this.civico = civico;
-        this.citta = citta;
+    public IndirizzoSpedizione(IndirizzoSpedizioneId id, Utente utente) {
+        this.id = id;
         this.utente = utente;
     }
 
-    // Getters e setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getProvincia() { return provincia; }
-    public void setProvincia(String provincia) { this.provincia = provincia; }
-
-    public Integer getCap() { return cap; }
-    public void setCap(Integer cap) { this.cap = cap; }
-
-    public String getVia() { return via; }
-    public void setVia(String via) { this.via = via; }
-
-    public String getCivico() { return civico; }
-    public void setCivico(String civico) { this.civico = civico; }
-
-    public String getCitta() { return citta; }
-    public void setCitta(String citta) { this.citta = citta; }
+    public IndirizzoSpedizioneId getId() { return id; }
+    public void setId(IndirizzoSpedizioneId id) { this.id = id; }
 
     public Utente getUtente() { return utente; }
     public void setUtente(Utente utente) { this.utente = utente; }
+
 
     // Equals e HashCode
     @Override

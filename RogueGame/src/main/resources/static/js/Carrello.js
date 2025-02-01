@@ -42,11 +42,13 @@ $(document).ready(function() {
             type: "POST",
             data: { nome: nomeProdotto }, // Invia il nome del prodotto nel corpo della richiesta
             success: function(response) {
-                provaAlert("Prodotto aggiunto al carrello!");
+                provaAlert(nomeProdotto + " è aggiunto al carrello!");
             },
             error: function(xhr, status, error) {
                 if (xhr.status === 401) {
                     provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                }else if (xhr.status === 400) {
+                        provaAlert("Errore: Il gestore non può acquistare. Registrati con l'account cliente");
                 } else if (xhr.responseJSON && xhr.responseJSON.message) {
                     provaAlert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
                 } else if (xhr.responseText) {
@@ -75,12 +77,15 @@ $(document).ready(function() {
                 provaAlert("Quantità aggiornata con successo!");
                 setTimeout(() => {
                     location.reload(); // Ricarica la pagina dopo 3 secondi
-                }, 3000);
+                }, 2000);
             },
             error: function(xhr, status, error) {
                 location.reload();
                 if (xhr.status === 401) {
-                    window.location.href = "/utenti/login";
+                    provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                    setTimeout(() => {
+                        window.location.href = "/utenti/login"; // Ricarica la pagina dopo 3 secondi
+                    }, 2000);
                 } else if (xhr.responseJSON && xhr.responseJSON.message) {
                     provaAlert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
                 } else if (xhr.responseText) {
@@ -93,17 +98,6 @@ $(document).ready(function() {
     });
 })
 
-document.getElementById('btnAcquista').addEventListener('click', function(event) {
-    event.preventDefault(); // Impedisci il submit del form
-
-    if (carrelloVuoto()) {
-        document.getElementById('popup').classList.remove('hidden');
-    }
-});
-
-document.getElementById('btnClose').addEventListener('click', function() {
-    document.getElementById('popup').classList.add('hidden');
-});
 
 function provaAlert(message) {
     const alertDiv = document.createElement("messageDiv");

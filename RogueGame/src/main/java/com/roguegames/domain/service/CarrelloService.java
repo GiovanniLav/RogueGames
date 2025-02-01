@@ -53,7 +53,7 @@ public class CarrelloService {
         if (prodottoCarrello.isPresent()) {
                 PCarrello carrello = prodottoCarrello.get();
                 int newQnt= carrello.getQuantita()+1;
-                if(newQnt < prodotto.getQuantita()) {
+                if(newQnt <= prodotto.getQuantita()) {
                     carrello.setQuantita(newQnt);
                     carrelloRepository.save(carrello);
                 }else{throw new QuantitaNonDisponibileException("La quantità non è disponibile. La quantità massima di " + prodotto.getNome() + " è di " + prodotto.getQuantita());}
@@ -118,6 +118,14 @@ public class CarrelloService {
 
     public List<PCarrello> getCarrello(Utente utente) {
         return (List<PCarrello>) carrelloRepository.findAllByUtente(utente);
+    }
+
+    public List<PCarrello> getCarrelloNome(String nome) {
+        return (List<PCarrello>) carrelloRepository.findAllByNome(nome);
+    }
+
+    public void deleteCarrelloProdotto(PCarrelloId id) {
+       carrelloRepository.deleteById(id);
     }
 
 }

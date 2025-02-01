@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/css/RiepilogoAcquisto.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/Ordine.js"></script>
+
 </head>
 <body>
 
@@ -18,7 +20,19 @@
 <div class="container">
     <h1>Riepilogo Acquisto</h1>
 
-    <!-- Esempio di contenitore con dati dinamici -->
+    <div th:if="${carrelloItem == null || carrelloItem.isEmpty()}">
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Quantità</th>
+                <th>Prezzo</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
     <table class="table">
         <thead>
         <tr>
@@ -31,7 +45,7 @@
         <tbody>
         <tr th:each="item : ${carrelloItem}">
             <td>
-            <img class="img" th:src="@{/images/{name}(name=${item.immagine})}" th:alt="${item.carrello.id.nome}">
+                <img class="img" th:src="@{/images/{name}(name=${item.immagine})}" th:alt="${item.carrello.id.nome}">
             </td>
             <td th:text="${item.carrello.id.nome}"></td>
             <td th:text="${item.carrello.quantita}"></td>
@@ -44,11 +58,83 @@
         <h3>Totale: <span th:text="${#numbers.formatDecimal(totale,2,2)} + '€'"></span></h3>
     </div>
 
-    <form th:action="@{/aggiungiOrdine}" method="post">
-        <input type="hidden" th:name="totale" th:value="${totale}" />
-        <button type="submit" class="processa-ordine" th:attr="data-totale=${totale}">Processa Carrello</button>
-    </form>
+    <form id = "processaOrdine" th:action="@{/aggiungiOrdine}" method="post">
 
+        <div class="form-group">
+            <label for="indirizzo">Indirizzo di Spedizione:</label>
+            <select class="form-control" id="indirizzo" name="indirizzo" required>
+                <option value="">Seleziona indirizzo</option>
+                <th:block th:each="indirizzo : ${indirizzi}">
+                    <option th:value="|${indirizzo.id.provincia}-${indirizzo.id.cap}-${indirizzo.id.via}-${indirizzo.id.civico}-${indirizzo.id.citta}|"
+                            th:text="|${indirizzo.id.provincia} ${indirizzo.id.cap} ${indirizzo.id.via} ${indirizzo.id.civico} ${indirizzo.id.citta}|">
+                    </option>
+                </th:block>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cartacredito">Carta di Credito:</label>
+            <select class="form-control" id="cartacredito" name="cartacredito" required>
+                <option value="">Seleziona la carta</option>
+                <th:block th:each="carta : ${carte}">
+                    <option th:value="${carta.cif}" th:text="|${carta.cif} ${carta.scadenza}|"></option>
+                </th:block>
+            </select>
+        </div>
+        <input type="hidden" th:name="totale" th:value="${totale}" />
+        <button type="submit" class="processa-ordine" th:attr="data-totale=${totale}" disabled>Processa Carrello</button>
+    </form>
+</div>
+
+<button class="open-button-indi" onclick="openForm('myFormIndirizzo')">Aggiungi Indirizzo</button>
+<div class="form-popup-indi" id="myFormIndirizzo">
+    <form class="form-container">
+        <h6>Aggiungi Indirizzo</h6>
+
+        <label id="aggpron" for="aggpron"><b>Provincia</b></label>
+        <input type="text" placeholder="Enter provincia" name="provincia" id="provincia" required>
+        <small id="provinciaError" class="text-danger"></small>
+
+        <label id="aggcap" for="aggcap"><b>Cap</b></label>
+        <input type="text" placeholder="Enter cap" name="cap" id="cap" required>
+        <small id="capError" class="text-danger"></small>
+
+        <label id="aggvia" for="aggvia"><b>Via</b></label>
+        <input type="text" placeholder="Enter via" name="via" id="via" required>
+        <small id="viaError" class="text-danger"></small>
+
+        <label id="aggcivico" for="aggcivico"><b>Civico</b></label>
+        <input type="text" placeholder="Enter civico" name="civico" id="civico" required>
+        <small id="civicoError" class="text-danger"></small>
+
+        <label id="aggcitta" for="aggcitta"><b>Città</b></label>
+        <input type="text" placeholder="Enter citta" name="citta" id="citta" required>
+        <small id="cittaError" class="text-danger"></small>
+
+        <button type="button" class="aggiungi-indirizzo">Aggiungi indirizzo</button>
+        <button type="button" class="btn cancel" onclick="closeForm('myFormIndirizzo')">Close</button>
+    </form>
+</div>
+<button class="open-button" onclick="openForm('myFormCarta')">Aggiungi Carta</button>
+<div class="form-popup" id="myFormCarta">
+    <form class="form-container" method="post">
+        <h6>Aggiungi Carta</h6>
+
+        <label id="aggcif" for="aggcif">Numero Carta:</label>
+        <input type="text" placeholder="Numero Carta" name="cif" id="cif" required>
+        <small id="cifError" class="text-danger"></small>
+
+        <label id="aggscad" for="aggscad">Scadenza:</label>
+        <input type="text" placeholder="MM/AA" name="scadenza" id="scadenza" required>
+        <small id="scadenzaError" class="text-danger"></small>
+
+        <label id="aggcvv" for="aggcvv">CVV:</label>
+        <input type="text" placeholder="123" name="cvv" id="cvv" required>
+        <small id="cvvError" class="text-danger"></small>
+
+        <button type="button" class="aggiungi-carta">Aggiungi</button>
+        <button type="button" class="btn cancel" onclick="closeForm('myFormCarta')">Chiudi</button>
+    </form>
 </div>
 
 <!-- Inclusione del frammento footer -->

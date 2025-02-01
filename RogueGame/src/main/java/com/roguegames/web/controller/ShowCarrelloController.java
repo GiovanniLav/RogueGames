@@ -2,11 +2,10 @@ package com.roguegames.web.controller;
 
 import com.roguegames.domain.comandi.carrello.AggiungiAlCarrello;
 import com.roguegames.domain.comandi.carrello.RimuoviDalCarrello;
-import com.roguegames.domain.entity.PCarrello;
+import com.roguegames.domain.entity.*;
 import com.roguegames.domain.service.CarrelloService;
-import com.roguegames.domain.entity.Prodotto;
+import com.roguegames.domain.service.CartaDiCreditoService;
 import com.roguegames.domain.service.ProdottoService;
-import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.service.UtenteService;
 import com.roguegames.web.controller.Item.CarrelloItem;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +28,8 @@ public class ShowCarrelloController {
     private CarrelloService carrelloService;
     @Autowired
     private UtenteService utenteService;
+    @Autowired
+    private CartaDiCreditoService cartaDiCreditoService;
 
 
 
@@ -50,6 +51,10 @@ public class ShowCarrelloController {
             return "redirect:/login";
         }
 
+        if(utente.getRuolo().equals("gestore")){
+            return "redirect:/utenti/home";
+        }
+
         List<PCarrello> carrello = carrelloService.getCarrello(utente);
 
         List<CarrelloItem> carrelloItem = getCarrelloItem(carrello);
@@ -65,6 +70,9 @@ public class ShowCarrelloController {
         Utente utente = (Utente) session.getAttribute("utente");
         if(utente == null){
             return "redirect:/login";
+        }
+        if(utente.getRuolo().equals("gestore")){
+            return "redirect:/utenti/home";
         }
 
         List <PCarrello> carrello = carrelloService.getCarrello(utente);
@@ -85,6 +93,10 @@ public class ShowCarrelloController {
             return "redirect:/login";
         }
 
+        if(utente.getRuolo().equals("gestore")){
+            return "redirect:/utenti/home";
+        }
+
         List<PCarrello> carrello = carrelloService.getCarrello(utente);
 
         if(carrello.isEmpty() || carrello == null){
@@ -92,13 +104,15 @@ public class ShowCarrelloController {
         }
 
         List<CarrelloItem> carrelloItem = getCarrelloItem(carrello);
-
-
+        List<IndirizzoSpedizione> indirizzi = utenteService.getIndirizzoSpedizioni(utente);
+        List<CartaDiCredito> carte = cartaDiCreditoService.getCarteByUtente(utente);
         double totale = 0;
         for (CarrelloItem item : carrelloItem) {
             totale += item.getPrezzo() * item.getCarrello().getQuantita();
         }
 
+        model.addAttribute("carte", carte);
+        model.addAttribute("indirizzi", indirizzi);
         model.addAttribute("totale", totale);
         model.addAttribute("carrelloItem", carrelloItem);
         session.setAttribute("carrelloItem", carrelloItem);

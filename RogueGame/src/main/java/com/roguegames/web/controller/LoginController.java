@@ -25,7 +25,11 @@ public class LoginController {
 
     // Mostra la pagina di login
     @GetMapping("/login")
-    public String showLoginForm(Model model) {
+    public String showLoginForm(Model model, HttpSession session) {
+        Utente utente = (Utente) session.getAttribute("utente");
+        if (utente != null) {
+            return "redirect:/utenti/home";
+        }
         model.addAttribute("error", false);
         return "Login";  // Restituisce la pagina login.html
     }
@@ -69,18 +73,5 @@ public class LoginController {
         model.addAttribute("prodotti", prodotti);
         model.addAttribute("utente", utente);
         return "Home";  // Mostra la pagina di dashboard
-    }
-
-    // Logout
-    @GetMapping("/InvalidateSessionL")
-    public String logout(HttpSession session) {
-        session.invalidate();  // Invalida la sessione
-        return "redirect:/utenti/login";  // Reindirizza al login
-    }
-
-    @GetMapping("/InvalidateSessionH")
-    public String logout1(HttpSession session) {
-        session.invalidate();  // Invalida la sessione
-        return "Home";  // Reindirizza alla home
     }
 }

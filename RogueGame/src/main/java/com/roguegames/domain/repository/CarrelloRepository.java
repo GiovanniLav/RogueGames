@@ -12,7 +12,8 @@ import java.util.List;
 
 @Repository
 public interface CarrelloRepository extends JpaRepository<PCarrello, PCarrelloId> {
-    PCarrello deletePCarrelloById(PCarrelloId id);
+    void deleteById(PCarrelloId id);
     List<PCarrello> findAllByUtente(Utente utente);
-
+    @Query(value = "SELECT * FROM pcarrello  WHERE Nome = :nome", nativeQuery = true)
+    List<PCarrello> findAllByNome(@Param("nome")String nome);
 }

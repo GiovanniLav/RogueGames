@@ -5,12 +5,16 @@ import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.service.CartaDiCreditoService;
 import com.roguegames.domain.service.UtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/carte")
@@ -119,5 +123,34 @@ public class CartaDiCreditoController {
         }
 
         return "redirect:/carte";  // Ritorna alla pagina delle carte
+    }
+
+    @PostMapping("/salvaCartaOrdine")
+    public ResponseEntity<?> salvaCartaOrd(Model model, HttpSession session, @RequestParam("cif") String cif, @RequestParam("scadenza") String scadenza, @RequestParam("cvv") String cvv) {
+        Utente utente = (Utente) session.getAttribute("utente");
+        if (utente == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("Location", "/utenti/login").build(); // Se l'utente non è loggato, reindirizza al login
+        }
+
+        try {
+            System.out.println("salvacartaordine");
+            CartaDiCredito carta = new CartaDiCredito(cif, scadenza, cvv, utente);
+            cartaDiCreditoService.saveCarta(carta);
+            model.addAttribute("utente", utente);
+            model.addAttribute("carta", carta);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @GetMapping("/aggiornaCarte")
+    @ResponseBody
+    public Map<String, List<CartaDiCredito>> aggiornaCarte(HttpSession session) {
+        Utente utente = (Utente) session.getAttribute("utente");
+        List<CartaDiCredito> carte = cartaDiCreditoService.getCarteByUtente(utente); // Recupera le carte dal database
+        Map<String, List<CartaDiCredito>> response = new HashMap<>();
+        response.put("carte", carte);
+        return response;
     }
 }
