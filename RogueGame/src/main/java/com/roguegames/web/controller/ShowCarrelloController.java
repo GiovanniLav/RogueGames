@@ -69,7 +69,7 @@ public class ShowCarrelloController {
     public String rimuoviCarrello(Model model, HttpSession session) {
         Utente utente = (Utente) session.getAttribute("utente");
         if(utente == null){
-            return "redirect:/login";
+            return "redirect:/utenti/login";
         }
         if(utente.getRuolo().equals("gestore")){
             return "redirect:/utenti/home";

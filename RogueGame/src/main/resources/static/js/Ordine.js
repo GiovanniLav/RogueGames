@@ -163,7 +163,7 @@ $(document).ready(function () {
                     ${provincia} ${cap} ${via} ${civico} ${citta}
                 </option>`;
                 $('#indirizzo').append(nuovoIndirizzo);
-
+                closeForm('myFormIndirizzo');
                 // Mostra un messaggio di successo
                 Swal.fire('Successo', 'Indirizzo aggiunto correttamente!', 'success');
 
