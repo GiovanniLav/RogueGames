@@ -61,8 +61,13 @@ public class CatalogoController {
         return "catalogo";
     }
     @GetMapping("/ordina")
-    public String ordinaCatalogo(@RequestParam(name = "order", defaultValue = "asc") String order, Model model) {
+    public String ordinaCatalogo(@RequestParam(name = "order", defaultValue = "asc") String order, Model model, HttpSession session) {
+        Utente utente = (Utente) session.getAttribute("utente");
         List<Prodotto> prodottiOrdinati = prodottoService.ordinaPerData(order);
+        if(utente != null) {
+            model.addAttribute("utente", utente);
+            model.addAttribute("products", prodottiOrdinati);
+        }
         model.addAttribute("products", prodottiOrdinati);
         return "catalogo"; // Nome della vista HTML
     }
