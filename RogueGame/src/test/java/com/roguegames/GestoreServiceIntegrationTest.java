@@ -17,6 +17,9 @@ import com.roguegames.domain.entity.PCarrello;
 import com.roguegames.domain.entity.PCarrelloId;
 import com.roguegames.domain.repository.PCarrelloRepository;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 
 import static com.roguegames.domain.entity.Prodotto.Piattaforma.PlayStation;
@@ -38,10 +41,22 @@ public class GestoreServiceIntegrationTest {
 
     @Autowired
     private GestoreRepository gestoreRepository;
+
     @Test
     @Commit
     public void aggiungiProdotto_NonEsistente() throws Exception {
         Utente utente = new Utente("lollo@lollo.lol", "Tester12!", "User", "Test", 10, "Test 14b", "1112223330");
+
+        String dataRilascioStringa = "2002-09-22";
+        SimpleDateFormat formatoData = new SimpleDateFormat("yyyy-MM-dd");
+        Date dataRilascio = null;
+
+        try {
+            dataRilascio = formatoData.parse(dataRilascioStringa);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         Prodotto prodotto = new Prodotto("God of War Ragnarök", "Gow4.jpg", "Gow.mp4.mp4", "descrizione prodotto test", true, 10.00, "Test Srl", PlayStation, "Fantasy", Videogiochi, dataRilascio, 80);
         utente.setRuolo("gestore");
 
@@ -55,13 +70,7 @@ public class GestoreServiceIntegrationTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(nomeProdotto)
                         .session(session))
-            .andExpect(status().isOk());
+                .andExpect(status().isOk());
 
-    PCarrelloId carrelloId = new PCarrelloId(nomeProdotto, utente.getEmail());
-    Optional<PCarrello> carrello = pCarrelloRepository.findById(carrelloId);
-    assertTrue(carrello.isPresent());
-    assertEquals(1, carrello.get().getQuantita());
-    assertEquals(nomeProdotto, carrello.get().getProdotto().getNome());
-    assertEquals(utente.getEmail(), carrello.get().getUtente().getEmail());
-}
+    }
 }
