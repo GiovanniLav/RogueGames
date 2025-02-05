@@ -9,21 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Aggiunta del test del gestore, di ordine e di carrello">
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Correzione di rimuovi e aggiungi prodotti al catalogo">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/config/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/config/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CartaDiCreditoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CartaDiCreditoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/PreferitiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/PreferitiService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CatalogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CatalogoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ProfiloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ProfiloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ErrorPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ErrorPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/RogueGamesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/RogueGamesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Profilo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Profilo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Profilo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -66,7 +66,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/GiovanniLav/RogueGames.git&quot;,
-    &quot;accountId&quot;: &quot;33ae3f31-d9e0-4fa3-af59-ede51d5b734e&quot;
+    &quot;accountId&quot;: &quot;9c3832cf-568e-4e1b-8d1b-80df7faf44a7&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -88,7 +88,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="proportion" value="0.320457" />
+    <option name="proportion" value="0.9" />
     <option name="selectedTabId" value="CurrentFile" />
     <option name="showPreview" value="true" />
   </component>
@@ -106,59 +106,6 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiCarrello_utenteGestore.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiCarrello_utenteNonAutenticato.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiProdottoValido_ProdottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiProdottoValido_nuovoProdotto.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiProdotto_quantitaNonDisponibile.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.modificaQuantita_ProdottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.modificaQuantita_ProdottoNonEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.modificaQuantita_QuantitaNonDisponibile.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.modificaQuantita_ValoreNonIntero.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.rimuoviCarrello_utenteNonAutenticato.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.rimuoviProdotto_prodottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.rimuoviProdotto_prodottoNonEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.rimuoviiCarrello_utenteNonAutenticato.executor": "Run",
-    "JUnit.CarrelloServiceTest.aggiungiProdottoValido_nuovoProdotto.executor": "Run",
-    "JUnit.CarrelloServiceTest.aggiungiProdottoValido_prodottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceTest.aggiungiProdotto_quantitaNonDisponibile.executor": "Run",
-    "JUnit.CarrelloServiceTest.executor": "Run",
-    "JUnit.CarrelloServiceTest.modificaQuantita_ProdottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceTest.modificaQuantita_ProdottoNonEsistente.executor": "Run",
-    "JUnit.CarrelloServiceTest.modificaQuantita_QuantitaNonDisponibile.executor": "Run",
-    "JUnit.CarrelloServiceTest.modificaQuantita_ValoreNonIntero.executor": "Run",
-    "JUnit.CarrelloServiceTest.rimuoviProdotto.executor": "Run",
-    "JUnit.CarrelloServiceTest.rimuoviProdotto_prodottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceTest.rimuoviProdotto_prodottoNonEsistente.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.deleteCarta_RemovesCarta.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.getCartaByCif_ExistingCif_ReturnsCarta.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.getCarteByUtente_ReturnsCarte.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.saveCarta_ValidData_Success.executor": "Run",
-    "JUnit.CartaDiCreditoServiceTest.executor": "Run",
-    "JUnit.GestoreServiceTest.aggiungiProdotto_Esistente.executor": "Run",
-    "JUnit.GestoreServiceTest.aggiungiProdotto_NonEsistente.executor": "Run",
-    "JUnit.GestoreServiceTest.eliminaProdotto_Esistente.executor": "Run",
-    "JUnit.GestoreServiceTest.eliminaProdotto_NonEsistente.executor": "Run",
-    "JUnit.GestoreServiceTest.modificaProdotto_Esistente.executor": "Run",
-    "JUnit.GestoreServiceTest.modificaProdotto_NonEsistente.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.aggiungiOrdine_utenteGestore.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.aggiungiOrdine_utenteNonAutenticato.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.processaOrdine_carrelloMultipliElementi.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.processaOrdine_carrelloSingoloElemento.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.processaOrdine_carrelloVuoto.executor": "Run",
-    "JUnit.OrdineServiceTest.executor": "Run",
-    "JUnit.OrdineServiceTest.processaOrdine_carrelloMultipliElementi.executor": "Run",
-    "JUnit.OrdineServiceTest.processaOrdine_carrelloSingoloElemento.executor": "Run",
-    "JUnit.OrdineServiceTest.processaOrdine_carrelloVuoto.executor": "Run",
-    "JUnit.PreferitiServiceIntegrationTest.executor": "Run",
-    "JUnit.PreferitiServiceTest.executor": "Run",
-    "JUnit.RogueGamesTest.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.registrati_EmailGiàEsistente_LancioEccezione.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.registrati_Success.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.verificaCredenziali_Success.executor": "Run",
-    "JUnit.UtenteServiceTest.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -168,10 +115,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.RogueGameApplication.executor": "Run",
-    "Spring Boot.RogueGames.executor": "Run",
     "Tomcat Server.Tomcat 9.0.98.executor": "Run",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "Marco",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/arion/IdeaProjects/RogueGames/RogueGame/src/main/resources/templates/Profilo.html",
@@ -183,7 +128,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "advanced.settings",
     "two.files.diff.last.used.file": "C:/Users/arion/IdeaProjects/RogueGames/RogueGame/src/main/resources/templates/Profilo.html",
     "vue.rearranger.settings.migration": "true"
   },
@@ -205,40 +150,111 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RogueGamesTest">
-    <configuration name="RogueGamesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RogueGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.roguegames.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.RogueGamesTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RogueGames" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <component name="RunManager" selected="Spring Boot.RogueGameApplication">
+    <configuration name="RogueGameApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="RogueGame" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.roguegames.RogueGameApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.RogueGamesTest" />
-      </list>
-    </recent_temporary>
+    <configuration name="Tomcat 9.0.98" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.98" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="RogueGame:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/RogueGame_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="695dfc39-0299-4031-945b-8f43f4693bf2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52838" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="RogueGame:war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.RogueGameApplication" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.98" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
       </set>
     </attachedChunks>
   </component>
@@ -287,12 +303,8 @@
       <workItem from="1738314998038" duration="10005000" />
       <workItem from="1738338813863" duration="540000" />
       <workItem from="1738339491976" duration="2772000" />
-      <workItem from="1738574141097" duration="704000" />
-      <workItem from="1738600264815" duration="15787000" />
-      <workItem from="1738660197003" duration="8530000" />
-      <workItem from="1738677926865" duration="7155000" />
-      <workItem from="1738747046235" duration="10616000" />
-      <workItem from="1738765739597" duration="7400000" />
+      <workItem from="1738404668053" duration="1526000" />
+      <workItem from="1738406221582" duration="633000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />
@@ -406,13 +418,13 @@
       <option name="project" value="LOCAL" />
       <updated>1738324543351</updated>
     </task>
-    <task id="LOCAL-00015" summary="Aggiunta del test del gestore, di ordine e di carrello">
+    <task id="LOCAL-00015" summary="Correzione di rimuovi e aggiungi prodotti al catalogo">
       <option name="closed" value="true" />
-      <created>1738768031627</created>
+      <created>1738403621571</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1738768031627</updated>
+      <updated>1738403621571</updated>
     </task>
     <option name="localTasksCounter" value="16" />
     <servers />
@@ -446,8 +458,7 @@
     <MESSAGE value="-Home aggiornata&#10;-Modifica css Login&#10;-Modifica css Register" />
     <MESSAGE value="modifiche varie" />
     <MESSAGE value="Correzione di rimuovi e aggiungi prodotti al catalogo" />
-    <MESSAGE value="Aggiunta del test del gestore, di ordine e di carrello" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta del test del gestore, di ordine e di carrello" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzione di rimuovi e aggiungi prodotti al catalogo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

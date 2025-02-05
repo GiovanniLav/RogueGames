@@ -37,36 +37,23 @@ public class ProfiloController {
     public ResponseEntity<?> modificaCampo(HttpSession session, @RequestBody Map<String, String> request) {
         Utente utente = (Utente) session.getAttribute("utente");
         if (utente == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Utente non loggato");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("errore", "Utente non loggato"));
         }
-        System.out.println(utente.getEta());
+
         String campo = request.get("campo");
         String valore = request.get("valore");
-        try {
-            switch (campo) {
-                case "email":
-                    utente.setEmail(valore);
-                    break;
-                case "nome":
-                    utente.setNome(valore);
-                    break;
-                case "cognome":
-                    utente.setCognome(valore);
-                    break;
-                case "eta":
-                    utente.setEta(Integer.parseInt(valore));
-                    break;
-                case "password":
-                    utente.setPassword(valore);
-                    break;
-                default:
-                    return ResponseEntity.badRequest().body("Campo non valido");
-            }
-            utenteService.aggiornaUtente(utente); // Salva le modifiche
 
-            return ResponseEntity.ok("Campo aggiornato");
+        try {
+            utenteService.aggiornaUtente(utente, campo, valore);
+            return ResponseEntity.ok(Map.of("messaggio", campo + " aggiornato con successo!"));
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(Map.of("errore", "Errore: " + e.getMessage()));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Errore durante l'aggiornamento");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of("errore", "Errore interno del server"));
         }
     }
+
+
+
+
 }

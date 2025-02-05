@@ -58,6 +58,18 @@
         <button class="btn-modifica" onclick="apriModale('password')">Modifica</button>
       </div>
 
+      <div class="profilo-campo">
+        <label>Residenza:</label>
+        <span th:text="${utente.residenza}">Via Emanuele</span>
+        <button class="btn-modifica" onclick="apriModale('residenza')">Modifica</button>
+      </div>
+
+      <div class="profilo-campo">
+        <label>Telefono:</label>
+        <span th:text="${utente.tel}">1234567890</span>
+        <button class="btn-modifica" onclick="apriModale('telefono')">Modifica</button>
+      </div>
+
       <!-- Link alle carte di credito -->
       <div class="profilo-campo">
         <a href="/carte" class="btn-modifica carte">Carta di credito</a>
@@ -76,6 +88,7 @@
 <footer th:replace="footer :: footer"></footer>
 
 <!-- Finestra Modale per la modifica -->
+<!-- Finestra Modale per la modifica -->
 <div id="modale" class="modale">
   <div class="modale-contenuto">
     <span class="chiudi" onclick="chiudiModale()">×</span>
@@ -83,10 +96,14 @@
     <form id="modale-form" onsubmit="inviaModifica(event)">
       <label for="nuovoValore">Nuovo valore:</label>
       <input type="text" id="nuovoValore" name="nuovoValore" required>
-      <button type="submit">Salva</button>
+      <div class="bottoni-modale">
+        <button type="submit">Salva</button>
+        <button type="button" class="annulla" onclick="chiudiModale()">Annulla</button>
+      </div>
     </form>
   </div>
 </div>
+
 
 <div id="toast" class="toast">
   <span id="toast-message">Modifica avvenuta con successo!</span>

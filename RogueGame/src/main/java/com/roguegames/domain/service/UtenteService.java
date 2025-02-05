@@ -104,9 +104,49 @@ public class UtenteService {
         }
     }
 
-    public void aggiornaUtente(Utente utente) {
+    public void aggiornaUtente(Utente utente, String campo, String nuovoValore) {
+        switch (campo.toLowerCase()) {
+            case "email":
+                validateEmail(nuovoValore);
+                Optional<Utente> existingUser = Optional.ofNullable(utenteRepository.findByEmail(nuovoValore));
+                if (existingUser.isPresent() && !existingUser.get().getEmail().equals(utente.getEmail())) {
+                    throw new IllegalArgumentException("L'email è già registrata");
+                }
+                utente.setEmail(nuovoValore);
+                break;
+            case "nome":
+                validateNomeCognome(nuovoValore, utente.getCognome());
+                utente.setNome(nuovoValore);
+                break;
+            case "cognome":
+                validateNomeCognome(utente.getNome(), nuovoValore);
+                utente.setCognome(nuovoValore);
+                break;
+            case "eta":
+                int eta = Integer.parseInt(nuovoValore);
+                validateEta(eta);
+                utente.setEta(eta);
+                break;
+            case "telefono":
+                validateTelefono(nuovoValore);
+                utente.setTel(nuovoValore);
+                break;
+            case "residenza":
+                if (nuovoValore == null || nuovoValore.length() < 5) {
+                    throw new IllegalArgumentException("La residenza deve contenere almeno 5 caratteri");
+                }
+                utente.setResidenza(nuovoValore);
+                break;
+            case "password":
+                validatePassword(nuovoValore);
+                utente.setPassword(hashPassword(nuovoValore));
+                break;
+            default:
+                throw new IllegalArgumentException("Campo non valido");
+        }
         utenteRepository.save(utente);
     }
+
 
     public boolean isDatabaseConnected() {
         try {
