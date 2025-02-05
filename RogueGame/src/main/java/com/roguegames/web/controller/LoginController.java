@@ -74,4 +74,10 @@ public class LoginController {
         model.addAttribute("utente", utente);
         return "Home";  // Mostra la pagina di dashboard
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "Logout";  // Reindirizza alla home
+    }
 }

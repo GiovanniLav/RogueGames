@@ -1,4 +1,4 @@
-package com.roguegames.web.controller;
+package com.roguegames.domain.config;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.ControllerAdvice;

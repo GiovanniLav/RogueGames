@@ -32,12 +32,15 @@ public class CarrelloController {
         }
 
         if(utente.getRuolo().equals("gestore")){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
+
         Prodotto prodotto= prodottoService.findProdotto(nome);
 
+        System.out.println("prodotto trovato"+prodotto.getNome());
+
         if (prodotto == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Prodotto non trovato");
+            return ResponseEntity.badRequest().body("Prodotto non presente");
         }
         try{
             AggiungiAlCarrello command= new AggiungiAlCarrello(carrelloService, prodotto, utente);
@@ -55,19 +58,17 @@ public class CarrelloController {
         PCarrello carrello;
         Utente utente = (Utente) session.getAttribute("utente");
         if(utente == null){
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("Location", "/utenti/login").build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
-        Prodotto prodotto= prodottoService.findProdotto(nome);
-
-        if (prodotto == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Prodotto non trovato");
-        }
-
+        Prodotto prodotto = new Prodotto();
+        prodotto.setNome(nome);
         try{
            RimuoviDalCarrello command= new RimuoviDalCarrello(carrelloService, prodotto, utente);
            command.execute();
            return ResponseEntity.ok().build();
+        }catch (CarrelloService.QuantitaNonDisponibileException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
@@ -79,17 +80,13 @@ public class CarrelloController {
             @RequestParam("quantita") String quantitaStr,
             HttpSession session) {
 
-        PCarrello carrello;
         Utente utente = (Utente) session.getAttribute("utente");
         if(utente == null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("Location", "/utenti/login").build();
         }
 
-        Prodotto prodotto= prodottoService.findProdotto(nome);
-
-        if (prodotto == null) {
-            return ResponseEntity.badRequest().body("Prodotto non trovato");
-        }
+        Prodotto prodotto = new Prodotto();
+        prodotto.setNome(nome);
 
         try{
             modificaQnt command= new modificaQnt(carrelloService, prodotto, utente, quantitaStr);

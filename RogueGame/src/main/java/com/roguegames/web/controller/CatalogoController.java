@@ -64,6 +64,10 @@ public class CatalogoController {
     public String ordinaCatalogo(@RequestParam(name = "order", defaultValue = "asc") String order, Model model, HttpSession session) {
         Utente utente = (Utente) session.getAttribute("utente");
         List<Prodotto> prodottiOrdinati = prodottoService.ordinaPerData(order);
+        if(utente != null) {
+            model.addAttribute("utente", utente);
+            model.addAttribute("products", prodottiOrdinati);
+        }
         model.addAttribute("products", prodottiOrdinati);
         model.addAttribute("utente", utente);
         return "catalogo"; // Nome della vista HTML

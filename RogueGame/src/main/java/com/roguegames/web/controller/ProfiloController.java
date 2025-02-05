@@ -39,10 +39,9 @@ public class ProfiloController {
         if (utente == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Utente non loggato");
         }
-
+        System.out.println(utente.getEta());
         String campo = request.get("campo");
         String valore = request.get("valore");
-
         try {
             switch (campo) {
                 case "email":
@@ -58,13 +57,13 @@ public class ProfiloController {
                     utente.setEta(Integer.parseInt(valore));
                     break;
                 case "password":
-                    utente.setPassword(valore); // Aggiungi hashing della password in produzione
+                    utente.setPassword(valore);
                     break;
                 default:
                     return ResponseEntity.badRequest().body("Campo non valido");
             }
-
             utenteService.aggiornaUtente(utente); // Salva le modifiche
+
             return ResponseEntity.ok("Campo aggiornato");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Errore durante l'aggiornamento");

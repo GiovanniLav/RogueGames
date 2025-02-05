@@ -41,6 +41,7 @@ public class OrdineController {
 
         List<CarrelloItem> carrello = (List<CarrelloItem>) session.getAttribute("carrelloItem");
         List<CarrelloItem> carr = carrello;
+
         if(utente == null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("Location", "/utenti/login").build();
         }

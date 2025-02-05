@@ -32,7 +32,7 @@ public class ShowOrdiniController {
     public String showOrdine(HttpSession session, Model model) {
         Utente utente = (Utente) session.getAttribute("utente");
         if(utente == null){
-            return "redirect:/login";
+            return "redirect:/utenti/login";
         }
 
         if(utente.getRuolo().equals("gestore")){

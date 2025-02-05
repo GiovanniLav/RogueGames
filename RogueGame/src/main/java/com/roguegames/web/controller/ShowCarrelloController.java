@@ -48,7 +48,7 @@ public class ShowCarrelloController {
         Utente utente = (Utente) session.getAttribute("utente");
 
         if(utente == null){
-            return "redirect:/login";
+            return "redirect:/utenti/login";
         }
 
         if(utente.getRuolo().equals("gestore")){
@@ -90,7 +90,7 @@ public class ShowCarrelloController {
         Utente utente = (Utente) session.getAttribute("utente");
 
         if(utente == null){
-            return "redirect:/login";
+            return "redirect:/utenti/login";
         }
 
         if(utente.getRuolo().equals("gestore")){

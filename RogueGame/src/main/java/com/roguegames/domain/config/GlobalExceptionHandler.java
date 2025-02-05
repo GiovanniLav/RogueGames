@@ -1,4 +1,4 @@
-package com.roguegames.web.controller;
+package com.roguegames.domain.config;
 
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -14,13 +14,13 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ModelAndView handleMethodNotSupportedException(HttpRequestMethodNotSupportedException ex, HttpSession session) {
         session.invalidate();
-        ModelAndView modelAndView = new ModelAndView("error/methodNotSupported"); // Sostituisci con il nome della tua view
+        ModelAndView modelAndView = new ModelAndView("ErrorPage"); // Sostituisci con il nome della tua view
         modelAndView.addObject("error", "Si sono verificati alcuni errori. Ci scusiamo per il disagio");
         return modelAndView;
     }
 
     public ModelAndView handleGeneralException(Exception ex, HttpSession session) {
-        ModelAndView modelAndView = new ModelAndView("error/methodNotSupported"); // Nome della tua view personalizzata
+        ModelAndView modelAndView = new ModelAndView("ErrorPage"); // Nome della tua view personalizzata
         modelAndView.addObject("error", "Si è verificato un errore interno. Ci scusiamo per il disagio.");
         // Log dell'errore per debugging (opzionale)
         ex.printStackTrace();
@@ -31,7 +31,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NoHandlerFoundException.class)
     public ModelAndView handleNotFoundException(NoHandlerFoundException ex, HttpSession session) {
         session.invalidate();
-        ModelAndView modelAndView = new ModelAndView("error/methodNotSupported"); // View personalizzata
+        ModelAndView modelAndView = new ModelAndView("ErrorPage"); // View personalizzata
         modelAndView.addObject("error", "La pagina richiesta non esiste.");
         return modelAndView;
     }

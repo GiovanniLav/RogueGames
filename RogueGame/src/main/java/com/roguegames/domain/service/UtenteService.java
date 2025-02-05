@@ -27,14 +27,63 @@ public class UtenteService {
 
     // Metodo per registrare un nuovo utente
     public Utente registrati(@Valid Utente utente) {
-        // Aggiungere logica, ad esempio controllare se l'email esiste già
+        // Esegui tutti i controlli necessari usando metodi privati
+        validateEmail(utente.getEmail());
+        validatePassword(utente.getPassword());
+        validateTelefono(utente.getTel());
+        validateEta(utente.getEta());
+        validateNomeCognome(utente.getNome(), utente.getCognome());
+
+        // Verifica che l'email non sia già registrata
         Optional<Utente> existingUser = Optional.ofNullable(utenteRepository.findByEmail(utente.getEmail()));
         if (existingUser.isPresent()) {
             throw new IllegalArgumentException("L'email è già registrata");
         }
+
+        // Se tutti i controlli sono passati, cripta la password e salva l'utente
         utente.setPassword(hashPassword(utente.getPassword()));
         return utenteRepository.save(utente);
     }
+
+    // Metodo privato per validare l'email
+    private void validateEmail(String email) {
+        if (email == null || !email.contains("@") || !email.contains(".")) {
+            throw new IllegalArgumentException("L'email non è nel formato corretto");
+        }
+    }
+
+    // Metodo privato per validare la password
+    private void validatePassword(String password) {
+        if (password == null || password.length() < 8 || !password.matches(".*[A-Z].*")
+                || !password.matches(".*[0-9].*") || !password.matches(".*[!@#$%^&*()].*")) {
+            throw new IllegalArgumentException("La password deve essere lunga almeno 8 caratteri, contenere almeno una maiuscola, un numero e un carattere speciale");
+        }
+    }
+
+    // Metodo privato per validare il telefono
+    private void validateTelefono(String telefono) {
+        if (telefono == null || telefono.length() != 10 || !telefono.matches("[0-9]+")) {
+            throw new IllegalArgumentException("Il numero di telefono deve contenere 10 cifre numeriche");
+        }
+    }
+
+    // Metodo privato per validare l'età
+    private void validateEta(int eta) {
+        if (eta < 10) {
+            throw new IllegalArgumentException("L'età deve essere maggiore di 10");
+        }
+    }
+
+    // Metodo privato per validare nome e cognome
+    private void validateNomeCognome(String nome, String cognome) {
+        if (nome == null || nome.length() < 2 || nome.length() > 45 || cognome == null || cognome.length() < 2 || cognome.length() > 45) {
+            throw new IllegalArgumentException("Il nome e il cognome devono essere compresi tra 2 e 45 caratteri");
+        }
+    }
+
+    // Metodo per criptare la password (se non hai già un'implementazione)
+
+
 
     // Metodo per ottenere un utente tramite email
     public Utente getUtenteByEmail(@NotNull String email) {
@@ -43,10 +92,16 @@ public class UtenteService {
 
     public Utente verificaCredenziali(String email, String password) {
         Utente utente = utenteRepository.findByEmail(email);
-        if (utente != null && utente.getPassword().equals(password)) { // Assicurati di aggiungere hashing in futuro
-            return utente;
+        if (utente != null ) { // Assicurati di aggiungere hashing in futuro
+            if(utente.getPassword().equals(password)) {
+                return utente;
+            }else{
+                throw new IllegalArgumentException("Password errata");
+            }
         }
-        return null;
+        else{
+            throw new IllegalArgumentException("Email non esiste");
+        }
     }
 
     public void aggiornaUtente(Utente utente) {
