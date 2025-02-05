@@ -33,7 +33,7 @@ public class OrdineService {
 
 
 
-    public void processaOrdine(Utente utente, List<CarrelloItem> carrello1, double totale) throws ParseException {
+    public void processaOrdine(Utente utente, List<CarrelloItem> carrello1, double totale) {
 
         if (carrello1 == null || carrello1.isEmpty()) {
             throw new IllegalArgumentException("Il carrello non può essere vuoto.");
@@ -66,7 +66,6 @@ public class OrdineService {
         int i=p.getId().getIdOrdine();
 
         if (carrello != null || !carrello.isEmpty()) {
-
             for (CarrelloItem item : carrello) {
                 prz = item.getPrezzo();
                 qnt = item.getCarrello().getQuantita();
@@ -77,7 +76,6 @@ public class OrdineService {
 
 
                 order = ordineRepository.saveAndFlush(order);
-
                 ordine.add(order);
             }
         }

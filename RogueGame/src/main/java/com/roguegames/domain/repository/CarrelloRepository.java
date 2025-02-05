@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface CarrelloRepository extends JpaRepository<PCarrello, PCarrelloId> {
@@ -16,4 +17,7 @@ public interface CarrelloRepository extends JpaRepository<PCarrello, PCarrelloId
     List<PCarrello> findAllByUtente(Utente utente);
     @Query(value = "SELECT * FROM pcarrello  WHERE Nome = :nome", nativeQuery = true)
     List<PCarrello> findAllByNome(@Param("nome")String nome);
+
+    @Query(value = "SELECT * FROM pcarrello  WHERE Nome = :nome AND Email = :email", nativeQuery = true)
+    Optional<PCarrello> findByNomeAndEmail(@Param("nome")String nome, @Param("email")String email);
 }

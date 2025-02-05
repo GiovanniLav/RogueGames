@@ -20,10 +20,17 @@ $(document).ready(function() {
                 provaAlert("Prodotto eliminato dal carrello!");
             },
             error: function(xhr, status, error) {
-                // Mostra un messaggio di errore personalizzato
-                $('#error-message').text('Si è verificato un errore durante l\'aggiunta al carrello: ' + error);
-                $('#error-message').show();
-                // Registra l'errore in console per debugging
+                if (xhr.status === 401) {
+                    provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                }else if (xhr.status === 403) {
+                    provaAlert("Errore: Il gestore non può acquistare. Registrati con l'account cliente");
+                } else if (xhr.responseJSON && xhr.responseJSON.message) {
+                    provaAlert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
+                } else if (xhr.responseText) {
+                    provaAlert("Errore: " + xhr.responseText); // Gestisce errori con testo semplice
+                } else {
+                    provaAlert("Errore durante la richiesta.");
+                }
             }
         });
     });
@@ -47,8 +54,8 @@ $(document).ready(function() {
             error: function(xhr, status, error) {
                 if (xhr.status === 401) {
                     provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
-                }else if (xhr.status === 400) {
-                        provaAlert("Errore: Il gestore non può acquistare. Registrati con l'account cliente");
+                }else if (xhr.status === 403) {
+                    provaAlert("Errore: Il gestore non può acquistare. Registrati con l'account cliente");
                 } else if (xhr.responseJSON && xhr.responseJSON.message) {
                     provaAlert("Errore: " + xhr.responseJSON.message); // Gestisce errori con messaggi JSON
                 } else if (xhr.responseText) {
@@ -82,7 +89,7 @@ $(document).ready(function() {
             error: function(xhr, status, error) {
                 location.reload();
                 if (xhr.status === 401) {
-                    provaAlert("Errore: Devi loggarti per poter aggiungere prodotti al carrello");
+                    provaAlert("Errore: Devi loggarti per poter rimuovere prodotti al carrello");
                     setTimeout(() => {
                         window.location.href = "/utenti/login"; // Ricarica la pagina dopo 3 secondi
                     }, 2000);

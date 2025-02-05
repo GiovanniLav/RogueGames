@@ -81,7 +81,7 @@ public class GestoreController {
         model.addAttribute("utente", utente);
         List<PCarrello> carrello = carrelloService.getCarrelloNome(nome);
         for (PCarrello pCarrello : carrello) {
-            carrelloService.deleteCarrelloProdotto(pCarrello.getId());
+            carrelloService.rimuoviProdotto(pCarrello.getProdotto(), pCarrello.getUtente());
         }
         productService.deleteProduct(nome); // Elimina il prodotto
         return "redirect:/utenti/prodotti"; // Ricarica la pagina con i prodotti

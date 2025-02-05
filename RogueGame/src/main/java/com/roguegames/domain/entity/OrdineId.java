@@ -32,6 +32,10 @@ public class OrdineId implements Serializable {
         this.data = data;
     }
 
+    public OrdineId(int idOrdine) {
+        this.idOrdine = idOrdine;
+    }
+
     public OrdineId(int idOrdine, String nome, String email, String data) {
         this.idOrdine = idOrdine;
         this.nome = nome;

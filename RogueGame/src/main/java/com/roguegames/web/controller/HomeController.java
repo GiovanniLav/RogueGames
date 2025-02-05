@@ -18,12 +18,6 @@ public class HomeController {
     @Autowired
     private ProdottoService prodottoService;
 
-    /*@GetMapping("/")
-    public String home(Model model) {
-        return "Home"; // Restituisce la vista "index.html"
-    }*/
-
-    //Mostra 6 Prodotti Random in fondo alla Home
     @GetMapping("/")
     public String showHomePage(Model model) {
         // Ottieni 6 prodotti random

@@ -7,10 +7,12 @@ import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.repository.CarrelloRepository;
 
 import com.roguegames.domain.repository.PCarrelloRepository;
+import com.roguegames.domain.repository.ProdottoRepository;
 import com.roguegames.web.controller.Item.CarrelloItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.ArrayList;
@@ -24,11 +26,12 @@ public class CarrelloService {
 
     @Autowired
     private CarrelloRepository carrelloRepository;
-
     @Autowired
     private PCarrelloRepository pCarrelloRepository;
+    @Autowired
+    private ProdottoService prodottoService;
 
-    public Optional<PCarrello> trovaElementoCarrello(String emailCliente, String nomeProdotto) {
+    public Optional<PCarrello> trovaElementoCarrello(String nomeProdotto, String emailCliente) {
         PCarrelloId id = new PCarrelloId(nomeProdotto, emailCliente);
         return pCarrelloRepository.findById(id);
     }
@@ -48,8 +51,8 @@ public class CarrelloService {
     }
 
     public void aggiungiProdotto(Prodotto prodotto, Utente utente) {
-        PCarrelloId id = new PCarrelloId(utente.getEmail(), prodotto.getNome());
-        Optional<PCarrello> prodottoCarrello = trovaElementoCarrello(utente.getEmail(), prodotto.getNome());
+        PCarrelloId id = new PCarrelloId(prodotto.getNome(), utente.getEmail());
+        Optional<PCarrello> prodottoCarrello = trovaElementoCarrello(prodotto.getNome(), utente.getEmail());
         if (prodottoCarrello.isPresent()) {
                 PCarrello carrello = prodottoCarrello.get();
                 int newQnt= carrello.getQuantita()+1;
@@ -59,15 +62,15 @@ public class CarrelloService {
                 }else{throw new QuantitaNonDisponibileException("La quantità non è disponibile. La quantità massima di " + prodotto.getNome() + " è di " + prodotto.getQuantita());}
         }else{PCarrello carrello  = new PCarrello(id, 1, prodotto, utente);
             carrelloRepository.save(carrello);
+
         }
     }
 
     public void rimuoviProdotto(Prodotto prodotto, Utente utente) {
-        PCarrelloId id = new PCarrelloId(utente.getEmail(), prodotto.getNome());
-        Optional<PCarrello> prodottoCarrello = trovaElementoCarrello(utente.getEmail(), prodotto.getNome());
+        Optional<PCarrello> prodottoCarrello = trovaElementoCarrello(prodotto.getNome(), utente.getEmail());
         if (prodottoCarrello.isPresent()) {
             carrelloRepository.delete(prodottoCarrello.get());
-        }
+        }else{throw new QuantitaNonDisponibileException("Prodotto non presente");}
     }
 
     public void rimuoviInteroCarrello (List <PCarrello> carrello, Utente utente){
@@ -92,18 +95,22 @@ public class CarrelloService {
 
     public void modificaQnt(Prodotto prodotto, Utente utente, String quantitaStr) {
         PCarrelloId id = new PCarrelloId(utente.getEmail(), prodotto.getNome());
-        Optional<PCarrello> prodottoCarrello = trovaElementoCarrello(utente.getEmail(), prodotto.getNome());
+        Optional<PCarrello> prodottoCarrello = trovaElementoCarrello(prodotto.getNome(), utente.getEmail());
+        prodotto = prodottoService.findProdotto(prodotto.getNome());
         if (prodottoCarrello.isPresent()) {
+
             PCarrello carrello = prodottoCarrello.get();
 
             if (!isInteger(quantitaStr)) {
                 throw new QuantitaNonDisponibileException("La quantità deve essere un numero intero valido.");
             }
+            System.out.println(prodottoCarrello.isPresent());
             int quantita = Integer.parseInt(quantitaStr);
-
+            System.out.println(prodottoCarrello.isPresent());
             if(quantita <=0) {
                 throw new QuantitaNonDisponibileException("La quantità non può essere negativa");
             }
+
             if(quantita > prodotto.getQuantita()) {
                 throw new QuantitaNonDisponibileException("La quantità non è disponibile. La quantità massima di " + prodotto.getNome() + " è di " + prodotto.getQuantita());
             }
@@ -112,7 +119,7 @@ public class CarrelloService {
             carrelloRepository.save(carrello);
 
         }else {
-            throw new QuantitaNonDisponibileException("Quantità richiesta non disponibile.");
+            throw new QuantitaNonDisponibileException("Prodotto non presente");
         }
     }
 
@@ -123,10 +130,5 @@ public class CarrelloService {
     public List<PCarrello> getCarrelloNome(String nome) {
         return (List<PCarrello>) carrelloRepository.findAllByNome(nome);
     }
-
-    public void deleteCarrelloProdotto(PCarrelloId id) {
-       carrelloRepository.deleteById(id);
-    }
-
 }
 

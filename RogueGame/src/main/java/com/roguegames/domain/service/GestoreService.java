@@ -21,17 +21,31 @@ public class GestoreService {
 
     // Salva un prodotto
     public void saveProduct(Prodotto prodotto) {
-        prodottoRepository.save(prodotto);
+        Optional<Prodotto> prodottoOpt = prodottoRepository.findById(prodotto.getNome());
+        if(prodottoOpt.isPresent())
+            throw new IllegalArgumentException("Esiste già un prodotto con questo nome.");
+        else
+            prodottoRepository.save(prodotto);
+
     }
 
     // Modifica un prodotto
     public void updateProduct(Prodotto prodotto) {
-        prodottoRepository.save(prodotto);
+        Optional<Prodotto> prodottoOpt = prodottoRepository.findById(prodotto.getNome());
+        if(prodottoOpt.isPresent())
+            prodottoRepository.save(prodotto);
+        else
+            throw new IllegalArgumentException("Non esiste un prodotto con questo nome.");
     }
 
     // Elimina un prodotto
     public void deleteProduct(String nome) {
-        prodottoRepository.deleteById(nome);
+        Optional<Prodotto> prodottoOpt = prodottoRepository.findById(nome);
+        if(prodottoOpt.isPresent())
+            prodottoRepository.deleteById(nome);
+        else
+            throw new IllegalArgumentException("Non esiste un prodotto con questo nome.");
+
     }
 
     // Ottieni un prodotto per nome
