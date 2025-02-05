@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log (vid.name)
                 v="";
             }
-
         })
         document.getElementById('immagine').addEventListener('change', function(event) {
             const file = event.target.files[0];
