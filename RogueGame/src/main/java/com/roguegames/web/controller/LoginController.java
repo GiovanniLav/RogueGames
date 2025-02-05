@@ -40,23 +40,27 @@ public class LoginController {
                               @RequestParam("password") String password,
                               HttpSession session,
                               Model model) {
-        String hashPass= UtenteService.hashPassword(password);
-        Utente utente = utenteService.verificaCredenziali(email, hashPass);
-        if (utente == null) {
-            model.addAttribute("error", true);
-            return "Login";  // Mostra la pagina di login con un messaggio di errore
-        }
-        String ruolo = utente.getRuolo();
-        if ("gestore".equals(ruolo)) {
-            // Se l'utente è un gestore, passiamo questa informazione alla sessione
-            session.setAttribute("isGestore", true);
-        } else {
-            session.setAttribute("isGestore", false);
-        }
+        try {
+            // Hash della password prima di verificarla
+            String hashPass = UtenteService.hashPassword(password);
 
-        session.setAttribute("utente", utente);
-        return "redirect:/utenti/home";  // Reindirizza alla dashboard
+            // Verifica credenziali
+            Utente utente = utenteService.verificaCredenziali(email, hashPass);
+
+            // Gestione ruolo utente nella sessione
+            String ruolo = utente.getRuolo();
+            session.setAttribute("isGestore", "gestore".equals(ruolo));
+
+            session.setAttribute("utente", utente);
+            return "redirect:/utenti/home";  // Reindirizza alla home dopo il login
+        } catch (IllegalArgumentException e) {
+            // Se l'eccezione è stata sollevata, mostra un messaggio di errore nella pagina di login
+            model.addAttribute("error", e.getMessage());
+            return "Login"; // Mostra di nuovo la pagina di login con il messaggio di errore
+        }
     }
+
+
 
     // Mostra la dashboard (protetta)
     @GetMapping("/home")

@@ -11,7 +11,7 @@
   <description>Spring Boot application with Thymeleaf</description>
 
   <properties>
-    <java.version>17</java.version> <!-- Usa la versione di Java installata -->
+    <java.version>17</java.version>
     <spring-boot.version>2.7.5</spring-boot.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -20,10 +20,61 @@
   </properties>
 
   <dependencies>
-    <!-- Starter Web (per creare applicazioni web) -->
+    <!-- Starter Web -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
+
+    <!-- JUnit 5 (rimosso duplicato) -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.11.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.11.3</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Mockito -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>5.14.2</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Spring Boot Test -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>${spring-boot.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Starter Thymeleaf -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
+
+    <!-- Starter Validation -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
+
+    <!-- Starter Data JPA -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
       <version>${spring-boot.version}</version>
     </dependency>
 
@@ -33,34 +84,6 @@
       <version>2.3.1</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-core</artifactId>
-      <version>5.7.4</version>  <!-- Assicurati di usare la versione corretta -->
-    </dependency>
-
-    <!-- Starter Thymeleaf (per supporto a Thymeleaf) -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-thymeleaf</artifactId>
-      <version>${spring-boot.version}</version>
-    </dependency>
-
-    <!-- Starter Validation (per la validazione delle entitÃ ) -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-validation</artifactId>
-      <version>${spring-boot.version}</version>
-    </dependency>
-
-    <!-- Spring Boot Starter Data JPA (per la gestione del database) -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-data-jpa</artifactId>
-      <version>${spring-boot.version}</version>
-    </dependency>
-
-
     <!-- MySQL Connector -->
     <dependency>
       <groupId>mysql</groupId>
@@ -68,48 +91,40 @@
       <version>8.0.29</version>
     </dependency>
 
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-actuator</artifactId>
-        <version>${spring-boot.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.jetbrains</groupId>
-          <artifactId>annotations</artifactId>
-          <version>26.0.1</version>
-          <scope>compile</scope>
-      </dependency>
+    <!-- Spring Boot Actuator -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
 
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>5.10.0</version>
-      <scope>test</scope>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>26.0.1</version>
+      <scope>compile</scope>
     </dependency>
+
+    <!-- Spring Boot DevTools -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <version>${spring-boot.version}</version>
       <scope>runtime</scope>
     </dependency>
-
-
   </dependencies>
 
   <build>
-
     <finalName>RogueGame</finalName>
     <plugins>
-      <!-- Plugin per Spring Boot -->
+      <!-- Spring Boot Plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <version>${spring-boot.version}</version>
       </plugin>
 
-      <!-- Plugin per compilazione Java -->
-
-
+      <!-- Maven Jar Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -117,12 +132,11 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <Main-Class>com.roguegames.RogueGameApplication</Main-Class> <!-- La tua classe principale -->
+              <Main-Class>com.roguegames.RogueGameApplication</Main-Class>
             </manifestEntries>
           </archive>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
 </project>

@@ -9,18 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Correzione di rimuovi e aggiungi prodotti al catalogo">
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Header registrazione (effettuato da Antonio) e controlli della registrazione">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5b95d3ec-4f7a-4bdd-abb1-3494b08ae0bc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_01_2025_18_54__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_01_2025_18_54__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_24_01_2025_18_18_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_24_01_2025_18_18__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_10_44_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_10_44__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_11_14_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_11_14__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_12_19_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_12_19__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_17_28_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_17_28__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_17_30_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_01_2025_17_30__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2025_10_06_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2025_10_06__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_01_2025_10_44_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_28_01_2025_10_44__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Catalogo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/CartaDiCredito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/entity/CartaDiCredito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CartaDiCreditoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CartaDiCreditoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/service/UtenteService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +68,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="main" />
+        <entry key="$PROJECT_DIR$/.." value="Giovanni" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -71,7 +82,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/GiovanniLav/RogueGames.git&quot;,
-    &quot;accountId&quot;: &quot;9c3832cf-568e-4e1b-8d1b-80df7faf44a7&quot;
+    &quot;accountId&quot;: &quot;8d0ed380-654d-469a-8658-561e18c66822&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
@@ -111,6 +122,49 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.CartaDiCreditoServiceIntegrationTest.deleteCarta_RemovesCarta.executor": "Run",
+    "JUnit.CartaDiCreditoServiceIntegrationTest.executor": "Run",
+    "JUnit.CartaDiCreditoServiceIntegrationTest.getCartaByCif_ExistingCif_ReturnsCarta.executor": "Run",
+    "JUnit.CartaDiCreditoServiceIntegrationTest.getCarteByUtente_ReturnsCarte.executor": "Run",
+    "JUnit.CartaDiCreditoServiceIntegrationTest.saveCarta_NonValidCif.executor": "Run",
+    "JUnit.CartaDiCreditoServiceIntegrationTest.saveCarta_NonValidCif_ThrowsException.executor": "Run",
+    "JUnit.CartaDiCreditoServiceIntegrationTest.saveCarta_ValidData_Success.executor": "Run",
+    "JUnit.CartaDiCreditoTest.deleteCarta_RemovesCarta.executor": "Run",
+    "JUnit.CartaDiCreditoTest.executor": "Run",
+    "JUnit.CartaDiCreditoTest.getCartaByCif_ExistingCif_ReturnsCarta.executor": "Run",
+    "JUnit.CartaDiCreditoTest.getCartaByCif_NonExistingCif_ReturnsNull.executor": "Run",
+    "JUnit.CartaDiCreditoTest.getCarteByUtente_ReturnsList.executor": "Run",
+    "JUnit.CartaDiCreditoTest.saveCarta_InvalidCif_ThrowsException.executor": "Run",
+    "JUnit.CartaDiCreditoTest.saveCarta_ValidData_Success.executor": "Run",
+    "JUnit.PreferitiServiceIntegrationTest.aggiungiPreferito_Success.executor": "Run",
+    "JUnit.PreferitiServiceIntegrationTest.executor": "Run",
+    "JUnit.PreferitiServiceIntegrationTest.rimuoviPreferito_Success.executor": "Run",
+    "JUnit.PreferitiServiceTest.executor": "Run",
+    "JUnit.PreferitiServiceTest.rimuoviPreferitoTest.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.aggiungiIndirizzoSpd_LancioEccezioneSeIndirizzoEsistente.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.aggiungiIndirizzoSpd_Success.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.cancellaIndirizzoSpedizione_Success.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.getIndirizziSpedizione_Success.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.modificaIndirizzoSpd_Success.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.registrati_EmailGiàEsistente_LancioEccezione.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.registrati_Success.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.verificaCredenziali_Success.executor": "Run",
+    "JUnit.UtenteServiceTest.executor": "Run",
+    "JUnit.UtenteServiceTest.testAggiungiIndirizzoSpd.executor": "Run",
+    "JUnit.UtenteServiceTest.testAggiungiIndirizzoSpd_IndirizzoEsistente.executor": "Run",
+    "JUnit.UtenteServiceTest.testAggiungiIndirizzoSpedizione.executor": "Run",
+    "JUnit.UtenteServiceTest.testCancellaIndirizzoSpedizione.executor": "Run",
+    "JUnit.UtenteServiceTest.testGetIndirizziSpedizione.executor": "Run",
+    "JUnit.UtenteServiceTest.testModificaIndirizzoSpd.executor": "Run",
+    "JUnit.UtenteServiceTest.testModificaIndirizzoSpedizione.executor": "Run",
+    "JUnit.UtenteServiceTest.testRegistrati_EmailGiaRegistrata.executor": "Run",
+    "JUnit.UtenteServiceTest.testRegistrati_UtenteEsistente.executor": "Run",
+    "JUnit.UtenteServiceTest.testRegistrati_UtenteNuovo.executor": "Run",
+    "JUnit.UtenteServiceTest.testVerificaCredenziali_EmailNonEsiste.executor": "Run",
+    "JUnit.UtenteServiceTest.testVerificaCredenziali_Invalide.executor": "Run",
+    "JUnit.UtenteServiceTest.testVerificaCredenziali_InvalidePass.executor": "Run",
+    "JUnit.UtenteServiceTest.testVerificaCredenziali_Valide.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -121,7 +175,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.RogueGameApplication.executor": "Run",
     "Tomcat Server.Tomcat 9.0.98.executor": "Run",
-    "git-widget-placeholder": "Domenico",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/arion/IdeaProjects/RogueGames/RogueGame/src/main/resources/templates/Profilo.html",
@@ -133,7 +187,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "two.files.diff.last.used.file": "C:/Users/arion/IdeaProjects/RogueGames/RogueGame/src/main/resources/templates/Profilo.html",
     "vue.rearranger.settings.migration": "true"
   },
@@ -155,7 +209,86 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RogueGameApplication">
+  <component name="RunManager" selected="JUnit.UtenteServiceIntegrationTest">
+    <configuration name="UtenteServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames.service" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.service.UtenteServiceIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtenteServiceIntegrationTest.cancellaIndirizzoSpedizione_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames.service" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.service.UtenteServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="cancellaIndirizzoSpedizione_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtenteServiceIntegrationTest.getIndirizziSpedizione_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames.service" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.service.UtenteServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="getIndirizziSpedizione_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtenteServiceIntegrationTest.modificaIndirizzoSpd_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames.service" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.service.UtenteServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="modificaIndirizzoSpd_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtenteServiceIntegrationTest.registrati_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames.service" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.service.UtenteServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="registrati_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RogueGameApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="RogueGame" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.roguegames.RogueGameApplication" />
@@ -251,15 +384,29 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.UtenteServiceIntegrationTest" />
+      <item itemvalue="JUnit.UtenteServiceIntegrationTest.cancellaIndirizzoSpedizione_Success" />
+      <item itemvalue="JUnit.UtenteServiceIntegrationTest.getIndirizziSpedizione_Success" />
+      <item itemvalue="JUnit.UtenteServiceIntegrationTest.modificaIndirizzoSpd_Success" />
+      <item itemvalue="JUnit.UtenteServiceIntegrationTest.registrati_Success" />
       <item itemvalue="Spring Boot.RogueGameApplication" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.98" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UtenteServiceIntegrationTest.registrati_Success" />
+        <item itemvalue="JUnit.UtenteServiceIntegrationTest.modificaIndirizzoSpd_Success" />
+        <item itemvalue="JUnit.UtenteServiceIntegrationTest.getIndirizziSpedizione_Success" />
+        <item itemvalue="JUnit.UtenteServiceIntegrationTest.cancellaIndirizzoSpedizione_Success" />
+        <item itemvalue="JUnit.UtenteServiceIntegrationTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.24807.4" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.24807.4" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -310,6 +457,8 @@
       <workItem from="1738339491976" duration="2772000" />
       <workItem from="1738404668053" duration="1526000" />
       <workItem from="1738406221582" duration="633000" />
+      <workItem from="1738677634119" duration="10505000" />
+      <workItem from="1738764012593" duration="904000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />
@@ -471,10 +620,6 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.sql.SQLIntegrityConstraintViolationException" package="java.sql" />
           <option name="timeStamp" value="4" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="org.springframework.expression.spel.SpelEvaluationException" package="org.springframework.expression.spel" />
-          <option name="timeStamp" value="6" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

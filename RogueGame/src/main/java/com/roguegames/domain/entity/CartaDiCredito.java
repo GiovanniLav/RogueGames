@@ -12,7 +12,7 @@ public class CartaDiCredito {
     @Id
     @Column(name = "CIF", length = 18, nullable = false, unique = true)
     @NotBlank(message = "Il CIF è obbligatorio")
-    @Size(min = 16, max = 18, message = "Il CIF deve contenere tra 16 e 18 caratteri")
+    @Size(min = 16, max = 16, message = "Il CIF deve contenere 16 cifre")
     private String cif;
 
     @Column(name = "Scadenza", length = 10, nullable = false)
@@ -23,7 +23,7 @@ public class CartaDiCredito {
 
     @Column(name = "CVV", length = 4, nullable = false)
     @NotBlank(message = "Il CVV è obbligatorio")
-    @Pattern(regexp = "\\d{3,4}", message = "Il CVV deve contenere 3 o 4 cifre")
+    @Pattern(regexp = "\\d{3}", message = "Il CVV deve contenere 3 cifre")
     private String cvv;
 
     @ManyToOne
