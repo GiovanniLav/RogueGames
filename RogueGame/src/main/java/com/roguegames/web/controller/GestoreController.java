@@ -49,7 +49,7 @@ public class GestoreController {
     public String modificaProdotto(@PathVariable String nome, @ModelAttribute Prodotto prodotto, HttpSession session, Model model) {
         Utente utente = (Utente) session.getAttribute("utente");
         if (utente == null || !utente.getRuolo().equals("gestore")) {
-            return "redirect:/login";
+            return "redirect:/utenti/login";
         }
 
         // Verifica se esiste già un altro prodotto con lo stesso nome (escluso quello che si sta modificando)
@@ -64,8 +64,12 @@ public class GestoreController {
             prodotto.setVideo(null);
         }
         prodotto.setNome(nome); // Mantieni il nome originale per l'update
-        productService.updateProduct(prodotto); // Modifica il prodotto
-        return "redirect:/utenti/prodotti"; // Ricarica la pagina con i prodotti
+        try {
+            productService.updateProduct(prodotto); // Modifica il prodotto
+            return "redirect:/utenti/prodotti";
+        } catch (IllegalArgumentException e) {
+            return "redirect:/utenti/prodotti";
+        }// Ricarica la pagina con i prodotti
     }
 
 
@@ -75,16 +79,20 @@ public class GestoreController {
     @PostMapping("/prodotti/elimina/{nome}")
     public String eliminaProdotto(@PathVariable String nome, HttpSession session, Model model) {
         Utente utente = (Utente) session.getAttribute("utente");
-        if (utente == null && !utente.getRuolo().equals("gestore")) {
-            return "redirect:/login";
+        if (utente == null || !utente.getRuolo().equals("gestore")) {
+            return "redirect:/utenti/login";
         }
         model.addAttribute("utente", utente);
         List<PCarrello> carrello = carrelloService.getCarrelloNome(nome);
         for (PCarrello pCarrello : carrello) {
             carrelloService.rimuoviProdotto(pCarrello.getProdotto(), pCarrello.getUtente());
         }
-        productService.deleteProduct(nome); // Elimina il prodotto
-        return "redirect:/utenti/prodotti"; // Ricarica la pagina con i prodotti
+        try {
+            productService.deleteProduct(nome); // Elimina il prodotto
+            return "redirect:/utenti/prodotti";
+        } catch (IllegalArgumentException e) {
+            return "redirect:/utenti/prodotti";
+        }
     }
 
     @GetMapping("/prodotti/{nome}")

@@ -9,16 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="Aggiunta del test del gestore, di ordine e di carrello">
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="merge main che branch Marco">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/config/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/config/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CartaDiCreditoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CartaDiCreditoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/PreferitiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/PreferitiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CatalogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CatalogoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ProfiloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ProfiloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ErrorPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ErrorPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/RogueGamesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/RogueGamesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreAggiuntaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreAggiuntaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/GestoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Gestore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Gestore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/GestoreServiceIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/GestoreServiceIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +132,19 @@
     "JUnit.CartaDiCreditoServiceIntegrationTest.getCarteByUtente_ReturnsCarte.executor": "Run",
     "JUnit.CartaDiCreditoServiceIntegrationTest.saveCarta_ValidData_Success.executor": "Run",
     "JUnit.CartaDiCreditoServiceTest.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_Esistente.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_NonEsistente.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_UtenteNonAutenticato.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_UtenteNonAutorizzato.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.eliminaProdotto_Esistente.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.eliminaProdotto_NonEsistente.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutenticato.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutorizzato.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.modificaProdotto_Esistente.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.modificaProdotto_NonEsistente.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.modificaProdotto_UtenteNonAutenticato.executor": "Run",
+    "JUnit.GestoreServiceIntegrationTest.modificaProdotto_UtenteNonAutorizzato.executor": "Run",
     "JUnit.GestoreServiceTest.aggiungiProdotto_Esistente.executor": "Run",
     "JUnit.GestoreServiceTest.aggiungiProdotto_NonEsistente.executor": "Run",
     "JUnit.GestoreServiceTest.eliminaProdotto_Esistente.executor": "Run",
@@ -205,8 +214,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RogueGamesTest">
-    <configuration name="RogueGamesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GestoreServiceIntegrationTest">
+    <configuration name="GestoreServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RogueGame" />
       <extension name="coverage">
         <pattern>
@@ -215,8 +224,72 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.RogueGamesTest" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GestoreServiceIntegrationTest.aggiungiProdotto_Esistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="aggiungiProdotto_Esistente" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GestoreServiceIntegrationTest.eliminaProdotto_NonEsistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="eliminaProdotto_NonEsistente" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutenticato" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="eliminaProdotto_UtenteNonAutenticato" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GestoreServiceIntegrationTest.modificaProdotto_NonEsistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="modificaProdotto_NonEsistente" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -230,7 +303,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RogueGamesTest" />
+        <item itemvalue="JUnit.GestoreServiceIntegrationTest" />
+        <item itemvalue="JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_Esistente" />
+        <item itemvalue="JUnit.GestoreServiceIntegrationTest.modificaProdotto_NonEsistente" />
+        <item itemvalue="JUnit.GestoreServiceIntegrationTest.eliminaProdotto_NonEsistente" />
+        <item itemvalue="JUnit.GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutenticato" />
       </list>
     </recent_temporary>
   </component>
@@ -414,7 +491,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738768031627</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="merge main che branch Marco">
+      <option name="closed" value="true" />
+      <created>1738774044088</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1738774044088</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +532,8 @@
     <MESSAGE value="modifiche varie" />
     <MESSAGE value="Correzione di rimuovi e aggiungi prodotti al catalogo" />
     <MESSAGE value="Aggiunta del test del gestore, di ordine e di carrello" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta del test del gestore, di ordine e di carrello" />
+    <MESSAGE value="merge main che branch Marco" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge main che branch Marco" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
