@@ -41,7 +41,6 @@ public class GestoreServiceIntegrationTest {
 
     @Autowired
     private GestoreRepository gestoreRepository;
-
     @Test
     @Commit
     public void aggiungiProdotto_NonEsistente() throws Exception {
@@ -70,7 +69,7 @@ public class GestoreServiceIntegrationTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(nomeProdotto)
                         .session(session))
-                .andExpect(status().isOk());
+            .andExpect(status().isOk());
 
     }
 }
