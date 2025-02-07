@@ -40,21 +40,23 @@ public class LoginController {
                               @RequestParam("password") String password,
                               HttpSession session,
                               Model model) {
-        String hashPass= utenteService.hashPassword(password);
+        String hashPass = utenteService.hashPassword(password);
         try {
             Utente utente = utenteService.verificaCredenziali(email, hashPass);
-
             String ruolo = utente.getRuolo();
             if ("gestore".equals(ruolo)) {
+                // Se l'utente è un gestore, passiamo questa informazione alla sessione
                 session.setAttribute("isGestore", true);
             } else {
                 session.setAttribute("isGestore", false);
             }
+
             session.setAttribute("utente", utente);
-            return "redirect:/utenti/home";
-        }catch(IllegalArgumentException e){
+            return "redirect:/utenti/home";  // Reindirizza alla dashboard
+
+        } catch (IllegalArgumentException e) {
             model.addAttribute("error", true);
-            return "redirect:/utenti/login";
+            return "Login";
         }
     }
 

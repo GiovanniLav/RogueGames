@@ -1,5 +1,20 @@
+let campoModifica = ''; // Memorizza il campo che si vuole modificare
+
+// Funzione per aprire la modale
+function apriModale(campo) {
+    campoModifica = campo;
+    document.getElementById('modale').style.display = 'flex';
+    document.getElementById('modale-titolo').textContent = `Modifica ${campo.charAt(0).toUpperCase() + campo.slice(1)}`;
+}
+
+// Funzione per chiudere la modale
+function chiudiModale() {
+    document.getElementById('modale').style.display = 'none';
+}
+
+// Funzione per inviare la modifica
 function inviaModifica(event) {
-    event.preventDefault(); // Evita il refresh della pagina
+    event.preventDefault(); // Prevenire il comportamento di invio del form
 
     const nuovoValore = document.getElementById('nuovoValore').value;
 
@@ -9,20 +24,13 @@ function inviaModifica(event) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ campo: campoModifica, valore: nuovoValore })
-    })
-        .then(response => response.json().then(data => ({ status: response.status, body: data }))) // Legge sempre JSON
-        .then(result => {
-            if (result.status === 200) {
-                alert(result.body.messaggio); // Mostra il messaggio di successo
-                location.reload(); // Ricarica la pagina per aggiornare i dati
-            } else {
-                alert(result.body.errore); // Mostra il messaggio di errore personalizzato
-            }
-            chiudiModale(); // Chiude la modale in ogni caso
-        })
-        .catch(() => {
-            alert('Errore di connessione. Riprova più tardi.');
-            chiudiModale();
-        });
+    }).then(response => {
+        if (response.ok) {
+            alert(`${campoModifica} aggiornato con successo!`);
+            location.reload(); // Ricarica la pagina per aggiornare i dati
+        } else {
+            alert('Errore durante l\'aggiornamento. Riprova.');
+        }
+        chiudiModale(); // Chiudi la modale
+    });
 }
-
