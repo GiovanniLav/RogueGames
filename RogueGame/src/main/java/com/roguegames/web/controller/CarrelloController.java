@@ -5,6 +5,7 @@ import com.roguegames.domain.comandi.carrello.RimuoviDalCarrello;
 import com.roguegames.domain.entity.PCarrello;
 import com.roguegames.domain.service.CarrelloService;
 import com.roguegames.domain.entity.Prodotto;
+import com.roguegames.domain.service.CarrelloServiceImp;
 import com.roguegames.domain.service.ProdottoService;
 import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.service.UtenteService;
@@ -46,7 +47,7 @@ public class CarrelloController {
             AggiungiAlCarrello command= new AggiungiAlCarrello(carrelloService, prodotto, utente);
             command.execute();
             return ResponseEntity.ok().build();
-        }catch (CarrelloService.QuantitaNonDisponibileException e) {
+        }catch (CarrelloServiceImp.QuantitaNonDisponibileException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -67,7 +68,7 @@ public class CarrelloController {
            RimuoviDalCarrello command= new RimuoviDalCarrello(carrelloService, prodotto, utente);
            command.execute();
            return ResponseEntity.ok().build();
-        }catch (CarrelloService.QuantitaNonDisponibileException e) {
+        }catch (CarrelloServiceImp.QuantitaNonDisponibileException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -93,7 +94,7 @@ public class CarrelloController {
             command.execute();
             return ResponseEntity.ok().build();
 
-        }catch (CarrelloService.QuantitaNonDisponibileException e) {
+        }catch (CarrelloServiceImp.QuantitaNonDisponibileException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Errore interno del server: " + e.getMessage());

@@ -5,6 +5,7 @@ import com.roguegames.domain.repository.OrdineRepository;
 import com.roguegames.domain.repository.ProdottoRepository;
 import com.roguegames.domain.service.CarrelloService;
 import com.roguegames.domain.service.GestoreService;
+import com.roguegames.domain.service.GestoreServiceImp;
 import com.roguegames.domain.service.OrdineService;
 import com.roguegames.web.controller.Item.CarrelloItem;
 import org.junit.jupiter.api.*;
@@ -36,7 +37,7 @@ import static org.mockito.Mockito.*;
 public class GestoreServiceTest {
 
     @InjectMocks
-    GestoreService gestoreService;
+    GestoreService gestoreService = new GestoreServiceImp();
 
     @Mock
     GestoreRepository gestoreRepository;

@@ -9,27 +9,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="merge main che branch Marco">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2025_16_31_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2025_16_31__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2025_11_34_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2025_11_34__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2025_11_54_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2025_11_54__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2025_12_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2025_12_03__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_30_01_2025_11_53_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_30_01_2025_11_53_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_30_01_2025_11_53__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_30_01_2025_11_53__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2025_11_50_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2025_11_50__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2025_12_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_01_2025_12_03__Changes_.xml" beforeDir="false" />
+    <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifiche varie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/Carrello.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/Carrello.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/OrdineUtente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/OrdineUtente.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CartaDiCreditoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/GestoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/GestoreServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/OrdineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/OrdineServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/PreferitiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/PreferitiServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/ProdottoServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/UtenteServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CarrelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CarrelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CartaDiCreditoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/CartaDiCreditoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/IndirizzoSpedizioneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ShowCarrelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/web/controller/ShowCarrelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/StoricoOrdineGestore.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/StoricoOrdineGestore.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/CarrelloServiceIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/CarrelloServiceIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/CarrelloServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/CarrelloServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/CartaDiCreditoServiceIntegrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/CartaDiCreditoServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/OrdineServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/OrdineServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/PreferitiServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/PreferitiServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/UtenteServiceIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/UtenteServiceIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/UtenteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/UtenteServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +42,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -77,7 +79,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/GiovanniLav/RogueGames.git",
-    "accountId": "269ed0c3-3027-494d-a916-68e948044a1a"
+    "accountId": "33ae3f31-d9e0-4fa3-af59-ede51d5b734e"
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
@@ -177,12 +179,29 @@
     "JUnit.OrdineServiceTest.processaOrdine_carrelloVuoto.executor": "Run",
     "JUnit.PreferitiServiceIntegrationTest.executor": "Run",
     "JUnit.PreferitiServiceTest.executor": "Run",
+    "JUnit.PreferitiServiceTest.trovaPerUtenteTest.executor": "Run",
     "JUnit.RogueGamesTest.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.deleteCarta_RemovesCarta.executor": "Run",
     "JUnit.UtenteServiceIntegrationTest.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.getCartaByCif_ExistingCif_ReturnsCarta.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.getCarteByUtente_ReturnsCarte.executor": "Run",
     "JUnit.UtenteServiceIntegrationTest.registrati_EmailGiàEsistente_LancioEccezione.executor": "Run",
     "JUnit.UtenteServiceIntegrationTest.registrati_Success.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.saveCarta_NonValidCVV_ThrowsException.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.saveCarta_NonValidCif_ThrowsException.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.saveCarta_NonValidScadenza_ThrowsException.executor": "Run",
+    "JUnit.UtenteServiceIntegrationTest.saveCarta_ValidData_Success.executor": "Run",
     "JUnit.UtenteServiceIntegrationTest.verificaCredenziali_Success.executor": "Run",
+    "JUnit.UtenteServiceTest.deleteCarta_RemovesCarta.executor": "Run",
     "JUnit.UtenteServiceTest.executor": "Run",
+    "JUnit.UtenteServiceTest.getCartaByCif_ExistingCif_ReturnsCarta.executor": "Run",
+    "JUnit.UtenteServiceTest.getCartaByCif_NonExistingCif_ReturnsNull.executor": "Run",
+    "JUnit.UtenteServiceTest.getCarteByUtente_ReturnsList.executor": "Run",
+    "JUnit.UtenteServiceTest.saveCarta_InvalidCVV_ThrowsException.executor": "Run",
+    "JUnit.UtenteServiceTest.saveCarta_InvalidCif_ThrowsException.executor": "Run",
+    "JUnit.UtenteServiceTest.saveCarta_InvalidScadenza_ThrowsException.executor": "Run",
+    "JUnit.UtenteServiceTest.saveCarta_ValidData_Success.executor": "Run",
+    "JUnit.UtenteServiceTest.testRegistrati_UtenteNuovo.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -195,7 +214,7 @@
     "Spring Boot.RogueGames.executor": "Run",
     "Tomcat Server.Tomcat 9.0.98.executor": "Run",
     "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Marco",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/anton/IdeaProjects/RogueGames/RogueGame/pom.xml",
@@ -221,6 +240,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ROBA\RogueGames\RogueGame\src\main\resources\static\css\images" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.roguegames.domain.service" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="excludedTypes">
@@ -229,9 +251,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RogueGames">
-    <configuration name="GestoreServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RogueGame" />
+  <component name="RunManager" selected="JUnit.UtenteServiceIntegrationTest.registrati_Success">
+    <configuration name="CarrelloServiceIntegrationTest.aggiungiProdottoValido_nuovoProdotto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGames" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.roguegames.*" />
@@ -239,14 +261,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.CarrelloServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="aggiungiProdottoValido_nuovoProdotto" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GestoreServiceIntegrationTest.aggiungiProdotto_Esistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RogueGame" />
+    <configuration name="GestoreServiceTest.aggiungiProdotto_Esistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGames" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.roguegames.*" />
@@ -254,15 +277,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceTest" />
       <option name="METHOD_NAME" value="aggiungiProdotto_Esistente" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GestoreServiceIntegrationTest.eliminaProdotto_NonEsistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RogueGame" />
+    <configuration name="OrdineServiceTest.processaOrdine_carrelloMultipliElementi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGames" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.roguegames.*" />
@@ -270,15 +293,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
-      <option name="METHOD_NAME" value="eliminaProdotto_NonEsistente" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.OrdineServiceTest" />
+      <option name="METHOD_NAME" value="processaOrdine_carrelloMultipliElementi" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutenticato" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RogueGame" />
+    <configuration name="OrdineServiceTest.processaOrdine_carrelloSingoloElemento" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGames" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.roguegames.*" />
@@ -286,15 +309,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
-      <option name="METHOD_NAME" value="eliminaProdotto_UtenteNonAutenticato" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.OrdineServiceTest" />
+      <option name="METHOD_NAME" value="processaOrdine_carrelloSingoloElemento" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GestoreServiceIntegrationTest.modificaProdotto_NonEsistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RogueGame" />
+    <configuration name="UtenteServiceIntegrationTest.registrati_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGames" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.roguegames.*" />
@@ -302,15 +325,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.GestoreServiceIntegrationTest" />
-      <option name="METHOD_NAME" value="modificaProdotto_NonEsistente" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.UtenteServiceIntegrationTest" />
+      <option name="METHOD_NAME" value="registrati_Success" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="RogueGames" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="RogueGame" />
+      <module name="RogueGames" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.roguegames.RogueGameApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -318,11 +341,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GestoreServiceIntegrationTest" />
-        <item itemvalue="JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_Esistente" />
-        <item itemvalue="JUnit.GestoreServiceIntegrationTest.modificaProdotto_NonEsistente" />
-        <item itemvalue="JUnit.GestoreServiceIntegrationTest.eliminaProdotto_NonEsistente" />
-        <item itemvalue="JUnit.GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutenticato" />
+        <item itemvalue="JUnit.UtenteServiceIntegrationTest.registrati_Success" />
+        <item itemvalue="JUnit.CarrelloServiceIntegrationTest.aggiungiProdottoValido_nuovoProdotto" />
+        <item itemvalue="JUnit.GestoreServiceTest.aggiungiProdotto_Esistente" />
+        <item itemvalue="JUnit.OrdineServiceTest.processaOrdine_carrelloMultipliElementi" />
+        <item itemvalue="JUnit.OrdineServiceTest.processaOrdine_carrelloSingoloElemento" />
       </list>
     </recent_temporary>
   </component>
@@ -386,6 +409,7 @@
       <workItem from="1738747046235" duration="10616000" />
       <workItem from="1738765739597" duration="7400000" />
       <workItem from="1738843778748" duration="306000" />
+      <workItem from="1738926220536" duration="3135000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />

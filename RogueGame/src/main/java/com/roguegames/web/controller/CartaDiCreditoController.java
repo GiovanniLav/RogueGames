@@ -2,7 +2,6 @@ package com.roguegames.web.controller;
 
 import com.roguegames.domain.entity.CartaDiCredito;
 import com.roguegames.domain.entity.Utente;
-import com.roguegames.domain.service.CartaDiCreditoService;
 import com.roguegames.domain.service.UtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,9 +20,6 @@ import java.util.Map;
 public class CartaDiCreditoController {
 
     @Autowired
-    private CartaDiCreditoService cartaDiCreditoService;
-
-    @Autowired
     private UtenteService utenteService;
 
     // Visualizza tutte le carte dell'utente
@@ -34,7 +30,7 @@ public class CartaDiCreditoController {
             return "redirect:/utenti/login"; // Se l'utente non è loggato, reindirizza al login
         }
 
-        List<CartaDiCredito> carte = cartaDiCreditoService.getCarteByUtente(utente);
+        List<CartaDiCredito> carte = utenteService.getCarteByUtente(utente);
 
         model.addAttribute("utente", utente);
         model.addAttribute("carte", carte);
@@ -68,7 +64,7 @@ public class CartaDiCreditoController {
         }
 
         CartaDiCredito carta = new CartaDiCredito(cif, scadenza, cvv, utente);
-        cartaDiCreditoService.saveCarta(carta);
+        utenteService.saveCarta(carta);
 
         return "redirect:/carte";  // Ritorna alla pagina delle carte
     }
@@ -81,7 +77,7 @@ public class CartaDiCreditoController {
             return "redirect:/utenti/login"; // Se l'utente non è loggato, reindirizza al login
         }
 
-        CartaDiCredito carta = cartaDiCreditoService.getCartaByCif(cif);
+        CartaDiCredito carta = utenteService.getCartaByCif(cif);
         model.addAttribute("utente", utente);
         model.addAttribute("carta", carta); // Passa la carta da modificare
         model.addAttribute("modifica", true); // Imposta `modifica` a true
@@ -98,11 +94,11 @@ public class CartaDiCreditoController {
             return "redirect:/utenti/login"; // Se l'utente non è loggato, reindirizza al login
         }
 
-        CartaDiCredito carta = cartaDiCreditoService.getCartaByCif(cif);
+        CartaDiCredito carta = utenteService.getCartaByCif(cif);
         if (carta != null && carta.getUtente().equals(utente)) {
             carta.setScadenza(scadenza);
             carta.setCvv(cvv);
-            cartaDiCreditoService.saveCarta(carta);
+            utenteService.saveCarta(carta);
         }
 
         return "redirect:/carte"; // Ritorna alla pagina delle carte
@@ -117,9 +113,9 @@ public class CartaDiCreditoController {
             return "redirect:/utenti/login"; // Se l'utente non è loggato, reindirizza al login
         }
 
-        CartaDiCredito carta = cartaDiCreditoService.getCartaByCif(cif);
+        CartaDiCredito carta = utenteService.getCartaByCif(cif);
         if (carta != null && carta.getUtente().equals(utente)) {
-            cartaDiCreditoService.deleteCarta(carta);
+            utenteService.deleteCarta(carta);
         }
 
         return "redirect:/carte";  // Ritorna alla pagina delle carte
@@ -135,7 +131,7 @@ public class CartaDiCreditoController {
         try {
             System.out.println("salvacartaordine");
             CartaDiCredito carta = new CartaDiCredito(cif, scadenza, cvv, utente);
-            cartaDiCreditoService.saveCarta(carta);
+            utenteService.saveCarta(carta);
             model.addAttribute("utente", utente);
             model.addAttribute("carta", carta);
             return ResponseEntity.ok().build();
@@ -148,7 +144,7 @@ public class CartaDiCreditoController {
     @ResponseBody
     public Map<String, List<CartaDiCredito>> aggiornaCarte(HttpSession session) {
         Utente utente = (Utente) session.getAttribute("utente");
-        List<CartaDiCredito> carte = cartaDiCreditoService.getCarteByUtente(utente); // Recupera le carte dal database
+        List<CartaDiCredito> carte = utenteService.getCarteByUtente(utente); // Recupera le carte dal database
         Map<String, List<CartaDiCredito>> response = new HashMap<>();
         response.put("carte", carte);
         return response;

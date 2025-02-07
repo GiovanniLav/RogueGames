@@ -92,12 +92,19 @@ public class CarrelloServiceIntegrationTest {
     void aggiungiProdotto_quantitaNonDisponibile() throws Exception {
         Utente utente = new Utente("lollo@lollo.lol", "Tester12!", "User", "Test", 10, "Test 14b", "1112223330");
 
+
+
         MockHttpSession session = new MockHttpSession();
         session.setAttribute("utente", utente);
 
-
         String nomeProdotto = "Tazza 3D Pokeball";
         int quantita = 1;
+        mockMvc.perform(post("/aggiungi/Tazza 3D Pokeball")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(nomeProdotto)
+                        .session(session))
+                .andExpect(status().isOk());
+
         mockMvc.perform(post("/aggiungi/Tazza 3D Pokeball")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(nomeProdotto)
@@ -117,9 +124,9 @@ public class CarrelloServiceIntegrationTest {
         session.setAttribute("utente", utente);
 
 
-        String nomeProdotto = "Cassette Beasts";
+        String nomeProdotto = "Tazza 3D Pokeball";
 
-        mockMvc.perform(post("/rimuovi/Cassette Beasts")
+        mockMvc.perform(post("/rimuovi/Tazza 3D Pokeball")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(nomeProdotto)
                         .session(session))
@@ -140,9 +147,9 @@ public class CarrelloServiceIntegrationTest {
         session.setAttribute("utente", utente);
 
 
-        String nomeProdotto = "Cassette Beasts"; // Il nome del prodotto
+        String nomeProdotto = "Tazza 3D Pokeball"; // Il nome del prodotto
 
-        mockMvc.perform(post("/rimuovi/Cassette Beasts") // URL senza {nome}
+        mockMvc.perform(post("/rimuovi/Tazza 3D Pokeball") // URL senza {nome}
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(nomeProdotto) // Invia solo il nome come stringa
                         .session(session))

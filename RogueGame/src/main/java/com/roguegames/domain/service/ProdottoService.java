@@ -1,61 +1,29 @@
 package com.roguegames.domain.service;
 
 import com.roguegames.domain.entity.Prodotto;
-import com.roguegames.domain.repository.ProdottoRepository;
-import org.jetbrains.annotations.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
-import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Optional;
-import java.util.List;
 import com.roguegames.web.controller.Item.CarrelloItem;
+import org.jetbrains.annotations.NotNull;
 
-@Service
-public class ProdottoService {
+import java.util.List;
 
-    @Autowired
-    private ProdottoRepository prodottoRepository;
+public interface ProdottoService {
+    List<Prodotto> findProdotto(List<CarrelloItem> carrello);
 
-    public List<Prodotto> findProdotto(List <CarrelloItem> carrello) {
-        List <Prodotto> prodotto = new ArrayList<Prodotto>();
-        for (CarrelloItem carrelloItem : carrello) {
-            prodotto.add(carrelloItem.getCarrello().getProdotto());
-        }
-        return prodotto;
-    }
+    List<Prodotto> getAllProdotti();
 
-    public List<Prodotto> getAllProdotti() {return prodottoRepository.findAll();}
+    Prodotto saveProdotto(Prodotto prodotto);
 
-    public Prodotto saveProdotto(Prodotto prodotto) {
-        return prodottoRepository.save(prodotto);
-        }
+    Prodotto findProdotto(String nome);
 
-    public Prodotto findProdotto(String nome){return prodottoRepository.findByNome(nome);}
+    void updateProdottoQnt(@NotNull Prodotto prodotto, int qnt);
 
-    public void updateProdottoQnt(@NotNull Prodotto prodotto, int qnt) {
-                int qnt2= prodotto.getQuantita();
-                prodotto.setQuantita(qnt2-qnt);
-                prodottoRepository.save(prodotto);
-            }
+    List<Prodotto> get6RandomProdotto();
 
-    public List<Prodotto> get6RandomProdotto() {return prodottoRepository.findRandom();}
+    List<Prodotto> filteredCatalogo(Prodotto.Piattaforma piattaforma);
 
-    public List<Prodotto> filteredCatalogo(Prodotto.Piattaforma piattaforma) {return prodottoRepository.findByPiattaforma(piattaforma);};
+    List<Prodotto> getFantasy();
 
-    public List<Prodotto> getFantasy() {return prodottoRepository.findFantasy();};
+    List<Prodotto> getConsole();
 
-    public List<Prodotto> getConsole() {return prodottoRepository.findConsole();};
-
-    public List<Prodotto> ordinaPerData(String order) {
-        if ("desc".equalsIgnoreCase(order)) {
-            return prodottoRepository.findAllByOrderByDataRilascioDesc();
-        } else {
-            return prodottoRepository.findAllByOrderByDataRilascioAsc();
-        }
-    }
+    List<Prodotto> ordinaPerData(String order);
 }
-
-
-

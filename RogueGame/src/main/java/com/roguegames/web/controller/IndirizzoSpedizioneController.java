@@ -4,6 +4,7 @@ import com.roguegames.domain.entity.IndirizzoSpedizione;
 import com.roguegames.domain.entity.IndirizzoSpedizioneId;
 import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.service.UtenteService;
+import com.roguegames.domain.service.UtenteServiceImp;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -99,7 +100,7 @@ public class IndirizzoSpedizioneController {
                 System.out.println("Indirizzo spedizione non trovato");
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
             }
-        } catch (UtenteService.IndirizzoNonDisponibile e) {
+        } catch (UtenteServiceImp.IndirizzoNonDisponibile e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

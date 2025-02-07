@@ -1,11 +1,14 @@
 package com.roguegames;
 
+import com.roguegames.domain.entity.CartaDiCredito;
 import com.roguegames.domain.entity.IndirizzoSpedizione;
 import com.roguegames.domain.entity.IndirizzoSpedizioneId;
 import com.roguegames.domain.entity.Utente;
+import com.roguegames.domain.repository.CartaDiCreditoRepository;
 import com.roguegames.domain.repository.IndirizzoSpedizioneRepository;
 import com.roguegames.domain.repository.UtenteRepository;
 import com.roguegames.domain.service.UtenteService;
+import com.roguegames.domain.service.UtenteServiceImp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,6 +19,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,10 +33,20 @@ class UtenteServiceTest {
     private IndirizzoSpedizioneRepository indirizzoSpedizioneRepository;
 
     @InjectMocks
-    private UtenteService utenteService;
+    private UtenteService utenteService = new UtenteServiceImp();
 
     private Utente utente;
     private IndirizzoSpedizione indirizzoSpedizione;
+
+    @Mock
+    private CartaDiCreditoRepository cartaDiCreditoRepository;
+
+
+    @InjectMocks
+
+    private CartaDiCredito cartaValida;
+    private CartaDiCredito cartaNonValida;
+
 
     @BeforeEach
     void setUp() {
@@ -49,6 +63,9 @@ class UtenteServiceTest {
         indirizzoSpedizione = new IndirizzoSpedizione();
         indirizzoSpedizione.setId(new IndirizzoSpedizioneId("MI", 20100, "Via Roma", "10", "Milano", utente.getEmail()));
         indirizzoSpedizione.setUtente(utente);
+
+        cartaValida = new CartaDiCredito("1234567812345678", "12/30", "123", utente);
+        cartaNonValida = new CartaDiCredito("1234", "01/20", "12", utente);
     }
 
     @Test
@@ -111,7 +128,7 @@ class UtenteServiceTest {
         when(indirizzoSpedizioneRepository.findById(id)).thenReturn(Optional.of(indirizzoSpedizione));
 
         // Verifica che venga lanciata l'eccezione
-        UtenteService.IndirizzoNonDisponibile thrown = assertThrows(UtenteService.IndirizzoNonDisponibile.class, () -> {
+        UtenteServiceImp.IndirizzoNonDisponibile thrown = assertThrows(UtenteServiceImp.IndirizzoNonDisponibile.class, () -> {
             utenteService.aggiungiIndirizzoSpd("MI", 20100, "Via Roma", "10", "Milano", utente);
         });
 
@@ -203,5 +220,60 @@ class UtenteServiceTest {
 
         // Verifica che il messaggio dell'eccezione sia corretto
         assertEquals("Email non esiste", exception.getMessage());
+    }
+
+    @Test
+    void saveCarta_ValidData_Success() {
+        when(cartaDiCreditoRepository.save(cartaValida)).thenReturn(cartaValida);
+        assertDoesNotThrow(() -> utenteService.saveCarta(cartaValida));
+        verify(cartaDiCreditoRepository, times(1)).save(cartaValida);
+    }
+
+    @Test
+    void saveCarta_InvalidCif_ThrowsException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> utenteService.saveCarta(cartaNonValida));
+        assertEquals("Dati della carta non validi", exception.getMessage());
+    }
+
+    @Test
+    void saveCarta_InvalidCVV_ThrowsException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> utenteService.saveCarta(cartaNonValida));
+        assertEquals("Dati della carta non validi", exception.getMessage());
+    }
+
+    @Test
+    void saveCarta_InvalidScadenza_ThrowsException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> utenteService.saveCarta(cartaNonValida));
+        assertEquals("Dati della carta non validi", exception.getMessage());
+    }
+
+    @Test
+    void getCarteByUtente_ReturnsList() {
+        Utente utente = new Utente();
+        when(cartaDiCreditoRepository.findByUtente(utente)).thenReturn(Collections.singletonList(cartaValida));
+        List<CartaDiCredito> carte = utenteService.getCarteByUtente(utente);
+        assertFalse(carte.isEmpty());
+        assertEquals(1, carte.size());
+    }
+
+    @Test
+    void getCartaByCif_ExistingCif_ReturnsCarta() {
+        when(cartaDiCreditoRepository.findById("1234567812345678")).thenReturn(Optional.of(cartaValida));
+        CartaDiCredito carta = utenteService.getCartaByCif("1234567812345678");
+        assertNotNull(carta);
+    }
+
+    @Test
+    void getCartaByCif_NonExistingCif_ReturnsNull() {
+        when(cartaDiCreditoRepository.findById("0000000000000000")).thenReturn(Optional.empty());
+        CartaDiCredito carta = utenteService.getCartaByCif("0000000000000000");
+        assertNull(carta);
+    }
+
+    @Test
+    void deleteCarta_RemovesCarta() {
+        doNothing().when(cartaDiCreditoRepository).delete(cartaValida);
+        assertDoesNotThrow(() -> utenteService.deleteCarta(cartaValida));
+        verify(cartaDiCreditoRepository, times(1)).delete(cartaValida);
     }
 }

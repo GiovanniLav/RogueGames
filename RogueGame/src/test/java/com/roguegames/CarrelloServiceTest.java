@@ -8,6 +8,7 @@ import com.roguegames.domain.repository.CarrelloRepository;
 import com.roguegames.domain.repository.PCarrelloRepository;
 import com.roguegames.domain.service.CarrelloService;
 
+import com.roguegames.domain.service.CarrelloServiceImp;
 import org.junit.jupiter.api.*;
 
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -34,7 +35,7 @@ import static org.mockito.Mockito.*;
 public class CarrelloServiceTest {
 
     @InjectMocks
-    private CarrelloService carrelloService;
+    private CarrelloService carrelloService = new CarrelloServiceImp();
 
     @Mock
     private CarrelloRepository carrelloRepository;
@@ -115,7 +116,7 @@ public class CarrelloServiceTest {
 
         when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.of(new PCarrello(carrelloId, 80, prodotto, utente)));
 
-        CarrelloService.QuantitaNonDisponibileException exception = assertThrows(CarrelloService.QuantitaNonDisponibileException.class, () -> {
+        CarrelloServiceImp.QuantitaNonDisponibileException exception = assertThrows(CarrelloServiceImp.QuantitaNonDisponibileException.class, () -> {
             when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.of(new PCarrello(carrelloId, 80, prodotto, utente)));
             carrelloService.aggiungiProdotto(prodotto, utente); // Tenta di aggiungere un'unità extra
         });
@@ -144,7 +145,7 @@ public class CarrelloServiceTest {
     void rimuoviProdotto_prodottoNonEsistente(){
         when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.empty());
 
-        CarrelloService.QuantitaNonDisponibileException exception = assertThrows(CarrelloService.QuantitaNonDisponibileException.class, () -> {
+        CarrelloServiceImp.QuantitaNonDisponibileException exception = assertThrows(CarrelloServiceImp.QuantitaNonDisponibileException.class, () -> {
             when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.empty());
             carrelloService.rimuoviProdotto(prodotto, utente); // Tenta di aggiungere un'unità extra
         });
@@ -183,7 +184,7 @@ public class CarrelloServiceTest {
     void modificaQuantita_ProdottoNonEsistente(){
         when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.empty());
 
-        CarrelloService.QuantitaNonDisponibileException exception = assertThrows(CarrelloService.QuantitaNonDisponibileException.class, () -> {
+        CarrelloServiceImp.QuantitaNonDisponibileException exception = assertThrows(CarrelloServiceImp.QuantitaNonDisponibileException.class, () -> {
             when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.empty());
             carrelloService.modificaQnt(prodotto, utente, "7"); // Tenta di aggiungere un'unità extra
         });
@@ -196,7 +197,7 @@ public class CarrelloServiceTest {
 
     @Test
     void modificaQuantita_ValoreNonIntero(){
-        CarrelloService.QuantitaNonDisponibileException exception = assertThrows(CarrelloService.QuantitaNonDisponibileException.class, () -> {
+        CarrelloServiceImp.QuantitaNonDisponibileException exception = assertThrows(CarrelloServiceImp.QuantitaNonDisponibileException.class, () -> {
             when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.of(new PCarrello(carrelloId, 1, prodotto, utente)));
             carrelloService.modificaQnt(prodotto, utente, ","); // Tenta di aggiungere un'unità extra
         });
@@ -209,7 +210,7 @@ public class CarrelloServiceTest {
 
     @Test
     void modificaQuantita_QuantitaNonDisponibile() {
-        CarrelloService.QuantitaNonDisponibileException exception = assertThrows(CarrelloService.QuantitaNonDisponibileException.class, () -> {
+        CarrelloServiceImp.QuantitaNonDisponibileException exception = assertThrows(CarrelloServiceImp.QuantitaNonDisponibileException.class, () -> {
             when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.of(new PCarrello(carrelloId, 80, prodotto, utente)));
             carrelloService.modificaQnt(prodotto, utente, "81"); // Tenta di aggiungere un'unità extra
         });

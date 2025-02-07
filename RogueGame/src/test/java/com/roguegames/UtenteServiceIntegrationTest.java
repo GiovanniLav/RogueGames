@@ -1,9 +1,12 @@
 package com.roguegames;
 
+import com.roguegames.domain.entity.CartaDiCredito;
 import com.roguegames.domain.entity.IndirizzoSpedizione;
 import com.roguegames.domain.entity.Utente;
+import com.roguegames.domain.repository.CartaDiCreditoRepository;
 import com.roguegames.domain.repository.UtenteRepository;
 import com.roguegames.domain.service.UtenteService;
+import com.roguegames.domain.service.UtenteServiceImp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,7 +16,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 import java.util.Optional;
 
-import static com.roguegames.domain.service.UtenteService.hashPassword;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest  // Usa la configurazione di Spring Boot e connetti al database di test
@@ -23,9 +25,16 @@ class UtenteServiceIntegrationTest {
     private UtenteRepository utenteRepository;
 
     @Autowired
+    private CartaDiCreditoRepository cartaDiCreditoRepository;
+
+    @Autowired
     private UtenteService utenteService;
 
     private Utente utente;
+    private CartaDiCredito cartaValida;
+    private CartaDiCredito cartaNonValidaCif;
+    private CartaDiCredito cartaNonValidaCVV;
+    private CartaDiCredito cartaNonValidaScadenza;
 
     @BeforeEach
     void setUp() {
@@ -39,6 +48,10 @@ class UtenteServiceIntegrationTest {
         utente.setTel("1234567890");
         utente.setEta(25);
 
+        cartaValida = new CartaDiCredito("1234567812345678", "12/30", "123", utente);
+        cartaNonValidaCif = new CartaDiCredito("123456781234567", "12/30", "123", utente);
+        cartaNonValidaCVV = new CartaDiCredito("1234567812345678", "12/30", "12", utente);
+        cartaNonValidaScadenza = new CartaDiCredito("1234567812345678", "12/20", "123", utente);
     }
 
     @Test
@@ -85,7 +98,7 @@ class UtenteServiceIntegrationTest {
     @Test
     void verificaCredenziali_Success() {
         // Verifica le credenziali dell'utente creato nel setUp
-        Utente verificato = utenteService.verificaCredenziali("lollo@lollo.lol", hashPassword("lollolol"));
+        Utente verificato = utenteService.verificaCredenziali("lollo@lollo.lol", utenteService.hashPassword("lollolol"));
         assertNotNull(verificato);
         assertEquals(utente.getEmail(), verificato.getEmail());
     }
@@ -107,7 +120,7 @@ class UtenteServiceIntegrationTest {
         utenteService.aggiungiIndirizzoSpd("RI", 10101, "Via Test", "10", "Rimini", utente);
 
         // Verifica che venga lanciata un'eccezione se cerchi di aggiungere lo stesso indirizzo
-        assertThrows(UtenteService.IndirizzoNonDisponibile.class, () -> {
+        assertThrows(UtenteServiceImp.IndirizzoNonDisponibile.class, () -> {
             utenteService.aggiungiIndirizzoSpd("RI", 10101, "Via Test", "10", "Rimini", utente);
         });
     }
@@ -150,4 +163,61 @@ class UtenteServiceIntegrationTest {
         Optional<IndirizzoSpedizione> indirizzoCancellato = utenteService.getIndirizzoSpedizioneById(indirizzo.getId());
         assertFalse(indirizzoCancellato.isPresent());
     }
+
+    @Test
+    void saveCarta_ValidData_Success() {
+        utenteService.saveCarta(cartaValida);
+
+        CartaDiCredito savedCarta = cartaDiCreditoRepository.findById(cartaValida.getCif()).orElse(null);
+        assertNotNull(savedCarta);
+        assertEquals(cartaValida.getCif(), savedCarta.getCif());
+    }
+
+    @Test
+    void saveCarta_NonValidCif_ThrowsException() {
+        // Verifica che venga lanciata IllegalArgumentException per CIF non valido
+        assertThrows(IllegalArgumentException.class, () -> utenteService.saveCarta(cartaNonValidaCif));
+    }
+
+    @Test
+    void saveCarta_NonValidCVV_ThrowsException() {
+        // Verifica che venga lanciata IllegalArgumentException per CVV non valido
+        assertThrows(IllegalArgumentException.class, () -> utenteService.saveCarta(cartaNonValidaCVV));
+    }
+
+    @Test
+    void saveCarta_NonValidScadenza_ThrowsException() {
+        // Verifica che venga lanciata IllegalArgumentException per scadenza non valida
+        assertThrows(IllegalArgumentException.class, () -> utenteService.saveCarta(cartaNonValidaScadenza));
+    }
+
+
+    @Test
+    void getCarteByUtente_ReturnsCarte() {
+        utenteService.saveCarta(cartaValida);
+
+        List<CartaDiCredito> carte = utenteService.getCarteByUtente(utente);
+        assertFalse(carte.isEmpty());
+        assertTrue(carte.contains(cartaValida));
+    }
+
+    @Test
+    void getCartaByCif_ExistingCif_ReturnsCarta() {
+        utenteService.saveCarta(cartaValida);
+
+        CartaDiCredito carta = utenteService.getCartaByCif(cartaValida.getCif());
+        assertNotNull(carta);
+        assertEquals(cartaValida.getCif(), carta.getCif());
+    }
+
+    @Test
+    void deleteCarta_RemovesCarta() {
+        utenteService.saveCarta(cartaValida);
+
+        utenteService.deleteCarta(cartaValida);
+
+        CartaDiCredito cartaEliminata = cartaDiCreditoRepository.findById(cartaValida.getCif()).orElse(null);
+        assertNull(cartaEliminata);
+    }
+
 }
