@@ -81,11 +81,6 @@ public class UtenteService {
         }
     }
 
-    // Metodo per criptare la password (se non hai già un'implementazione)
-
-
-
-    // Metodo per ottenere un utente tramite email
     public Utente getUtenteByEmail(@NotNull String email) {
         return utenteRepository.findByEmail(email);
     }

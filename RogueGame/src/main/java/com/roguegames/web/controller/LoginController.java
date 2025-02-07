@@ -44,7 +44,7 @@ public class LoginController {
         Utente utente = utenteService.verificaCredenziali(email, hashPass);
         if (utente == null) {
             model.addAttribute("error", true);
-            return "Login";  // Mostra la pagina di login con un messaggio di errore
+            return "redirect:/utenti/home";  // Mostra la pagina di login con un messaggio di errore
         }
         String ruolo = utente.getRuolo();
         if ("gestore".equals(ruolo)) {
