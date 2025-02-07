@@ -3,6 +3,7 @@ package com.roguegames;
 import com.roguegames.domain.entity.*;
 import com.roguegames.domain.repository.OrdineRepository;
 import com.roguegames.domain.service.OrdineService;
+import com.roguegames.domain.service.OrdineServiceImp;
 import com.roguegames.web.controller.Item.CarrelloItem;
 import org.junit.jupiter.api.*;
 
@@ -34,7 +35,7 @@ public class OrdineServiceTest {
     private OrdineRepository ordineRepository;
 
     @InjectMocks
-    private OrdineService carrelloService;
+    private OrdineService carrelloService = new OrdineServiceImp();
 
     private Utente utente;
     private Prodotto prodotto;

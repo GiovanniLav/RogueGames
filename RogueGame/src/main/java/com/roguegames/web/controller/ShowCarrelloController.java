@@ -1,16 +1,11 @@
 package com.roguegames.web.controller;
 
-import com.roguegames.domain.comandi.carrello.AggiungiAlCarrello;
-import com.roguegames.domain.comandi.carrello.RimuoviDalCarrello;
 import com.roguegames.domain.entity.*;
 import com.roguegames.domain.service.CarrelloService;
-import com.roguegames.domain.service.CartaDiCreditoService;
 import com.roguegames.domain.service.ProdottoService;
 import com.roguegames.domain.service.UtenteService;
 import com.roguegames.web.controller.Item.CarrelloItem;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
@@ -28,8 +23,6 @@ public class ShowCarrelloController {
     private CarrelloService carrelloService;
     @Autowired
     private UtenteService utenteService;
-    @Autowired
-    private CartaDiCreditoService cartaDiCreditoService;
 
 
 
@@ -105,7 +98,7 @@ public class ShowCarrelloController {
 
         List<CarrelloItem> carrelloItem = getCarrelloItem(carrello);
         List<IndirizzoSpedizione> indirizzi = utenteService.getIndirizzoSpedizioni(utente);
-        List<CartaDiCredito> carte = cartaDiCreditoService.getCarteByUtente(utente);
+        List<CartaDiCredito> carte = utenteService.getCarteByUtente(utente);
         double totale = 0;
         for (CarrelloItem item : carrelloItem) {
             totale += item.getPrezzo() * item.getCarrello().getQuantita();

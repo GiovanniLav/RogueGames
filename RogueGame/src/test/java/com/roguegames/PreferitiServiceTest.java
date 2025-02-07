@@ -8,6 +8,7 @@ import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.repository.PreferitiRepository;
 import com.roguegames.domain.repository.ProdottoRepository;
 import com.roguegames.domain.service.PreferitiService;
+import com.roguegames.domain.service.PreferitiServiceImp;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -24,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PreferitiServiceTest {
 
     @InjectMocks
-    private PreferitiService preferitiService;
+    private PreferitiService preferitiService = new PreferitiServiceImp();
 
     @Mock
     private PreferitiRepository preferitiRepository;
