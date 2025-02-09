@@ -6,9 +6,12 @@ import com.roguegames.domain.entity.Prodotto;
 import com.roguegames.domain.entity.Utente;
 import com.roguegames.domain.repository.CarrelloRepository;
 import com.roguegames.domain.repository.PCarrelloRepository;
+import com.roguegames.domain.repository.ProdottoRepository;
 import com.roguegames.domain.service.CarrelloService;
 
 import com.roguegames.domain.service.CarrelloServiceImp;
+import com.roguegames.domain.service.ProdottoService;
+import com.roguegames.domain.service.ProdottoServiceImp;
 import org.junit.jupiter.api.*;
 
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,6 +25,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static com.roguegames.domain.entity.Prodotto.Piattaforma.PlayStation;
 import static com.roguegames.domain.entity.Prodotto.Tipo.Videogiochi;
@@ -31,16 +37,23 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+
 @ExtendWith(MockitoExtension.class)
 public class CarrelloServiceTest {
 
-    @InjectMocks
-    private CarrelloService carrelloService = new CarrelloServiceImp();
+    @Mock
+    private ProdottoServiceImp prodottoService;
 
+    @InjectMocks
+    private CarrelloServiceImp carrelloService;
+
+    @Mock
+    private ProdottoRepository prodottoRepository;
     @Mock
     private CarrelloRepository carrelloRepository;
     @Mock
     private PCarrelloRepository pCarrelloRepository;
+
     private Prodotto prodotto;
     private Utente utente;
     private PCarrelloId carrelloId;
@@ -159,7 +172,7 @@ public class CarrelloServiceTest {
     @Test
     void modificaQuantita_ProdottoEsistente() {
         when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.of(new PCarrello(carrelloId, 1, prodotto, utente)));
-
+        when(prodottoService.findProdotto(prodotto.getNome())).thenReturn(prodotto);
         carrelloService.modificaQnt(prodotto, utente, "7");
 
         ArgumentCaptor<PCarrello> carrelloCaptor = ArgumentCaptor.forClass(PCarrello.class);
@@ -183,7 +196,7 @@ public class CarrelloServiceTest {
     @Test
     void modificaQuantita_ProdottoNonEsistente(){
         when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.empty());
-
+        when(prodottoService.findProdotto(prodotto.getNome())).thenReturn(prodotto);
         CarrelloServiceImp.QuantitaNonDisponibileException exception = assertThrows(CarrelloServiceImp.QuantitaNonDisponibileException.class, () -> {
             when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.empty());
             carrelloService.modificaQnt(prodotto, utente, "7"); // Tenta di aggiungere un'unità extra
@@ -199,6 +212,7 @@ public class CarrelloServiceTest {
     void modificaQuantita_ValoreNonIntero(){
         CarrelloServiceImp.QuantitaNonDisponibileException exception = assertThrows(CarrelloServiceImp.QuantitaNonDisponibileException.class, () -> {
             when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.of(new PCarrello(carrelloId, 1, prodotto, utente)));
+            when(prodottoService.findProdotto(prodotto.getNome())).thenReturn(prodotto);
             carrelloService.modificaQnt(prodotto, utente, ","); // Tenta di aggiungere un'unità extra
         });
 
@@ -212,6 +226,7 @@ public class CarrelloServiceTest {
     void modificaQuantita_QuantitaNonDisponibile() {
         CarrelloServiceImp.QuantitaNonDisponibileException exception = assertThrows(CarrelloServiceImp.QuantitaNonDisponibileException.class, () -> {
             when(pCarrelloRepository.findById(carrelloId)).thenReturn(Optional.of(new PCarrello(carrelloId, 80, prodotto, utente)));
+            when(prodottoService.findProdotto(prodotto.getNome())).thenReturn(prodotto);
             carrelloService.modificaQnt(prodotto, utente, "81"); // Tenta di aggiungere un'unità extra
         });
 

@@ -26,7 +26,7 @@ public class CarrelloServiceImp implements CarrelloService {
     @Autowired
     private PCarrelloRepository pCarrelloRepository;
     @Autowired
-    private ProdottoService prodottoService;
+    private ProdottoService prodottoService = new ProdottoServiceImp();
 
     public Optional<PCarrello> trovaElementoCarrello(String nomeProdotto, String emailCliente) {
         PCarrelloId id = new PCarrelloId(nomeProdotto, emailCliente);
@@ -101,9 +101,7 @@ public class CarrelloServiceImp implements CarrelloService {
             if (!isInteger(quantitaStr)) {
                 throw new QuantitaNonDisponibileException("La quantità deve essere un numero intero valido.");
             }
-            System.out.println(prodottoCarrello.isPresent());
             int quantita = Integer.parseInt(quantitaStr);
-            System.out.println(prodottoCarrello.isPresent());
             if(quantita <=0) {
                 throw new QuantitaNonDisponibileException("La quantità non può essere negativa");
             }

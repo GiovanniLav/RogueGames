@@ -1,4 +1,5 @@
 package com.roguegames;
+import com.roguegames.domain.repository.CarrelloRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -6,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.annotation.Commit;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,6 +37,8 @@ public class CarrelloServiceIntegrationTest {
 
     @Autowired
     private PCarrelloRepository pCarrelloRepository;
+    @Autowired
+    private CarrelloRepository carrelloRepository;
 
     @Test
     @Commit
@@ -68,12 +72,19 @@ public class CarrelloServiceIntegrationTest {
 
         Utente utente = new Utente("lollo@lollo.lol", "Tester12!", "User", "Test", 10, "Test 14b", "1112223330");
 
+
         MockHttpSession session = new MockHttpSession();
         session.setAttribute("utente", utente);
 
-        String nomeProdotto = "Cassette Beasts";
+        String nomeProdotto = "The legend of Zelda Action figure Link";
 
-        mockMvc.perform(post("/aggiungi/Cassette Beasts")
+        mockMvc.perform(post("/aggiungi/The legend of Zelda Action figure Link")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(nomeProdotto)
+                        .session(session))
+                .andExpect(status().isOk());
+
+        mockMvc.perform(post("/aggiungi/The legend of Zelda Action figure Link")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(nomeProdotto)
                         .session(session))
@@ -147,9 +158,9 @@ public class CarrelloServiceIntegrationTest {
         session.setAttribute("utente", utente);
 
 
-        String nomeProdotto = "Tazza 3D Pokeball"; // Il nome del prodotto
+        String nomeProdotto = "lost"; // Il nome del prodotto
 
-        mockMvc.perform(post("/rimuovi/Tazza 3D Pokeball") // URL senza {nome}
+        mockMvc.perform(post("/rimuovi/lost") // URL senza {nome}
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(nomeProdotto) // Invia solo il nome come stringa
                         .session(session))
@@ -166,9 +177,14 @@ public class CarrelloServiceIntegrationTest {
         MockHttpSession session = new MockHttpSession();
         session.setAttribute("utente", utente);
 
-        String nomeProdotto = "Cassette Beasts";
+        String nomeProdotto = "The legend of Zelda Action figure Link";
         String qnt = "10";
 
+        mockMvc.perform(post("/aggiungi/The legend of Zelda Action figure Link")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(nomeProdotto)
+                        .session(session))
+                .andExpect(status().isOk());
 
         mockMvc.perform(post("/aumentaQnt")
                         .param("nomeProdotto", nomeProdotto)
@@ -212,7 +228,7 @@ public class CarrelloServiceIntegrationTest {
         MockHttpSession session = new MockHttpSession();
         session.setAttribute("utente", utente);
 
-        String nomeProdotto = "Cassette Beasts";
+        String nomeProdotto = "The legend of Zelda Action figure Link";
         String qnt = "a";
 
 
@@ -232,7 +248,7 @@ public class CarrelloServiceIntegrationTest {
         MockHttpSession session = new MockHttpSession();
         session.setAttribute("utente", utente);
 
-        String nomeProdotto = "Cassette Beasts";
+        String nomeProdotto = "The legend of Zelda Action figure Link";
         String qnt = "44";
 
 

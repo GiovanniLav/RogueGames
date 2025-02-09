@@ -85,22 +85,15 @@ public class OrdineServiceIntegrationTest {
         List< CarrelloItem> listaCarrello = new ArrayList<>();
         Utente utente = new Utente("lollo@lollo.lol", "Tester12!", "User", "Test", 10, "Test 14b", "1112223330");
 
-        Prodotto p= new Prodotto();
-        p.setNome("EldenRing");
-        p.setImmagine("EldenRing.jpg");
-        p.setPrezzo(20.00);
-        PCarrelloId id = new PCarrelloId("EldenRing", "lollo@lollo.lol");
-        PCarrello c = new PCarrello(id, 1, p, utente);
-        CarrelloItem ci = new CarrelloItem(p, c);
-        listaCarrello.add(ci);
+        Prodotto p;
 
         p= new Prodotto();
         p.setNome("Cassette Beasts");
         p.setImmagine("Cassette Beasts.jpg");
         p.setPrezzo(20.00);
-        id = new PCarrelloId("Cassette Beasts", "lollo@lollo.lol");
-        c = new PCarrello(id, 2, p, utente);
-        ci = new CarrelloItem(p, c);
+        PCarrelloId id = new PCarrelloId("Cassette Beasts", "lollo@lollo.lol");
+        PCarrello c = new PCarrello(id, 2, p, utente);
+        CarrelloItem ci = new CarrelloItem(p, c);
         listaCarrello.add(ci);
 
         p= new Prodotto();
