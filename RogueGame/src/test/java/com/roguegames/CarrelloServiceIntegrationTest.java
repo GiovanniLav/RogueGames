@@ -64,6 +64,7 @@ public class CarrelloServiceIntegrationTest {
         assertEquals(1, carrello.get().getQuantita());
         assertEquals(nomeProdotto, carrello.get().getProdotto().getNome());
         assertEquals(utente.getEmail(), carrello.get().getUtente().getEmail());
+        carrelloRepository.delete(carrello.get());
     }
 
     @Test
@@ -96,6 +97,7 @@ public class CarrelloServiceIntegrationTest {
         assertEquals(2, carrello.get().getQuantita());
         assertEquals(nomeProdotto, carrello.get().getProdotto().getNome());
         assertEquals(utente.getEmail(), carrello.get().getUtente().getEmail());
+        carrelloRepository.delete(carrello.get());
     }
 
     @Test
@@ -198,6 +200,7 @@ public class CarrelloServiceIntegrationTest {
         assertEquals(10, carrello.get().getQuantita());
         assertEquals(nomeProdotto, carrello.get().getProdotto().getNome());
         assertEquals(utente.getEmail(), carrello.get().getUtente().getEmail());
+        carrelloRepository.delete(carrello.get());
     }
 
     @Test
@@ -231,6 +234,11 @@ public class CarrelloServiceIntegrationTest {
         String nomeProdotto = "The legend of Zelda Action figure Link";
         String qnt = "a";
 
+        mockMvc.perform(post("/aggiungi/The legend of Zelda Action figure Link")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(nomeProdotto)
+                        .session(session))
+                .andExpect(status().isOk());
 
         mockMvc.perform(post("/aumentaQnt")
                         .param("nomeProdotto", nomeProdotto)
@@ -238,6 +246,11 @@ public class CarrelloServiceIntegrationTest {
                         .session(session))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().string("La quantità deve essere un numero intero valido."));
+
+        PCarrelloId carrelloId = new PCarrelloId(nomeProdotto, utente.getEmail());
+        Optional<PCarrello> carrello = pCarrelloRepository.findById(carrelloId);
+        assertTrue(carrello.isPresent());
+        carrelloRepository.delete(carrello.get());
     }
 
     @Test
@@ -249,15 +262,26 @@ public class CarrelloServiceIntegrationTest {
         session.setAttribute("utente", utente);
 
         String nomeProdotto = "The legend of Zelda Action figure Link";
-        String qnt = "44";
+        String qnt = "800";
 
+
+        mockMvc.perform(post("/aggiungi/The legend of Zelda Action figure Link")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(nomeProdotto)
+                        .session(session))
+                .andExpect(status().isOk());
 
         mockMvc.perform(post("/aumentaQnt")
                         .param("nomeProdotto", nomeProdotto)
                         .param("quantita", qnt)
                         .session(session))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("La quantità non è disponibile. La quantità massima di " + nomeProdotto + " è di 43"));
+                .andExpect(content().string("La quantità non è disponibile. La quantità massima di " + nomeProdotto + " è di 500"));
+
+        PCarrelloId carrelloId = new PCarrelloId(nomeProdotto, utente.getEmail());
+        Optional<PCarrello> carrello = pCarrelloRepository.findById(carrelloId);
+        assertTrue(carrello.isPresent());
+        carrelloRepository.delete(carrello.get());
     }
 
     @Test

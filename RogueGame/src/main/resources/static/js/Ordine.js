@@ -122,7 +122,7 @@ $(document).ready(function () {
         const provinciaRegex = /^[A-Z]{2}$/;
         const cittaRegex = /^[a-zA-Z\s]{2,45}$/;
         const civicoRegex = /^[a-zA-Z0-9\s]{1,10}$/;
-        const viaRegex = /^[a-zA-Z\s]{2,45}$/;
+        const viaRegex = /^[a-zA-Z\s]{7,45}$/;
 
         const provincia = $('#provincia').val();
         const cap = $('#cap').val();
@@ -140,7 +140,7 @@ $(document).ready(function () {
             return;
         }
         if (!viaRegex.test(via)) {
-            $('#viaError').text('La via deve contenere tra 2 e 45 caratteri.');
+            $('#viaError').text('La via deve contenere tra 7 e 45 caratteri.');
             return;
         }
         if (!civicoRegex.test(civico)) {

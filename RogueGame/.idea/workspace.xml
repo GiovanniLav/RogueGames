@@ -12,18 +12,23 @@
     <list default="true" id="433e2958-9e21-4bdc-a2c5-d543b8096ec1" name="Changes" comment="modifiche varie">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_02_2025_11_47_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_02_2025_11_47__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_02_2025_10_56_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_02_2025_10_56__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_02_2025_15_26_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_02_2025_15_26__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_02_2025_16_50_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_02_2025_16_50__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_01_02_2025_11_49_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_01_02_2025_11_49__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_31_01_2025_18_45_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_31_01_2025_18_45__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_02_2025_10_17_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_02_2025_10_17__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2025_18_55_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2025_18_55__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roguegames/domain/service/CarrelloServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Ordine.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/CarrelloServiceIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/CarrelloServiceIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/CarrelloServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/CarrelloServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/OrdineServiceIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/OrdineServiceIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/roguegames/RogueGamesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/roguegames/RogueGamesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,128 +113,130 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiCarrello_utenteGestore.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiCarrello_utenteNonAutenticato.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiProdottoValido_ProdottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiProdottoValido_nuovoProdotto.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.aggiungiProdotto_quantitaNonDisponibile.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.modificaQuantita_ProdottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.modificaQuantita_ProdottoNonEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.modificaQuantita_QuantitaNonDisponibile.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.modificaQuantita_ValoreNonIntero.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.rimuoviCarrello_utenteNonAutenticato.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.rimuoviProdotto_prodottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.rimuoviProdotto_prodottoNonEsistente.executor": "Run",
-    "JUnit.CarrelloServiceIntegrationTest.rimuoviiCarrello_utenteNonAutenticato.executor": "Run",
-    "JUnit.CarrelloServiceTest.aggiungiProdottoValido_nuovoProdotto.executor": "Run",
-    "JUnit.CarrelloServiceTest.aggiungiProdottoValido_prodottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceTest.aggiungiProdotto_quantitaNonDisponibile.executor": "Run",
-    "JUnit.CarrelloServiceTest.executor": "Run",
-    "JUnit.CarrelloServiceTest.modificaQuantita_ProdottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceTest.modificaQuantita_ProdottoNonEsistente.executor": "Run",
-    "JUnit.CarrelloServiceTest.modificaQuantita_QuantitaNonDisponibile.executor": "Run",
-    "JUnit.CarrelloServiceTest.modificaQuantita_ValoreNonIntero.executor": "Run",
-    "JUnit.CarrelloServiceTest.rimuoviProdotto.executor": "Run",
-    "JUnit.CarrelloServiceTest.rimuoviProdotto_prodottoEsistente.executor": "Run",
-    "JUnit.CarrelloServiceTest.rimuoviProdotto_prodottoNonEsistente.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.deleteCarta_RemovesCarta.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.getCartaByCif_ExistingCif_ReturnsCarta.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.getCarteByUtente_ReturnsCarte.executor": "Run",
-    "JUnit.CartaDiCreditoServiceIntegrationTest.saveCarta_ValidData_Success.executor": "Run",
-    "JUnit.CartaDiCreditoServiceTest.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_Esistente.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_NonEsistente.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_UtenteNonAutenticato.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_UtenteNonAutorizzato.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.eliminaProdotto_Esistente.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.eliminaProdotto_NonEsistente.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutenticato.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutorizzato.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.modificaProdotto_Esistente.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.modificaProdotto_NonEsistente.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.modificaProdotto_UtenteNonAutenticato.executor": "Run",
-    "JUnit.GestoreServiceIntegrationTest.modificaProdotto_UtenteNonAutorizzato.executor": "Run",
-    "JUnit.GestoreServiceTest.aggiungiProdotto_Esistente.executor": "Run",
-    "JUnit.GestoreServiceTest.aggiungiProdotto_NonEsistente.executor": "Run",
-    "JUnit.GestoreServiceTest.eliminaProdotto_Esistente.executor": "Run",
-    "JUnit.GestoreServiceTest.eliminaProdotto_NonEsistente.executor": "Run",
-    "JUnit.GestoreServiceTest.executor": "Run",
-    "JUnit.GestoreServiceTest.modificaProdotto_Esistente.executor": "Run",
-    "JUnit.GestoreServiceTest.modificaProdotto_NonEsistente.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.aggiungiOrdine_utenteGestore.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.aggiungiOrdine_utenteNonAutenticato.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.processaOrdine_carrelloMultipliElementi.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.processaOrdine_carrelloSingoloElemento.executor": "Run",
-    "JUnit.OrdineServiceIntegrationTest.processaOrdine_carrelloVuoto.executor": "Run",
-    "JUnit.OrdineServiceTest.executor": "Run",
-    "JUnit.OrdineServiceTest.processaOrdine_carrelloMultipliElementi.executor": "Run",
-    "JUnit.OrdineServiceTest.processaOrdine_carrelloSingoloElemento.executor": "Run",
-    "JUnit.OrdineServiceTest.processaOrdine_carrelloVuoto.executor": "Run",
-    "JUnit.PreferitiServiceIntegrationTest.executor": "Run",
-    "JUnit.PreferitiServiceTest.executor": "Run",
-    "JUnit.PreferitiServiceTest.trovaPerUtenteTest.executor": "Run",
-    "JUnit.RogueGamesTest.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.deleteCarta_RemovesCarta.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.getCartaByCif_ExistingCif_ReturnsCarta.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.getCarteByUtente_ReturnsCarte.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.registrati_EmailGiàEsistente_LancioEccezione.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.registrati_Success.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.saveCarta_NonValidCVV_ThrowsException.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.saveCarta_NonValidCif_ThrowsException.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.saveCarta_NonValidScadenza_ThrowsException.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.saveCarta_ValidData_Success.executor": "Run",
-    "JUnit.UtenteServiceIntegrationTest.verificaCredenziali_Success.executor": "Run",
-    "JUnit.UtenteServiceTest.deleteCarta_RemovesCarta.executor": "Run",
-    "JUnit.UtenteServiceTest.executor": "Run",
-    "JUnit.UtenteServiceTest.getCartaByCif_ExistingCif_ReturnsCarta.executor": "Run",
-    "JUnit.UtenteServiceTest.getCartaByCif_NonExistingCif_ReturnsNull.executor": "Run",
-    "JUnit.UtenteServiceTest.getCarteByUtente_ReturnsList.executor": "Run",
-    "JUnit.UtenteServiceTest.saveCarta_InvalidCVV_ThrowsException.executor": "Run",
-    "JUnit.UtenteServiceTest.saveCarta_InvalidCif_ThrowsException.executor": "Run",
-    "JUnit.UtenteServiceTest.saveCarta_InvalidScadenza_ThrowsException.executor": "Run",
-    "JUnit.UtenteServiceTest.saveCarta_ValidData_Success.executor": "Run",
-    "JUnit.UtenteServiceTest.testRegistrati_UtenteNuovo.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.RogueGameApplication.executor": "Run",
-    "Spring Boot.RogueGames.executor": "Run",
-    "Tomcat Server.Tomcat 9.0.98.executor": "Run",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/anton/IdeaProjects/RogueGames/RogueGame/pom.xml",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "two.files.diff.last.used.file": "C:/Users/arion/IdeaProjects/RogueGames/RogueGame/src/main/resources/templates/Profilo.html",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest,aggiungiProdottoValido_ProdottoEsistente and 11 more.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.aggiungiCarrello_utenteGestore.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.aggiungiCarrello_utenteNonAutenticato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.aggiungiProdottoValido_ProdottoEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.aggiungiProdottoValido_nuovoProdotto.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.aggiungiProdotto_quantitaNonDisponibile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.modificaQuantita_ProdottoEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.modificaQuantita_ProdottoNonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.modificaQuantita_QuantitaNonDisponibile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.modificaQuantita_ValoreNonIntero.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.rimuoviCarrello_utenteNonAutenticato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.rimuoviProdotto_prodottoEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.rimuoviProdotto_prodottoNonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceIntegrationTest.rimuoviiCarrello_utenteNonAutenticato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.aggiungiProdottoValido_nuovoProdotto.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.aggiungiProdottoValido_prodottoEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.aggiungiProdotto_quantitaNonDisponibile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.modificaQuantita_ProdottoEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.modificaQuantita_ProdottoNonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.modificaQuantita_QuantitaNonDisponibile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.modificaQuantita_ValoreNonIntero.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.rimuoviProdotto.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.rimuoviProdotto_prodottoEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CarrelloServiceTest.rimuoviProdotto_prodottoNonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CartaDiCreditoServiceIntegrationTest.deleteCarta_RemovesCarta.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CartaDiCreditoServiceIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CartaDiCreditoServiceIntegrationTest.getCartaByCif_ExistingCif_ReturnsCarta.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CartaDiCreditoServiceIntegrationTest.getCarteByUtente_ReturnsCarte.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CartaDiCreditoServiceIntegrationTest.saveCarta_ValidData_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CartaDiCreditoServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_Esistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_NonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_UtenteNonAutenticato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.aggiungiProdotto_UtenteNonAutorizzato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.eliminaProdotto_Esistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.eliminaProdotto_NonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutenticato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.eliminaProdotto_UtenteNonAutorizzato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.modificaProdotto_Esistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.modificaProdotto_NonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.modificaProdotto_UtenteNonAutenticato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceIntegrationTest.modificaProdotto_UtenteNonAutorizzato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceTest,aggiungiProdotto_NonEsistente and 5 more.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceTest.aggiungiProdotto_Esistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceTest.aggiungiProdotto_NonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceTest.eliminaProdotto_Esistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceTest.eliminaProdotto_NonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceTest.modificaProdotto_Esistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GestoreServiceTest.modificaProdotto_NonEsistente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrdineServiceIntegrationTest.aggiungiOrdine_utenteGestore.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrdineServiceIntegrationTest.aggiungiOrdine_utenteNonAutenticato.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrdineServiceIntegrationTest.processaOrdine_carrelloMultipliElementi.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrdineServiceIntegrationTest.processaOrdine_carrelloSingoloElemento.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrdineServiceIntegrationTest.processaOrdine_carrelloVuoto.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrdineServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrdineServiceTest.processaOrdine_carrelloMultipliElementi.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrdineServiceTest.processaOrdine_carrelloSingoloElemento.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrdineServiceTest.processaOrdine_carrelloVuoto.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PreferitiServiceIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PreferitiServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PreferitiServiceTest.trovaPerUtenteTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RogueGamesTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.deleteCarta_RemovesCarta.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.getCartaByCif_ExistingCif_ReturnsCarta.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.getCarteByUtente_ReturnsCarte.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.registrati_EmailGiàEsistente_LancioEccezione.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.registrati_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.saveCarta_NonValidCVV_ThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.saveCarta_NonValidCif_ThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.saveCarta_NonValidScadenza_ThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.saveCarta_ValidData_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceIntegrationTest.verificaCredenziali_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.deleteCarta_RemovesCarta.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.getCartaByCif_ExistingCif_ReturnsCarta.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.getCartaByCif_NonExistingCif_ReturnsNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.getCarteByUtente_ReturnsList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.saveCarta_InvalidCVV_ThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.saveCarta_InvalidCif_ThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.saveCarta_InvalidScadenza_ThrowsException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.saveCarta_ValidData_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UtenteServiceTest.testRegistrati_UtenteNuovo.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.RogueGameApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.RogueGames.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.98.executor&quot;: &quot;Run&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/anton/IdeaProjects/RogueGames/RogueGame/pom.xml&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/arion/IdeaProjects/RogueGames/RogueGame/src/main/resources/templates/Profilo.html&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ROBA\RogueGames\RogueGame\src\main\resources\static\css\images" />
@@ -245,18 +252,24 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CarrelloServiceTest">
-    <configuration name="CarrelloServiceIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.RogueGames">
+    <configuration name="CarrelloServiceIntegrationTest,aggiungiProdottoValido_ProdottoEsistente and 11 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RogueGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.roguegames.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.CarrelloServiceIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,aggiungiProdottoValido_ProdottoEsistente" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,aggiungiProdotto_quantitaNonDisponibile" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,rimuoviProdotto_prodottoEsistente" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,rimuoviProdotto_prodottoNonEsistente" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,modificaQuantita_ProdottoEsistente" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,modificaQuantita_ProdottoNonEsistente" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,modificaQuantita_ValoreNonIntero" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,modificaQuantita_QuantitaNonDisponibile" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,aggiungiCarrello_utenteNonAutenticato" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,aggiungiCarrello_utenteGestore" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,rimuoviCarrello_utenteNonAutenticato" />
+        <pattern testClass="com.roguegames.CarrelloServiceIntegrationTest,modificaCarrello_utenteNonAutenticato" />
+      </patterns>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -276,38 +289,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CarrelloServiceTest.aggiungiProdotto_quantitaNonDisponibile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RogueGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.roguegames.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.CarrelloServiceTest" />
-      <option name="METHOD_NAME" value="aggiungiProdotto_quantitaNonDisponibile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CarrelloServiceTest.modificaQuantita_ProdottoEsistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RogueGames" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.roguegames.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.roguegames" />
-      <option name="MAIN_CLASS_NAME" value="com.roguegames.CarrelloServiceTest" />
-      <option name="METHOD_NAME" value="modificaQuantita_ProdottoEsistente" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GestoreServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RogueGames" />
       <extension name="coverage">
@@ -323,6 +304,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GestoreServiceTest,aggiungiProdotto_NonEsistente and 5 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGames" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="com.roguegames.GestoreServiceTest,aggiungiProdotto_NonEsistente" />
+        <pattern testClass="com.roguegames.GestoreServiceTest,aggiungiProdotto_Esistente" />
+        <pattern testClass="com.roguegames.GestoreServiceTest,modificaProdotto_Esistente" />
+        <pattern testClass="com.roguegames.GestoreServiceTest,modificaProdotto_NonEsistente" />
+        <pattern testClass="com.roguegames.GestoreServiceTest,eliminaProdotto_NonEsistente" />
+        <pattern testClass="com.roguegames.GestoreServiceTest,eliminaProdotto_Esistente" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdineServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RogueGames" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roguegames.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.roguegames" />
+      <option name="MAIN_CLASS_NAME" value="com.roguegames.OrdineServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RogueGames" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="RogueGames" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.roguegames.RogueGameApplication" />
@@ -332,11 +343,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CarrelloServiceTest" />
-        <item itemvalue="JUnit.CarrelloServiceTest.modificaQuantita_ProdottoEsistente" />
+        <item itemvalue="JUnit.OrdineServiceTest" />
+        <item itemvalue="JUnit.CarrelloServiceIntegrationTest,aggiungiProdottoValido_ProdottoEsistente and 11 more" />
         <item itemvalue="JUnit.GestoreServiceTest" />
-        <item itemvalue="JUnit.CarrelloServiceIntegrationTest" />
-        <item itemvalue="JUnit.CarrelloServiceTest.aggiungiProdotto_quantitaNonDisponibile" />
+        <item itemvalue="JUnit.GestoreServiceTest,aggiungiProdotto_NonEsistente and 5 more" />
+        <item itemvalue="JUnit.CarrelloServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -401,6 +412,9 @@
       <workItem from="1738765739597" duration="7400000" />
       <workItem from="1738843778748" duration="306000" />
       <workItem from="1738926220536" duration="3135000" />
+      <workItem from="1739113341861" duration="5660000" />
+      <workItem from="1739208403441" duration="7000" />
+      <workItem from="1739290205647" duration="1460000" />
     </task>
     <task id="LOCAL-00001" summary="Prova commit">
       <option name="closed" value="true" />
@@ -530,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738774044088</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="modifiche varie">
+      <option name="closed" value="true" />
+      <created>1739100748253</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1739100748253</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,11 +582,11 @@
     <MESSAGE value="Modifica css Carrello" />
     <MESSAGE value="Sistemato Carrello" />
     <MESSAGE value="-Home aggiornata&#10;-Modifica css Login&#10;-Modifica css Register" />
-    <MESSAGE value="modifiche varie" />
     <MESSAGE value="Correzione di rimuovi e aggiungi prodotti al catalogo" />
     <MESSAGE value="Aggiunta del test del gestore, di ordine e di carrello" />
     <MESSAGE value="merge main che branch Marco" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge main che branch Marco" />
+    <MESSAGE value="modifiche varie" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifiche varie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
